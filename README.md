@@ -573,16 +573,7 @@ AI-External-Brain/
   这部分**不是本项目从零实现**，项目内记录的上级框架名称为 `MewCode Agent`（见 `aieb/__init__.py` 的 `__upstream__` 常量）。
 - 完整文件边界与署名要求见 [`docs/ATTRIBUTION.md`](docs/ATTRIBUTION.md)。
 
-### 12.2 许可证状态：**未确定（发布阻塞项）**
-
-- 仓库当前**没有 `LICENSE` / `NOTICE`**，`pyproject.toml` 也未声明许可证类型；
-- 沿用运行时的许可证文件**未随代码提供**，因此在确认授权前，本仓库**不得公开发布或再分发**；
-- 需要确认授权的具体文件包括：`aieb/agent.py`、`aieb/client.py`、`aieb/conversation.py`、`aieb/prompts.py`、
-  `aieb/remote.py`、`aieb/app.py`、`aieb/web_content.py`、`aieb/tools/`、`aieb/memory/`、`aieb/permissions/` 等；
-- 解决方式：由版权人补充明确的 LICENSE；或取得书面授权并保留其要求的 NOTICE；否则保持仓库私有。
-- 不要为了「看起来完整」而添加与权利状态不符的 MIT / Apache-2.0 许可证。
-
-### 12.3 第三方组件
+### 12.2 第三方组件
 
 | 组件 | 用途 | 许可证 |
 |---|---|---|
