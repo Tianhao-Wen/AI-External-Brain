@@ -1,0 +1,2434 @@
+{
+  "mode": "live_deepseek",
+  "model": "deepseek-chat",
+  "base_url": "https://api.deepseek.com",
+  "dataset": {
+    "dataset": "live_workflow_meetings",
+    "version": 1,
+    "cases": 25,
+    "by_category": {
+      "A_simple": 5,
+      "B_multi_risk": 5,
+      "C_no_or_resolved_risk": 5,
+      "D_complex": 5,
+      "E_long": 5
+    },
+    "gold_risks": 93,
+    "gold_todos": 77,
+    "text_chars": 8679,
+    "sha256_dataset": "24376a72a40b94a77226b450c7ef9dd3d7d85a1c5f4fde55d094f42730e48a4a",
+    "sha256_scoring": "8463b9ac67eb56964f795bb069224ea4ce16ce5af2f0698ddc5b701929f2f929",
+    "frozen_on": "2026-11-11"
+  },
+  "summary": {
+    "cases_executed": 25,
+    "cases_scored": 25,
+    "metrics": {
+      "scoring_version": "gold_scoring_v1",
+      "cases": 25,
+      "workflow_completion_rate": 1.0,
+      "task_success_rate": 1.0,
+      "side_effect_correct_rate": 1.0,
+      "risk_micro": {
+        "precision": 0.8539,
+        "recall": 0.8172,
+        "f1": 0.8352,
+        "tp": 76,
+        "fp": 13,
+        "fn": 17
+      },
+      "risk_macro": {
+        "precision": 0.8994,
+        "recall": 0.8903,
+        "f1": 0.8939
+      },
+      "todo_micro": {
+        "precision": 0.9383,
+        "recall": 0.987,
+        "f1": 0.962,
+        "tp": 76,
+        "fp": 5,
+        "fn": 1
+      },
+      "todo_macro": {
+        "precision": 0.9716,
+        "recall": 0.9933,
+        "f1": 0.9814
+      },
+      "decision_accuracy": 0.8133,
+      "false_positive_rate": 0.1461,
+      "duplicate_side_effects": 0,
+      "failed_cases": []
+    },
+    "llm_calls": 50,
+    "input_tokens": 25559,
+    "output_tokens": 30309,
+    "estimated_cost_usd": 0.044,
+    "price_assumption": {
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "note": "DeepSeek 公示价，取峰值+cache miss 上界；off-peak 为半价"
+    },
+    "latency_p50_ms": 7876.4,
+    "latency_p95_ms": 12053.8,
+    "node_total_ms": {
+      "load_meeting": 337.42,
+      "analyze_meeting": 120432.94,
+      "extract_todos": 47.59,
+      "validate_risks": 84.18,
+      "merge_results": 0.22,
+      "persist_business_state": 393.14,
+      "generate_email_draft": 73762.62,
+      "human_approval": 16.41,
+      "graph": 0.0,
+      "send_email": 784.06,
+      "record_audit": 137.75,
+      "cancelled": 8.52,
+      "update_draft": 4.33
+    },
+    "errors": [
+      {
+        "id": "A01",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_15e9bdf4fb08', 'email_draft_id': 'mail_2c957da3d98e', 'version': 1, 'draft_hash': '80ef929456ba1e6e', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】星河制造周例会（时间/地点待确认）', 'body': '各位好：\\n\\n现就星河制造周例会信息提醒如下：\\n\\n一、会议信息\\n- 会议：星河制造周例会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、会议结论\\n1. 复盘九月份产线良率，98.2%达成月度目标；\\n2. 十月份按两班制排产，十月份排产方案已通过；\\n3. 良率保持跟踪。\\n"
+      },
+      {
+        "id": "A02",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_3d522b4811c9', 'email_draft_id': 'mail_b9961106b01a', 'version': 1, 'draft_hash': '004de0e1bb7f368c', 'to_addr': 'audit-demo@example.com', 'subject': '客户支持周会提醒', 'body': '各位好：\\n\\n客户支持周会提醒如下：\\n\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议回顾：上周共收到412张工单，全部在24小时内首次响应，SLA达标。为保持SLA，知识库更新列入本周待办。\\n\\n待办事项：\\n1. 将新版退换货政策写入知识库，负责人：陈晨，截止：10月11日前，优先级：中。\\n2. 安排下周值班，负责"
+      },
+      {
+        "id": "A03",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_a319ba84bbc0', 'email_draft_id': 'mail_c8eac58dbb02', 'version': 1, 'draft_hash': '36cdc07aa9881f08', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：新员工入职流程对齐会（时间地点待确认）', 'body': '各位好：\\n\\n关于新员工入职流程对齐会，现就会议结论、风险及待办事项提醒如下。会议时间、地点及参会人尚待确认。\\n\\n一、会议结论\\n1. 自11月1日起全面使用线上入职表单，由孙倩在10月25日前完成表单配置。\\n2. 账号开通时效需改进，吴磊负责在10月30日前给出将时效压到半个工作日的方案。\\n3. 行政"
+      },
+      {
+        "id": "A04",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_29a369257676', 'email_draft_id': 'mail_179a7bacc5cf', 'version': 1, 'draft_hash': 'a521b42f623febe0', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】仓储月度盘点会（时间地点待确认）', 'body': '各位好：\\n\\n现提醒召开仓储月度盘点会，具体信息如下：\\n\\n- 会议主题：仓储月度盘点会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n会议结论：九月盘点账实相符率99.6%，总体结果合格，差异主要集中在B区零配件，需开展一次循环盘点。\\n\\n待办事项：\\n1. 对B区零配件做一次循环盘"
+      },
+      {
+        "id": "A05",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_0c828ab1e026', 'email_draft_id': 'mail_c48c3d3abddf', 'version': 1, 'draft_hash': '05d6da3a3c66bcc5', 'to_addr': 'audit-demo@example.com', 'subject': '市场活动复盘会提醒：关键风险与待办事项', 'body': '各位同事：\\n\\n关于市场活动复盘会，现将关键风险与待办事项提醒如下：\\n\\n一、关键风险\\n- 线索转化率数据缺失（中风险）：九月行业展会线索转化率尚未统计，需补齐。\\n\\n二、待办事项\\n1. 十月下旬线上研讨会策划，10月18日前出方案（负责人：林芳，优先级：高）。\\n2. 补齐线索转化率统计，10月16日前完成"
+      },
+      {
+        "id": "B01",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_27ef79857bb5', 'email_draft_id': 'mail_38b070d39b8b', 'version': 1, 'draft_hash': '5e13a0abffdc3e4e', 'to_addr': 'audit-demo@example.com', 'subject': '智能质检项目周会提醒', 'body': '各位好：\\n\\n智能质检项目周会提醒如下，请关注关键风险与待办事项。\\n\\n会议时间：待确认\\n会议地点：待确认\\n\\n一、关键风险\\n1. 供应商A相机模组交付延期两周，联调窗口压缩，产线试用排期延误（高风险）。\\n2. 九月项目成本超出预算12%，主要因现场实施人力增加，财务要求本季度内控制（高风险）。\\n3. 算法团队仅两名工程师"
+      },
+      {
+        "id": "B02",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_c5e92f35ed3f', 'email_draft_id': 'mail_a4d41296cde1', 'version': 1, 'draft_hash': '304bac84b56806c6', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】华东区域交付协调会', 'body': '各位好：\\n\\n现提醒召开华东区域交付协调会，会议时间、地点及参会人员待确认。\\n\\n会议背景与关键风险：\\n1. 毛利率低于年度目标（高风险）：原材料涨价致本季度毛利率降至18%，低于20%的年度目标，问题尚未解决。\\n2. 交付团队人力不足导致返工率上升（中风险）：华东三个项目同时进入验收，交付团队平均每人背两个项目，返工"
+      },
+      {
+        "id": "B03",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_fe9eb9c9b380', 'email_draft_id': 'mail_70e5421b33f0', 'version': 1, 'draft_hash': '977f7e9c16a64348', 'to_addr': 'audit-demo@example.com', 'subject': '供应链风险专题会提醒', 'body': '各位好：\\n\\n现就供应链风险专题会事项提醒如下。会议时间、地点及参会人待确认。\\n\\n一、识别的主要风险\\n1. 关键芯片单一来源，四季度存在断供风险（高）：关键芯片依赖单一供应商B，其产能已被其他客户用满，四季度可能断供。\\n2. 安全库存低于公司标准（中）：安全库存已降至0.8周，低于1.5周的公司标准，库存缓冲不足。\\n3. 外"
+      },
+      {
+        "id": "B04",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_bd9869196358', 'email_draft_id': 'mail_f48f8cd92f49', 'version': 1, 'draft_hash': '84f437be05c0f9a3', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：跨部门数据平台推进会（时间/地点待确认）', 'body': '各位同事：\\n\\n关于跨部门数据平台推进会，现将会议结论、关键风险与待办事项提醒如下。会议时间、地点及参与人待确认。\\n\\n一、会议结论\\n会议围绕跨部门数据平台推进中的四项问题展开：订单口径不一致导致报表连续两次人工调整、风控规则接口未提供导致平台联调受阻、生产库晚高峰查询超时率升至7%、两家三方数据源未签授"
+      },
+      {
+        "id": "B05",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_c9ccb8d2a737', 'email_draft_id': 'mail_0f749a1dd6a9', 'version': 1, 'draft_hash': '7ff710f89d71480f', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】安全生产月度会（时间地点待确认）', 'body': '各位同事：\\n\\n现就安全生产月度会相关事项提醒如下，请提前知悉并做好准备。\\n\\n一、会议信息\\n会议：安全生产月度会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n二、主要风险\\n1. 两台压力容器年检逾期（高风险）：特种设备年检中有两台压力容器逾期未检，存在合规风险。会议决定立即停用这两台逾期压力"
+      },
+      {
+        "id": "C01",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_08fdaa83d479', 'email_draft_id': 'mail_2998ffbe189d', 'version': 1, 'draft_hash': '026e75d763a14197', 'to_addr': 'audit-demo@example.com', 'subject': '订单系统故障复盘会提醒', 'body': '各位好：\\n\\n现就订单系统故障复盘会相关事项提醒如下。\\n\\n会议：订单系统故障复盘会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议结论：本次会议复盘了10月3日订单系统间歇不可用问题，确认根因为连接池配置错误，已于10月4日修复上线。修复后连续观察十天未复现，监控告警正常。会议结论为故障已解决，无需进一步处理。\\n"
+      },
+      {
+        "id": "C02",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_120fcd4d3298', 'email_draft_id': 'mail_7d81e6bfe74a', 'version': 1, 'draft_hash': '56768626fd6b3ceb', 'to_addr': 'audit-demo@example.com', 'subject': '会议提醒：历史风险关闭评审会', 'body': '各位同事：\\n\\n现提醒召开历史风险关闭评审会，会议信息如下：\\n\\n会议：历史风险关闭评审会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议结论：\\n本次会议对年初识别的「关键工序人员流失」与「测试环境不足」两条历史风险进行关闭评审。前者已完成双人互备与技能矩阵建设并通过8月复核；后者已通过新增两套环境消除。两条"
+      },
+      {
+        "id": "C03",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_ea1789f37cb8', 'email_draft_id': 'mail_577a12e09f08', 'version': 1, 'draft_hash': '49ac2378303fadc6', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：产能规划讨论会（时间/地点待确认）', 'body': '各位好：\\n\\n现就“产能规划讨论会”作如下提醒。\\n\\n会议时间：待确认\\n会议地点：待确认\\n参会人员：待确认\\n\\n会议结论：\\n1. 会议围绕明年订单增长不同情景下的产能规划进行了推演。\\n2. 若订单增长30%，新增一条产线按现有测算设备投资约2800万，投资回收期约三年半。\\n3. 若订单增长低于15%，"
+      },
+      {
+        "id": "C04",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_e12d6bd31198', 'email_draft_id': 'mail_60b74fbf8c8c', 'version': 1, 'draft_hash': 'e0b65b11fed770a6', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】培训方案评审会', 'body': '各位好：\\n\\n现提醒培训方案评审会相关事项。会议时间、地点及参会人待确认。\\n\\n会议结论：\\n1. 评审新员工培训方案；\\n2. 将培训从三天压缩至两天的提议因会牺牲实操课时，已被否决；\\n3. 决定维持三天培训，并增加一次线上答疑；\\n4. 培训时长不变。\\n\\n待办事项：\\n1. 安排线上答疑并完成排期，负责人：孙倩，截止"
+      },
+      {
+        "id": "C05",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_54e483f61930', 'email_draft_id': 'mail_6a1635120518', 'version': 1, 'draft_hash': '54fe1f512da90afa', 'to_addr': 'audit-demo@example.com', 'subject': '【提醒】办公区搬迁协调会结论及待办事项', 'body': '各位好：\\n\\n现将办公区搬迁协调会结论提醒如下：\\n\\n一、会议结论\\n1. 三楼搬迁已于2026年10月15日完成；\\n2. 网络与门禁全部调试正常，暂无异常；\\n3. 搬迁遗留旧工位已处理完毕；\\n4. 搬迁工作结束。\\n\\n二、关键风险\\n暂无。\\n\\n三、待办事项\\n1. 更新资产台账——负责人：郑楠；截止时"
+      },
+      {
+        "id": "D01",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_05c31cce8629', 'email_draft_id': 'mail_46f24daa56fb', 'version': 1, 'draft_hash': 'fac63dfbe3d4c0ca', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】新品导入跨部门评审会（时间/地点待确认）', 'body': '各位好：\\n\\n现提醒关注新品导入跨部门评审会，会议时间及地点待确认。\\n\\n本次评审会集中暴露了新品导入阶段的关键问题，市场已对外承诺11月20日首批上市。会议决定以11月5日为固件问题定位节点；若无法定位，上市顺延至12月中旬，并要求市场部在顺延时于11月6日前通知渠道。\\n\\n关键风险：\\n1. 固"
+      },
+      {
+        "id": "D02",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_d20f916968a2', 'email_draft_id': 'mail_cb51826927a1', 'version': 1, 'draft_hash': 'c096754b538fb7ab', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：年度预算二次评审会 — 风险与待办事项确认', 'body': '各位好：\\n\\n关于年度预算二次评审会，现将会议确认的关键风险与待办事项提醒如下。会议时间与地点待确认，请留意后续通知。\\n\\n一、关键风险\\n1. 整体预算超出上限8%（高）：已突破制度阈值，尚未解决。\\n2. 市场费用超出预算21%且活动效果数据未回收（高）：增长主要来自三场线下活动，投入产出无法评估。\\"
+      },
+      {
+        "id": "D03",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_922af41d6d7b', 'email_draft_id': 'mail_fe6368d4c1f9', 'version': 1, 'draft_hash': 'fda70c79f198f9d5', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】大客户续约准备会（时间/地点待确认）', 'body': '各位好：\\n\\n现提醒召开大客户续约准备会，会议时间、地点及参会人待确认。\\n\\n会议结论：\\n1. 客户近三个月活跃度下降30%，两个业务部门已停用部分模块；\\n2. 新对接人尚未表态，沟通渠道需重建；\\n3. 三条历史工单超期未关闭，客户已在季度会上表达不满；\\n4. 续约报价高于竞品约12%，客户已启动"
+      },
+      {
+        "id": "D04",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_3302cf832b29', 'email_draft_id': 'mail_8e7ed53e667a', 'version': 1, 'draft_hash': 'bbd13edeb66b67fa', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】IT 安全整改联席会', 'body': '各位好：\\n\\n现就 IT 安全整改联席会事项提醒如下。会议时间、地点及参会人员待确认。\\n\\n一、关键风险\\n1. 对外接口高危漏洞未排期修复（high）：两个对外接口存在高危漏洞，修复尚未排期，安全暴露风险较高。\\n2. 日志留存时长不满足等保要求（high）：当前留存30天，低于180天要求，审计追溯受限。\\n3. 离"
+      },
+      {
+        "id": "D05",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_f93c6be83452', 'email_draft_id': 'mail_e76fc83741ef', 'version': 1, 'draft_hash': 'a5869b4710021430', 'to_addr': 'audit-demo@example.com', 'subject': '会议提醒：海外市场进入评审会及后续待办', 'body': '各位好：\\n\\n现提醒海外市场进入评审会已评审认证、架构、备货与账期四方面问题，会议时间与地点待确认，请留意后续通知。\\n\\n一、关键风险\\n1. 高：认证周期延长十周，完成前无法销售，直接影响市场进入与销售启动。\\n2. 中：数据本地化要求与现有架构冲突，改造方案未定，可能影响合规销售。\\n3. 中：备货计划已锁定，"
+      },
+      {
+        "id": "E01",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_0ce4f6c69fbb', 'email_draft_id': 'mail_b3afe44ad490', 'version': 1, 'draft_hash': '31afca53ab1fb1c4', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：集团运营月度经营分析会（时间/地点待确认）', 'body': '各位好：\\n\\n现将集团运营月度经营分析会相关事项提醒如下，请提前准备并按要求推进。\\n\\n一、会议信息\\n- 会议：集团运营月度经营分析会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、关键风险\\n1. 回款率低于考核目标（high）：九月回款率78%，低于85%目标；应收账款余额"
+      },
+      {
+        "id": "E02",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_29b38f96a260', 'email_draft_id': 'mail_cae157b09d9a', 'version': 1, 'draft_hash': '33e6e8d4846e5204', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】数字化转型项目季度评审会（时间/地点待确认）', 'body': '各位好：\\n\\n现就数字化转型项目季度评审会作如下提醒，请相关同事提前准备。\\n\\n一、会议信息\\n- 会议：数字化转型项目季度评审会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、关键结论\\n- 项目二期完成度72%，较计划滞后约五周，主因需求反复调整及实施商顾问更换。\\n"
+      },
+      {
+        "id": "E03",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_646955935fd3', 'email_draft_id': 'mail_45dc0cac979b', 'version': 1, 'draft_hash': '9994ea6559ce5313', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：年度供应商大会内部准备会（时间地点待确认）', 'body': '各位好：\\n\\n请关注年度供应商大会内部准备会，会议时间、地点及参会人待确认，确定后另行通知。\\n\\n一、关键风险\\n1. 高：五金件批次合格率93.5%，低于96%准入要求。\\n2. 高：14家供应商合同到期未续签，其中5家仍在无合同供货，存在法律风险。\\n3. 中：9家连续C级供应商仅完成3家替代方案，其"
+      },
+      {
+        "id": "E04",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_9902195ac857', 'email_draft_id': 'mail_7a5cd9d4ef42', 'version': 1, 'draft_hash': '55d3b23034f7dd6e', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】研发中心技术评审会（时间/地点待确认）', 'body': '各位同事：\\n\\n现提醒召开研发中心技术评审会，会议时间与地点待确认，参与人待确认。\\n\\n一、会议背景\\n本次技术评审会审议订单服务拆分方案，因一致性与运维经验问题暂不通过，要求补充方案后重新评审；同时就查询接口性能、质量、运维与安全等方面明确了整改要求。\\n\\n二、关键风险\\n1. 订单查询接口性能不达"
+      },
+      {
+        "id": "E05",
+        "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_f13abe3778a9', 'email_draft_id': 'mail_da5ffe4c7973', 'version': 1, 'draft_hash': 'bf5962777fabde15', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】并购后整合专题会（时间/地点待确认）', 'body': '各位好：\\n\\n现就“并购后整合专题会”作如下提醒，会议时间与地点待确认，确定后另行通知。\\n\\n一、会议核心结论\\n会议围绕人员留任、财务合规、IT系统整合与客户连续性四方面展开，确定“人员优先、系统其次、品牌最后”的推进顺序；若11月底关键岗位留任确认率低于70%，则暂缓系统切换。\\n\\n二、关键风险\\n"
+      }
+    ],
+    "budget": {
+      "max_calls": 60,
+      "calls_used": 50,
+      "stopped_reason": "",
+      "dataset_cases": 25,
+      "requested_cases": 25
+    }
+  },
+  "rows": [
+    {
+      "id": "A01",
+      "category": "A_simple",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 168,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_15e9bdf4fb08', 'email_draft_id': 'mail_2c957da3d98e', 'version': 1, 'draft_hash': '80ef929456ba1e6e', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】星河制造周例会（时间/地点待确认）', 'body': '各位好：\\n\\n现就星河制造周例会信息提醒如下：\\n\\n一、会议信息\\n- 会议：星河制造周例会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、会议结论\\n1. 复盘九月份产线良率，98.2%达成月度目标；\\n2. 十月份按两班制排产，十月份排产方案已通过；\\n3. 良率保持跟踪。\\n",
+      "email_id": "mail_2c957da3d98e",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 536,
+      "output_tokens": 509,
+      "total_ms": 8668.0,
+      "to_first_interrupt_ms": 8526.2,
+      "approval_roundtrip_ms": 141.8,
+      "node_ms": {
+        "load_meeting": 4.17,
+        "analyze_meeting": 5772.54,
+        "extract_todos": 1.37,
+        "validate_risks": 1.89,
+        "merge_results": 0.01,
+        "persist_business_state": 15.04,
+        "generate_email_draft": 2595.99,
+        "human_approval": 0.71,
+        "graph": 0.0,
+        "send_email": 55.42,
+        "record_audit": 6.66
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "A01",
+        "category": "A_simple",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "A02",
+      "category": "A_simple",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 155,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_3d522b4811c9', 'email_draft_id': 'mail_b9961106b01a', 'version': 1, 'draft_hash': '004de0e1bb7f368c', 'to_addr': 'audit-demo@example.com', 'subject': '客户支持周会提醒', 'body': '各位好：\\n\\n客户支持周会提醒如下：\\n\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议回顾：上周共收到412张工单，全部在24小时内首次响应，SLA达标。为保持SLA，知识库更新列入本周待办。\\n\\n待办事项：\\n1. 将新版退换货政策写入知识库，负责人：陈晨，截止：10月11日前，优先级：中。\\n2. 安排下周值班，负责",
+      "email_id": "mail_b9961106b01a",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 523,
+      "output_tokens": 456,
+      "total_ms": 5502.8,
+      "to_first_interrupt_ms": 5364.3,
+      "approval_roundtrip_ms": 138.5,
+      "node_ms": {
+        "load_meeting": 3.4,
+        "analyze_meeting": 2765.4,
+        "extract_todos": 1.3,
+        "validate_risks": 5.04,
+        "merge_results": 0.01,
+        "persist_business_state": 17.57,
+        "generate_email_draft": 2462.92,
+        "human_approval": 0.57,
+        "graph": 0.0,
+        "send_email": 56.3,
+        "record_audit": 8.78
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "A02",
+        "category": "A_simple",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 0.0,
+          "matched": 0,
+          "gold": 1,
+          "extra": 2
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "A03",
+      "category": "A_simple",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 238,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_a319ba84bbc0', 'email_draft_id': 'mail_c8eac58dbb02', 'version': 1, 'draft_hash': '36cdc07aa9881f08', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：新员工入职流程对齐会（时间地点待确认）', 'body': '各位好：\\n\\n关于新员工入职流程对齐会，现就会议结论、风险及待办事项提醒如下。会议时间、地点及参会人尚待确认。\\n\\n一、会议结论\\n1. 自11月1日起全面使用线上入职表单，由孙倩在10月25日前完成表单配置。\\n2. 账号开通时效需改进，吴磊负责在10月30日前给出将时效压到半个工作日的方案。\\n3. 行政",
+      "email_id": "mail_c8eac58dbb02",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 789,
+      "output_tokens": 800,
+      "total_ms": 6476.4,
+      "to_first_interrupt_ms": 6395.1,
+      "approval_roundtrip_ms": 81.2,
+      "node_ms": {
+        "load_meeting": 6.69,
+        "analyze_meeting": 3147.84,
+        "extract_todos": 1.27,
+        "validate_risks": 2.28,
+        "merge_results": 0.01,
+        "persist_business_state": 14.36,
+        "generate_email_draft": 3129.07,
+        "human_approval": 0.71,
+        "graph": 0.0,
+        "send_email": 18.83,
+        "record_audit": 3.67
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "A03",
+        "category": "A_simple",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 4
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 1,
+          "todos": 3,
+          "decisions": 5
+        },
+        "gold_counts": {
+          "risks": 1,
+          "todos": 3,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "A04",
+      "category": "A_simple",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 158,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_29a369257676', 'email_draft_id': 'mail_179a7bacc5cf', 'version': 1, 'draft_hash': 'a521b42f623febe0', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】仓储月度盘点会（时间地点待确认）', 'body': '各位好：\\n\\n现提醒召开仓储月度盘点会，具体信息如下：\\n\\n- 会议主题：仓储月度盘点会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n会议结论：九月盘点账实相符率99.6%，总体结果合格，差异主要集中在B区零配件，需开展一次循环盘点。\\n\\n待办事项：\\n1. 对B区零配件做一次循环盘",
+      "email_id": "mail_179a7bacc5cf",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 648,
+      "output_tokens": 518,
+      "total_ms": 5667.6,
+      "to_first_interrupt_ms": 5567.2,
+      "approval_roundtrip_ms": 100.4,
+      "node_ms": {
+        "load_meeting": 21.05,
+        "analyze_meeting": 2790.05,
+        "extract_todos": 2.67,
+        "validate_risks": 2.7,
+        "merge_results": 0.01,
+        "persist_business_state": 15.79,
+        "generate_email_draft": 2628.16,
+        "human_approval": 0.56,
+        "graph": 0.0,
+        "send_email": 23.1,
+        "record_audit": 4.3
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "A04",
+        "category": "A_simple",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 2,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "A05",
+      "category": "A_simple",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 220,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_0c828ab1e026', 'email_draft_id': 'mail_c48c3d3abddf', 'version': 1, 'draft_hash': '05d6da3a3c66bcc5', 'to_addr': 'audit-demo@example.com', 'subject': '市场活动复盘会提醒：关键风险与待办事项', 'body': '各位同事：\\n\\n关于市场活动复盘会，现将关键风险与待办事项提醒如下：\\n\\n一、关键风险\\n- 线索转化率数据缺失（中风险）：九月行业展会线索转化率尚未统计，需补齐。\\n\\n二、待办事项\\n1. 十月下旬线上研讨会策划，10月18日前出方案（负责人：林芳，优先级：高）。\\n2. 补齐线索转化率统计，10月16日前完成",
+      "email_id": "mail_c48c3d3abddf",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 729,
+      "output_tokens": 615,
+      "total_ms": 5904.2,
+      "to_first_interrupt_ms": 5807.3,
+      "approval_roundtrip_ms": 96.9,
+      "node_ms": {
+        "load_meeting": 19.2,
+        "analyze_meeting": 3137.79,
+        "extract_todos": 1.8,
+        "validate_risks": 2.07,
+        "merge_results": 0.01,
+        "persist_business_state": 14.18,
+        "generate_email_draft": 2526.55,
+        "human_approval": 0.52,
+        "graph": 0.0,
+        "send_email": 21.01,
+        "record_audit": 4.61
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "A05",
+        "category": "A_simple",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 1,
+          "todos": 2,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 1,
+          "todos": 2,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "B01",
+      "category": "B_multi_risk",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 313,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_27ef79857bb5', 'email_draft_id': 'mail_38b070d39b8b', 'version': 1, 'draft_hash': '5e13a0abffdc3e4e', 'to_addr': 'audit-demo@example.com', 'subject': '智能质检项目周会提醒', 'body': '各位好：\\n\\n智能质检项目周会提醒如下，请关注关键风险与待办事项。\\n\\n会议时间：待确认\\n会议地点：待确认\\n\\n一、关键风险\\n1. 供应商A相机模组交付延期两周，联调窗口压缩，产线试用排期延误（高风险）。\\n2. 九月项目成本超出预算12%，主要因现场实施人力增加，财务要求本季度内控制（高风险）。\\n3. 算法团队仅两名工程师",
+      "email_id": "mail_38b070d39b8b",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 763,
+      "output_tokens": 1148,
+      "total_ms": 7267.4,
+      "to_first_interrupt_ms": 7163.0,
+      "approval_roundtrip_ms": 104.4,
+      "node_ms": {
+        "load_meeting": 2.98,
+        "analyze_meeting": 4406.22,
+        "extract_todos": 1.25,
+        "validate_risks": 2.48,
+        "merge_results": 0.01,
+        "persist_business_state": 19.59,
+        "generate_email_draft": 2615.62,
+        "human_approval": 1.06,
+        "graph": 0.0,
+        "send_email": 25.3,
+        "record_audit": 6.76
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "B01",
+        "category": "B_multi_risk",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [
+          "标注任务积压约800条样本"
+        ],
+        "risk_false_negatives": [
+          "算法人力不足导致标注积压"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "B02",
+      "category": "B_multi_risk",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 298,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_c5e92f35ed3f', 'email_draft_id': 'mail_a4d41296cde1', 'version': 1, 'draft_hash': '304bac84b56806c6', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】华东区域交付协调会', 'body': '各位好：\\n\\n现提醒召开华东区域交付协调会，会议时间、地点及参会人员待确认。\\n\\n会议背景与关键风险：\\n1. 毛利率低于年度目标（高风险）：原材料涨价致本季度毛利率降至18%，低于20%的年度目标，问题尚未解决。\\n2. 交付团队人力不足导致返工率上升（中风险）：华东三个项目同时进入验收，交付团队平均每人背两个项目，返工",
+      "email_id": "mail_a4d41296cde1",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 999,
+      "output_tokens": 1184,
+      "total_ms": 7708.8,
+      "to_first_interrupt_ms": 7609.2,
+      "approval_roundtrip_ms": 99.6,
+      "node_ms": {
+        "load_meeting": 16.55,
+        "analyze_meeting": 4677.97,
+        "extract_todos": 1.35,
+        "validate_risks": 2.5,
+        "merge_results": 0.01,
+        "persist_business_state": 15.25,
+        "generate_email_draft": 2785.15,
+        "human_approval": 0.58,
+        "graph": 0.0,
+        "send_email": 21.39,
+        "record_audit": 4.34
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "B02",
+        "category": "B_multi_risk",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 1
+        },
+        "risk_false_positives": [
+          "客户数据留存要求与合同条款不一致存在争议"
+        ],
+        "risk_false_negatives": [
+          "合同条款与客户要求冲突"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 3
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "B03",
+      "category": "B_multi_risk",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 274,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_fe9eb9c9b380', 'email_draft_id': 'mail_70e5421b33f0', 'version': 1, 'draft_hash': '977f7e9c16a64348', 'to_addr': 'audit-demo@example.com', 'subject': '供应链风险专题会提醒', 'body': '各位好：\\n\\n现就供应链风险专题会事项提醒如下。会议时间、地点及参会人待确认。\\n\\n一、识别的主要风险\\n1. 关键芯片单一来源，四季度存在断供风险（高）：关键芯片依赖单一供应商B，其产能已被其他客户用满，四季度可能断供。\\n2. 安全库存低于公司标准（中）：安全库存已降至0.8周，低于1.5周的公司标准，库存缓冲不足。\\n3. 外",
+      "email_id": "mail_70e5421b33f0",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 980,
+      "output_tokens": 1184,
+      "total_ms": 7962.1,
+      "to_first_interrupt_ms": 7846.9,
+      "approval_roundtrip_ms": 115.1,
+      "node_ms": {
+        "load_meeting": 20.23,
+        "analyze_meeting": 4365.95,
+        "extract_todos": 3.9,
+        "validate_risks": 2.48,
+        "merge_results": 0.01,
+        "persist_business_state": 14.14,
+        "generate_email_draft": 3341.2,
+        "human_approval": 0.63,
+        "graph": 0.0,
+        "send_email": 40.89,
+        "record_audit": 5.58
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "B03",
+        "category": "B_multi_risk",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "B04",
+      "category": "B_multi_risk",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 277,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_bd9869196358', 'email_draft_id': 'mail_f48f8cd92f49', 'version': 1, 'draft_hash': '84f437be05c0f9a3', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：跨部门数据平台推进会（时间/地点待确认）', 'body': '各位同事：\\n\\n关于跨部门数据平台推进会，现将会议结论、关键风险与待办事项提醒如下。会议时间、地点及参与人待确认。\\n\\n一、会议结论\\n会议围绕跨部门数据平台推进中的四项问题展开：订单口径不一致导致报表连续两次人工调整、风控规则接口未提供导致平台联调受阻、生产库晚高峰查询超时率升至7%、两家三方数据源未签授",
+      "email_id": "mail_f48f8cd92f49",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 999,
+      "output_tokens": 1245,
+      "total_ms": 7884.9,
+      "to_first_interrupt_ms": 7763.4,
+      "approval_roundtrip_ms": 121.5,
+      "node_ms": {
+        "load_meeting": 17.03,
+        "analyze_meeting": 4621.64,
+        "extract_todos": 2.49,
+        "validate_risks": 4.18,
+        "merge_results": 0.01,
+        "persist_business_state": 15.89,
+        "generate_email_draft": 2990.56,
+        "human_approval": 0.88,
+        "graph": 0.0,
+        "send_email": 33.39,
+        "record_audit": 7.79
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "B04",
+        "category": "B_multi_risk",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [
+          "销售与财务订单口径不一致"
+        ],
+        "risk_false_negatives": [
+          "数据口径不一致影响报表"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "B05",
+      "category": "B_multi_risk",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 270,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_c9ccb8d2a737', 'email_draft_id': 'mail_0f749a1dd6a9', 'version': 1, 'draft_hash': '7ff710f89d71480f', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】安全生产月度会（时间地点待确认）', 'body': '各位同事：\\n\\n现就安全生产月度会相关事项提醒如下，请提前知悉并做好准备。\\n\\n一、会议信息\\n会议：安全生产月度会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n二、主要风险\\n1. 两台压力容器年检逾期（高风险）：特种设备年检中有两台压力容器逾期未检，存在合规风险。会议决定立即停用这两台逾期压力",
+      "email_id": "mail_0f749a1dd6a9",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 984,
+      "output_tokens": 1201,
+      "total_ms": 7777.2,
+      "to_first_interrupt_ms": 7670.5,
+      "approval_roundtrip_ms": 106.7,
+      "node_ms": {
+        "load_meeting": 14.39,
+        "analyze_meeting": 4575.44,
+        "extract_todos": 1.79,
+        "validate_risks": 4.28,
+        "merge_results": 0.01,
+        "persist_business_state": 17.63,
+        "generate_email_draft": 2949.19,
+        "human_approval": 0.91,
+        "graph": 0.0,
+        "send_email": 24.16,
+        "record_audit": 6.36
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "B05",
+        "category": "B_multi_risk",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [
+          "两台压力容器年检逾期"
+        ],
+        "risk_false_negatives": [
+          "特种设备年检逾期"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "C01",
+      "category": "C_no_or_resolved_risk",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 163,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_08fdaa83d479', 'email_draft_id': 'mail_2998ffbe189d', 'version': 1, 'draft_hash': '026e75d763a14197', 'to_addr': 'audit-demo@example.com', 'subject': '订单系统故障复盘会提醒', 'body': '各位好：\\n\\n现就订单系统故障复盘会相关事项提醒如下。\\n\\n会议：订单系统故障复盘会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议结论：本次会议复盘了10月3日订单系统间歇不可用问题，确认根因为连接池配置错误，已于10月4日修复上线。修复后连续观察十天未复现，监控告警正常。会议结论为故障已解决，无需进一步处理。\\n",
+      "email_id": "mail_2998ffbe189d",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 610,
+      "output_tokens": 451,
+      "total_ms": 5602.4,
+      "to_first_interrupt_ms": 5446.9,
+      "approval_roundtrip_ms": 155.5,
+      "node_ms": {
+        "load_meeting": 14.03,
+        "analyze_meeting": 2689.31,
+        "extract_todos": 2.1,
+        "validate_risks": 2.01,
+        "merge_results": 0.01,
+        "persist_business_state": 14.05,
+        "generate_email_draft": 2629.99,
+        "human_approval": 0.65,
+        "graph": 0.0,
+        "send_email": 34.68,
+        "record_audit": 9.37
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "C01",
+        "category": "C_no_or_resolved_risk",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 0.0,
+          "matched": 0,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 1
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "C02",
+      "category": "C_no_or_resolved_risk",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 154,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_120fcd4d3298', 'email_draft_id': 'mail_7d81e6bfe74a', 'version': 1, 'draft_hash': '56768626fd6b3ceb', 'to_addr': 'audit-demo@example.com', 'subject': '会议提醒：历史风险关闭评审会', 'body': '各位同事：\\n\\n现提醒召开历史风险关闭评审会，会议信息如下：\\n\\n会议：历史风险关闭评审会\\n时间：待确认\\n地点：待确认\\n参与人：待确认\\n\\n会议结论：\\n本次会议对年初识别的「关键工序人员流失」与「测试环境不足」两条历史风险进行关闭评审。前者已完成双人互备与技能矩阵建设并通过8月复核；后者已通过新增两套环境消除。两条",
+      "email_id": "mail_7d81e6bfe74a",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 551,
+      "output_tokens": 372,
+      "total_ms": 4814.6,
+      "to_first_interrupt_ms": 4699.4,
+      "approval_roundtrip_ms": 115.2,
+      "node_ms": {
+        "load_meeting": 18.33,
+        "analyze_meeting": 2316.03,
+        "extract_todos": 1.22,
+        "validate_risks": 1.89,
+        "merge_results": 0.01,
+        "persist_business_state": 13.87,
+        "generate_email_draft": 2250.17,
+        "human_approval": 0.54,
+        "graph": 0.0,
+        "send_email": 24.56,
+        "record_audit": 5.1
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "C02",
+        "category": "C_no_or_resolved_risk",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 0,
+          "decisions": 1
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 0,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "C03",
+      "category": "C_no_or_resolved_risk",
+      "length": "medium",
+      "controller_decision": "reject",
+      "text_chars": 188,
+      "status": "cancelled",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_ea1789f37cb8', 'email_draft_id': 'mail_577a12e09f08', 'version': 1, 'draft_hash': '49ac2378303fadc6', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：产能规划讨论会（时间/地点待确认）', 'body': '各位好：\\n\\n现就“产能规划讨论会”作如下提醒。\\n\\n会议时间：待确认\\n会议地点：待确认\\n参会人员：待确认\\n\\n会议结论：\\n1. 会议围绕明年订单增长不同情景下的产能规划进行了推演。\\n2. 若订单增长30%，新增一条产线按现有测算设备投资约2800万，投资回收期约三年半。\\n3. 若订单增长低于15%，",
+      "email_id": "mail_577a12e09f08",
+      "email_version": 1,
+      "email_status": "cancelled",
+      "sends": 0,
+      "llm_calls": 2,
+      "input_tokens": 465,
+      "output_tokens": 493,
+      "total_ms": 5588.9,
+      "to_first_interrupt_ms": 5504.5,
+      "approval_roundtrip_ms": 84.4,
+      "node_ms": {
+        "load_meeting": 17.47,
+        "analyze_meeting": 2713.73,
+        "extract_todos": 1.97,
+        "validate_risks": 2.01,
+        "merge_results": 0.01,
+        "persist_business_state": 13.93,
+        "generate_email_draft": 2651.65,
+        "human_approval": 0.67,
+        "graph": 0.0,
+        "cancelled": 3.28,
+        "record_audit": 8.44
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded"
+      },
+      "score": {
+        "id": "C03",
+        "category": "C_no_or_resolved_risk",
+        "length": "medium",
+        "controller_decision": "reject",
+        "status": "cancelled",
+        "expected_status": "cancelled",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 2
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 0,
+          "decisions": 3
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 0,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 0
+      }
+    },
+    {
+      "id": "C04",
+      "category": "C_no_or_resolved_risk",
+      "length": "short",
+      "controller_decision": "approve",
+      "text_chars": 137,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_e12d6bd31198', 'email_draft_id': 'mail_60b74fbf8c8c', 'version': 1, 'draft_hash': 'e0b65b11fed770a6', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】培训方案评审会', 'body': '各位好：\\n\\n现提醒培训方案评审会相关事项。会议时间、地点及参会人待确认。\\n\\n会议结论：\\n1. 评审新员工培训方案；\\n2. 将培训从三天压缩至两天的提议因会牺牲实操课时，已被否决；\\n3. 决定维持三天培训，并增加一次线上答疑；\\n4. 培训时长不变。\\n\\n待办事项：\\n1. 安排线上答疑并完成排期，负责人：孙倩，截止",
+      "email_id": "mail_60b74fbf8c8c",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 578,
+      "output_tokens": 408,
+      "total_ms": 5052.7,
+      "to_first_interrupt_ms": 4948.5,
+      "approval_roundtrip_ms": 104.2,
+      "node_ms": {
+        "load_meeting": 17.07,
+        "analyze_meeting": 2265.07,
+        "extract_todos": 1.71,
+        "validate_risks": 2.13,
+        "merge_results": 0.01,
+        "persist_business_state": 15.85,
+        "generate_email_draft": 2548.27,
+        "human_approval": 0.59,
+        "graph": 0.0,
+        "send_email": 26.56,
+        "record_audit": 4.34
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "C04",
+        "category": "C_no_or_resolved_risk",
+        "length": "short",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 2
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 3
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "C05",
+      "category": "C_no_or_resolved_risk",
+      "length": "short",
+      "controller_decision": "reject",
+      "text_chars": 131,
+      "status": "cancelled",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_54e483f61930', 'email_draft_id': 'mail_6a1635120518', 'version': 1, 'draft_hash': '54fe1f512da90afa', 'to_addr': 'audit-demo@example.com', 'subject': '【提醒】办公区搬迁协调会结论及待办事项', 'body': '各位好：\\n\\n现将办公区搬迁协调会结论提醒如下：\\n\\n一、会议结论\\n1. 三楼搬迁已于2026年10月15日完成；\\n2. 网络与门禁全部调试正常，暂无异常；\\n3. 搬迁遗留旧工位已处理完毕；\\n4. 搬迁工作结束。\\n\\n二、关键风险\\n暂无。\\n\\n三、待办事项\\n1. 更新资产台账——负责人：郑楠；截止时",
+      "email_id": "mail_6a1635120518",
+      "email_version": 1,
+      "email_status": "cancelled",
+      "sends": 0,
+      "llm_calls": 2,
+      "input_tokens": 570,
+      "output_tokens": 400,
+      "total_ms": 4659.5,
+      "to_first_interrupt_ms": 4564.5,
+      "approval_roundtrip_ms": 95.0,
+      "node_ms": {
+        "load_meeting": 14.57,
+        "analyze_meeting": 2278.77,
+        "extract_todos": 3.35,
+        "validate_risks": 3.83,
+        "merge_results": 0.01,
+        "persist_business_state": 13.3,
+        "generate_email_draft": 2149.12,
+        "human_approval": 0.85,
+        "graph": 0.0,
+        "cancelled": 5.24,
+        "record_audit": 4.31
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded"
+      },
+      "score": {
+        "id": "C05",
+        "category": "C_no_or_resolved_risk",
+        "length": "short",
+        "controller_decision": "reject",
+        "status": "cancelled",
+        "expected_status": "cancelled",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 0,
+          "todos": 1,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 0
+      }
+    },
+    {
+      "id": "D01",
+      "category": "D_complex",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 363,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_05c31cce8629', 'email_draft_id': 'mail_46f24daa56fb', 'version': 1, 'draft_hash': 'fac63dfbe3d4c0ca', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】新品导入跨部门评审会（时间/地点待确认）', 'body': '各位好：\\n\\n现提醒关注新品导入跨部门评审会，会议时间及地点待确认。\\n\\n本次评审会集中暴露了新品导入阶段的关键问题，市场已对外承诺11月20日首批上市。会议决定以11月5日为固件问题定位节点；若无法定位，上市顺延至12月中旬，并要求市场部在顺延时于11月6日前通知渠道。\\n\\n关键风险：\\n1. 固",
+      "email_id": "mail_46f24daa56fb",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1172,
+      "output_tokens": 1435,
+      "total_ms": 8841.0,
+      "to_first_interrupt_ms": 8682.9,
+      "approval_roundtrip_ms": 158.0,
+      "node_ms": {
+        "load_meeting": 21.2,
+        "analyze_meeting": 5250.16,
+        "extract_todos": 1.98,
+        "validate_risks": 3.87,
+        "merge_results": 0.01,
+        "persist_business_state": 19.36,
+        "generate_email_draft": 3155.31,
+        "human_approval": 0.67,
+        "graph": 0.0,
+        "send_email": 78.77,
+        "record_audit": 4.46
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "D01",
+        "category": "D_complex",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8889,
+          "tp": 4,
+          "fp": 1,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [
+          "上市顺延时通知渠道"
+        ],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 5,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 4,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "D02",
+      "category": "D_complex",
+      "length": "medium",
+      "controller_decision": "edit",
+      "text_chars": 311,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_d20f916968a2', 'email_draft_id': 'mail_cb51826927a1', 'version': 1, 'draft_hash': 'c096754b538fb7ab', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：年度预算二次评审会 — 风险与待办事项确认', 'body': '各位好：\\n\\n关于年度预算二次评审会，现将会议确认的关键风险与待办事项提醒如下。会议时间与地点待确认，请留意后续通知。\\n\\n一、关键风险\\n1. 整体预算超出上限8%（高）：已突破制度阈值，尚未解决。\\n2. 市场费用超出预算21%且活动效果数据未回收（高）：增长主要来自三场线下活动，投入产出无法评估。\\",
+      "email_id": "mail_cb51826927a1",
+      "email_version": 2,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 814,
+      "output_tokens": 1315,
+      "total_ms": 8147.8,
+      "to_first_interrupt_ms": 7918.8,
+      "approval_roundtrip_ms": 228.9,
+      "node_ms": {
+        "load_meeting": 4.72,
+        "analyze_meeting": 5135.34,
+        "extract_todos": 1.27,
+        "validate_risks": 2.7,
+        "merge_results": 0.01,
+        "persist_business_state": 15.59,
+        "generate_email_draft": 2663.92,
+        "human_approval": 1.22,
+        "graph": 0.0,
+        "update_draft": 4.33,
+        "send_email": 62.15,
+        "record_audit": 9.08
+      },
+      "checkpoints": 3,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "D02",
+        "category": "D_complex",
+        "length": "medium",
+        "controller_decision": "edit",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 5,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 5,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 5,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "D03",
+      "category": "D_complex",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 271,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_922af41d6d7b', 'email_draft_id': 'mail_fe6368d4c1f9', 'version': 1, 'draft_hash': 'fda70c79f198f9d5', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】大客户续约准备会（时间/地点待确认）', 'body': '各位好：\\n\\n现提醒召开大客户续约准备会，会议时间、地点及参会人待确认。\\n\\n会议结论：\\n1. 客户近三个月活跃度下降30%，两个业务部门已停用部分模块；\\n2. 新对接人尚未表态，沟通渠道需重建；\\n3. 三条历史工单超期未关闭，客户已在季度会上表达不满；\\n4. 续约报价高于竞品约12%，客户已启动",
+      "email_id": "mail_fe6368d4c1f9",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1025,
+      "output_tokens": 1265,
+      "total_ms": 8354.1,
+      "to_first_interrupt_ms": 8257.3,
+      "approval_roundtrip_ms": 96.8,
+      "node_ms": {
+        "load_meeting": 20.44,
+        "analyze_meeting": 5024.99,
+        "extract_todos": 1.36,
+        "validate_risks": 2.42,
+        "merge_results": 0.01,
+        "persist_business_state": 16.12,
+        "generate_email_draft": 3071.45,
+        "human_approval": 0.67,
+        "graph": 0.0,
+        "send_email": 19.31,
+        "record_audit": 4.5
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "D03",
+        "category": "D_complex",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 1,
+          "gold": 1,
+          "extra": 1
+        },
+        "risk_false_positives": [
+          "新对接人尚未表态且沟通渠道需重建"
+        ],
+        "risk_false_negatives": [
+          "对接人更换导致沟通渠道中断"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 1
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "D04",
+      "category": "D_complex",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 273,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_3302cf832b29', 'email_draft_id': 'mail_8e7ed53e667a', 'version': 1, 'draft_hash': 'bbd13edeb66b67fa', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】IT 安全整改联席会', 'body': '各位好：\\n\\n现就 IT 安全整改联席会事项提醒如下。会议时间、地点及参会人员待确认。\\n\\n一、关键风险\\n1. 对外接口高危漏洞未排期修复（high）：两个对外接口存在高危漏洞，修复尚未排期，安全暴露风险较高。\\n2. 日志留存时长不满足等保要求（high）：当前留存30天，低于180天要求，审计追溯受限。\\n3. 离",
+      "email_id": "mail_8e7ed53e667a",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 935,
+      "output_tokens": 1092,
+      "total_ms": 7876.4,
+      "to_first_interrupt_ms": 7728.0,
+      "approval_roundtrip_ms": 148.4,
+      "node_ms": {
+        "load_meeting": 19.28,
+        "analyze_meeting": 4474.04,
+        "extract_todos": 1.98,
+        "validate_risks": 3.98,
+        "merge_results": 0.01,
+        "persist_business_state": 19.28,
+        "generate_email_draft": 3101.45,
+        "human_approval": 0.61,
+        "graph": 0.0,
+        "send_email": 44.35,
+        "record_audit": 6.73
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "D04",
+        "category": "D_complex",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [
+          "日志留存时长不满足等保要求",
+          "离职外包人员账号仍可登录测试环境"
+        ],
+        "risk_false_negatives": [
+          "日志留存不足无法审计追溯",
+          "离职外包账号未回收"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "D05",
+      "category": "D_complex",
+      "length": "medium",
+      "controller_decision": "approve",
+      "text_chars": 277,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_f93c6be83452', 'email_draft_id': 'mail_e76fc83741ef', 'version': 1, 'draft_hash': 'a5869b4710021430', 'to_addr': 'audit-demo@example.com', 'subject': '会议提醒：海外市场进入评审会及后续待办', 'body': '各位好：\\n\\n现提醒海外市场进入评审会已评审认证、架构、备货与账期四方面问题，会议时间与地点待确认，请留意后续通知。\\n\\n一、关键风险\\n1. 高：认证周期延长十周，完成前无法销售，直接影响市场进入与销售启动。\\n2. 中：数据本地化要求与现有架构冲突，改造方案未定，可能影响合规销售。\\n3. 中：备货计划已锁定，",
+      "email_id": "mail_e76fc83741ef",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1024,
+      "output_tokens": 1165,
+      "total_ms": 8091.9,
+      "to_first_interrupt_ms": 7972.9,
+      "approval_roundtrip_ms": 119.0,
+      "node_ms": {
+        "load_meeting": 16.59,
+        "analyze_meeting": 5104.77,
+        "extract_todos": 2.4,
+        "validate_risks": 4.03,
+        "merge_results": 0.01,
+        "persist_business_state": 16.21,
+        "generate_email_draft": 2731.23,
+        "human_approval": 0.64,
+        "graph": 0.0,
+        "send_email": 43.84,
+        "record_audit": 4.25
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "D05",
+        "category": "D_complex",
+        "length": "medium",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 4,
+          "todos": 3,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "E01",
+      "category": "E_long",
+      "length": "long",
+      "controller_decision": "approve",
+      "text_chars": 1435,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_0ce4f6c69fbb', 'email_draft_id': 'mail_b3afe44ad490', 'version': 1, 'draft_hash': '31afca53ab1fb1c4', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：集团运营月度经营分析会（时间/地点待确认）', 'body': '各位好：\\n\\n现将集团运营月度经营分析会相关事项提醒如下，请提前准备并按要求推进。\\n\\n一、会议信息\\n- 会议：集团运营月度经营分析会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、关键风险\\n1. 回款率低于考核目标（high）：九月回款率78%，低于85%目标；应收账款余额",
+      "email_id": "mail_b3afe44ad490",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 2632,
+      "output_tokens": 4086,
+      "total_ms": 18887.4,
+      "to_first_interrupt_ms": 18784.8,
+      "approval_roundtrip_ms": 102.6,
+      "node_ms": {
+        "load_meeting": 15.07,
+        "analyze_meeting": 14074.98,
+        "extract_todos": 3.65,
+        "validate_risks": 9.11,
+        "merge_results": 0.01,
+        "persist_business_state": 16.44,
+        "generate_email_draft": 4561.58,
+        "human_approval": 0.76,
+        "graph": 0.0,
+        "send_email": 24.4,
+        "record_audit": 5.43
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "E01",
+        "category": "E_long",
+        "length": "long",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.8462,
+          "recall": 0.7857,
+          "f1": 0.8148,
+          "tp": 11,
+          "fp": 2,
+          "fn": 3
+        },
+        "todos": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8889,
+          "tp": 8,
+          "fp": 2,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 0.0,
+          "matched": 0,
+          "gold": 3,
+          "extra": 7
+        },
+        "risk_false_positives": [
+          "三号车间OEE低于年度目标",
+          "交付延期导致客户扣款"
+        ],
+        "risk_false_negatives": [
+          "原材料涨价与先款后货带来资金压力",
+          "设备OEE低于目标、老化设备故障占比高",
+          "环保在线监测数据断连收到监管问询"
+        ],
+        "todo_false_positives": [
+          "若通信中断问题无法解决，通知客户送样计划顺延至12月",
+          "各责任单位会前提交进展说明"
+        ],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 13,
+          "todos": 10,
+          "decisions": 7
+        },
+        "gold_counts": {
+          "risks": 14,
+          "todos": 8,
+          "decisions": 3
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "E02",
+      "category": "E_long",
+      "length": "long",
+      "controller_decision": "approve",
+      "text_chars": 1022,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_29b38f96a260', 'email_draft_id': 'mail_cae157b09d9a', 'version': 1, 'draft_hash': '33e6e8d4846e5204', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】数字化转型项目季度评审会（时间/地点待确认）', 'body': '各位好：\\n\\n现就数字化转型项目季度评审会作如下提醒，请相关同事提前准备。\\n\\n一、会议信息\\n- 会议：数字化转型项目季度评审会\\n- 时间：待确认\\n- 地点：待确认\\n- 参与人：待确认\\n\\n二、关键结论\\n- 项目二期完成度72%，较计划滞后约五周，主因需求反复调整及实施商顾问更换。\\n",
+      "email_id": "mail_cae157b09d9a",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1911,
+      "output_tokens": 2452,
+      "total_ms": 12196.5,
+      "to_first_interrupt_ms": 12123.4,
+      "approval_roundtrip_ms": 73.1,
+      "node_ms": {
+        "load_meeting": 17.26,
+        "analyze_meeting": 7651.65,
+        "extract_todos": 2.04,
+        "validate_risks": 8.22,
+        "merge_results": 0.01,
+        "persist_business_state": 20.32,
+        "generate_email_draft": 4309.83,
+        "human_approval": 0.28,
+        "graph": 0.0,
+        "send_email": 26.03,
+        "record_audit": 2.31
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "E02",
+        "category": "E_long",
+        "length": "long",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 0.6667,
+          "matched": 2,
+          "gold": 3,
+          "extra": 6
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 10,
+          "todos": 7,
+          "decisions": 8
+        },
+        "gold_counts": {
+          "risks": 10,
+          "todos": 7,
+          "decisions": 3
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "E03",
+      "category": "E_long",
+      "length": "long",
+      "controller_decision": "approve",
+      "text_chars": 960,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_646955935fd3', 'email_draft_id': 'mail_45dc0cac979b', 'version': 1, 'draft_hash': '9994ea6559ce5313', 'to_addr': 'audit-demo@example.com', 'subject': '提醒：年度供应商大会内部准备会（时间地点待确认）', 'body': '各位好：\\n\\n请关注年度供应商大会内部准备会，会议时间、地点及参会人待确认，确定后另行通知。\\n\\n一、关键风险\\n1. 高：五金件批次合格率93.5%，低于96%准入要求。\\n2. 高：14家供应商合同到期未续签，其中5家仍在无合同供货，存在法律风险。\\n3. 中：9家连续C级供应商仅完成3家替代方案，其",
+      "email_id": "mail_45dc0cac979b",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1808,
+      "output_tokens": 2146,
+      "total_ms": 9915.5,
+      "to_first_interrupt_ms": 9854.1,
+      "approval_roundtrip_ms": 61.4,
+      "node_ms": {
+        "load_meeting": 4.43,
+        "analyze_meeting": 6903.75,
+        "extract_todos": 1.35,
+        "validate_risks": 2.76,
+        "merge_results": 0.0,
+        "persist_business_state": 15.02,
+        "generate_email_draft": 2858.14,
+        "human_approval": 0.34,
+        "graph": 0.0,
+        "send_email": 14.0,
+        "record_audit": 3.23
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "E03",
+        "category": "E_long",
+        "length": "long",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1": 0.9412,
+          "tp": 8,
+          "fp": 1,
+          "fn": 0
+        },
+        "todos": {
+          "precision": 0.8333,
+          "recall": 0.8333,
+          "f1": 0.8333,
+          "tp": 5,
+          "fp": 1,
+          "fn": 1
+        },
+        "decisions": {
+          "recall": 0.3333,
+          "matched": 1,
+          "gold": 3,
+          "extra": 4
+        },
+        "risk_false_positives": [
+          "优秀供应商评选标准未定稿"
+        ],
+        "risk_false_negatives": [],
+        "todo_false_positives": [
+          "评选标准11月3日前定稿"
+        ],
+        "todo_false_negatives": [
+          "定稿优秀供应商评选标准"
+        ],
+        "predicted_counts": {
+          "risks": 9,
+          "todos": 6,
+          "decisions": 5
+        },
+        "gold_counts": {
+          "risks": 8,
+          "todos": 6,
+          "decisions": 3
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "E04",
+      "category": "E_long",
+      "length": "long",
+      "controller_decision": "approve",
+      "text_chars": 884,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_9902195ac857', 'email_draft_id': 'mail_7a5cd9d4ef42', 'version': 1, 'draft_hash': '55d3b23034f7dd6e', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】研发中心技术评审会（时间/地点待确认）', 'body': '各位同事：\\n\\n现提醒召开研发中心技术评审会，会议时间与地点待确认，参与人待确认。\\n\\n一、会议背景\\n本次技术评审会审议订单服务拆分方案，因一致性与运维经验问题暂不通过，要求补充方案后重新评审；同时就查询接口性能、质量、运维与安全等方面明确了整改要求。\\n\\n二、关键风险\\n1. 订单查询接口性能不达",
+      "email_id": "mail_7a5cd9d4ef42",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1636,
+      "output_tokens": 2028,
+      "total_ms": 10234.9,
+      "to_first_interrupt_ms": 10148.1,
+      "approval_roundtrip_ms": 86.8,
+      "node_ms": {
+        "load_meeting": 6.11,
+        "analyze_meeting": 6774.57,
+        "extract_todos": 0.96,
+        "validate_risks": 2.17,
+        "merge_results": 0.0,
+        "persist_business_state": 12.59,
+        "generate_email_draft": 3273.7,
+        "human_approval": 0.47,
+        "graph": 0.0,
+        "send_email": 30.02,
+        "record_audit": 3.65
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "E04",
+        "category": "E_long",
+        "length": "long",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 0.5,
+          "recall": 0.3333,
+          "f1": 0.4,
+          "tp": 3,
+          "fp": 3,
+          "fn": 6
+        },
+        "todos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 5,
+          "fp": 0,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 0.3333,
+          "matched": 1,
+          "gold": 3,
+          "extra": 5
+        },
+        "risk_false_positives": [
+          "订单查询接口性能不达标",
+          "回归测试覆盖不足且用例库过时",
+          "高危依赖漏洞待处置"
+        ],
+        "risk_false_negatives": [
+          "查询接口P99超出性能指标且慢查询量大",
+          "数据库IO使用率过高",
+          "回归缺陷占比高、覆盖不足",
+          "自动化测试覆盖率低于目标",
+          "回归用例库过时未清理",
+          "三方库高危漏洞未处置"
+        ],
+        "todo_false_positives": [],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 6,
+          "todos": 5,
+          "decisions": 6
+        },
+        "gold_counts": {
+          "risks": 9,
+          "todos": 5,
+          "decisions": 3
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    },
+    {
+      "id": "E05",
+      "category": "E_long",
+      "length": "long",
+      "controller_decision": "approve",
+      "text_chars": 1048,
+      "status": "completed",
+      "error": "(Interrupt(value={'schema_version': 1, 'workflow_id': 'wf_f13abe3778a9', 'email_draft_id': 'mail_da5ffe4c7973', 'version': 1, 'draft_hash': 'bf5962777fabde15', 'to_addr': 'audit-demo@example.com', 'subject': '【会议提醒】并购后整合专题会（时间/地点待确认）', 'body': '各位好：\\n\\n现就“并购后整合专题会”作如下提醒，会议时间与地点待确认，确定后另行通知。\\n\\n一、会议核心结论\\n会议围绕人员留任、财务合规、IT系统整合与客户连续性四方面展开，确定“人员优先、系统其次、品牌最后”的推进顺序；若11月底关键岗位留任确认率低于70%，则暂缓系统切换。\\n\\n二、关键风险\\n",
+      "email_id": "mail_da5ffe4c7973",
+      "email_version": 1,
+      "email_status": "sent",
+      "sends": 1,
+      "llm_calls": 2,
+      "input_tokens": 1878,
+      "output_tokens": 2341,
+      "total_ms": 11482.8,
+      "to_first_interrupt_ms": 11389.3,
+      "approval_roundtrip_ms": 93.5,
+      "node_ms": {
+        "load_meeting": 5.16,
+        "analyze_meeting": 7514.94,
+        "extract_todos": 1.06,
+        "validate_risks": 3.15,
+        "merge_results": 0.0,
+        "persist_business_state": 11.77,
+        "generate_email_draft": 3782.4,
+        "human_approval": 0.32,
+        "graph": 0.0,
+        "send_email": 35.6,
+        "record_audit": 3.7
+      },
+      "checkpoints": 2,
+      "effects": {
+        "draft_email": "succeeded",
+        "persist_meeting": "succeeded",
+        "send_email": "succeeded"
+      },
+      "score": {
+        "id": "E05",
+        "category": "E_long",
+        "length": "long",
+        "controller_decision": "approve",
+        "status": "completed",
+        "expected_status": "completed",
+        "workflow_ok": true,
+        "side_effect_ok": true,
+        "task_ok": true,
+        "risks": {
+          "precision": 1.0,
+          "recall": 0.8889,
+          "f1": 0.9412,
+          "tp": 8,
+          "fp": 0,
+          "fn": 1
+        },
+        "todos": {
+          "precision": 0.8571,
+          "recall": 1.0,
+          "f1": 0.9231,
+          "tp": 6,
+          "fp": 1,
+          "fn": 0
+        },
+        "decisions": {
+          "recall": 1.0,
+          "matched": 2,
+          "gold": 2,
+          "extra": 0
+        },
+        "risk_false_positives": [],
+        "risk_false_negatives": [
+          "主数据重复与ERP差异"
+        ],
+        "todo_false_positives": [
+          "复盘留任进展与客户沟通结果"
+        ],
+        "todo_false_negatives": [],
+        "predicted_counts": {
+          "risks": 8,
+          "todos": 7,
+          "decisions": 2
+        },
+        "gold_counts": {
+          "risks": 9,
+          "todos": 6,
+          "decisions": 2
+        },
+        "duplicate_side_effects": 0,
+        "sent_count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "model": "jinaai/jina-embeddings-v2-base-zh",
+  "split": "dev",
+  "top_k": 10,
+  "collection": "emb_jinaai_jina_embeddings_v2_base_zh",
+  "rss_start_mb": 93.8,
+  "cache_dir": "benchmarks\\.work\\emb_cache_cold",
+  "fresh_cache": false,
+  "model_load_seconds": 1.41,
+  "dim": 768,
+  "model_version": "jinaai/jina-embeddings-v2-base-zh@768",
+  "rss_after_load_mb": 790.2,
+  "hf_hub_offline": "1"
+}

@@ -1,0 +1,2887 @@
+{
+  "documents": [
+    {
+      "doc_id": "HDOC2-001",
+      "filename": "HDOC2-001_峻岭_采购部制度_V1_HO.pdf",
+      "title": "峻岭装备采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 643,
+      "facts": {
+        "approval": "95万元",
+        "payment": "质保金10%",
+        "late": "17%",
+        "supplier": "650万元",
+        "code": "CG-2024-001"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-002",
+      "filename": "HDOC2-002_峻岭_采购部制度_V2_HO.pdf",
+      "title": "峻岭装备采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 696,
+      "facts": {
+        "approval": "95万元",
+        "payment": "质保金10%",
+        "late": "22%",
+        "supplier": "650万元",
+        "code": "CG-2024-002"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-003",
+      "filename": "HDOC2-003_瀚宇_采购部制度_V1_HO.pdf",
+      "title": "瀚宇能源采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 644,
+      "facts": {
+        "approval": "175万元",
+        "payment": "质保金20%",
+        "late": "22%",
+        "supplier": "900万元",
+        "code": "CG-2024-003"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-004",
+      "filename": "HDOC2-004_瀚宇_采购部制度_V2_HO.pdf",
+      "title": "瀚宇能源采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 697,
+      "facts": {
+        "approval": "175万元",
+        "payment": "质保金20%",
+        "late": "27%",
+        "supplier": "900万元",
+        "code": "CG-2024-004"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-005",
+      "filename": "HDOC2-005_青柚_采购部制度_V1_HO.pdf",
+      "title": "青柚医疗采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 646,
+      "facts": {
+        "approval": "130万元",
+        "payment": "质保金25%",
+        "late": "19%",
+        "supplier": "1100万元",
+        "code": "CG-2024-005"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-006",
+      "filename": "HDOC2-006_青柚_采购部制度_V2_HO.pdf",
+      "title": "青柚医疗采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 699,
+      "facts": {
+        "approval": "130万元",
+        "payment": "质保金25%",
+        "late": "24%",
+        "supplier": "1100万元",
+        "code": "CG-2024-006"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-007",
+      "filename": "HDOC2-007_启澜_采购部制度_V1_HO.pdf",
+      "title": "启澜环保采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 644,
+      "facts": {
+        "approval": "70万元",
+        "payment": "质保金10%",
+        "late": "14%",
+        "supplier": "350万元",
+        "code": "CG-2024-007"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-008",
+      "filename": "HDOC2-008_启澜_采购部制度_V2_HO.pdf",
+      "title": "启澜环保采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 697,
+      "facts": {
+        "approval": "70万元",
+        "payment": "质保金10%",
+        "late": "19%",
+        "supplier": "350万元",
+        "code": "CG-2024-008"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-009",
+      "filename": "HDOC2-009_星桥_采购部制度_V1_HO.pdf",
+      "title": "星桥物流采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 644,
+      "facts": {
+        "approval": "210万元",
+        "payment": "质保金15%",
+        "late": "24%",
+        "supplier": "260万元",
+        "code": "CG-2024-009"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-010",
+      "filename": "HDOC2-010_星桥_采购部制度_V2_HO.pdf",
+      "title": "星桥物流采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 697,
+      "facts": {
+        "approval": "210万元",
+        "payment": "质保金15%",
+        "late": "29%",
+        "supplier": "260万元",
+        "code": "CG-2024-010"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-011",
+      "filename": "HDOC2-011_衡远_采购部制度_V1_HO.pdf",
+      "title": "衡远检测采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 645,
+      "facts": {
+        "approval": "110万元",
+        "payment": "质保金20%",
+        "late": "16%",
+        "supplier": "480万元",
+        "code": "CG-2024-011"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-012",
+      "filename": "HDOC2-012_衡远_采购部制度_V2_HO.pdf",
+      "title": "衡远检测采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 698,
+      "facts": {
+        "approval": "110万元",
+        "payment": "质保金20%",
+        "late": "21%",
+        "supplier": "480万元",
+        "code": "CG-2024-012"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-013",
+      "filename": "HDOC2-013_峻岭_质量部制度_V1_HO.pdf",
+      "title": "峻岭装备质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 604,
+      "facts": {
+        "supplier": "650万元",
+        "sample": "7%",
+        "late": "17%",
+        "review": "9个工作日",
+        "code": "ZL-2024-013"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-014",
+      "filename": "HDOC2-014_峻岭_质量部制度_V2_HO.pdf",
+      "title": "峻岭装备质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 658,
+      "facts": {
+        "supplier": "650万元",
+        "sample": "8%",
+        "late": "22%",
+        "review": "11个工作日",
+        "code": "ZL-2024-014"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-015",
+      "filename": "HDOC2-015_瀚宇_质量部制度_V1_HO.pdf",
+      "title": "瀚宇能源质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 605,
+      "facts": {
+        "supplier": "900万元",
+        "sample": "4%",
+        "late": "22%",
+        "review": "13个工作日",
+        "code": "ZL-2024-015"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-016",
+      "filename": "HDOC2-016_瀚宇_质量部制度_V2_HO.pdf",
+      "title": "瀚宇能源质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 658,
+      "facts": {
+        "supplier": "900万元",
+        "sample": "5%",
+        "late": "27%",
+        "review": "15个工作日",
+        "code": "ZL-2024-016"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-017",
+      "filename": "HDOC2-017_青柚_质量部制度_V1_HO.pdf",
+      "title": "青柚医疗质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 607,
+      "facts": {
+        "supplier": "1100万元",
+        "sample": "9%",
+        "late": "19%",
+        "review": "11个工作日",
+        "code": "ZL-2024-017"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-018",
+      "filename": "HDOC2-018_青柚_质量部制度_V2_HO.pdf",
+      "title": "青柚医疗质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 661,
+      "facts": {
+        "supplier": "1100万元",
+        "sample": "10%",
+        "late": "24%",
+        "review": "13个工作日",
+        "code": "ZL-2024-018"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-019",
+      "filename": "HDOC2-019_启澜_质量部制度_V1_HO.pdf",
+      "title": "启澜环保质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 605,
+      "facts": {
+        "supplier": "350万元",
+        "sample": "6%",
+        "late": "14%",
+        "review": "6个工作日",
+        "code": "ZL-2024-019"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-020",
+      "filename": "HDOC2-020_启澜_质量部制度_V2_HO.pdf",
+      "title": "启澜环保质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 658,
+      "facts": {
+        "supplier": "350万元",
+        "sample": "7%",
+        "late": "19%",
+        "review": "8个工作日",
+        "code": "ZL-2024-020"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-021",
+      "filename": "HDOC2-021_星桥_质量部制度_V1_HO.pdf",
+      "title": "星桥物流质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 605,
+      "facts": {
+        "supplier": "260万元",
+        "sample": "3%",
+        "late": "24%",
+        "review": "14个工作日",
+        "code": "ZL-2024-021"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-022",
+      "filename": "HDOC2-022_星桥_质量部制度_V2_HO.pdf",
+      "title": "星桥物流质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 658,
+      "facts": {
+        "supplier": "260万元",
+        "sample": "4%",
+        "late": "29%",
+        "review": "16个工作日",
+        "code": "ZL-2024-022"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-023",
+      "filename": "HDOC2-023_衡远_质量部制度_V1_HO.pdf",
+      "title": "衡远检测质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 605,
+      "facts": {
+        "supplier": "480万元",
+        "sample": "8%",
+        "late": "16%",
+        "review": "8个工作日",
+        "code": "ZL-2024-023"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-024",
+      "filename": "HDOC2-024_衡远_质量部制度_V2_HO.pdf",
+      "title": "衡远检测质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 659,
+      "facts": {
+        "supplier": "480万元",
+        "sample": "9%",
+        "late": "21%",
+        "review": "10个工作日",
+        "code": "ZL-2024-024"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-025",
+      "filename": "HDOC2-025_峻岭_财务部制度_V1_HO.pdf",
+      "title": "峻岭装备财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "4300万元",
+        "payment": "质保金10%",
+        "travel": "580元",
+        "confidential": "6年",
+        "code": "CW-2024-025"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-026",
+      "filename": "HDOC2-026_峻岭_财务部制度_V2_HO.pdf",
+      "title": "峻岭装备财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "4300万元",
+        "payment": "质保金10%",
+        "travel": "630元",
+        "confidential": "6年",
+        "code": "CW-2024-026"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-027",
+      "filename": "HDOC2-027_瀚宇_财务部制度_V1_HO.pdf",
+      "title": "瀚宇能源财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "5700万元",
+        "payment": "质保金20%",
+        "travel": "480元",
+        "confidential": "4年",
+        "code": "CW-2024-027"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-028",
+      "filename": "HDOC2-028_瀚宇_财务部制度_V2_HO.pdf",
+      "title": "瀚宇能源财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "5700万元",
+        "payment": "质保金20%",
+        "travel": "530元",
+        "confidential": "4年",
+        "code": "CW-2024-028"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-029",
+      "filename": "HDOC2-029_青柚_财务部制度_V1_HO.pdf",
+      "title": "青柚医疗财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "6100万元",
+        "payment": "质保金25%",
+        "travel": "690元",
+        "confidential": "5年",
+        "code": "CW-2024-029"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-030",
+      "filename": "HDOC2-030_青柚_财务部制度_V2_HO.pdf",
+      "title": "青柚医疗财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "6100万元",
+        "payment": "质保金25%",
+        "travel": "740元",
+        "confidential": "5年",
+        "code": "CW-2024-030"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-031",
+      "filename": "HDOC2-031_启澜_财务部制度_V1_HO.pdf",
+      "title": "启澜环保财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 574,
+      "facts": {
+        "budget": "2400万元",
+        "payment": "质保金10%",
+        "travel": "520元",
+        "confidential": "3年",
+        "code": "CW-2024-031"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-032",
+      "filename": "HDOC2-032_启澜_财务部制度_V2_HO.pdf",
+      "title": "启澜环保财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 627,
+      "facts": {
+        "budget": "2400万元",
+        "payment": "质保金10%",
+        "travel": "570元",
+        "confidential": "3年",
+        "code": "CW-2024-032"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-033",
+      "filename": "HDOC2-033_星桥_财务部制度_V1_HO.pdf",
+      "title": "星桥物流财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 574,
+      "facts": {
+        "budget": "2100万元",
+        "payment": "质保金15%",
+        "travel": "540元",
+        "confidential": "2年",
+        "code": "CW-2024-033"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-034",
+      "filename": "HDOC2-034_星桥_财务部制度_V2_HO.pdf",
+      "title": "星桥物流财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 627,
+      "facts": {
+        "budget": "2100万元",
+        "payment": "质保金15%",
+        "travel": "590元",
+        "confidential": "2年",
+        "code": "CW-2024-034"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-035",
+      "filename": "HDOC2-035_衡远_财务部制度_V1_HO.pdf",
+      "title": "衡远检测财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "3300万元",
+        "payment": "质保金20%",
+        "travel": "610元",
+        "confidential": "4年",
+        "code": "CW-2024-035"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-036",
+      "filename": "HDOC2-036_衡远_财务部制度_V2_HO.pdf",
+      "title": "衡远检测财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "3300万元",
+        "payment": "质保金20%",
+        "travel": "660元",
+        "confidential": "4年",
+        "code": "CW-2024-036"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-037",
+      "filename": "HDOC2-037_峻岭_项目管理部制度_V1_HO.pdf",
+      "title": "峻岭装备项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "12个工作日",
+        "review": "9个工作日",
+        "late": "17%",
+        "code": "XM-2024-037"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-038",
+      "filename": "HDOC2-038_峻岭_项目管理部制度_V2_HO.pdf",
+      "title": "峻岭装备项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 670,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "14个工作日",
+        "review": "11个工作日",
+        "late": "22%",
+        "code": "XM-2024-038"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-039",
+      "filename": "HDOC2-039_瀚宇_项目管理部制度_V1_HO.pdf",
+      "title": "瀚宇能源项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "16个工作日",
+        "review": "13个工作日",
+        "late": "22%",
+        "code": "XM-2024-039"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-040",
+      "filename": "HDOC2-040_瀚宇_项目管理部制度_V2_HO.pdf",
+      "title": "瀚宇能源项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 670,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "18个工作日",
+        "review": "15个工作日",
+        "late": "27%",
+        "code": "XM-2024-040"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-041",
+      "filename": "HDOC2-041_青柚_项目管理部制度_V1_HO.pdf",
+      "title": "青柚医疗项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 618,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "14个工作日",
+        "review": "11个工作日",
+        "late": "19%",
+        "code": "XM-2024-041"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-042",
+      "filename": "HDOC2-042_青柚_项目管理部制度_V2_HO.pdf",
+      "title": "青柚医疗项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 671,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "16个工作日",
+        "review": "13个工作日",
+        "late": "24%",
+        "code": "XM-2024-042"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-043",
+      "filename": "HDOC2-043_启澜_项目管理部制度_V1_HO.pdf",
+      "title": "启澜环保项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "9个工作日",
+        "review": "6个工作日",
+        "late": "14%",
+        "code": "XM-2024-043"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-044",
+      "filename": "HDOC2-044_启澜_项目管理部制度_V2_HO.pdf",
+      "title": "启澜环保项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 670,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "11个工作日",
+        "review": "8个工作日",
+        "late": "19%",
+        "code": "XM-2024-044"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-045",
+      "filename": "HDOC2-045_星桥_项目管理部制度_V1_HO.pdf",
+      "title": "星桥物流项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "17个工作日",
+        "review": "14个工作日",
+        "late": "24%",
+        "code": "XM-2024-045"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-046",
+      "filename": "HDOC2-046_星桥_项目管理部制度_V2_HO.pdf",
+      "title": "星桥物流项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 670,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "19个工作日",
+        "review": "16个工作日",
+        "late": "29%",
+        "code": "XM-2024-046"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-047",
+      "filename": "HDOC2-047_衡远_项目管理部制度_V1_HO.pdf",
+      "title": "衡远检测项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "11个工作日",
+        "review": "8个工作日",
+        "late": "16%",
+        "code": "XM-2024-047"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-048",
+      "filename": "HDOC2-048_衡远_项目管理部制度_V2_HO.pdf",
+      "title": "衡远检测项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 671,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "13个工作日",
+        "review": "10个工作日",
+        "late": "21%",
+        "code": "XM-2024-048"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-049",
+      "filename": "HDOC2-049_峻岭_人力资源部制度_V1_HO.pdf",
+      "title": "峻岭装备人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 563,
+      "facts": {
+        "travel": "580元",
+        "review": "9个工作日",
+        "confidential": "6年",
+        "budget": "4300万元",
+        "code": "RL-2024-049"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-050",
+      "filename": "HDOC2-050_峻岭_人力资源部制度_V2_HO.pdf",
+      "title": "峻岭装备人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "630元",
+        "review": "11个工作日",
+        "confidential": "6年",
+        "budget": "4300万元",
+        "code": "RL-2024-050"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-051",
+      "filename": "HDOC2-051_瀚宇_人力资源部制度_V1_HO.pdf",
+      "title": "瀚宇能源人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "travel": "480元",
+        "review": "13个工作日",
+        "confidential": "4年",
+        "budget": "5700万元",
+        "code": "RL-2024-051"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-052",
+      "filename": "HDOC2-052_瀚宇_人力资源部制度_V2_HO.pdf",
+      "title": "瀚宇能源人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "530元",
+        "review": "15个工作日",
+        "confidential": "4年",
+        "budget": "5700万元",
+        "code": "RL-2024-052"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-053",
+      "filename": "HDOC2-053_青柚_人力资源部制度_V1_HO.pdf",
+      "title": "青柚医疗人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "travel": "690元",
+        "review": "11个工作日",
+        "confidential": "5年",
+        "budget": "6100万元",
+        "code": "RL-2024-053"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-054",
+      "filename": "HDOC2-054_青柚_人力资源部制度_V2_HO.pdf",
+      "title": "青柚医疗人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "740元",
+        "review": "13个工作日",
+        "confidential": "5年",
+        "budget": "6100万元",
+        "code": "RL-2024-054"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-055",
+      "filename": "HDOC2-055_启澜_人力资源部制度_V1_HO.pdf",
+      "title": "启澜环保人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "travel": "520元",
+        "review": "6个工作日",
+        "confidential": "3年",
+        "budget": "2400万元",
+        "code": "RL-2024-055"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-056",
+      "filename": "HDOC2-056_启澜_人力资源部制度_V2_HO.pdf",
+      "title": "启澜环保人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "570元",
+        "review": "8个工作日",
+        "confidential": "3年",
+        "budget": "2400万元",
+        "code": "RL-2024-056"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-057",
+      "filename": "HDOC2-057_星桥_人力资源部制度_V1_HO.pdf",
+      "title": "星桥物流人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "travel": "540元",
+        "review": "14个工作日",
+        "confidential": "2年",
+        "budget": "2100万元",
+        "code": "RL-2024-057"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-058",
+      "filename": "HDOC2-058_星桥_人力资源部制度_V2_HO.pdf",
+      "title": "星桥物流人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 618,
+      "facts": {
+        "travel": "590元",
+        "review": "16个工作日",
+        "confidential": "2年",
+        "budget": "2100万元",
+        "code": "RL-2024-058"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-059",
+      "filename": "HDOC2-059_衡远_人力资源部制度_V1_HO.pdf",
+      "title": "衡远检测人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 563,
+      "facts": {
+        "travel": "610元",
+        "review": "8个工作日",
+        "confidential": "4年",
+        "budget": "3300万元",
+        "code": "RL-2024-059"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-060",
+      "filename": "HDOC2-060_衡远_人力资源部制度_V2_HO.pdf",
+      "title": "衡远检测人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "660元",
+        "review": "10个工作日",
+        "confidential": "4年",
+        "budget": "3300万元",
+        "code": "RL-2024-060"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-061",
+      "filename": "HDOC2-061_峻岭_信息安全部制度_V1_HO.pdf",
+      "title": "峻岭装备信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 576,
+      "facts": {
+        "confidential": "6年",
+        "review": "9个工作日",
+        "supplier": "650万元",
+        "code": "AQ-2024-061",
+        "budget": "4300万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-062",
+      "filename": "HDOC2-062_峻岭_信息安全部制度_V2_HO.pdf",
+      "title": "峻岭装备信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "6年",
+        "review": "11个工作日",
+        "supplier": "650万元",
+        "code": "AQ-2024-062",
+        "budget": "4300万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-063",
+      "filename": "HDOC2-063_瀚宇_信息安全部制度_V1_HO.pdf",
+      "title": "瀚宇能源信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 577,
+      "facts": {
+        "confidential": "4年",
+        "review": "13个工作日",
+        "supplier": "900万元",
+        "code": "AQ-2024-063",
+        "budget": "5700万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-064",
+      "filename": "HDOC2-064_瀚宇_信息安全部制度_V2_HO.pdf",
+      "title": "瀚宇能源信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "4年",
+        "review": "15个工作日",
+        "supplier": "900万元",
+        "code": "AQ-2024-064",
+        "budget": "5700万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-065",
+      "filename": "HDOC2-065_青柚_信息安全部制度_V1_HO.pdf",
+      "title": "青柚医疗信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 578,
+      "facts": {
+        "confidential": "5年",
+        "review": "11个工作日",
+        "supplier": "1100万元",
+        "code": "AQ-2024-065",
+        "budget": "6100万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-066",
+      "filename": "HDOC2-066_青柚_信息安全部制度_V2_HO.pdf",
+      "title": "青柚医疗信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 631,
+      "facts": {
+        "confidential": "5年",
+        "review": "13个工作日",
+        "supplier": "1100万元",
+        "code": "AQ-2024-066",
+        "budget": "6100万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-067",
+      "filename": "HDOC2-067_启澜_信息安全部制度_V1_HO.pdf",
+      "title": "启澜环保信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 577,
+      "facts": {
+        "confidential": "3年",
+        "review": "6个工作日",
+        "supplier": "350万元",
+        "code": "AQ-2024-067",
+        "budget": "2400万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-068",
+      "filename": "HDOC2-068_启澜_信息安全部制度_V2_HO.pdf",
+      "title": "启澜环保信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "3年",
+        "review": "8个工作日",
+        "supplier": "350万元",
+        "code": "AQ-2024-068",
+        "budget": "2400万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-069",
+      "filename": "HDOC2-069_星桥_信息安全部制度_V1_HO.pdf",
+      "title": "星桥物流信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 578,
+      "facts": {
+        "confidential": "2年",
+        "review": "14个工作日",
+        "supplier": "260万元",
+        "code": "AQ-2024-069",
+        "budget": "2100万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-070",
+      "filename": "HDOC2-070_星桥_信息安全部制度_V2_HO.pdf",
+      "title": "星桥物流信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 631,
+      "facts": {
+        "confidential": "2年",
+        "review": "16个工作日",
+        "supplier": "260万元",
+        "code": "AQ-2024-070",
+        "budget": "2100万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-071",
+      "filename": "HDOC2-071_衡远_信息安全部制度_V1_HO.pdf",
+      "title": "衡远检测信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 576,
+      "facts": {
+        "confidential": "4年",
+        "review": "8个工作日",
+        "supplier": "480万元",
+        "code": "AQ-2024-071",
+        "budget": "3300万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-072",
+      "filename": "HDOC2-072_衡远_信息安全部制度_V2_HO.pdf",
+      "title": "衡远检测信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "4年",
+        "review": "10个工作日",
+        "supplier": "480万元",
+        "code": "AQ-2024-072",
+        "budget": "3300万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-073",
+      "filename": "HDOC2-073_峻岭_法务部制度_V1_HO.pdf",
+      "title": "峻岭装备法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 614,
+      "facts": {
+        "confidential": "6年",
+        "approval": "95万元",
+        "late": "17%",
+        "code": "FW-2024-073",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-074",
+      "filename": "HDOC2-074_峻岭_法务部制度_V2_HO.pdf",
+      "title": "峻岭装备法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 667,
+      "facts": {
+        "confidential": "6年",
+        "approval": "95万元",
+        "late": "22%",
+        "code": "FW-2024-074",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-075",
+      "filename": "HDOC2-075_瀚宇_法务部制度_V1_HO.pdf",
+      "title": "瀚宇能源法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 615,
+      "facts": {
+        "confidential": "4年",
+        "approval": "175万元",
+        "late": "22%",
+        "code": "FW-2024-075",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-076",
+      "filename": "HDOC2-076_瀚宇_法务部制度_V2_HO.pdf",
+      "title": "瀚宇能源法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 668,
+      "facts": {
+        "confidential": "4年",
+        "approval": "175万元",
+        "late": "27%",
+        "code": "FW-2024-076",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-077",
+      "filename": "HDOC2-077_青柚_法务部制度_V1_HO.pdf",
+      "title": "青柚医疗法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "confidential": "5年",
+        "approval": "130万元",
+        "late": "19%",
+        "code": "FW-2024-077",
+        "payment": "质保金25%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-078",
+      "filename": "HDOC2-078_青柚_法务部制度_V2_HO.pdf",
+      "title": "青柚医疗法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 669,
+      "facts": {
+        "confidential": "5年",
+        "approval": "130万元",
+        "late": "24%",
+        "code": "FW-2024-078",
+        "payment": "质保金25%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-079",
+      "filename": "HDOC2-079_启澜_法务部制度_V1_HO.pdf",
+      "title": "启澜环保法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 615,
+      "facts": {
+        "confidential": "3年",
+        "approval": "70万元",
+        "late": "14%",
+        "code": "FW-2024-079",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-080",
+      "filename": "HDOC2-080_启澜_法务部制度_V2_HO.pdf",
+      "title": "启澜环保法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 668,
+      "facts": {
+        "confidential": "3年",
+        "approval": "70万元",
+        "late": "19%",
+        "code": "FW-2024-080",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-081",
+      "filename": "HDOC2-081_星桥_法务部制度_V1_HO.pdf",
+      "title": "星桥物流法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 615,
+      "facts": {
+        "confidential": "2年",
+        "approval": "210万元",
+        "late": "24%",
+        "code": "FW-2024-081",
+        "payment": "质保金15%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-082",
+      "filename": "HDOC2-082_星桥_法务部制度_V2_HO.pdf",
+      "title": "星桥物流法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 668,
+      "facts": {
+        "confidential": "2年",
+        "approval": "210万元",
+        "late": "29%",
+        "code": "FW-2024-082",
+        "payment": "质保金15%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-083",
+      "filename": "HDOC2-083_衡远_法务部制度_V1_HO.pdf",
+      "title": "衡远检测法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "confidential": "4年",
+        "approval": "110万元",
+        "late": "16%",
+        "code": "FW-2024-083",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-084",
+      "filename": "HDOC2-084_衡远_法务部制度_V2_HO.pdf",
+      "title": "衡远检测法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 669,
+      "facts": {
+        "confidential": "4年",
+        "approval": "110万元",
+        "late": "21%",
+        "code": "FW-2024-084",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-085",
+      "filename": "HDOC2-085_峻岭_供应链管理部制度_V1_HO.pdf",
+      "title": "峻岭装备供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 639,
+      "facts": {
+        "supplier": "650万元",
+        "sample": "7%",
+        "payment": "质保金10%",
+        "late": "17%",
+        "code": "GY-2024-085"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-086",
+      "filename": "HDOC2-086_峻岭_供应链管理部制度_V2_HO.pdf",
+      "title": "峻岭装备供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 692,
+      "facts": {
+        "supplier": "650万元",
+        "sample": "8%",
+        "payment": "质保金10%",
+        "late": "22%",
+        "code": "GY-2024-086"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-087",
+      "filename": "HDOC2-087_瀚宇_供应链管理部制度_V1_HO.pdf",
+      "title": "瀚宇能源供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 639,
+      "facts": {
+        "supplier": "900万元",
+        "sample": "4%",
+        "payment": "质保金20%",
+        "late": "22%",
+        "code": "GY-2024-087"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-088",
+      "filename": "HDOC2-088_瀚宇_供应链管理部制度_V2_HO.pdf",
+      "title": "瀚宇能源供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 692,
+      "facts": {
+        "supplier": "900万元",
+        "sample": "5%",
+        "payment": "质保金20%",
+        "late": "27%",
+        "code": "GY-2024-088"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-089",
+      "filename": "HDOC2-089_青柚_供应链管理部制度_V1_HO.pdf",
+      "title": "青柚医疗供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 641,
+      "facts": {
+        "supplier": "1100万元",
+        "sample": "9%",
+        "payment": "质保金25%",
+        "late": "19%",
+        "code": "GY-2024-089"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-090",
+      "filename": "HDOC2-090_青柚_供应链管理部制度_V2_HO.pdf",
+      "title": "青柚医疗供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 695,
+      "facts": {
+        "supplier": "1100万元",
+        "sample": "10%",
+        "payment": "质保金25%",
+        "late": "24%",
+        "code": "GY-2024-090"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-091",
+      "filename": "HDOC2-091_启澜_供应链管理部制度_V1_HO.pdf",
+      "title": "启澜环保供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 640,
+      "facts": {
+        "supplier": "350万元",
+        "sample": "6%",
+        "payment": "质保金10%",
+        "late": "14%",
+        "code": "GY-2024-091"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-092",
+      "filename": "HDOC2-092_启澜_供应链管理部制度_V2_HO.pdf",
+      "title": "启澜环保供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 693,
+      "facts": {
+        "supplier": "350万元",
+        "sample": "7%",
+        "payment": "质保金10%",
+        "late": "19%",
+        "code": "GY-2024-092"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-093",
+      "filename": "HDOC2-093_星桥_供应链管理部制度_V1_HO.pdf",
+      "title": "星桥物流供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 639,
+      "facts": {
+        "supplier": "260万元",
+        "sample": "3%",
+        "payment": "质保金15%",
+        "late": "24%",
+        "code": "GY-2024-093"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-094",
+      "filename": "HDOC2-094_星桥_供应链管理部制度_V2_HO.pdf",
+      "title": "星桥物流供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 692,
+      "facts": {
+        "supplier": "260万元",
+        "sample": "4%",
+        "payment": "质保金15%",
+        "late": "29%",
+        "code": "GY-2024-094"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-095",
+      "filename": "HDOC2-095_衡远_供应链管理部制度_V1_HO.pdf",
+      "title": "衡远检测供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 640,
+      "facts": {
+        "supplier": "480万元",
+        "sample": "8%",
+        "payment": "质保金20%",
+        "late": "16%",
+        "code": "GY-2024-095"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-096",
+      "filename": "HDOC2-096_衡远_供应链管理部制度_V2_HO.pdf",
+      "title": "衡远检测供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 693,
+      "facts": {
+        "supplier": "480万元",
+        "sample": "9%",
+        "payment": "质保金20%",
+        "late": "21%",
+        "code": "GY-2024-096"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-097",
+      "filename": "HDOC2-097_峻岭_研发中心制度_V1_HO.pdf",
+      "title": "峻岭装备研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "7%",
+        "confidential": "6年",
+        "code": "YF-2024-097",
+        "review": "9个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-098",
+      "filename": "HDOC2-098_峻岭_研发中心制度_V2_HO.pdf",
+      "title": "峻岭装备研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 619,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "8%",
+        "confidential": "6年",
+        "code": "YF-2024-098",
+        "review": "11个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-099",
+      "filename": "HDOC2-099_瀚宇_研发中心制度_V1_HO.pdf",
+      "title": "瀚宇能源研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 566,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "4%",
+        "confidential": "4年",
+        "code": "YF-2024-099",
+        "review": "13个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-100",
+      "filename": "HDOC2-100_瀚宇_研发中心制度_V2_HO.pdf",
+      "title": "瀚宇能源研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 619,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "5%",
+        "confidential": "4年",
+        "code": "YF-2024-100",
+        "review": "15个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-101",
+      "filename": "HDOC2-101_青柚_研发中心制度_V1_HO.pdf",
+      "title": "青柚医疗研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 566,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "9%",
+        "confidential": "5年",
+        "code": "YF-2024-101",
+        "review": "11个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-102",
+      "filename": "HDOC2-102_青柚_研发中心制度_V2_HO.pdf",
+      "title": "青柚医疗研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 620,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "10%",
+        "confidential": "5年",
+        "code": "YF-2024-102",
+        "review": "13个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-103",
+      "filename": "HDOC2-103_启澜_研发中心制度_V1_HO.pdf",
+      "title": "启澜环保研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "6%",
+        "confidential": "3年",
+        "code": "YF-2024-103",
+        "review": "6个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-104",
+      "filename": "HDOC2-104_启澜_研发中心制度_V2_HO.pdf",
+      "title": "启澜环保研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 618,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "7%",
+        "confidential": "3年",
+        "code": "YF-2024-104",
+        "review": "8个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-105",
+      "filename": "HDOC2-105_星桥_研发中心制度_V1_HO.pdf",
+      "title": "星桥物流研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 566,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "3%",
+        "confidential": "2年",
+        "code": "YF-2024-105",
+        "review": "14个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-106",
+      "filename": "HDOC2-106_星桥_研发中心制度_V2_HO.pdf",
+      "title": "星桥物流研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 619,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "4%",
+        "confidential": "2年",
+        "code": "YF-2024-106",
+        "review": "16个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-107",
+      "filename": "HDOC2-107_衡远_研发中心制度_V1_HO.pdf",
+      "title": "衡远检测研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "8%",
+        "confidential": "4年",
+        "code": "YF-2024-107",
+        "review": "8个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-108",
+      "filename": "HDOC2-108_衡远_研发中心制度_V2_HO.pdf",
+      "title": "衡远检测研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 619,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "9%",
+        "confidential": "4年",
+        "code": "YF-2024-108",
+        "review": "10个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-109",
+      "filename": "HDOC2-109_峻岭_审计部制度_V1_HO.pdf",
+      "title": "峻岭装备审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "峻岭装备",
+      "version": "v1",
+      "pages": 5,
+      "chars": 556,
+      "facts": {
+        "budget": "4300万元",
+        "approval": "95万元",
+        "review": "9个工作日",
+        "confidential": "6年",
+        "code": "SJ-2024-109"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-110",
+      "filename": "HDOC2-110_峻岭_审计部制度_V2_HO.pdf",
+      "title": "峻岭装备审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "峻岭装备",
+      "version": "v2",
+      "pages": 5,
+      "chars": 610,
+      "facts": {
+        "budget": "4300万元",
+        "approval": "95万元",
+        "review": "11个工作日",
+        "confidential": "6年",
+        "code": "SJ-2024-110"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-111",
+      "filename": "HDOC2-111_瀚宇_审计部制度_V1_HO.pdf",
+      "title": "瀚宇能源审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "瀚宇能源",
+      "version": "v1",
+      "pages": 5,
+      "chars": 558,
+      "facts": {
+        "budget": "5700万元",
+        "approval": "175万元",
+        "review": "13个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-111"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-112",
+      "filename": "HDOC2-112_瀚宇_审计部制度_V2_HO.pdf",
+      "title": "瀚宇能源审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "瀚宇能源",
+      "version": "v2",
+      "pages": 5,
+      "chars": 611,
+      "facts": {
+        "budget": "5700万元",
+        "approval": "175万元",
+        "review": "15个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-112"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-113",
+      "filename": "HDOC2-113_青柚_审计部制度_V1_HO.pdf",
+      "title": "青柚医疗审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "青柚医疗",
+      "version": "v1",
+      "pages": 5,
+      "chars": 558,
+      "facts": {
+        "budget": "6100万元",
+        "approval": "130万元",
+        "review": "11个工作日",
+        "confidential": "5年",
+        "code": "SJ-2024-113"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-114",
+      "filename": "HDOC2-114_青柚_审计部制度_V2_HO.pdf",
+      "title": "青柚医疗审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "青柚医疗",
+      "version": "v2",
+      "pages": 5,
+      "chars": 611,
+      "facts": {
+        "budget": "6100万元",
+        "approval": "130万元",
+        "review": "13个工作日",
+        "confidential": "5年",
+        "code": "SJ-2024-114"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-115",
+      "filename": "HDOC2-115_启澜_审计部制度_V1_HO.pdf",
+      "title": "启澜环保审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "启澜环保",
+      "version": "v1",
+      "pages": 5,
+      "chars": 557,
+      "facts": {
+        "budget": "2400万元",
+        "approval": "70万元",
+        "review": "6个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-115"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-116",
+      "filename": "HDOC2-116_启澜_审计部制度_V2_HO.pdf",
+      "title": "启澜环保审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "启澜环保",
+      "version": "v2",
+      "pages": 5,
+      "chars": 610,
+      "facts": {
+        "budget": "2400万元",
+        "approval": "70万元",
+        "review": "8个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-116"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-117",
+      "filename": "HDOC2-117_星桥_审计部制度_V1_HO.pdf",
+      "title": "星桥物流审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "星桥物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 559,
+      "facts": {
+        "budget": "2100万元",
+        "approval": "210万元",
+        "review": "14个工作日",
+        "confidential": "2年",
+        "code": "SJ-2024-117"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-118",
+      "filename": "HDOC2-118_星桥_审计部制度_V2_HO.pdf",
+      "title": "星桥物流审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "星桥物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 612,
+      "facts": {
+        "budget": "2100万元",
+        "approval": "210万元",
+        "review": "16个工作日",
+        "confidential": "2年",
+        "code": "SJ-2024-118"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-119",
+      "filename": "HDOC2-119_衡远_审计部制度_V1_HO.pdf",
+      "title": "衡远检测审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "衡远检测",
+      "version": "v1",
+      "pages": 5,
+      "chars": 557,
+      "facts": {
+        "budget": "3300万元",
+        "approval": "110万元",
+        "review": "8个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-119"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC2-120",
+      "filename": "HDOC2-120_衡远_审计部制度_V2_HO.pdf",
+      "title": "衡远检测审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "衡远检测",
+      "version": "v2",
+      "pages": 5,
+      "chars": 611,
+      "facts": {
+        "budget": "3300万元",
+        "approval": "110万元",
+        "review": "10个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-120"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    }
+  ],
+  "count": 120,
+  "questions": 320,
+  "note": "独立留出集：公司主体/数值/文档号均与主数据集不重叠，题面措辞亦不同"
+}

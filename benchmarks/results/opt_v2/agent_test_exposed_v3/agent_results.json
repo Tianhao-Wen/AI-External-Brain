@@ -1,0 +1,449 @@
+{
+  "meta": {
+    "run_id": "20261109_171433_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T17:14:33",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 60,
+      "used": 23,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 0.875,
+    "task_total": 8,
+    "task_passed": 7,
+    "tool_call_success_rate": 1.0,
+    "tool_call_total": 10,
+    "tool_success_total": 10,
+    "avg_tool_calls": 1.25,
+    "avg_llm_calls": 2.875,
+    "latency_p50_ms": 6918.35,
+    "latency_p95_ms": 11649.559999999998,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "duplicate_tool_calls": {
+      "duplicate": 0,
+      "total": 10,
+      "rate": 0.0
+    },
+    "pptx_artifact_duplicates": {
+      "pptx_runs": 1,
+      "runs_with_multiple_artifacts": 0
+    },
+    "by_type": {
+      "email_draft": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 12846.0
+      },
+      "error_handling": {
+        "tasks": 1,
+        "passed": 0,
+        "success_rate": 0.0,
+        "avg_llm_calls": 2.0,
+        "avg_latency_ms": 4269.1
+      },
+      "meeting_analysis": {
+        "tasks": 2,
+        "passed": 2,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 8308.1
+      },
+      "memory_recall": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.0,
+        "avg_latency_ms": 4119.3
+      },
+      "pdf_qa": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 6648.1
+      },
+      "pptx": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 9167.6
+      },
+      "web_search_fixture": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.0,
+        "avg_latency_ms": 4302.4
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 0
+    }
+  },
+  "cases": [
+    {
+      "task_id": "A2",
+      "round": 1,
+      "label": "A2",
+      "type": "pdf_qa",
+      "title": "供应商评分权重",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "在《供应商质量管理规范》（DOC-B）第 3 页，供应商季度评分采用**百分制**，其中“质量”项占 **40 分（40%）**。\n\n需要注意：这份文档使用的是“供应商季度评分”，并没有“综合评分”这一名称；如果你的“综合评分”指的是另一套考核表，请告诉我文件名，我再核对。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "args": {
+            "query": "供应商综合评分 质量 分值 权重",
+            "top_k": 5
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 6648.1,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B2",
+      "round": 1,
+      "label": "B2",
+      "type": "meeting_analysis",
+      "title": "无风险会议（不虚报）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 0 条"
+        }
+      ],
+      "answer": "已存入会议中心，编号 mtg_080ae32d1bf3。\n\n**风险情况：0 条风险。**\n\n系统没有从会议记录中识别出任何风险条目。原会议的判断是：本次只与客户确认了需求边界，具体包括报表导出只支持 Excel、不做自动归档、权限模型沿用现有的三级角色；实现范围因此缩小，比原方案约省 5 人日；现有排期足以覆盖，因此没有新增风险。\n\n**两项待办**\n- 更新需求规格说明书：负责人陈晨，截止 2026年3月26日\n- 按澄清结论调整前端排期：负责人李娜，截止 2026年3月25日\n\n需要提醒的是，“零风险”只是原会议记录里的结论，并不意味着这次范围收缩本身没有后续影响。范围缩小、5 人日释放之后，是否会被挪去其他工作、从而挤压别的排期，通常值得在下次例会上确认；如果需要，我可以据此生成一份风险复盘或提醒邮件草稿。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-013.txt",
+            "meeting_text": "",
+            "title": ""
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 7188.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B4",
+      "round": 1,
+      "label": "B4",
+      "type": "meeting_analysis",
+      "title": "会议决策提取",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 1 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "**不发布：原定 3 月 15 日的全量发布已经取消。** 会议结束后改成了“灰度 5% 用户，观察 48 小时”的有条件推进，最终是否扩大范围要等赵敏提供观察报告后再决定。\n\n依据（均来自会议记录原文）：\n\n1. **回归测试尚未达到发布标准**：486 条用例中失败 6 条；虽然失败数量不多，但版本还没有达到“全部通过”。\n2. **阻塞性缺陷已经复现**：支付回调超时在 3000 并发压测下稳定复现，1.7% 的请求超过 15 秒。\n3. **根因尚未修复**：回调处理缺少幂等保护，可能造成用户重复支付；这是资金类问题，风险等级为 high。\n4. **决策本身**：取消全量发布，改为灰度 5% 用户并观察 48 小时，再由观察报告决定是否扩大灰度。\n\n三个约束条件，任一条件未满足就不能进入灰度：\n- 王强在 **3/13** 前补齐幂等去重逻辑，灰度前必须完成\n- 刘洋在 **3/14** 前准备好灰度开关与回滚预案\n- 赵敏在灰度后的 **3/18** 前出具观察报告，只有该报告合格，才谈扩大灰度\n\n需要我把这三项待办的风险和截止时间整理成提醒邮件草稿吗？草稿只会生成，不会自动发送。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-004.txt",
+            "meeting_text": "",
+            "title": ""
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 9427.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C2",
+      "round": 1,
+      "label": "C2",
+      "type": "memory_recall",
+      "title": "回忆责任人",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings']（实际：['ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "是陈晨负责跟进。\n\n- 来源：会议「星海项目周例会」\n- 决策：由陈晨出面与支付网关方对接，争取沙箱环境\n- 待办：与支付网关方确认沙箱环境，负责人陈晨，截止 2026年3月7日\n\n需要的话我可以调出那场会议的完整记录，看看风险项和相关上下文。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "args": {
+            "query": "支付网关 沙箱环境",
+            "limit": 8
+          },
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "args": {
+            "query": "支付网关 沙箱",
+            "limit": 10
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 2,
+      "latency_ms": 4119.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "D2",
+      "round": 1,
+      "label": "D2",
+      "type": "web_search_fixture",
+      "title": "指数行情",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['WebSearch']（实际：['WebSearch']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "搜索结果给出一条数据：上证指数 **3286.45 点**，涨 0.62%，成交额 4120 亿元，日期标注为 2026-10-20。\n\n不过要提醒一句：这是搜索摘要里的公开数据，我无法确认它对应的就是“今天”的收盘，也无法核对是否实时。建议以上交所官网或交易所行情软件的数据为准。",
+      "tool_calls": [
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "args": {
+            "query": "上证指数 今日收盘点位"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 4302.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E2",
+      "round": 1,
+      "label": "E2",
+      "type": "email_draft",
+      "title": "明确要求不发时不得发送",
+      "success": true,
+      "checks": [
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "会议记录已分析完成，邮件草稿也已生成，**目前只是草稿，尚未发送**。\n\n**会议要点（云图平台双周例会，2026年3月6日 10:00-10:40，线上）**\n- 参与人：张伟、郑爽、刘洋\n- 结论：设计评审通过；灰度环境扩容正在推进；客户侧没有新增投诉，满意度得分为 4.6 分；可视化交互方案暂不排期，等客户明确诉求后再启动；下一阶段重点转向性能优化\n- 待办：郑爽需要输出性能优化交互降级方案，截止 3 月 13 日；刘洋需要整理灰度环境扩容配置清单，截止 3 月 11 日\n- 风险：无\n\n**邮件草稿**\n- 收件人：[REDACTED]\n- 主题：云图平台双周例会纪要（2026年3月6日）\n- 正文包含会议时间与地点、参与人、五条结论和两项待办\n\n草稿已经放在你聊天的邮件草稿卡片里，需要你核对内容后自己点击确认发送；我不会替你发出。如果需修改收件人、语气或内容，请告诉我。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-002.txt",
+            "meeting_text": "",
+            "title": ""
+          },
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "args": {
+            "meeting_id": "mtg_4bbf9da61b41",
+            "to": "lina@example.com",
+            "extra": "这是例会纪要邮件，而非催办提醒：请按会议纪要的语气组织，包含会议时间地点参与人、主要结论（设计评审通过、客户满意度4.6分、可视化交互方案暂不排期、下阶段重心为性能优化）和两项待办的负责人及截止时间。语气平和，不要催促。"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 12846.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F2",
+      "round": 1,
+      "label": "F2",
+      "type": "pptx",
+      "title": "5 页项目复盘",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['CreatePresentation']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "5 页，全部可读"
+        }
+      ],
+      "answer": "已生成，共 5 页，页面结构如下：\n\n1. 封面\n2. 本季度整体回顾\n3. 性能优化：优化前后关键指标对比\n4. 主要优化手段与收益\n5. 遗留问题与下季度计划\n\n文件在 `汇报材料/` 目录下，可直接下载。如果希望补充真实的性能数据（响应时间、吞吐量、资源成本等），把它们发给我，我会据此调整具体数字和图表。",
+      "tool_calls": [
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "args": {
+            "topic": "云图平台季度复盘",
+            "slides": 5,
+            "focus": "重点讲性能优化：优化前后的关键指标对比、主要优化手段与收益、遗留问题与下季度计划",
+            "audience": ""
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 9167.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G2",
+      "round": 1,
+      "label": "G2",
+      "type": "error_handling",
+      "title": "不支持的文件格式",
+      "success": false,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": false,
+          "detail": "命中：无（要求命中任意一个）"
+        }
+      ],
+      "answer": "这个文件只有两行，且只有 `meeting_id` 和 `risk` 两列，没有会议名称、时间、参与人、决策、待办等可解析的会议记录正文。\n\n我可以做两件事：\n1. 按现有内容建一条记录：会议编号为 MEET-001，风险为“接口联调滞后”，其余字段标记为待确认；\n2. 你先确认原始导出文件是否完整：是不是导出时丢了正文列，或者还有分片文件？\n\n你希望按哪种方式处理？",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/数据导出.csv",
+            "offset": 0,
+            "limit": 2000
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 4269.1,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "dataset": "live_workflow_meetings",
+  "version": 1,
+  "cases": 25,
+  "by_category": {
+    "A_simple": 5,
+    "B_multi_risk": 5,
+    "C_no_or_resolved_risk": 5,
+    "D_complex": 5,
+    "E_long": 5
+  },
+  "gold_risks": 93,
+  "gold_todos": 77,
+  "text_chars": 8679,
+  "sha256_dataset": "24376a72a40b94a77226b450c7ef9dd3d7d85a1c5f4fde55d094f42730e48a4a",
+  "sha256_scoring": "8463b9ac67eb56964f795bb069224ea4ce16ce5af2f0698ddc5b701929f2f929",
+  "frozen_on": "2026-11-11"
+}

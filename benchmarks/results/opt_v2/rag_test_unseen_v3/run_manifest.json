@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-11-09T16:55:12",
+  "last_run": {
+    "run_id": "20261109_165420_rag_live",
+    "suite": "rag",
+    "mode": "live",
+    "meta": {
+      "run_id": "20261109_165420_rag_live",
+      "suite": "rag",
+      "mode": "live",
+      "created_at": "2026-11-09T16:54:20",
+      "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+      "git": {
+        "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+        "commit_short": "67bac69",
+        "branch": "master",
+        "dirty": true
+      },
+      "model": {
+        "provider": "deepseek-flash",
+        "protocol": "openai-compat",
+        "model": "deepseek-chat",
+        "endpoint_host": "api.deepseek.com",
+        "context_window": 128000
+      },
+      "budget": {
+        "max_calls": 35,
+        "used": 23,
+        "failures": 0
+      },
+      "demo_env": {
+        "files": 23,
+        "digest": "f572baf7c98c8020"
+      },
+      "python": "3.14.2",
+      "platform": "nt",
+      "notes": [
+        "DOC-E -> doc_4abbaaa1a529 (4页)",
+        "DOC-F -> doc_7db3ca326b2e (4页)"
+      ]
+    },
+    "demo_env_unchanged": true,
+    "statuses": {
+      "rag": "ok"
+    }
+  },
+  "suites": {
+    "rag": {
+      "run_id": "20261109_165420_rag_live",
+      "mode": "live",
+      "status": "ok",
+      "wall_seconds": 50.52,
+      "case_count": 23,
+      "llm_calls": 23,
+      "model": "deepseek-chat",
+      "git_commit": "67bac69",
+      "created_at": "2026-11-09T16:54:20"
+    }
+  }
+}

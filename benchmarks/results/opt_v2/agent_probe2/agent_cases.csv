@@ -1,0 +1,3 @@
+﻿label,task_id,round,type,title,success,tool_call_count,tool_calls_ok,llm_calls,latency_ms,timed_out,error,failed_checks,check_detail,answer_preview
+A2,A2,1,pdf_qa,供应商评分权重,true,1,1,3,9489.5,false,,,,质量这一项占 **40 分**（满分 100）。  评分权重为：质量 40、交期 30、成本 20、服务 10。 来源：DOC-B-供应商质量管理规范.pdf，第 3 页。  需要说明的是，文档中没有写质量项 40 分的具体扣分细则和评定标准。如果你需要这部分内容，我可以再针对“质量评分细则”检索一次。
+A4,A4,1,pdf_qa_negative,知识库里没有的信息,false,0,0,1,2901.1,false,,tool_called_any,tool_called_any: 已调用：无（实际：无）,我没有找到你提到的公司信息，所以无法回答股票代码是多少。  如果你能告诉我公司名称，我可以帮你查。另外，如果公司相关资料已上传到知识库，我可以先检索一下。

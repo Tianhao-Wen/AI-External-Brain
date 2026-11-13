@@ -1,0 +1,131 @@
+# AI 外脑 —— Docker Compose 编排（Python 后端 + Qdrant）
+#
+#   docker compose up --build -d       # 一键启动（首次会构建镜像）
+#   docker compose ps                 # 容器状态（含健康状态）
+#   docker compose logs -f aieb       # 跟后端日志
+#   docker compose restart aieb       # 只重启后端（验证数据持久化）
+#   docker compose down               # 停止并删除容器，**保留数据卷**
+#   docker compose down -v            # 连数据一起删（会丢业务数据与向量索引）
+#
+# 只想跑向量库（本地开发模式，后端仍在宿主机跑）时：
+#   docker compose up -d qdrant
+#
+# 端口与 Origin：后端用「容器内监听端口」校验浏览器 Origin，因此宿主端口与容器端口
+# 保持同一个值（默认 18888）。若改成 8080，需同时在 config.yaml 的
+# remote.allowed_origins 里加上 http://localhost:8080，否则浏览器会被 403。
+#
+# 详细说明见 docs/docker-deployment.md。
+
+name: aieb
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.20.0
+    container_name: aieb-qdrant
+    restart: unless-stopped
+    ports:
+      # 容器内的后端走服务名 qdrant:6333；宿主端口仅供本机调试/传统本地模式使用
+      - "${QDRANT_HTTP_PORT:-6333}:6333"
+      - "${QDRANT_GRPC_PORT:-6334}:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    environment:
+      # 生产环境建议用 API Key 并配合 AIEB_QDRANT_API_KEY；
+      # 本地开发默认关闭，方便直接跑 benchmark。
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:-}
+      QDRANT__LOG_LEVEL: ${QDRANT_LOG_LEVEL:-WARN}
+      QDRANT__TELEMETRY_DISABLED: "true"
+    healthcheck:
+      # 官方镜像里没有 curl/wget，用 shell 的 /dev/tcp 做 TCP 探活；
+      # 即便该探活在某些镜像版本不可用，也不会阻塞后端启动（见 depends_on）。
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 15s
+
+  aieb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_VERSION: "3.12"
+    image: aieb-backend:local
+    container_name: aieb-backend
+    restart: unless-stopped
+    depends_on:
+      qdrant:
+        # 用 service_started 而不是 service_healthy：向量库是**懒连接**，
+        # Qdrant 未就绪时后端仍可启动（bm25 可用，向量检索给出明确错误提示），
+        # 避免探活脚本差异导致启动死锁。
+        condition: service_started
+    ports:
+      - "${AIEB_PORT:-18888}:${AIEB_PORT:-18888}"
+    environment:
+      # ---- 服务监听（容器内必须 0.0.0.0，否则宿主访问不到）----
+      AIEB_HOST: 0.0.0.0
+      AIEB_PORT: ${AIEB_PORT:-18888}
+      # ---- 访问 token：非 loopback 绑定必须提供（沿用原安全模型）----
+      AIEB_REMOTE_TOKEN: ${AIEB_REMOTE_TOKEN:-}
+      AIEB_ALLOW_UNAUTHENTICATED_REMOTE: ${AIEB_ALLOW_UNAUTHENTICATED_REMOTE:-0}
+      # ---- 模型密钥：只在运行时注入，绝不进镜像 ----
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      # ---- 向量库：容器内通过服务名访问同一网络 ----
+      AIEB_QDRANT_URL: ${AIEB_QDRANT_URL:-http://qdrant:6333}
+      AIEB_QDRANT_API_KEY: ${QDRANT_API_KEY:-}
+      AIEB_QDRANT_COLLECTION: ${AIEB_QDRANT_COLLECTION:-aieb_chunks}
+      AIEB_QDRANT_TIMEOUT: ${AIEB_QDRANT_TIMEOUT:-10}
+      # ---- 检索模式（hybrid 才会用到 Qdrant；bm25 时零依赖）----
+      AIEB_RETRIEVAL_MODE: ${AIEB_RETRIEVAL_MODE:-hybrid}
+      AIEB_CONTEXT_BUDGET: ${AIEB_CONTEXT_BUDGET:-legacy}
+      AIEB_CONTEXT_MAX_TOKENS: ${AIEB_CONTEXT_MAX_TOKENS:-1800}
+      AIEB_CONTEXT_MAX_CHARS: ${AIEB_CONTEXT_MAX_CHARS:-6000}
+      AIEB_RRF_K: ${AIEB_RRF_K:-60}
+      AIEB_RETRIEVAL_CANDIDATES: ${AIEB_RETRIEVAL_CANDIDATES:-30}
+      # ---- Embedding / Reranker：模型缓存放数据卷内，重建容器不用重新下载 ----
+      AIEB_EMBEDDING_MODEL: ${AIEB_EMBEDDING_MODEL:-BAAI/bge-small-zh-v1.5}
+      AIEB_EMBEDDING_CACHE: ${AIEB_EMBEDDING_CACHE:-1}
+      AIEB_EMBEDDING_CACHE_DIR: /data/.cache/fastembed
+      # huggingface_hub（fastembed 下载模型用）的缓存也放数据卷
+      HF_HOME: /data/.cache/huggingface
+      AIEB_RERANK_MODEL: ${AIEB_RERANK_MODEL:-BAAI/bge-reranker-v2-m3-int8}
+      AIEB_RERANK_CANDIDATES: ${AIEB_RERANK_CANDIDATES:-10}
+      # ---- 邮件：默认 dry-run（真实发送返回 send_blocked，不假装成功）----
+      AIEB_EMAIL_DRY_RUN: ${AIEB_EMAIL_DRY_RUN:-1}
+      AIEB_SMTP_HOST: ${AIEB_SMTP_HOST:-}
+      AIEB_SMTP_PORT: ${AIEB_SMTP_PORT:-465}
+      AIEB_SMTP_SECURITY: ${AIEB_SMTP_SECURITY:-ssl}
+      AIEB_SMTP_USER: ${AIEB_SMTP_USER:-}
+      AIEB_SMTP_PASSWORD: ${AIEB_SMTP_PASSWORD:-}
+      AIEB_SMTP_FROM: ${AIEB_SMTP_FROM:-}
+      # ---- 日志级别与时区 ----
+      AIEB_LOG_LEVEL: ${AIEB_LOG_LEVEL:-INFO}
+      TZ: ${TZ:-Asia/Shanghai}
+    volumes:
+      # 业务库 / LangGraph Checkpoint / 上传文档 / 导出产物 / Embedding 缓存
+      # 全部落在 /data 下（同一个命名卷，重建容器不丢）
+      - aieb_data:/data
+      # 想直接看宿主机上的数据，可改成绑定挂载（注意 Windows 文件权限）：
+      # - ./data/.aieb:/data/.aieb
+    healthcheck:
+      # 就绪探针：/readyz 额外探测 Qdrant；Qdrant 未就绪时返回 503
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import os,urllib.request; p=os.environ.get('AIEB_PORT','18888'); r=urllib.request.urlopen('http://127.0.0.1:%s/readyz' % p, timeout=5); raise SystemExit(0 if r.status==200 else 1)",
+        ]
+      interval: 20s
+      timeout: 6s
+      retries: 5
+      start_period: 40s
+    stop_grace_period: 25s
+
+volumes:
+  # 业务数据卷（SQLite 业务库 / Checkpoint / 上传 PDF / artifact / 模型缓存）
+  aieb_data:
+    name: aieb_data
+  # 向量索引卷（可从 SQLite 重建，但重启/重建容器后应保留，避免重复 embedding）
+  qdrant_storage:
+    name: aieb_qdrant_storage

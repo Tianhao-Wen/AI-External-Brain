@@ -1,0 +1,106 @@
+{
+  "db": "benchmarks\\.work\\scale_50000\\.aieb\\brain\\brain.sqlite3",
+  "top_k": 10,
+  "rss_start_mb": 25.0,
+  "cpu_count": 32,
+  "chunks": 75000,
+  "chars": 42088596,
+  "rebuild_seconds": 19.29,
+  "rss_after_build_mb": 584.5,
+  "vocab": 2563,
+  "postings_entries": 26429901,
+  "postings_arrays_mb": 202.2,
+  "legacy_structure_estimate_mb": 6915.5,
+  "queries": 35,
+  "legacy_ms": {
+    "p50": 2696.24,
+    "p95": 3006.73
+  },
+  "python_path_ms": {
+    "p50": 606.81,
+    "p95": 835.67
+  },
+  "numpy_path_ms": {
+    "p50": 35.92,
+    "p95": 44.54
+  },
+  "rss_final_mb": 583.6,
+  "equivalence": {
+    "legacy_vs_python": {
+      "cases": 35,
+      "all_equal": true
+    },
+    "python_vs_numpy": {
+      "cases": 35,
+      "all_equal": true
+    },
+    "legacy_vs_numpy": {
+      "cases": 35,
+      "all_equal": true
+    },
+    "all_pass": true
+  },
+  "numpy_qps": 32.2,
+  "samples": [
+    {
+      "query": "SCALE-00000 采购事业部A采购管理管理办法 — 第 1 页 / 共 5",
+      "legacy_top1": "SCALE-00000_采购事业部A_采购管理.md",
+      "numpy_top1": "SCALE-00000_采购事业部A_采购管理.md",
+      "shared_top1": true
+    },
+    {
+      "query": "批。 第815条 办公用品。打印纸按月申领,单次申领不超过 5 包;硒鼓以旧换新",
+      "legacy_top1": "SCALE-00216_培训事业部Q_培训管理.md",
+      "numpy_top1": "SCALE-00216_培训事业部Q_培训管理.md",
+      "shared_top1": true
+    },
+    {
+      "query": "11:30 至 13:00,节假日另行通知;班车每日 8:00 自地铁站发车。 ",
+      "legacy_top1": "SCALE-00353_生产事业部N_生产安全.md",
+      "numpy_top1": "SCALE-00353_生产事业部N_生产安全.md",
+      "shared_top1": true
+    },
+    {
+      "query": "SCALE-00050 研发事业部K研发立项管理办法 — 第 1 页 / 共 5",
+      "legacy_top1": "SCALE-00050_研发事业部K_研发立项.md",
+      "numpy_top1": "SCALE-00050_研发事业部K_研发立项.md",
+      "shared_top1": true
+    },
+    {
+      "query": "改完毕并完成。 第816条 绿植养护。办公区绿植由行政统一养护,每周浇水两次。 ",
+      "legacy_top1": "SCALE-00466_固定事业部G_固定资产.md",
+      "numpy_top1": "SCALE-00466_固定事业部G_固定资产.md",
+      "shared_top1": true
+    },
+    {
+      "query": "总额的 13%。 第413条 会议室预约。会议室需提前 2 小时在系统中预约,超",
+      "legacy_top1": "SCALE-00419_档案事业部T_档案管理.md",
+      "numpy_top1": "SCALE-00419_档案事业部T_档案管理.md",
+      "shared_top1": true
+    },
+    {
+      "query": "SCALE-00100 采购事业部A采购管理管理办法 — 第 1 页 / 共 5",
+      "legacy_top1": "SCALE-00100_采购事业部A_采购管理.md",
+      "numpy_top1": "SCALE-00100_采购事业部A_采购管理.md",
+      "shared_top1": true
+    },
+    {
+      "query": "0.17% 计收违约金,累计不超过合同总额的 22%。 第816条 办公用品。打",
+      "legacy_top1": "SCALE-00418_印章事业部S_印章管理.md",
+      "numpy_top1": "SCALE-00418_印章事业部S_印章管理.md",
+      "shared_top1": true
+    },
+    {
+      "query": "间为 11:30 至 13:00,节假日另行通知;班车每日 8:00 自地铁站发",
+      "legacy_top1": "SCALE-00133_生产事业部N_生产安全.md",
+      "numpy_top1": "SCALE-00133_生产事业部N_生产安全.md",
+      "shared_top1": true
+    },
+    {
+      "query": "SCALE-00150 研发事业部K研发立项管理办法 — 第 1 页 / 共 5",
+      "legacy_top1": "SCALE-00150_研发事业部K_研发立项.md",
+      "numpy_top1": "SCALE-00150_研发事业部K_研发立项.md",
+      "shared_top1": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-11-11T14:16:57",
+  "used_for_tuning": false,
+  "purpose": "最终一次性验证（四模式对比 + 嵌入模型验证）；冻结后不得用于调参",
+  "documents": 120,
+  "questions": 320,
+  "questions_sha256": "f1e4ebbe2171ba67bfb315af49ca608a8c83362d8a56f8edc9cb4675d475c028",
+  "corpus_meta_sha256": "f014ca60a47bec7cb67713b123628fab50016b8c35735c1c0346164aa10d0909",
+  "pdf_files": 120,
+  "pdf_bytes": 630764
+}

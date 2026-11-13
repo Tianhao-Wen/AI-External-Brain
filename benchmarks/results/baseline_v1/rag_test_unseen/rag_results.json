@@ -1,0 +1,3117 @@
+{
+  "meta": {
+    "run_id": "20261109_161320_rag_live",
+    "suite": "rag",
+    "mode": "live",
+    "created_at": "2026-11-09T16:13:20",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 30,
+      "used": 23,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-E -> doc_aed814104aa1 (4页)",
+      "DOC-F -> doc_b12433e97427 (4页)"
+    ]
+  },
+  "aggregates": {
+    "retrieval": {
+      "answerable_questions": 21,
+      "negative_questions": 2,
+      "recall@1": 0.7857,
+      "hit@1": 0.9048,
+      "recall@3": 1.0,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "hit@5": 1.0,
+      "mrr@5": 0.9524,
+      "full_evidence_rate@5": 1.0,
+      "multi_evidence_questions": 6,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "answer": {
+      "executed": 23,
+      "answerable_executed": 21,
+      "negative_executed": 2,
+      "answer_accuracy": 1.0,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.9762,
+      "strict_citation_accuracy": 0.9048,
+      "groundedness": 0.9814,
+      "no_citation_responses": 0,
+      "degraded_responses": 0,
+      "end_to_end_success": 1.0
+    },
+    "by_type": {
+      "cross_document": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 1.0,
+        "mrr@5": 0.8333,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "long_distractor": {
+        "count": 1,
+        "answerable_count": 1,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "count": 4,
+        "answerable_count": 4,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "negative": {
+        "count": 2,
+        "answerable_count": 0,
+        "recall@5": null,
+        "mrr@5": null,
+        "answer_accuracy": null,
+        "abstention_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "count": 2,
+        "answerable_count": 2,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "count": 2,
+        "answerable_count": 2,
+        "recall@5": 1.0,
+        "mrr@5": 0.75,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      }
+    },
+    "latency": {
+      "retrieval_p50_ms": 0.9,
+      "retrieval_p95_ms": 1.19,
+      "answer_p50_ms": 2347.1,
+      "answer_p95_ms": 3550.209999999999
+    }
+  },
+  "cases": [
+    {
+      "question_id": "RAGU-001",
+      "question": "数控加工设备的大修周期是多久？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "数控加工设备每 5 年一次。",
+      "gold_pages": [
+        "DOC-E:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 21.763
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 9.279
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 7.215
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 4.882
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 3.66
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 2.377
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 1.844
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 0.333
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p2"
+        ],
+        "top_pages": [
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-E:p4",
+          "DOC-E:p3",
+          "DOC-F:p4",
+          "DOC-F:p3",
+          "DOC-F:p1",
+          "DOC-F:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "数控加工设备的大修周期为每5年一次。[来源：DOC-E-设备维保管理制度.pdf · 第2页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1612
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 3619.0
+      },
+      "index": 1
+    },
+    {
+      "question_id": "RAGU-002",
+      "question": "A 级客户的电话响应时限是多少？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "30 分钟内。",
+      "gold_pages": [
+        "DOC-F:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 23.299
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 10.971
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 10.654
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 9.8
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 9.712
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.241
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 1.998
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 1.178
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p2"
+        ],
+        "top_pages": [
+          "DOC-F:p2",
+          "DOC-F:p3",
+          "DOC-E:p3",
+          "DOC-F:p4",
+          "DOC-F:p1",
+          "DOC-E:p4",
+          "DOC-E:p1",
+          "DOC-E:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "A 级客户的电话响应时限是 30 分钟内。[来源：DOC-F-客户服务响应时限规定.pdf · 第2页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-E-设备维保管理制度.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1437
+      },
+      "latency": {
+        "retrieval_ms": 1.0,
+        "answer_ms": 2094.0
+      },
+      "index": 2
+    },
+    {
+      "question_id": "RAGU-003",
+      "question": "关键备件的安全库存不得低于多少？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "不得低于 1 套。",
+      "gold_pages": [
+        "DOC-E:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 42.256
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 16.064
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 8.564
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 5.912
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 3.504
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 1.963
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 1.048
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 0.638
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4",
+          "DOC-E:p1",
+          "DOC-E:p2",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-F:p2",
+          "DOC-F:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "关键备件的安全库存不得低于 1 套。[来源：DOC-E-设备维保管理制度.pdf · 第4页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1466
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 17577.0
+      },
+      "index": 3
+    },
+    {
+      "question_id": "RAGU-004",
+      "question": "通用备件的库存周转天数上限是多少？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "不得超过 90 天。",
+      "gold_pages": [
+        "DOC-E:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 30.52
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 11.831
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 5.209
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 5.103
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 4.336
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 3.331
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 3.161
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 2.035
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4",
+          "DOC-E:p1",
+          "DOC-E:p3",
+          "DOC-F:p1",
+          "DOC-E:p2",
+          "DOC-F:p2",
+          "DOC-F:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "通用备件的库存周转天数不得超过 90 天。[来源：DOC-E-设备维保管理制度.pdf · 第4页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1491
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 1903.9
+      },
+      "index": 4
+    },
+    {
+      "question_id": "RAGU-005",
+      "question": "A 级客户的服务响应及时率考核目标是多少？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "98%。",
+      "gold_pages": [
+        "DOC-F:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 50.385
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 12.526
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 12.25
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 12.193
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 8.678
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.241
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 1.655
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 0.865
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p3"
+        ],
+        "top_pages": [
+          "DOC-F:p3",
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-E:p4",
+          "DOC-E:p1",
+          "DOC-E:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "A 级客户的服务响应及时率考核目标为 98%。[来源：DOC-F-客户服务响应时限规定.pdf · 第3页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1437
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1949.0
+      },
+      "index": 5
+    },
+    {
+      "question_id": "RAGU-006",
+      "question": "单次委外维修金额超过多少需要签订书面合同？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "超过 10 万元。",
+      "gold_pages": [
+        "DOC-E:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 44.703
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 9.406
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 8.936
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 6.347
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 4.143
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 3.855
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 3.404
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 1.595
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-E:p1",
+          "DOC-E:p3",
+          "DOC-F:p4",
+          "DOC-E:p2",
+          "DOC-F:p3",
+          "DOC-F:p1",
+          "DOC-F:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "单次委外维修金额超过 10 万元的，须签订书面合同并约定质保期不少于 6 个月。[来源：DOC-E-设备维保管理制度.pdf · 第4页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1612
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1985.2
+      },
+      "index": 6
+    },
+    {
+      "question_id": "RAGU-007",
+      "question": "一台注塑设备连续两个季度没做二级保养，会被怎么处理？还可以接什么活？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "系统自动将设备状态置为「受限」，只能安排非关键工序。",
+      "gold_pages": [
+        "DOC-E:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 30.196
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 16.617
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 11.517
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 8.337
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 6.894
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 6.254
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 5.854
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 3.826
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p2"
+        ],
+        "top_pages": [
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-E:p4",
+          "DOC-F:p3",
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-E:p3",
+          "DOC-F:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "按资料规定，设备连续两个周期未按计划完成保养的，系统会自动将其状态置为“受限”[来源：DOC-E-设备维保管理制度.pdf · 第2页]。状态为“受限”的设备只能安排非关键工序[来源：DOC-E-设备维保管理制度.pdf · 第2页]。\n\n关于“注塑设备二级保养周期”，资料中写明的是“二级保养每 2000 运行小时或每季度一次”[来源：DOC-E-设备维保管理制度.pdf · 第2页]；至于“连续两个季度没做二级保养”是否等同于“连续两个周期未按计划完成保养”，资料中未明确说明。",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1552
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2931.1
+      },
+      "index": 7
+    },
+    {
+      "question_id": "RAGU-008",
+      "question": "一台设备 30 天内第四次出现同一类故障，按制度要走什么流程、几个工作日内交什么？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "判定为重复故障，启动根因分析（RCA），5 个工作日内提交报告。",
+      "gold_pages": [
+        "DOC-E:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 27.785
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 20.51
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 15.564
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 13.988
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 13.283
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 9.719
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 7.416
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 5.566
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p3"
+        ],
+        "top_pages": [
+          "DOC-E:p3",
+          "DOC-E:p1",
+          "DOC-F:p4",
+          "DOC-E:p4",
+          "DOC-F:p3",
+          "DOC-E:p2",
+          "DOC-F:p1",
+          "DOC-F:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "按制度，同一设备 30 天内发生 3 次及以上同类故障的，判定为重复故障，须启动根因分析（RCA），并在 5 个工作日内提交报告。[来源：DOC-E-设备维保管理制度.pdf · 第3页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第3页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 4,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1577
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 2284.1
+      },
+      "index": 8
+    },
+    {
+      "question_id": "RAGU-009",
+      "question": "B 级客户提出远程接入，几小时内要响应？如果单月超时三次会有什么后果？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "8 小时内远程接入；单月 3 次超时须由服务经理 5 个工作日内回访并输出改进措施。",
+      "gold_pages": [
+        "DOC-F:p2",
+        "DOC-F:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 30.418
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 21.406
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 21.049
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 12.534
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 11.527
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 7.021
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 6.93
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 6.309
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p2",
+          "DOC-F:p3"
+        ],
+        "top_pages": [
+          "DOC-F:p2",
+          "DOC-F:p4",
+          "DOC-F:p3",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-E:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p2",
+          "DOC-F:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "B 级客户的远程接入响应时限为 8 小时内 [来源：DOC-F-客户服务响应时限规定.pdf · 第2页]。同一客户单月出现 3 次超时的，须由服务经理在 5 个工作日内回访并输出改进措施 [来源：DOC-F-客户服务响应时限规定.pdf · 第3页]。",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 5,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1437
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2118.5
+      },
+      "index": 9
+    },
+    {
+      "question_id": "RAGU-010",
+      "question": "一件关键备件从低于安全库存到补货审批完成，制度上有哪些时限要求？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "低于安全库存时自动触发补货申请，补货申请须在 2 个工作日内审批完成。",
+      "gold_pages": [
+        "DOC-E:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 50.556
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 20.231
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 13.604
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 12.31
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 11.997
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 6.328
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 5.995
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 3.389
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4",
+          "DOC-E:p1",
+          "DOC-E:p2",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-F:p2",
+          "DOC-F:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，关键备件低于安全库存时，系统自动触发补货申请，且关键备件的补货申请须在 2 个工作日内审批完成。因此从低于安全库存到补货审批完成的时限要求为 2 个工作日内审批完成。[来源：DOC-E-设备维保管理制度.pdf · 第4页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1466
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 2839.0
+      },
+      "index": 10
+    },
+    {
+      "question_id": "RAGU-011",
+      "question": "现场服务工程师派工前有什么硬性要求？服务完成后要交什么、多久内交？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "出发前须完成远程诊断；服务完成后 3 个工作日内提交服务报告，含故障现象、处理过程、更换备件与客户签字。",
+      "gold_pages": [
+        "DOC-F:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 36.973
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 17.437
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 12.262
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 11.711
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 9.746
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 6.306
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 5.377
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 2.576
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p4"
+        ],
+        "top_pages": [
+          "DOC-F:p4",
+          "DOC-F:p1",
+          "DOC-F:p2",
+          "DOC-F:p3",
+          "DOC-E:p2",
+          "DOC-E:p4",
+          "DOC-E:p3",
+          "DOC-E:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，现场服务工程师派工前须完成远程诊断，未完成远程诊断不得直接派工，紧急情况除外 [来源：DOC-F-客户服务响应时限规定.pdf · 第4页]。服务完成后须在3个工作日内提交服务报告，报告须包含故障现象、处理过程、更换备件与客户签字 [来源：DOC-F-客户服务响应时限规定.pdf · 第4页]。",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1412
+      },
+      "latency": {
+        "retrieval_ms": 1.0,
+        "answer_ms": 2361.0
+      },
+      "index": 11
+    },
+    {
+      "question_id": "RAGU-012",
+      "question": "A 级客户现场到场要求 24 小时内，如果工程师需要从备件库领关键备件，领用要满足什么条件？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E",
+        "DOC-F"
+      ],
+      "gold_answer": "现场到场 24 小时内；备件领用须填写用途与设备编号，旧件须交回备件库。",
+      "gold_pages": [
+        "DOC-E:p4",
+        "DOC-F:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 36.877
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 29.948
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 28.922
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 17.897
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 11.085
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 10.199
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 9.467
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 9.074
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4",
+          "DOC-F:p2"
+        ],
+        "top_pages": [
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-E:p4",
+          "DOC-F:p1",
+          "DOC-E:p2",
+          "DOC-E:p3",
+          "DOC-F:p3",
+          "DOC-E:p1"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4",
+          "DOC-F:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "关于关键备件领用的条件，资料中仅规定了：备件领用须填写用途与设备编号，旧件须交回备件库统一处置 [来源：DOC-E-设备维保管理制度.pdf · 第4页]。\n\n至于领用关键备件时还需满足的其他条件（例如审批、库存核对等），以及领用环节与 A 级客户 24 小时现场到场时限如何衔接，资料中未提及。",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 0.5,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1529
+      },
+      "latency": {
+        "retrieval_ms": 1.2,
+        "answer_ms": 2716.1
+      },
+      "index": 12
+    },
+    {
+      "question_id": "RAGU-013",
+      "question": "委外维修单位验收不合格两次会怎样？客户投诉长时间未闭环又会升级到哪？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E",
+        "DOC-F"
+      ],
+      "gold_answer": "委外单位暂停资格 12 个月；客户投诉 5 个工作日未闭环自动升级至质量管理部。",
+      "gold_pages": [
+        "DOC-E:p4",
+        "DOC-F:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 39.958
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 24.84
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 19.044
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 13.287
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 12.981
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 7.828
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 7.256
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 6.695
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4",
+          "DOC-E:p1",
+          "DOC-F:p3",
+          "DOC-F:p2",
+          "DOC-E:p2",
+          "DOC-E:p3",
+          "DOC-F:p1"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4",
+          "DOC-F:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "委外维修单位连续两次验收不合格的，暂停其委外资格 12 个月 [来源：DOC-E-设备维保管理制度.pdf · 第4页]。客户投诉在 5 个工作日内未闭环的，自动升级至质量管理部 [来源：DOC-F-客户服务响应时限规定.pdf · 第4页]。",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 4,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1566
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2327.2
+      },
+      "index": 13
+    },
+    {
+      "question_id": "RAGU-014",
+      "question": "新买的设备还没登记到台账里，能直接开起来干活吗？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "不能。未入账设备不得投入使用，也不得申请备件。",
+      "gold_pages": [
+        "DOC-E:p1"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 11.351
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 11.058
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 10.609
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 5.73
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 5.414
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.544
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 1.844
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 1.366
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p1"
+        ],
+        "top_pages": [
+          "DOC-F:p2",
+          "DOC-E:p1",
+          "DOC-E:p2",
+          "DOC-F:p4",
+          "DOC-E:p3",
+          "DOC-E:p4",
+          "DOC-F:p1",
+          "DOC-F:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p1"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "不能。资料明确规定，未入账设备不得投入使用，也不得申请备件；同时新增设备须在验收后 3 个工作日内入账。[来源：DOC-E-设备维保管理制度.pdf · 第1页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1544
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 2525.5
+      },
+      "index": 14
+    },
+    {
+      "question_id": "RAGU-015",
+      "question": "答应客户的时间是从什么时候开始算的？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "自客户请求在服务系统登记之时起算，不以电话沟通时间为准。",
+      "gold_pages": [
+        "DOC-F:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 13.337
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 8.628
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 6.522
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 4.903
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 2.948
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 2.376
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.3
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 0.344
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p2"
+        ],
+        "top_pages": [
+          "DOC-F:p2",
+          "DOC-F:p3",
+          "DOC-F:p4",
+          "DOC-F:p1",
+          "DOC-E:p2",
+          "DOC-E:p3",
+          "DOC-E:p4",
+          "DOC-E:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据规定，响应时限自客户请求在服务系统登记之时起算，不以电话沟通时间为准。[来源：DOC-F-客户服务响应时限规定.pdf · 第2页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1412
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 2379.1
+      },
+      "index": 15
+    },
+    {
+      "question_id": "RAGU-016",
+      "question": "设备维保分哪几类？二级保养多久做一次、由谁执行？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "分日常点检、一级保养、二级保养与大修四类；二级保养每 2000 运行小时或每季度一次，由设备部维修班组执行。",
+      "gold_pages": [
+        "DOC-E:p1",
+        "DOC-E:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 28.346
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 25.552
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 8.158
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 7.387
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 6.189
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 1.806
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 1.736
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 0.948
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p1",
+          "DOC-E:p2"
+        ],
+        "top_pages": [
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-F:p1",
+          "DOC-E:p4",
+          "DOC-E:p3",
+          "DOC-F:p2",
+          "DOC-F:p3",
+          "DOC-F:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p1",
+          "DOC-E:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "设备维保分为日常点检、一级保养、二级保养与大修四类 [来源：DOC-E-设备维保管理制度.pdf · 第1页]。二级保养每2000运行小时或每季度一次，由设备部维修班组执行，须停机进行 [来源：DOC-E-设备维保管理制度.pdf · 第2页]。",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1470
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 2106.0
+      },
+      "index": 16
+    },
+    {
+      "question_id": "RAGU-017",
+      "question": "二级保养和一级保养分别的周期是什么？请分别给出页码。",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "一级保养每 500 运行小时或每月一次；二级保养每 2000 运行小时或每季度一次（均在第 2 页）。",
+      "gold_pages": [
+        "DOC-E:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 27.776
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 23.933
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 6.919
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 5.142
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 4.814
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 4.142
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 3.482
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 3.315
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p2"
+        ],
+        "top_pages": [
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-E:p4",
+          "DOC-F:p3",
+          "DOC-F:p1",
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-E:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "一级保养的周期是每500运行小时或每月一次，以先到者为准 [来源：DOC-E-设备维保管理制度.pdf · 第2页]；二级保养的周期是每2000运行小时或每季度一次 [来源：DOC-E-设备维保管理制度.pdf · 第2页]。两项均见第2页。",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": false,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1410
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2347.1
+      },
+      "index": 17
+    },
+    {
+      "question_id": "RAGU-018",
+      "question": "公司对供应商的账期政策是多久？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "medium",
+      "document_ids": [],
+      "gold_answer": "两份文档都没有规定供应商账期。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 9.578
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 7.722
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 4.015
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.425
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 2.291
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 1.552
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 1.119
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 0.965
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-E:p1",
+          "DOC-F:p1",
+          "DOC-F:p4",
+          "DOC-E:p4",
+          "DOC-F:p3",
+          "DOC-E:p2",
+          "DOC-E:p3",
+          "DOC-F:p2"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 9.578,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及公司对供应商的账期政策。现有资料涉及设备维保管理、备件管理、委外维修管理以及客户服务响应时限等内容，均未包含供应商账期政策的相关规定。[来源：DOC-E-设备维保管理制度.pdf · 第1页；DOC-F-客户服务响应时限规定.pdf · 第1页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 1,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1431
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2603.3
+      },
+      "index": 18
+    },
+    {
+      "question_id": "RAGU-019",
+      "question": "一次 8 万元的委外维修，和一次 12 万元的委外维修，制度要求上有什么区别？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "8 万元未超过 10 万元门槛，无需书面合同；12 万元超过 10 万元，须签订书面合同并约定质保期不少于 6 个月。",
+      "gold_pages": [
+        "DOC-E:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 41.396
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 24.95
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 19.977
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 13.86
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 9.839
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 9.248
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 8.15
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 3.101
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p4"
+        ],
+        "top_pages": [
+          "DOC-E:p4",
+          "DOC-E:p1",
+          "DOC-F:p2",
+          "DOC-E:p2",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-F:p3",
+          "DOC-F:p4"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，8 万元和 12 万元的委外维修在制度要求上的区别是：单次委外维修金额超过 10 万元的，须签订书面合同并约定质保期不少于 6 个月；8 万元未超过 10 万元，资料中未规定其必须签订书面合同及约定质保期。两项金额均须遵守委外维修单位须在合格供方名录内、维修完成后由设备部与使用部门共同验收、验收不合格不予结算等规定。[来源：DOC-E-设备维保管理制度.pdf · 第4页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.5714,
+          "total": 7,
+          "unsupported": [
+            "12万元",
+            "8万元"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1459
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2594.7
+      },
+      "index": 19
+    },
+    {
+      "question_id": "RAGU-020",
+      "question": "A 级客户现场服务要求 24 小时到场，工程师出发前必须先做什么？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "现场到场 24 小时内；出发前须完成远程诊断，未完成不得直接派工。",
+      "gold_pages": [
+        "DOC-F:p2",
+        "DOC-F:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 38.96
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 26.572
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 15.387
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 14.938
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 11.668
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 8.186
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 2.307
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 0.807
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p2",
+          "DOC-F:p4"
+        ],
+        "top_pages": [
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-F:p1",
+          "DOC-F:p3",
+          "DOC-E:p3",
+          "DOC-E:p2",
+          "DOC-E:p4",
+          "DOC-E:p1"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p2",
+          "DOC-F:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "A 级客户现场到场时限为 24 小时内；工程师出发前须完成远程诊断，未完成远程诊断不得直接派工，紧急情况除外。[来源：DOC-F-客户服务响应时限规定.pdf · 第2页][来源：DOC-F-客户服务响应时限规定.pdf · 第4页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1437
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2260.7
+      },
+      "index": 20
+    },
+    {
+      "question_id": "RAGU-021",
+      "question": "客户投诉超时未闭环会升级到哪？服务响应及时率是怎么算的？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-F"
+      ],
+      "gold_answer": "5 个工作日未闭环自动升级至质量管理部；及时率 = 按时响应请求数 ÷ 应响应请求总数。",
+      "gold_pages": [
+        "DOC-F:p3",
+        "DOC-F:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 38.793
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 26.314
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 12.602
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 11.553
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 9.082
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 3.527
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 3.259
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 2.515
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-F:p3",
+          "DOC-F:p4"
+        ],
+        "top_pages": [
+          "DOC-F:p3",
+          "DOC-F:p4",
+          "DOC-F:p2",
+          "DOC-F:p1",
+          "DOC-E:p3",
+          "DOC-E:p1",
+          "DOC-E:p4",
+          "DOC-E:p2"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-F:p3",
+          "DOC-F:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "客户投诉在 5 个工作日内未闭环的，自动升级至质量管理部。[来源：DOC-F-客户服务响应时限规定.pdf · 第4页]\n\n服务响应及时率按月度统计，计算公式为：按时响应请求数 ÷ 应响应请求总数。[来源：DOC-F-客户服务响应时限规定.pdf · 第3页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-F-客户服务响应时限规定.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1437
+      },
+      "latency": {
+        "retrieval_ms": 1.4,
+        "answer_ms": 1947.3
+      },
+      "index": 21
+    },
+    {
+      "question_id": "RAGU-022",
+      "question": "员工每年有几天年假？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "medium",
+      "document_ids": [],
+      "gold_answer": "两份文档都没有规定年假。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 6.569
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 5.23
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 4.158
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 2.224
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 1.782
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 1.696
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 1.663
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 1.515
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-F:p1",
+          "DOC-E:p4",
+          "DOC-E:p2",
+          "DOC-F:p3",
+          "DOC-E:p3",
+          "DOC-E:p1",
+          "DOC-F:p2",
+          "DOC-F:p4"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 6.569,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及员工年假的相关规定。[来源：DOC-F-客户服务响应时限规定.pdf · 第1页][来源：DOC-E-设备维保管理制度.pdf · 第2页]",
+        "citations": [
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页",
+          "DOC-E-设备维保管理制度.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 2,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1484
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2167.7
+      },
+      "index": 22
+    },
+    {
+      "question_id": "RAGU-023",
+      "question": "一级保养和二级保养的周期分别是多少？两项规定都在文档的哪一页？",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-E"
+      ],
+      "gold_answer": "一级保养每 500 运行小时或每月一次；二级保养每 2000 运行小时或每季度一次；均在《设备维保管理制度》第 2 页。",
+      "gold_pages": [
+        "DOC-E:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 2,
+          "score": 30.563
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 1,
+          "score": 24.997
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 1,
+          "score": 13.096
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 4,
+          "score": 9.275
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 3,
+          "score": 5.282
+        },
+        {
+          "doc_id": "DOC-E",
+          "doc_name": "DOC-E-设备维保管理制度.pdf",
+          "page": 3,
+          "score": 4.134
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 4,
+          "score": 4.022
+        },
+        {
+          "doc_id": "DOC-F",
+          "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+          "page": 2,
+          "score": 3.072
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-E:p2"
+        ],
+        "top_pages": [
+          "DOC-E:p2",
+          "DOC-E:p1",
+          "DOC-F:p1",
+          "DOC-E:p4",
+          "DOC-F:p3",
+          "DOC-E:p3",
+          "DOC-F:p4",
+          "DOC-F:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-E:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "一级保养为每 500 运行小时或每月一次，以先到者为准，由操作工执行、班组长确认；二级保养为每 2000 运行小时或每季度一次，由设备部维修班组执行，须停机进行。两项规定均在文档的第 2 页。[来源：DOC-E-设备维保管理制度.pdf · 第2页]",
+        "citations": [
+          "DOC-E-设备维保管理制度.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-E-设备维保管理制度.pdf 第2页",
+          "DOC-E-设备维保管理制度.pdf 第1页",
+          "DOC-F-客户服务响应时限规定.pdf 第1页",
+          "DOC-E-设备维保管理制度.pdf 第4页",
+          "DOC-F-客户服务响应时限规定.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": false,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1410
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 2381.8
+      },
+      "index": 23
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "run_id": "20261109_161158_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T16:11:58",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 60,
+      "used": 23,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 0.8333,
+    "task_total": 6,
+    "task_passed": 5,
+    "tool_call_success_rate": 0.9333333333333333,
+    "tool_call_total": 15,
+    "tool_success_total": 14,
+    "avg_tool_calls": 2.5,
+    "avg_llm_calls": 3.8333,
+    "latency_p50_ms": 9100.4,
+    "latency_p95_ms": 14970.675,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "by_type": {
+      "email_draft": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 16080.4
+      },
+      "error_handling": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 9425.9
+      },
+      "meeting_analysis": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 4.0,
+        "avg_latency_ms": 11641.5
+      },
+      "memory_recall": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 6344.1
+      },
+      "pdf_qa": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 8715.4
+      },
+      "pptx": {
+        "tasks": 1,
+        "passed": 0,
+        "success_rate": 0.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 8774.9
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 0
+    }
+  },
+  "cases": [
+    {
+      "task_id": "UA1",
+      "round": 1,
+      "label": "UA1",
+      "type": "pdf_qa",
+      "title": "设备大修周期（未暴露文档）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "数控加工设备的大修周期是**每 5 年一次**。\n\n依据：《设备维保管理制度》（DOC-E-设备维保管理制度.pdf）第 2 页。\n\n需要我把这台设备在制度里的其他维保要求（日常点检、中修、保养间隔等）也一并整理出来吗？",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 8715.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "UA2",
+      "round": 1,
+      "label": "UA2",
+      "type": "meeting_analysis",
+      "title": "大促容量评审风险（未暴露会议）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ReadFile']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 3 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "已存入会议中心（编号 mtg_70b8beaf26c8），3 条风险、3 条待办。\n\n**最严重的性能问题：订单创建接口在高并发下响应时间急剧劣化。**\n\n- 压力测试中，QPS 到 3200 时响应时间从 **180 毫秒劣化到 2.6 秒**，是保障目标（500 毫秒）的 **5 倍以上**，劣化幅度约 14 倍。\n- 这是本次唯一被评为 high 的风险，因为它直接出现在大促下单主链路上：压测已经证明系统撑不住预估峰值，说明上线后很可能在大促高峰期真实发生超时、下单失败。\n- 根因是容量和接口实现两方面叠加：下单链路需要 240 台实例、当前只有 160 台；改造方向是限流 + 异步化，负责人马超，截止 5 月 30 日。\n\n其余两项中，46 万元扩容费用超预算属于成本问题，优惠券测试覆盖仅 60% 属于质量风险，影响面都不如主链路超时。",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 11641.5,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "UA3",
+      "round": 1,
+      "label": "UA3",
+      "type": "memory_recall",
+      "title": "回忆未暴露会议结论",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings', 'GetMeeting']（实际：['GetMeeting', 'ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['邮件', '字段']（要求命中任意一个）"
+        }
+      ],
+      "answer": "**结论**（海川物流 TMS 接口对接会，2026年5月15日 09:00–10:10，3号会议室，参与人：马超、彭博、蒋伟）：\n\n- **确定做法**：字段相关的结论全部通过邮件写明并固定下来，双方确认后即冻结，不再反复改动。\n- **背景原因**：客户接口文档已有两个月未更新，最新一版与线上实际返回不一致，导致字段定义反复返工。\n- **遗留待办**：由马超整理 3 个待确认字段的清单，截止 **2026年5月18日**（高优先级，目前仍未完成）。\n- **风险提示**：文档与实际返回不一致（中等风险），建议推动客户方更新接口文档。\n\n需要我查一下那 3 个字段的清单有没有更新、是否已完成，或者把这套结论整理成给海川的确认邮件草稿吗？",
+      "tool_calls": [
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "GetMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 3,
+      "latency_ms": 6344.1,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "UA4",
+      "round": 1,
+      "label": "UA4",
+      "type": "pptx",
+      "title": "6 页合规整改汇报",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": false,
+          "detail": "已调用：无（实际：['ListMeetings', 'SearchKnowledge']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": false,
+          "detail": "没有生成 .pptx"
+        }
+      ],
+      "answer": "知识库里没有 GSP 相关材料，会议中心也没有相关会议记录。我可以先生成一版通用框架，但其中的数据需要你替换。要我先按这个方向做吗？\n\n我倾向的 6 页结构：\n\n1. **封面** — GSP 合规整改进展汇报（日期/汇报人）\n2. **整改背景与监管要求** — 触发原因（飞检/换证/自查）、适用条款范围\n3. **整改进展总览** — 问题项总数、已完成/进行中/未启动的对比\n4. **重点问题及闭环情况** — 人员与培训、设施设备、计算机系统、购销存记录、温湿度管控等分项\n5. **未完成事项与风险** — 卡点、影响条款、风险等级\n6. **下一步计划** — 时间表、责任人、验收方式\n\n如果你能给我下面任意几项，我就把内容填实：整改问题清单或台账、上次检查的缺陷项、当前完成率、关键节点日期、汇报对象（药监局/公司管理层）。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 3,
+      "latency_ms": 8774.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "UA5",
+      "round": 1,
+      "label": "UA5",
+      "type": "email_draft",
+      "title": "未暴露会议的提醒邮件",
+      "success": true,
+      "checks": [
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "会议已分析完毕，邮件草稿也已生成。**目前尚未发送**，需要你在草稿卡片上确认。\n\n**会议要点**（康泰医药 GSP 合规检查准备会，2026年5月12日 14:00-15:20，质量部会议室，参与人：沈悦、罗敏、徐婷）\n- GSP 现场检查预计 6月2日进场，42 项检查要点已完成 31 项\n- 主要不符合项：冷链库房温度记录仍靠纸笔登记，尚未实现自动上传\n- 温控系统改造报价 18 万元，采购约需三周，赶不上检查；会议决定改造照常推进，接受在检查后完成，并同步进行电子化补录\n\n**两条待办**\n1. 完成冷链温控记录电子化补录流程，负责人是徐婷，截止 5月20日（高风险关联）\n2. 整理 42 项要点台账并标注风险项，负责人是沈悦，截止 5月26日\n\n**邮件草稿**：收件人 [REDACTED]，主题「提醒：康泰医药 GSP 合规检查准备会（5月12日 14:00）」，内容涵盖会议信息、两条风险、两条待办及推进要求。落款为“行政部”；如果这封邮件应由质量部或以你个人名义发出，请告诉我要改成什么。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 16080.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "UA6",
+      "round": 1,
+      "label": "UA6",
+      "type": "error_handling",
+      "title": "文件不存在时如实说明",
+      "success": true,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['不存在', '没有找到']（要求命中任意一个）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 0 场（期望 0）"
+        }
+      ],
+      "answer": "没有找到 `会议记录/MEET-U99.txt`，会议中心里也没有编号或名称含「U99」的记录。\n\n工作目录 `会议记录/` 下现有 47 份记录，编号规律是：\n- `MEET-001` ~ `MEET-033`（001–033，含 001/002/003…连续编号）\n- `MEET-U01` ~ `MEET-U14`\n\n可能是记错了编号（比如想找 `MEET-U09` 或 `MEET-099` 但不存在）。请确认一下具体是哪一份：\n\n- 如果是 `MEET-U01`~`MEET-U14` 中的某一份，直接告诉我编号，我来分析风险；\n- 如果是别的路径下的文件，给我完整文件名；\n- 如果这份记录还没上传，把内容贴给我或放到工作目录，我同样可以分析。",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": false,
+          "error": "Error: file not found: 会议记录/MEET-U99.txt"
+        },
+        {
+          "tool": "ToolSearch",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Glob",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Glob",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 5,
+      "tool_calls_ok": 4,
+      "llm_calls": 5,
+      "latency_ms": 9425.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

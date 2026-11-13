@@ -1,0 +1,1964 @@
+{
+  "meta": {
+    "run_id": "20261109_160503_rag_live",
+    "suite": "rag",
+    "mode": "live",
+    "created_at": "2026-11-09T16:05:03",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 25,
+      "used": 14,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-A -> doc_f11d1092565b (6页)",
+      "DOC-B -> doc_ce9f00a45875 (5页)",
+      "DOC-C -> doc_df7db0e53566 (5页)",
+      "DOC-D -> doc_9428b73fafff (4页)"
+    ]
+  },
+  "aggregates": {
+    "retrieval": {
+      "answerable_questions": 14,
+      "negative_questions": 0,
+      "recall@1": 0.5714,
+      "hit@1": 0.7143,
+      "recall@3": 0.9643,
+      "hit@3": 1.0,
+      "recall@5": 0.9643,
+      "hit@5": 1.0,
+      "mrr@5": 0.8333,
+      "full_evidence_rate@5": 0.9286,
+      "multi_evidence_questions": 4,
+      "negative_retrieved_any_rate": 0.0
+    },
+    "answer": {
+      "executed": 14,
+      "answerable_executed": 14,
+      "negative_executed": 0,
+      "answer_accuracy": 0.9286,
+      "abstention_accuracy": null,
+      "citation_precision": 0.8929,
+      "citation_recall": 0.9643,
+      "strict_citation_accuracy": 1.0,
+      "groundedness": 0.9501,
+      "no_citation_responses": 0,
+      "degraded_responses": 0,
+      "end_to_end_success": 0.9286
+    },
+    "by_type": {
+      "cross_document": {
+        "count": 1,
+        "answerable_count": 1,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "long_distractor": {
+        "count": 2,
+        "answerable_count": 2,
+        "recall@5": 1.0,
+        "mrr@5": 0.75,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "count": 1,
+        "answerable_count": 1,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 0.8333,
+        "mrr@5": 1.0,
+        "answer_accuracy": 0.6667,
+        "abstention_accuracy": null,
+        "end_to_end": 0.6667
+      },
+      "numeric": {
+        "count": 2,
+        "answerable_count": 2,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "count": 2,
+        "answerable_count": 2,
+        "recall@5": 1.0,
+        "mrr@5": 0.4166,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "count": 3,
+        "answerable_count": 3,
+        "recall@5": 1.0,
+        "mrr@5": 0.7778,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      }
+    },
+    "latency": {
+      "retrieval_p50_ms": 2.0,
+      "retrieval_p95_ms": 3.4299999999999993,
+      "answer_p50_ms": 2494.0,
+      "answer_p95_ms": 4635.469999999999
+    }
+  },
+  "cases": [
+    {
+      "question_id": "RAG-005",
+      "question": "星海项目的总预算是多少？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "总预算 2,480 万元人民币（含税）。",
+      "gold_pages": [
+        "DOC-C:p1"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 23.322
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 19.171
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 15.937
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 13.735
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 12.323
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 6.972
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 4.994
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 3.634
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p1"
+        ],
+        "top_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-C:p5",
+          "DOC-C:p3",
+          "DOC-D:p1",
+          "DOC-A:p2",
+          "DOC-A:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p1"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目的总预算为2,480万元人民币（含税）。[来源：DOC-C-星海项目预算与交付计划.pdf · 第1页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 6276.2
+      },
+      "index": 1
+    },
+    {
+      "question_id": "RAG-006",
+      "question": "绝密级数据都有谁能看？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "仅董事会与总经理可见。",
+      "gold_pages": [
+        "DOC-D:p1"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 19.918
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 18.158
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 17.545
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 7.229
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 3.59
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 2.921
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 2.153
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 2.082
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p1"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-A:p6",
+          "DOC-C:p1",
+          "DOC-A:p3",
+          "DOC-A:p1"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.3333,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p1"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，绝密级数据仅董事会与总经理可见 [来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]；其访问权限须由总经理批准，并报董事会备案 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 1.6,
+        "answer_ms": 2543.1
+      },
+      "index": 2
+    },
+    {
+      "question_id": "RAG-008",
+      "question": "机密级数据对外发送时用什么加密算法？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "须使用 AES-256 加密，并由两名授权人员复核。",
+      "gold_pages": [
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 35.199
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 24.016
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 18.246
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 12.936
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 11.21
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 8.107
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 7.102
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 5.754
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p1",
+          "DOC-D:p2",
+          "DOC-A:p6",
+          "DOC-D:p4",
+          "DOC-A:p5",
+          "DOC-B:p1",
+          "DOC-C:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "机密级数据对外发送须使用 AES-256 加密，并由两名授权人员复核后方可发出。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 2.1,
+        "answer_ms": 2444.9
+      },
+      "index": 3
+    },
+    {
+      "question_id": "RAG-012",
+      "question": "如果样机验证因为实验室档期推后 25 天，项目上要补哪些手续？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "需提交书面偏差说明与追赶计划（延期超 15 天），且里程碑日期变更须同步更新合同附件并抄送客户项目经理。",
+      "gold_pages": [
+        "DOC-C:p4",
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 37.852
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 22.75
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 17.734
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 12.451
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 11.464
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.042
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 9.385
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 8.382
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4",
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-C:p3",
+          "DOC-D:p3",
+          "DOC-B:p4",
+          "DOC-A:p3",
+          "DOC-B:p2",
+          "DOC-B:p3",
+          "DOC-C:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 0.5,
+        "hit@3": 1.0,
+        "recall@5": 0.5,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p5"
+        ],
+        "missing_pages": [
+          "DOC-C:p4"
+        ]
+      },
+      "answer": {
+        "answer": "资料中没有直接规定“样机验证因实验室档期推后25天需要补办哪些手续”。仅能找到以下相关条款：\n\n- 样机验证依赖第三方实验室档期，最早可预约时间为2025年8月15日；风险应对措施与责任人详见项目周报。[来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]\n- M2样机验证的里程碑日期为2025年9月30日，交付物为验证报告与问题清单；每个里程碑结束后5个工作日内完成里程碑评审并归档结论。[来源：DOC-C-星海项目预算与交付计划.pdf · 第3页]\n- 对外提供的样机验证数据，须经项目负责人确认其密级后方可外发。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n- 风险等级每季度复核一次，重大风险由指导委员会专项跟进。[来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]\n\n因此，除上述“样机验证数据外发须经项目负责人确认密级”“里程碑评审与归档”及“重大风险由指导委员会专项跟进”等条款外，关于推后25天具体应补的变更审批、计划调整或延期申请手续，资料中未提及。",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.7778,
+          "total": 9,
+          "unsupported": [
+            "25天"
+          ]
+        },
+        "citation_precision": 0.3333,
+        "citation_recall": 0.5,
+        "citation_count": 3,
+        "answer_correct": false,
+        "missing_keys": [
+          "书面偏差说明",
+          "合同附件"
+        ],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": false,
+        "executed": true,
+        "context_chars": 1450
+      },
+      "latency": {
+        "retrieval_ms": 1.9,
+        "answer_ms": 3518.6
+      },
+      "index": 4
+    },
+    {
+      "question_id": "RAG-013",
+      "question": "把机密级数据发给外部合作方，从申请到发出要经过哪些控制点？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "访问权限须部门负责人与信息安全负责人双签、有效期最长 12 个月；外发须 AES-256 加密并由两名授权人员复核。",
+      "gold_pages": [
+        "DOC-D:p2",
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 32.533
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 27.754
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 21.018
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 17.126
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 15.667
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 14.598
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 11.445
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 10.865
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p2",
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-A:p1",
+          "DOC-D:p4",
+          "DOC-A:p3",
+          "DOC-A:p5",
+          "DOC-A:p6"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p2",
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "要把机密级数据发给外部合作方，从申请到发出主要涉及以下控制点：\n\n1. **访问权限申请**：机密级数据的访问权限须由部门负责人与信息安全负责人双签；权限有效期最长 12 个月，到期由系统自动回收，续期须重新申请。[来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]\n\n2. **确认密级**：对外提供的样机验证数据，须经项目负责人确认其密级后方可外发。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n\n3. **加密外发**：机密级数据外发须使用 AES-256 加密，并由两名授权人员复核后方可发出。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n\n4. **禁止个人渠道**：禁止使用个人邮箱或个人网盘传输内部级及以上数据。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n\n此外，相关信息安全审计每季度开展一次，覆盖权限与外发记录；审计发现的问题须在 15 个工作日内整改闭环。[来源：DOC-D-信息安全与数据分级规定.pdf · 第4页]\n\n关于\"向外部合作方发送机密级数据\"是否需要额外的专门审批流程或合同约束，资料中未提及。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 7,
+          "unsupported": []
+        },
+        "citation_precision": 0.6667,
+        "citation_recall": 1.0,
+        "citation_count": 3,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1435
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 3467.9
+      },
+      "index": 5
+    },
+    {
+      "question_id": "RAG-014",
+      "question": "星海项目预留的预备费，大约占总预算的多少？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "预备费 200 万元，约占总预算 2,480 万元的 8.06%。",
+      "gold_pages": [
+        "DOC-C:p1",
+        "DOC-C:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 40.789
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 28.794
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 20.821
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 19.782
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 16.364
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 11.917
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.207
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 6.451
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-C:p5",
+          "DOC-C:p4",
+          "DOC-C:p3",
+          "DOC-D:p1",
+          "DOC-A:p2",
+          "DOC-D:p3"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目的预备费为200万元，项目总预算为2,480万元，预备费约占总预算的8.1%。\n\n（说明：资料中预备费与总预算分别见于第2页和第1页，但两处均未直接给出预备费占总支出的比例，上述比例为依据所给金额计算所得。）[来源：DOC-C-星海项目预算与交付计划.pdf · 第2页][来源：DOC-C-星海项目预算与交付计划.pdf · 第1页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.8571,
+          "total": 7,
+          "unsupported": [
+            "8.1%"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 2234.7
+      },
+      "index": 6
+    },
+    {
+      "question_id": "RAG-020",
+      "question": "预算变更幅度 4.9%，由谁签批就可以了？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "不超过 5% 的变更由项目经理与财务经理会签即可，无须上指导委员会。",
+      "gold_pages": [
+        "DOC-C:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 39.211
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 17.302
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 8.144
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 7.424
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 6.668
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 6.344
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 6.058
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 5.612
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4"
+        ],
+        "top_pages": [
+          "DOC-C:p4",
+          "DOC-C:p2",
+          "DOC-A:p5",
+          "DOC-C:p3",
+          "DOC-A:p6",
+          "DOC-C:p5",
+          "DOC-A:p2",
+          "DOC-C:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "预算变更幅度 4.9%，未超过 5%，由项目经理与财务经理会签即可。[来源：DOC-C-星海项目预算与交付计划.pdf · 第4页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.6667,
+          "total": 3,
+          "unsupported": [
+            "4.9%"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1445
+      },
+      "latency": {
+        "retrieval_ms": 2.8,
+        "answer_ms": 2392.3
+      },
+      "index": 7
+    },
+    {
+      "question_id": "RAG-024",
+      "question": "星海项目里工业相机的采购交期是多少周？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "16 周，且为单一供应商，存在断供风险。",
+      "gold_pages": [
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 35.472
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 26.91
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 18.116
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 16.261
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 15.454
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 9.106
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.41
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 7.903
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-C:p4",
+          "DOC-C:p3",
+          "DOC-A:p4",
+          "DOC-A:p2",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目中工业相机的采购交期为16周。[来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 2.8,
+        "answer_ms": 2170.7
+      },
+      "index": 8
+    },
+    {
+      "question_id": "RAG-025",
+      "question": "实施服务这一项预算科目是多少钱？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "实施服务 380 万元。",
+      "gold_pages": [
+        "DOC-C:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 29.626
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 19.539
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 13.636
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 9.178
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 5.552
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 5.456
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 5.339
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 4.885
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p2"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p5",
+          "DOC-C:p4",
+          "DOC-C:p1",
+          "DOC-D:p1",
+          "DOC-B:p1",
+          "DOC-C:p3",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "实施服务预算科目为 380 万元，含现场部署、联调与培训。[来源：DOC-C-星海项目预算与交付计划.pdf · 第2页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1355
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 1998.7
+      },
+      "index": 9
+    },
+    {
+      "question_id": "RAG-028",
+      "question": "要把星海项目的样机验证数据发给第三方实验室，按信息安全规定要注意什么？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-C",
+        "DOC-D"
+      ],
+      "gold_answer": "对外提供的样机验证数据须经项目负责人确认密级；属机密级时须 AES-256 加密并由两名授权人员复核，绝密级不得离开内网。",
+      "gold_pages": [
+        "DOC-D:p3",
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 43.86
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 41.465
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 30.942
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 29.24
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 23.928
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 23.689
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 15.628
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.034
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3",
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-D:p3",
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-D:p2",
+          "DOC-C:p3",
+          "DOC-B:p2",
+          "DOC-C:p2"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3",
+          "DOC-C:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "要把星海项目的样机验证数据发给第三方实验室，按信息安全规定，需要注意以下事项：\n\n1. **先确认数据密级**：对外提供的样机验证数据，须经项目负责人确认其密级后方可外发[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n\n2. **按密级遵守对应的外发要求**：\n   - 若属于**绝密级**：不得以任何形式离开公司内网，包括邮件、即时通讯与移动存储，即不能外发给第三方实验室[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n   - 若属于**机密级**：外发须使用 AES-256 加密，并由两名授权人员复核后方可发出[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n   - 若属于**内部级**：外发须在系统中留痕，留痕记录保存 90 天[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n\n3. **禁止使用个人渠道**：禁止使用个人邮箱或个人网盘传输内部级及以上数据[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n\n另外，项目风险资料提到样机验证依赖第三方实验室档期，最早可预约时间为 2025 年 8 月 15 日[来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]。\n\n至于该样机验证数据具体属于哪一密级、由谁担任项目负责人等，资料中未提及。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 8,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1346
+      },
+      "latency": {
+        "retrieval_ms": 2.1,
+        "answer_ms": 3752.0
+      },
+      "index": 10
+    },
+    {
+      "question_id": "RAG-040",
+      "question": "项目花钱超出计划一定比例时，需要哪个层级的机构点头？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "预算变更超过 5% 须提交项目指导委员会批准。",
+      "gold_pages": [
+        "DOC-C:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.259
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 12.341
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 11.52
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 11.116
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 11.096
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.818
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 9.754
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 9.331
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-C:p5",
+          "DOC-A:p3",
+          "DOC-C:p1",
+          "DOC-B:p2",
+          "DOC-C:p3",
+          "DOC-D:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "预算变更幅度超过 5% 的，须提交项目指导委员会批准。[来源：DOC-C-星海项目预算与交付计划.pdf · 第4页]\n\n（补充：预算变更幅度不超过 5% 的，由项目经理与财务经理会签即可。[来源：DOC-C-星海项目预算与交付计划.pdf · 第4页]）",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 4,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1430
+      },
+      "latency": {
+        "retrieval_ms": 2.4,
+        "answer_ms": 2628.8
+      },
+      "index": 11
+    },
+    {
+      "question_id": "RAG-042",
+      "question": "公司里最敏感的那类资料，能拷到 U 盘带出去吗？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "绝密级数据不得以任何形式离开公司内网，包括移动存储。",
+      "gold_pages": [
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 8.975
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 5.981
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 4.982
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 4.721
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 4.27
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 3.862
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 3.854
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 3.776
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-B:p4",
+          "DOC-C:p1",
+          "DOC-C:p4",
+          "DOC-C:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.3333,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，公司对数据分为绝密级、机密级、内部级等不同级别，其中**绝密级数据不得以任何形式离开公司内网，包括邮件、即时通讯与移动存储** [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。也就是说，最敏感的那类资料（绝密级）不能拷贝到 U 盘带出去。\n\n需要说明的是，资料中未提及“U盘”这一具体措辞，但其明确将“移动存储”列为绝密级数据禁止离开内网的途径之一 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1535
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 2735.8
+      },
+      "index": 12
+    },
+    {
+      "question_id": "RAG-044",
+      "question": "星海项目 2025 年 1 月启动，总预算 2,480 万元，研发人力 1,120 万元、硬件采购 780 万元、实施服务 380 万元、预备费 200 万元；M1 设计冻结、M2 样机验证都排在 2025 年。请问小批量交付（M3）的死线是哪一天？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "M3 小批量交付为 2026 年 2 月 28 日。",
+      "gold_pages": [
+        "DOC-C:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 126.205
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 81.672
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 72.892
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 57.815
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 52.92
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 50.681
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 31.576
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 30.631
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p3"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p3",
+          "DOC-C:p1",
+          "DOC-C:p5",
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-C:p4",
+          "DOC-A:p5"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目小批量交付（M3）的死线是 2026 年 2 月 28 日，需交付 3 台设备并完成客户验收 [来源：DOC-C-星海项目预算与交付计划.pdf · 第3页]。",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1507
+      },
+      "latency": {
+        "retrieval_ms": 4.6,
+        "answer_ms": 2283.6
+      },
+      "index": 13
+    },
+    {
+      "question_id": "RAG-045",
+      "question": "按信息安全规定，数据分四级、机密级要双签、绝密级要总经理批准并报董事会备案，外部传输还有加密与留痕要求。那么员工拿到的数据访问权限到期后会自动回收吗？有效期最长多久？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "会自动回收，权限有效期最长 12 个月，续期须重新申请。",
+      "gold_pages": [
+        "DOC-D:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 152.379
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 93.043
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 88.367
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 52.913
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 39.576
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 38.824
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 26.691
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 25.725
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p2"
+        ],
+        "top_pages": [
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-D:p3",
+          "DOC-D:p4",
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-A:p1",
+          "DOC-A:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "会自动回收，有效期最长 12 个月。规定明确“权限有效期最长 12 个月，到期由系统自动回收，续期须重新申请” [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 2.8,
+        "answer_ms": 2218.3
+      },
+      "index": 14
+    }
+  ]
+}

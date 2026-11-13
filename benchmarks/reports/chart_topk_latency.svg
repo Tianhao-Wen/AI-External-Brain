@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img">
+<rect width="1000" height="520" fill="#ffffff"/>
+<text x="500.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="20" fill="#24292f" font-weight="700" text-anchor="middle">RAG Top-K 消融：端到端回答延迟</text>
+<text x="500.0" y="58.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#5b6470" font-weight="400" text-anchor="middle">BM25 检索耗时与 K 无关（评分需遍历全部分块）；延迟差异来自 prompt 长度</text>
+<line x1="70" y1="392.0" x2="970" y2="392.0" stroke="#8b949e" stroke-width="1"/>
+<text x="60.0" y="396.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">0.00</text>
+<line x1="70" y1="317.0" x2="970" y2="317.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="321.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">878.77</text>
+<line x1="70" y1="242.0" x2="970" y2="242.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="246.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">1757.54</text>
+<line x1="70" y1="167.0" x2="970" y2="167.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="171.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">2636.32</text>
+<line x1="70" y1="92.0" x2="970" y2="92.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="96.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">3515.09</text>
+<rect x="101.5" y="222.1" width="78.0" height="169.9" rx="3" fill="#2f6feb"/>
+<text x="140.5" y="216.1" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">1991.05</text>
+<rect x="185.5" y="154.8" width="78.0" height="237.2" rx="3" fill="#e8710a"/>
+<text x="224.5" y="148.8" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">2779.40</text>
+<text x="182.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=1</text>
+<rect x="326.5" y="211.7" width="78.0" height="180.3" rx="3" fill="#2f6feb"/>
+<text x="365.5" y="205.7" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">2112.85</text>
+<rect x="410.5" y="114.8" width="78.0" height="277.2" rx="3" fill="#e8710a"/>
+<text x="449.5" y="108.8" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">3247.38</text>
+<text x="407.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=3</text>
+<rect x="551.5" y="213.4" width="78.0" height="178.6" rx="3" fill="#2f6feb"/>
+<text x="590.5" y="207.4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">2093.20</text>
+<rect x="635.5" y="105.8" width="78.0" height="286.2" rx="3" fill="#e8710a"/>
+<text x="674.5" y="99.8" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">3352.83</text>
+<text x="632.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=5</text>
+<rect x="776.5" y="214.6" width="78.0" height="177.4" rx="3" fill="#2f6feb"/>
+<text x="815.5" y="208.6" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">2078.65</text>
+<rect x="860.5" y="92.0" width="78.0" height="300.0" rx="3" fill="#e8710a"/>
+<text x="899.5" y="86.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">3515.09</text>
+<text x="857.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=10</text>
+<rect x="384.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#2f6feb"/>
+<text x="404.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">P50 毫秒</text>
+<rect x="500.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#e8710a"/>
+<text x="520.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">P95 毫秒</text>
+</svg>

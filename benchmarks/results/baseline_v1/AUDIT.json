@@ -1,0 +1,113 @@
+{
+  "snapshot_dir": "<repo>\\benchmarks\\results\\baseline_v1",
+  "rag": {
+    "denominators": {
+      "questions": 50,
+      "answerable": 44,
+      "negative": 6,
+      "answered_executed": 50
+    },
+    "recomputed": {
+      "answer_accuracy": 0.9545,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.8902,
+      "recall@5": 0.9583,
+      "hit@5": 1.0,
+      "end_to_end": 0.96
+    },
+    "stored": {
+      "recall@5": 0.9583,
+      "hit@5": 1.0,
+      "answer_accuracy": 0.9545,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.8902,
+      "end_to_end_success": 0.96
+    },
+    "mismatches": []
+  },
+  "meeting": {
+    "denominators": {
+      "meetings": 33,
+      "meetings_with_zero_gold_risk": 11,
+      "meetings_in_no_risk_category": 10,
+      "no_risk_false_positive_meetings": 5,
+      "gold_risks": 40,
+      "pred_risks": 60
+    },
+    "recomputed": {
+      "precision": 0.65,
+      "recall": 0.975,
+      "f1": 0.78,
+      "gold_total": 40,
+      "pred_total": 60
+    },
+    "no_risk_false_positive_rate_on_zero_gold": 0.4545,
+    "no_risk_false_positive_rate_on_category": 0.4,
+    "one_to_one_invariant_holds": true,
+    "stored": {
+      "gold_total": 40,
+      "pred_total": 60,
+      "tp": 39,
+      "fp": 21,
+      "fn": 1,
+      "precision": 0.65,
+      "recall": 0.975,
+      "f1": 0.78,
+      "high_risk_total": 19,
+      "high_risk_missed": 0,
+      "high_risk_miss_rate": 0.0,
+      "no_risk_false_positive_meetings": 5,
+      "no_risk_false_positive_rate": 0.45454545454545453,
+      "severity_accuracy": 0.6061,
+      "severity_confusion": {
+        "high": {
+          "high": 16,
+          "medium": 3,
+          "low": 0
+        },
+        "medium": {
+          "high": 8,
+          "medium": 9,
+          "low": 0
+        },
+        "low": {
+          "high": 0,
+          "medium": 3,
+          "low": 0
+        }
+      },
+      "evidence_grounded_rate": 1.0,
+      "evidence_relevant_rate": 0.9545,
+      "type_accuracy": 0.7197,
+      "exact_meeting_rate": 0.5757575757575758
+    },
+    "mismatches": []
+  },
+  "agent": {
+    "denominators": {
+      "executions": 39,
+      "unique_tasks": 25,
+      "repeated_tasks": 7,
+      "tool_calls": 88,
+      "pptx_executions": 5
+    },
+    "recomputed": {
+      "run_level_success": 0.8974,
+      "task_level_first_round": 0.88,
+      "task_level_all_rounds": 0.84,
+      "tool_call_success": 0.9659
+    },
+    "pptx_run_level_success": 0.6,
+    "failed_labels": [
+      "A2",
+      "A4",
+      "F1#3",
+      "F3"
+    ],
+    "stored": {
+      "task_success_rate": 0.8974,
+      "tool_call_success_rate": 0.9659090909090909
+    }
+  },
+  "problems": []
+}

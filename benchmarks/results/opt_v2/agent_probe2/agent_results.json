@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "run_id": "20261109_162952_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T16:29:53",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 12,
+      "used": 4,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 0.5,
+    "task_total": 2,
+    "task_passed": 1,
+    "tool_call_success_rate": 1.0,
+    "tool_call_total": 1,
+    "tool_success_total": 1,
+    "avg_tool_calls": 0.5,
+    "avg_llm_calls": 2.0,
+    "latency_p50_ms": 6195.3,
+    "latency_p95_ms": 9160.08,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "by_type": {
+      "pdf_qa": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 9489.5
+      },
+      "pdf_qa_negative": {
+        "tasks": 1,
+        "passed": 0,
+        "success_rate": 0.0,
+        "avg_llm_calls": 1.0,
+        "avg_latency_ms": 2901.1
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 0
+    }
+  },
+  "cases": [
+    {
+      "task_id": "A2",
+      "round": 1,
+      "label": "A2",
+      "type": "pdf_qa",
+      "title": "供应商评分权重",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "质量这一项占 **40 分**（满分 100）。\n\n评分权重为：质量 40、交期 30、成本 20、服务 10。\n来源：DOC-B-供应商质量管理规范.pdf，第 3 页。\n\n需要说明的是，文档中没有写质量项 40 分的具体扣分细则和评定标准。如果你需要这部分内容，我可以再针对“质量评分细则”检索一次。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 9489.5,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A4",
+      "round": 1,
+      "label": "A4",
+      "type": "pdf_qa_negative",
+      "title": "知识库里没有的信息",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": false,
+          "detail": "已调用：无（实际：无）"
+        },
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有', '无法']（要求命中任意一个）"
+        },
+        {
+          "kind": "answer_not_contains",
+          "ok": true,
+          "detail": "出现了不该有的内容：[]"
+        }
+      ],
+      "answer": "我没有找到你提到的公司信息，所以无法回答股票代码是多少。\n\n如果你能告诉我公司名称，我可以帮你查。另外，如果公司相关资料已上传到知识库，我可以先检索一下。",
+      "tool_calls": [],
+      "tool_call_count": 0,
+      "tool_calls_ok": 0,
+      "llm_calls": 1,
+      "latency_ms": 2901.1,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

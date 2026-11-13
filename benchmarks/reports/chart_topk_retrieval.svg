@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img">
+<rect width="1000" height="520" fill="#ffffff"/>
+<text x="500.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="20" fill="#24292f" font-weight="700" text-anchor="middle">RAG Top-K 消融：检索层召回（50 题，DOC-A~DOC-D）</text>
+<text x="500.0" y="58.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#5b6470" font-weight="400" text-anchor="middle">Recall@K=Top-K 覆盖标准证据页的比例；全证据率=Top-K 覆盖全部证据页的题目比例</text>
+<line x1="70" y1="392.0" x2="970" y2="392.0" stroke="#8b949e" stroke-width="1"/>
+<text x="60.0" y="396.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">0.00</text>
+<line x1="70" y1="317.0" x2="970" y2="317.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="321.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">0.25</text>
+<line x1="70" y1="242.0" x2="970" y2="242.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="246.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">0.50</text>
+<line x1="70" y1="167.0" x2="970" y2="167.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="171.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">0.75</text>
+<line x1="70" y1="92.0" x2="970" y2="92.0" stroke="#d0d7de" stroke-width="1"/>
+<text x="60.0" y="96.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#5b6470" font-weight="400" text-anchor="end">1.00</text>
+<rect x="101.5" y="203.4" width="36.0" height="188.6" rx="3" fill="#2f6feb"/>
+<text x="119.5" y="197.4" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">62.9%</text>
+<rect x="143.5" y="153.3" width="36.0" height="238.7" rx="3" fill="#e8710a"/>
+<text x="161.5" y="147.3" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">79.5%</text>
+<rect x="185.5" y="248.8" width="36.0" height="143.2" rx="3" fill="#1a9c62"/>
+<text x="203.5" y="242.8" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">47.7%</text>
+<rect x="227.5" y="124.9" width="36.0" height="267.1" rx="3" fill="#8b5cf6"/>
+<text x="245.5" y="118.9" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">89.0%</text>
+<text x="182.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=1</text>
+<rect x="326.5" y="114.7" width="36.0" height="277.3" rx="3" fill="#2f6feb"/>
+<text x="344.5" y="108.7" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">92.4%</text>
+<rect x="368.5" y="92.0" width="36.0" height="300.0" rx="3" fill="#e8710a"/>
+<text x="386.5" y="86.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">100.0%</text>
+<rect x="410.5" y="139.7" width="36.0" height="252.3" rx="3" fill="#1a9c62"/>
+<text x="428.5" y="133.7" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">84.1%</text>
+<rect x="452.5" y="124.9" width="36.0" height="267.1" rx="3" fill="#8b5cf6"/>
+<text x="470.5" y="118.9" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">89.0%</text>
+<text x="407.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=3</text>
+<rect x="551.5" y="104.5" width="36.0" height="287.5" rx="3" fill="#2f6feb"/>
+<text x="569.5" y="98.5" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">95.8%</text>
+<rect x="593.5" y="92.0" width="36.0" height="300.0" rx="3" fill="#e8710a"/>
+<text x="611.5" y="86.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">100.0%</text>
+<rect x="635.5" y="119.3" width="36.0" height="272.7" rx="3" fill="#1a9c62"/>
+<text x="653.5" y="113.3" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">90.9%</text>
+<rect x="677.5" y="124.9" width="36.0" height="267.1" rx="3" fill="#8b5cf6"/>
+<text x="695.5" y="118.9" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">89.0%</text>
+<text x="632.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=5</text>
+<rect x="776.5" y="94.3" width="36.0" height="297.7" rx="3" fill="#2f6feb"/>
+<text x="794.5" y="88.3" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">99.2%</text>
+<rect x="818.5" y="92.0" width="36.0" height="300.0" rx="3" fill="#e8710a"/>
+<text x="836.5" y="86.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">100.0%</text>
+<rect x="860.5" y="98.8" width="36.0" height="293.2" rx="3" fill="#1a9c62"/>
+<text x="878.5" y="92.8" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">97.7%</text>
+<rect x="902.5" y="124.9" width="36.0" height="267.1" rx="3" fill="#8b5cf6"/>
+<text x="920.5" y="118.9" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="10" fill="#24292f" font-weight="600" text-anchor="middle">89.0%</text>
+<text x="857.5" y="412.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="11" fill="#24292f" font-weight="400" text-anchor="middle">K=10</text>
+<rect x="274.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#2f6feb"/>
+<text x="294.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">Recall@K</text>
+<rect x="414.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#e8710a"/>
+<text x="434.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">Hit@K</text>
+<rect x="518.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#1a9c62"/>
+<text x="538.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">全证据率</text>
+<rect x="610.0" y="476.0" width="14.0" height="14.0" rx="3" fill="#8b5cf6"/>
+<text x="630.0" y="487.0" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="12" fill="#24292f" font-weight="400" text-anchor="start">MRR@10</text>
+</svg>

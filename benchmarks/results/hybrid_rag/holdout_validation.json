@@ -1,0 +1,37 @@
+{
+  "documents": 120,
+  "documents_with_pdf": 120,
+  "pages_total": 600,
+  "chars_total": 94160,
+  "questions": 320,
+  "answerable": 314,
+  "negatives": 6,
+  "checked_answer_key_groups": 380,
+  "type_distribution": {
+    "numeric": 80,
+    "single_page": 24,
+    "product_code": 60,
+    "multi_page": 60,
+    "negative": 6,
+    "paraphrase": 36,
+    "long_distractor": 18,
+    "conflict": 30,
+    "cross_document": 6
+  },
+  "split_distribution": {
+    "dev": 163,
+    "validation": 51,
+    "test": 106
+  },
+  "difficulty_distribution": {
+    "easy": 80,
+    "medium": 144,
+    "hard": 96
+  },
+  "duplicate_document_groups": [],
+  "missing_pdf": [],
+  "errors": [],
+  "key_not_on_gold_page": [],
+  "gold_page_mismatch": [],
+  "ok": true
+}

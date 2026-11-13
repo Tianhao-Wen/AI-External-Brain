@@ -1,0 +1,49 @@
+﻿question_id,question_type,difficulty,answerable,k,gold_pages,recall,hit,full_evidence,mrr@10,retrieved_chunks,retrieved_distinct_pages,ctx_delivered_chunks,ctx_dropped_chunks,ctx_context_chars,covered_pages,missing_pages,search_ms
+RAG-001,single_page,easy,true,3,DOC-A:p3,1.0,1.0,1.0,1.0,3,3,3,0,942,DOC-A:p3,,0.97
+RAG-001,single_page,easy,true,5,DOC-A:p3,1.0,1.0,1.0,1.0,5,5,5,0,1555,DOC-A:p3,,0.97
+RAG-001,single_page,easy,true,10,DOC-A:p3,1.0,1.0,1.0,1.0,10,10,10,0,2829,DOC-A:p3,,0.97
+RAG-006,single_page,easy,true,3,DOC-D:p1,1.0,1.0,1.0,0.3333,3,3,3,0,813,DOC-D:p1,,0.82
+RAG-006,single_page,easy,true,5,DOC-D:p1,1.0,1.0,1.0,0.3333,5,5,5,0,1493,DOC-D:p1,,0.82
+RAG-006,single_page,easy,true,10,DOC-D:p1,1.0,1.0,1.0,0.3333,10,10,10,0,3226,DOC-D:p1,,0.82
+RAG-012,multi_page,hard,true,3,DOC-C:p4 | DOC-C:p5,0.5,1.0,0.0,1.0,3,3,3,0,830,DOC-C:p5,DOC-C:p4,0.96
+RAG-012,multi_page,hard,true,5,DOC-C:p4 | DOC-C:p5,0.5,1.0,0.0,1.0,5,5,5,0,1450,DOC-C:p5,DOC-C:p4,0.96
+RAG-012,multi_page,hard,true,10,DOC-C:p4 | DOC-C:p5,1.0,1.0,1.0,1.0,10,10,10,0,2893,DOC-C:p4 | DOC-C:p5,,0.96
+RAG-013,multi_page,medium,true,3,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,3,3,3,0,813,DOC-D:p2 | DOC-D:p3,,0.98
+RAG-013,multi_page,medium,true,5,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,5,5,5,0,1435,DOC-D:p2 | DOC-D:p3,,0.98
+RAG-013,multi_page,medium,true,10,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,10,10,10,0,2963,DOC-D:p2 | DOC-D:p3,,0.98
+RAG-017,multi_condition,hard,true,3,DOC-B:p3,1.0,1.0,1.0,0.5,3,3,3,0,850,DOC-B:p3,,0.79
+RAG-017,multi_condition,hard,true,5,DOC-B:p3,1.0,1.0,1.0,0.5,5,5,5,0,1383,DOC-B:p3,,0.79
+RAG-017,multi_condition,hard,true,10,DOC-B:p3,1.0,1.0,1.0,0.5,10,10,10,0,3094,DOC-B:p3,,0.79
+RAG-018,multi_condition,hard,true,3,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,3,3,3,0,888,DOC-B:p3 | DOC-B:p5,,0.73
+RAG-018,multi_condition,hard,true,5,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,5,5,5,0,1472,DOC-B:p3 | DOC-B:p5,,0.73
+RAG-018,multi_condition,hard,true,10,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,10,10,10,0,3046,DOC-B:p3 | DOC-B:p5,,0.73
+RAG-021,numeric,easy,true,3,DOC-B:p2,1.0,1.0,1.0,1.0,3,3,3,0,858,DOC-B:p2,,0.78
+RAG-021,numeric,easy,true,5,DOC-B:p2,1.0,1.0,1.0,1.0,5,5,5,0,1502,DOC-B:p2,,0.78
+RAG-021,numeric,easy,true,10,DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3174,DOC-B:p2,,0.78
+RAG-027,cross_document,hard,true,3,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,0.6667,1.0,0.0,1.0,3,3,3,0,1041,DOC-A:p2 | DOC-B:p2,DOC-A:p6,0.78
+RAG-027,cross_document,hard,true,5,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,0.6667,1.0,0.0,1.0,5,5,5,0,1651,DOC-A:p2 | DOC-B:p2,DOC-A:p6,0.78
+RAG-027,cross_document,hard,true,10,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3231,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,,0.78
+RAG-029,cross_document,medium,true,3,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,0.6667,1.0,0.0,1.0,3,3,3,0,916,DOC-D:p1 | DOC-D:p4,DOC-A:p6,0.61
+RAG-029,cross_document,medium,true,5,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,0.6667,1.0,0.0,1.0,5,5,5,0,1435,DOC-D:p1 | DOC-D:p4,DOC-A:p6,0.61
+RAG-029,cross_document,medium,true,10,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,1.0,1.0,1.0,1.0,10,10,10,0,3137,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,,0.61
+RAG-031,cross_document,hard,true,3,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.3333,1.0,0.0,0.5,3,3,3,0,867,DOC-D:p1,DOC-A:p6 | DOC-D:p3,0.59
+RAG-031,cross_document,hard,true,5,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.3333,1.0,0.0,0.5,5,5,5,0,1431,DOC-D:p1,DOC-A:p6 | DOC-D:p3,0.59
+RAG-031,cross_document,hard,true,10,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.6667,1.0,0.0,0.5,10,10,10,0,2853,DOC-D:p1 | DOC-D:p3,DOC-A:p6,0.59
+RAG-032,negative,medium,false,3,,,,,,3,3,3,0,778,,,0.46
+RAG-032,negative,medium,false,5,,,,,,5,5,5,0,1493,,,0.46
+RAG-032,negative,medium,false,10,,,,,,10,10,10,0,3097,,,0.46
+RAG-033,negative,medium,false,3,,,,,,3,3,3,0,847,,,0.47
+RAG-033,negative,medium,false,5,,,,,,5,5,5,0,1627,,,0.47
+RAG-033,negative,medium,false,10,,,,,,10,10,10,0,2924,,,0.47
+RAG-035,negative,hard,false,3,,,,,,3,3,3,0,894,,,0.45
+RAG-035,negative,hard,false,5,,,,,,5,5,5,0,1594,,,0.45
+RAG-035,negative,hard,false,10,,,,,,10,10,10,0,3009,,,0.45
+RAG-039,paraphrase,medium,true,3,DOC-B:p4,1.0,1.0,1.0,0.5,3,3,3,0,814,DOC-B:p4,,0.85
+RAG-039,paraphrase,medium,true,5,DOC-B:p4,1.0,1.0,1.0,0.5,5,5,5,0,1454,DOC-B:p4,,0.85
+RAG-039,paraphrase,medium,true,10,DOC-B:p4,1.0,1.0,1.0,0.5,10,10,10,0,2965,DOC-B:p4,,0.85
+RAG-044,long_distractor,medium,true,3,DOC-C:p3,1.0,1.0,1.0,0.5,3,3,3,0,841,DOC-C:p3,,1.25
+RAG-044,long_distractor,medium,true,5,DOC-C:p3,1.0,1.0,1.0,0.5,5,5,5,0,1507,DOC-C:p3,,1.25
+RAG-044,long_distractor,medium,true,10,DOC-C:p3,1.0,1.0,1.0,0.5,10,10,10,0,3082,DOC-C:p3,,1.25
+RAG-047,page_citation_trap,hard,true,3,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,3,3,3,0,1182,DOC-A:p2 | DOC-A:p6,,0.68
+RAG-047,page_citation_trap,hard,true,5,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,5,5,5,0,1795,DOC-A:p2 | DOC-A:p6,,0.68
+RAG-047,page_citation_trap,hard,true,10,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,10,10,10,0,3215,DOC-A:p2 | DOC-A:p6,,0.68

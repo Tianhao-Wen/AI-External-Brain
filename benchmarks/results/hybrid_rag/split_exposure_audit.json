@@ -1,0 +1,47 @@
+{
+  "splits": {
+    "dev": 163,
+    "validation": 55,
+    "test": 49
+  },
+  "files_scanned": 5,
+  "per_file_coverage": {
+    "ablation_holdout_qa_cases.csv": {},
+    "ablation_holdout_retrieval_cases.csv": {},
+    "ablation_qa_cases.csv": {
+      "dev": 56,
+      "test": 1,
+      "validation": 3
+    },
+    "ablation_qwen3_retrieval_cases.csv": {
+      "dev": 163,
+      "test": 49,
+      "validation": 55
+    },
+    "ablation_retrieval_cases.csv": {
+      "dev": 163,
+      "test": 49,
+      "validation": 55
+    }
+  },
+  "exposure": {
+    "dev": {
+      "questions": 163,
+      "questions_seen_in_any_run": 163,
+      "ratio": 1.0,
+      "exposed": true
+    },
+    "validation": {
+      "questions": 55,
+      "questions_seen_in_any_run": 55,
+      "ratio": 1.0,
+      "exposed": true
+    },
+    "test": {
+      "questions": 49,
+      "questions_seen_in_any_run": 49,
+      "ratio": 1.0,
+      "exposed": true
+    }
+  }
+}

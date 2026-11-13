@@ -1,0 +1,53 @@
+# AI 外脑 Demo 配置模板
+#
+# 用法：
+#   cp .aieb/config.yaml.example .aieb/config.yaml
+#   然后在 .aieb/config.yaml 里填写模型信息；推荐用环境变量占位符，避免把密钥写进文件。
+#
+# 配置优先级：默认值 → ~/.aieb/config.yaml → ./.aieb/config.yaml → ./.aieb/config.local.yaml
+
+providers:
+  # DeepSeek（OpenAI 兼容协议）示例
+  - name: deepseek-flash
+    protocol: openai-compat
+    base_url: https://api.deepseek.com
+    model: deepseek-chat
+    api_key: "${DEEPSEEK_API_KEY}"
+    display_name: DeepSeek
+
+  # Anthropic 官方示例（需要用哪个就取消注释，并把上面的 provider 调整到第一位）
+  # - name: anthropic-official
+  #   protocol: anthropic
+  #   base_url: https://api.anthropic.com
+  #   model: claude-sonnet-4-20250514
+  #   api_key: "${ANTHROPIC_API_KEY}"
+  #   thinking: true
+
+  # OpenAI 官方示例
+  # - name: openai-official
+  #   protocol: openai
+  #   base_url: https://api.openai.com/v1
+  #   model: gpt-4o-mini
+  #   api_key: "${OPENAI_API_KEY}"
+
+# 权限模式：default（危险操作需确认）/ acceptEdits / bypassPermissions
+permission_mode: default
+
+# 联网搜索：provider 可选 auto / tavily / duckduckgo
+# 有 TAVILY_API_KEY 时优先使用 Tavily，否则走 DuckDuckGo。
+web_search:
+  enabled: true
+  provider: auto
+  max_results: 5
+
+# 浏览器访问（默认只监听本机；绑定 0.0.0.0 必须配置 token）
+remote:
+  host: 127.0.0.1
+  port: 18888
+  # auth_token: "${AIEB_REMOTE_TOKEN}"
+
+# MCP 服务器（可选）
+# mcp_servers:
+#   - name: context7
+#     command: npx
+#     args: ["-y", "@upstash/context7-mcp"]

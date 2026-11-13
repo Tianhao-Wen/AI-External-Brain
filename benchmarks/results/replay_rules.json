@@ -1,0 +1,89 @@
+{
+  "benchmarks\\results\\baseline_v1\\meeting_dev": {
+    "source": "benchmarks\\results\\baseline_v1\\meeting_dev",
+    "meetings": 20,
+    "without_rules": {
+      "tp": 25,
+      "fp": 14,
+      "fn": 0,
+      "precision": 0.641,
+      "recall": 1.0,
+      "f1": 0.7812,
+      "no_risk_fp": 3,
+      "no_risk_total": 6,
+      "high_missed": 0,
+      "high_total": 11
+    },
+    "with_rules": {
+      "tp": 25,
+      "fp": 9,
+      "fn": 0,
+      "precision": 0.7353,
+      "recall": 1.0,
+      "f1": 0.8475,
+      "no_risk_fp": 2,
+      "no_risk_total": 6,
+      "high_missed": 0,
+      "high_total": 11
+    },
+    "tp_lost_cases": []
+  },
+  "benchmarks\\results\\baseline_v1\\meeting_test_exposed": {
+    "source": "benchmarks\\results\\baseline_v1\\meeting_test_exposed",
+    "meetings": 13,
+    "without_rules": {
+      "tp": 13,
+      "fp": 7,
+      "fn": 2,
+      "precision": 0.65,
+      "recall": 0.8667,
+      "f1": 0.7429,
+      "no_risk_fp": 1,
+      "no_risk_total": 5,
+      "high_missed": 0,
+      "high_total": 8
+    },
+    "with_rules": {
+      "tp": 13,
+      "fp": 7,
+      "fn": 2,
+      "precision": 0.65,
+      "recall": 0.8667,
+      "f1": 0.7429,
+      "no_risk_fp": 1,
+      "no_risk_total": 5,
+      "high_missed": 0,
+      "high_total": 8
+    },
+    "tp_lost_cases": []
+  },
+  "benchmarks\\results\\baseline_v1\\meeting_test_unseen": {
+    "source": "benchmarks\\results\\baseline_v1\\meeting_test_unseen",
+    "meetings": 14,
+    "without_rules": {
+      "tp": 13,
+      "fp": 9,
+      "fn": 0,
+      "precision": 0.5909,
+      "recall": 1.0,
+      "f1": 0.7429,
+      "no_risk_fp": 1,
+      "no_risk_total": 6,
+      "high_missed": 0,
+      "high_total": 5
+    },
+    "with_rules": {
+      "tp": 13,
+      "fp": 7,
+      "fn": 0,
+      "precision": 0.65,
+      "recall": 1.0,
+      "f1": 0.7879,
+      "no_risk_fp": 0,
+      "no_risk_total": 6,
+      "high_missed": 0,
+      "high_total": 5
+    },
+    "tp_lost_cases": []
+  }
+}

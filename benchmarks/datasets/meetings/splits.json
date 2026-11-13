@@ -1,0 +1,63 @@
+{
+  "rule": "按整场会议切分；按 category 分层轮转；unseen 为独立编写的新会议",
+  "splits": {
+    "dev": [
+      "MEET-001",
+      "MEET-002",
+      "MEET-003",
+      "MEET-004",
+      "MEET-007",
+      "MEET-008",
+      "MEET-009",
+      "MEET-010",
+      "MEET-011",
+      "MEET-012",
+      "MEET-016",
+      "MEET-017",
+      "MEET-018",
+      "MEET-020",
+      "MEET-023",
+      "MEET-024",
+      "MEET-027",
+      "MEET-029",
+      "MEET-031",
+      "MEET-032"
+    ],
+    "test_exposed": [
+      "MEET-005",
+      "MEET-006",
+      "MEET-013",
+      "MEET-014",
+      "MEET-015",
+      "MEET-019",
+      "MEET-021",
+      "MEET-022",
+      "MEET-025",
+      "MEET-026",
+      "MEET-028",
+      "MEET-030",
+      "MEET-033"
+    ],
+    "test_unseen": [
+      "MEET-U01",
+      "MEET-U02",
+      "MEET-U03",
+      "MEET-U04",
+      "MEET-U05",
+      "MEET-U06",
+      "MEET-U07",
+      "MEET-U08",
+      "MEET-U09",
+      "MEET-U10",
+      "MEET-U11",
+      "MEET-U12",
+      "MEET-U13",
+      "MEET-U14"
+    ]
+  },
+  "sizes": {
+    "dev": 20,
+    "test_exposed": 13,
+    "test_unseen": 14
+  }
+}

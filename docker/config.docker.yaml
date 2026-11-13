@@ -1,0 +1,39 @@
+# AI 外脑 Demo —— 容器内默认配置模板（entrypoint 在首次启动时复制到 <数据目录>/.aieb/config.yaml）
+#
+# 这个文件**不含任何密钥**：api_key 使用 ${VAR} 占位符，由运行时环境变量注入。
+# 想改配置：
+#   1) 在项目根 .env 里设置变量（docker compose 会自动注入）；或
+#   2) 把本文件复制成宿主机文件，挂载到 /data/.aieb/config.yaml 覆盖。
+
+providers:
+  - name: deepseek-flash
+    protocol: openai-compat
+    base_url: https://api.deepseek.com
+    model: deepseek-chat
+    api_key: "${DEEPSEEK_API_KEY}"
+    display_name: DeepSeek
+
+permission_mode: default
+
+# 联网搜索：容器里默认关闭（出境网络/合规不可控），需要时改 enabled: true
+web_search:
+  enabled: false
+  provider: auto
+  max_results: 5
+
+remote:
+  host: 0.0.0.0
+  port: 18888
+  # 访问 token **不要写在这里**：请用环境变量 AIEB_REMOTE_TOKEN 注入。
+  # 若确需写进配置，请确保该文件不会进入镜像或版本库。
+  # auth_token: "${AIEB_REMOTE_TOKEN}"
+  # 如果你把宿主机端口映射成非 18888，需要把浏览器实际访问的 Origin 加进来，例如：
+  # allowed_origins:
+  #   - http://localhost:8080
+  #   - http://127.0.0.1:8080
+
+# MCP 服务（可选；容器里默认不启用，避免额外网络依赖）
+# mcp_servers:
+#   - name: context7
+#     command: npx
+#     args: ["-y", "@upstash/context7-mcp"]

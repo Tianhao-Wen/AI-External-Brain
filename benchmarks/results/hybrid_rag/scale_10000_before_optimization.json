@@ -1,0 +1,137 @@
+{
+  "target_chunks": 10000,
+  "corpus": {
+    "target_chunks": 10000,
+    "documents": 100,
+    "pages_per_doc": 50,
+    "chars_per_page": 1400,
+    "estimated_chunks_per_doc": 100,
+    "chars_total": 7221831,
+    "output_dir": "<repo>\\benchmarks\\.work\\scale_corpus\\n10000",
+    "note": "实际 chunk 数由 knowledge.chunk_pages 决定，运行时以实测为准"
+  },
+  "collection": "scale_10000",
+  "mode": "hybrid",
+  "embedding_model": "BAAI/bge-small-zh-v1.5",
+  "hardware": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu_count": 32,
+    "python": "3.14.2",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB"
+  },
+  "rss_start_mb": 99.8,
+  "upload_seconds": 7.25,
+  "actual_chunks": 15000,
+  "actual_documents": 100,
+  "chars_total": 8417938,
+  "bm25_docs": 15000,
+  "upload_chunks_per_second": 2068.97,
+  "rss_after_upload_mb": 695.1,
+  "bm25_rebuild_seconds": 3.35,
+  "bm25_rebuild_chunks_per_second": 4477.61,
+  "rss_after_bm25_mb": 700.5,
+  "vector_sync_seconds": 12.22,
+  "vector_sync": {
+    "documents": 100,
+    "chunks": 15000,
+    "written": 15000,
+    "skipped": 0,
+    "embed_seconds": 0.468,
+    "upsert_seconds": 7.656,
+    "cache_hits": 15000,
+    "computed": 0,
+    "errors": [],
+    "error_count": 0
+  },
+  "vector_chunks_per_second": 1227.5,
+  "qdrant_wait_indexed": true,
+  "qdrant_info": {
+    "collection": "scale_10000",
+    "points_count": 15000,
+    "vectors_count": 0,
+    "indexed_vectors_count": 0,
+    "status": "green",
+    "dim": 512,
+    "hnsw_m": 16,
+    "url": "http://127.0.0.1:6335"
+  },
+  "rss_after_vector_mb": 967.3,
+  "rerank_load_seconds": 1.74,
+  "query_latency": {
+    "bm25": {
+      "n": 30,
+      "mean_ms": 173.36,
+      "p50_ms": 152.01,
+      "p95_ms": 304.51,
+      "max_ms": 320.55
+    },
+    "vector": {
+      "n": 30,
+      "mean_ms": 19.4,
+      "p50_ms": 16.03,
+      "p95_ms": 51.65,
+      "max_ms": 68.15
+    },
+    "hybrid": {
+      "n": 30,
+      "mean_ms": 184.19,
+      "p50_ms": 162.77,
+      "p95_ms": 278.94,
+      "max_ms": 303.25
+    },
+    "rerank": {
+      "n": 30,
+      "mean_ms": 650.63,
+      "p50_ms": 634.64,
+      "p95_ms": 725.17,
+      "max_ms": 729.1
+    },
+    "rerank_only": {
+      "n": 30,
+      "mean_ms": 474.23,
+      "p50_ms": 457.31,
+      "p95_ms": 544.55,
+      "max_ms": 589.48
+    }
+  },
+  "query_count": 30,
+  "throughput_qps": 6.49,
+  "throughput_repeats": 3,
+  "concurrency": {
+    "threads": 4,
+    "queries": 30,
+    "wall_seconds": 4.16,
+    "qps": 7.22,
+    "latency": {
+      "n": 30,
+      "mean_ms": 544.88,
+      "p50_ms": 529.65,
+      "p95_ms": 815.22,
+      "max_ms": 837.09
+    }
+  },
+  "incremental_upload_seconds": 0.06,
+  "incremental_chunks": 1,
+  "delete_seconds": 3.42,
+  "points_after_delete": 15000,
+  "vector_rebuild_seconds": 11.66,
+  "sizes": {
+    "sqlite_mb": 29.52,
+    "uploads_dir_mb": 16.67,
+    "embedding_cache_mb": 150.62,
+    "qdrant_storage_mb_total": 1667.09,
+    "qdrant_storage_mb_delta": -0.24
+  },
+  "qdrant_info_final": {
+    "collection": "scale_10000",
+    "points_count": 15000,
+    "vectors_count": 0,
+    "indexed_vectors_count": 0,
+    "status": "green",
+    "dim": 512,
+    "hnsw_m": 16,
+    "url": "http://127.0.0.1:6335"
+  },
+  "rss_final_mb": 2685.7,
+  "status": "ok"
+}

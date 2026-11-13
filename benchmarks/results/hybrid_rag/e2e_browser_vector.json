@@ -1,0 +1,178 @@
+{
+  "mode": "vector",
+  "uses_vector": true,
+  "work_dir": "<repo>\\benchmarks\\.work\\e2e_vector",
+  "qdrant_url": "http://127.0.0.1:6335",
+  "collection": "e2e_vector",
+  "steps": [
+    {
+      "step": "prepare",
+      "t": 0.13,
+      "pdf_v1": "<repo>\\benchmarks\\.work\\e2e_vector\\docs\\采购管理制度.pdf",
+      "pdf_v2": "<repo>\\benchmarks\\.work\\e2e_vector\\docs\\采购管理制度_v2.pdf",
+      "bytes": 5628
+    },
+    {
+      "step": "server_up",
+      "t": 4.24,
+      "url": "http://127.0.0.1:18995"
+    },
+    {
+      "step": "open_knowledge",
+      "t": 6.22
+    },
+    {
+      "step": "upload_v1",
+      "t": 43.45,
+      "documents": 1,
+      "detail": "采购管理制度.pdf\n5.5 KB · 3 页 · 489 字符 · 今天 20:19\n删除\n基于本文档提问\n提问\n回答会附带页码引用"
+    },
+    {
+      "step": "ask",
+      "t": 46.02,
+      "label": "单页事实",
+      "hit": [
+        "95"
+      ],
+      "citation": true,
+      "error": ""
+    },
+    {
+      "step": "ask",
+      "t": 47.22,
+      "label": "相似编号",
+      "hit": [
+        "340"
+      ],
+      "citation": true,
+      "error": ""
+    },
+    {
+      "step": "ask",
+      "t": 48.42,
+      "label": "跨页多证据",
+      "hit": [
+        "10",
+        "5"
+      ],
+      "citation": true,
+      "error": ""
+    },
+    {
+      "step": "reupload_identical",
+      "t": 56.26,
+      "documents": 1,
+      "points_before": 6,
+      "points_after": 6
+    },
+    {
+      "step": "upload_v2",
+      "t": 59.55,
+      "documents": 2,
+      "selected_v2": true,
+      "answer": "单一份合同的采购金额超过 88 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度_v2.pdf · 第1页]\n\n"
+    },
+    {
+      "step": "delete",
+      "t": 64.03,
+      "points_before": 9,
+      "points_after": 6,
+      "docs_after": {
+        "doc_74215e0812a8": 3,
+        "doc_201f51ea17e9": 3
+      },
+      "answer": "单一份合同的采购金额超过 88 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度_v2.pdf · 第1页]\n\n"
+    }
+  ],
+  "checks": {
+    "server_up": true,
+    "upload_ok": true,
+    "pages_parsed_3": true,
+    "answer_and_citation": true,
+    "similar_code_disambiguated": true,
+    "no_duplicate_vectors": true,
+    "update_reflected": true,
+    "delete_synced": true,
+    "all_passed": true
+  },
+  "answers": {
+    "单页事实": {
+      "question": "单一份合同的采购金额超过多少万元需要两人共同签批？",
+      "answer": "单一份合同的采购金额超过 95 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度.pdf · 第1页]\n\n引用来源\n采购管理制度.pdf · 第1 页\n华东智造集团 采购管理制度(V1) 第一条 单一合同审批权限 单一份合同的采购金额超过 95 万元时,须由部门负责人与财务负责人共同签批; 不超过 95 万元的,由部门负责人单独签批即可。 第二条 质保金 质保金比例为合同金额的 5%,验收合格后 30 日内退还。 第三条 项目编号规则 项目编号格式为 PRJ-年份-三位序号,例如 PRJ-2024-123。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 第 1…\n采购管理制度.pdf · 第3 页\n附件二 交付与违约 第一阶段验收应在合同签订后第 30 日完成。 若交付逾期,违约金按合同金额的 0.5%/日计算,累计封顶比例为 10%。 违约金的计算基数为合同金额,与第二条的质保金条款互不抵扣。 第 3 页 / 共 3 页…\n采购管理制度.pdf · 第2 页\n附件一 项目台账(节选) 项目 PRJ-2024-1230 的负责人为张明,预算为 340 万元。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 注意:PRJ-2024-123 与 PRJ-2024-1230 是两个不同项目,请勿混淆。 第 2 页 / 共 3 页…",
+      "cites": [],
+      "error": "",
+      "hit": [
+        "95"
+      ],
+      "has_citation": true
+    },
+    "相似编号": {
+      "question": "项目 PRJ-2024-1230 的预算是多少万元？",
+      "answer": "项目 PRJ-2024-1230 的预算是 340 万元。[来源：采购管理制度.pdf · 第2页]\n\n引用来源\n采购管理制度.pdf · 第2 页\n附件一 项目台账(节选) 项目 PRJ-2024-1230 的负责人为张明,预算为 340 万元。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 注意:PRJ-2024-123 与 PRJ-2024-1230 是两个不同项目,请勿混淆。 第 2 页 / 共 3 页…\n采购管理制度.pdf · 第1 页\n华东智造集团 采购管理制度(V1) 第一条 单一合同审批权限 单一份合同的采购金额超过 95 万元时,须由部门负责人与财务负责人共同签批; 不超过 95 万元的,由部门负责人单独签批即可。 第二条 质保金 质保金比例为合同金额的 5%,验收合格后 30 日内退还。 第三条 项目编号规则 项目编号格式为 PRJ-年份-三位序号,例如 PRJ-2024-123。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 第 1…\n采购管理制度.pdf · 第3 页\n附件二 交付与违约 第一阶段验收应在合同签订后第 30 日完成。 若交付逾期,违约金按合同金额的 0.5%/日计算,累计封顶比例为 10%。 违约金的计算基数为合同金额,与第二条的质保金条款互不抵扣。 第 3 页 / 共 3 页…",
+      "cites": [],
+      "error": "",
+      "hit": [
+        "340"
+      ],
+      "has_citation": true
+    },
+    "跨页多证据": {
+      "question": "交付逾期违约金的累计封顶比例，以及质保金比例分别是多少？",
+      "answer": "交付逾期违约金的累计封顶比例为10%[来源：采购管理制度.pdf · 第3页]；质保金比例为合同金额的5%[来源：采购管理制度.pdf · 第1页]。\n\n引用来源\n采购管理制度.pdf · 第3 页\n附件二 交付与违约 第一阶段验收应在合同签订后第 30 日完成。 若交付逾期,违约金按合同金额的 0.5%/日计算,累计封顶比例为 10%。 违约金的计算基数为合同金额,与第二条的质保金条款互不抵扣。 第 3 页 / 共 3 页…\n采购管理制度.pdf · 第1 页\n华东智造集团 采购管理制度(V1) 第一条 单一合同审批权限 单一份合同的采购金额超过 95 万元时,须由部门负责人与财务负责人共同签批; 不超过 95 万元的,由部门负责人单独签批即可。 第二条 质保金 质保金比例为合同金额的 5%,验收合格后 30 日内退还。 第三条 项目编号规则 项目编号格式为 PRJ-年份-三位序号,例如 PRJ-2024-123。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 第 1…\n采购管理制度.pdf · 第2 页\n附件一 项目台账(节选) 项目 PRJ-2024-1230 的负责人为张明,预算为 340 万元。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 注意:PRJ-2024-123 与 PRJ-2024-1230 是两个不同项目,请勿混淆。 第 2 页 / 共 3 页…",
+      "cites": [],
+      "error": "",
+      "hit": [
+        "10",
+        "5"
+      ],
+      "has_citation": true
+    }
+  },
+  "reupload": {
+    "before": {
+      "exists": true,
+      "points": 6,
+      "documents": {
+        "doc_201f51ea17e9": 3,
+        "doc_6f9091b69d1d": 3
+      }
+    },
+    "after": {
+      "exists": true,
+      "points": 6,
+      "documents": {
+        "doc_201f51ea17e9": 3,
+        "doc_6f9091b69d1d": 3
+      }
+    },
+    "documents": 1
+  },
+  "update": {
+    "documents": 2,
+    "answer": "单一份合同的采购金额超过 88 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度_v2.pdf · 第1页]\n\n引用来源\n采购管理制度_v2.pdf · 第1 页\n华东智造集团 采购管理制度(V1) 第一条 单一合同审批权限 单一份合同的采购金额超过 88 万元时,须由部门负责人与财务负责人共同签批; 不超过 88 万元的,由部门负责人单独签批即可。 第二条 质保金 质保金比例为合同金额的 5%,验收合格后 30 日内退还。 第三条 项目编号规则 项目编号格式为 PRJ-年份-三位序号,例如 PRJ-2024-123。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 第 1…\n采购管理制度_v2.pdf · 第3 页\n附件二 交付与违约 第一阶段验收应在合同签订后第 30 日完成。 若交付逾期,违约金按合同金额的 0.5%/日计算,累计封顶比例为 10%。 违约金的计算基数为合同金额,与第二条的质保金条款互不抵扣。 第 3 页 / 共 3 页…\n采购管理制度_v2.pdf · 第2 页\n附件一 项目台账(节选) 项目 PRJ-2024-1230 的负责人为张明,预算为 340 万元。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 注意:PRJ-2024-123 与 PRJ-2024-1230 是两个不同项目,请勿混淆。 第 2 页 / 共 3 页…",
+    "selected_v2": true
+  },
+  "delete": {
+    "before": {
+      "exists": true,
+      "points": 9,
+      "documents": {
+        "doc_74215e0812a8": 3,
+        "doc_201f51ea17e9": 3,
+        "doc_6f9091b69d1d": 3
+      }
+    },
+    "after": {
+      "exists": true,
+      "points": 6,
+      "documents": {
+        "doc_74215e0812a8": 3,
+        "doc_201f51ea17e9": 3
+      }
+    },
+    "answer_after_delete": "单一份合同的采购金额超过 88 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度_v2.pdf · 第1页]\n\n"
+  },
+  "console": [],
+  "server_log_tail": "AI ���� Demo ����������http://127.0.0.1:18995\n\n  AI ���� Demo: http://127.0.0.1:18995\n\n\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n<user-home>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\huggingface_hub\\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in <repo>\\benchmarks\\.work\\e2e_vector\\.aieb\\cache\\embeddings\\models. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.\nTo support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development\n  warnings.warn(message)\n<user-home>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\huggingface_hub\\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in <repo>\\benchmarks\\.work\\e2e_vector\\.aieb\\cache\\embeddings\\models\\models--Qdrant--bge-small-zh-v1.5. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.\nTo support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development\n  warnings.warn(message)\n\nFetching 5 files:  20%|����        | 1/5 [00:01<00:04,  1.15s/it]\nFetching 5 files:  60%|������������    | 3/5 [00:01<00:00,  2.95it/s]\nFetching 5 files:  80%|����������������  | 4/5 [00:20<00:00,  2.95it/s]\nFetching 5 files: 100%|��������������������| 5/5 [00:33<00:00,  8.44s/it]\nFetching 5 files: 100%|��������������������| 5/5 [00:33<00:00,  6.69s/it]\n",
+  "elapsed_seconds": 64.4
+}

@@ -1,0 +1,401 @@
+{
+  "meta": {
+    "run_id": "topk_stability",
+    "suite": "topk-full",
+    "mode": "live",
+    "created_at": "2026-11-10T11:44:31",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "2f1e30ce3ed721715ac3074cc9c846a2ec7916b9",
+      "commit_short": "2f1e30c",
+      "branch": "experiment/rag-topk-ablation",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 144,
+      "used": 144,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-A -> doc_f89a73de8f9e (6页)",
+      "DOC-B -> doc_0d968f09e251 (5页)",
+      "DOC-C -> doc_429cc182a8c3 (5页)",
+      "DOC-D -> doc_45d4d63bfd9f (4页)"
+    ]
+  },
+  "dataset": "full",
+  "split": "all",
+  "ks": [
+    3,
+    5,
+    10
+  ],
+  "repeat": 3,
+  "question_count": 16,
+  "question_ids": [
+    "RAG-001",
+    "RAG-006",
+    "RAG-012",
+    "RAG-013",
+    "RAG-017",
+    "RAG-018",
+    "RAG-021",
+    "RAG-027",
+    "RAG-029",
+    "RAG-031",
+    "RAG-032",
+    "RAG-033",
+    "RAG-035",
+    "RAG-039",
+    "RAG-044",
+    "RAG-047"
+  ],
+  "index_audit": {
+    "total_chunks": 20,
+    "total_pages_with_text": 20,
+    "chunks_per_page_max": 1,
+    "chunks_per_page_histogram": {
+      "1": 20
+    },
+    "avg_chunk_chars": 265.6,
+    "documents": {
+      "doc_0d968f09e251": {
+        "doc_name": "DOC-B-供应商质量管理规范.pdf",
+        "chunks": 5,
+        "pages": 5,
+        "chars": 1235
+      },
+      "doc_429cc182a8c3": {
+        "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+        "chunks": 5,
+        "pages": 5,
+        "chars": 1176
+      },
+      "doc_45d4d63bfd9f": {
+        "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+        "chunks": 4,
+        "pages": 4,
+        "chars": 936
+      },
+      "doc_f89a73de8f9e": {
+        "doc_name": "DOC-A-内部管理手册.pdf",
+        "chunks": 6,
+        "pages": 6,
+        "chars": 1965
+      }
+    }
+  },
+  "aggregates": {
+    "3": {
+      "executed": 48,
+      "answerable_executed": 39,
+      "negative_executed": 9,
+      "answer_accuracy": 0.7949,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 0.8333,
+      "citation_precision": 0.8077,
+      "citation_recall": 0.7949,
+      "strict_citation_accuracy": 0.9231,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9318,
+      "avg_input_tokens": 205.5625,
+      "avg_prompt_tokens": 653.25,
+      "avg_output_tokens": 127.7083,
+      "avg_cache_read_tokens": 447.6875,
+      "total_input_tokens": 9867,
+      "total_prompt_tokens": 31356,
+      "total_cache_read_tokens": 21489,
+      "avg_delivered_chunks": 3.0,
+      "avg_context_chars": 885.875,
+      "answer_p50_ms": 2140.3,
+      "answer_p95_ms": 3314.985,
+      "errors": 0,
+      "degraded": 0
+    },
+    "5": {
+      "executed": 48,
+      "answerable_executed": 39,
+      "negative_executed": 9,
+      "answer_accuracy": 0.8205,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 0.8542,
+      "citation_precision": 0.7821,
+      "citation_recall": 0.8162,
+      "strict_citation_accuracy": 0.9231,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9416,
+      "avg_input_tokens": 197.125,
+      "avg_prompt_tokens": 1060.9375,
+      "avg_output_tokens": 150.9375,
+      "avg_cache_read_tokens": 863.8125,
+      "total_input_tokens": 9462,
+      "total_prompt_tokens": 50925,
+      "total_cache_read_tokens": 41463,
+      "avg_delivered_chunks": 5.0,
+      "avg_context_chars": 1517.3125,
+      "answer_p50_ms": 2122.3999999999996,
+      "answer_p95_ms": 4187.24,
+      "errors": 0,
+      "degraded": 0
+    },
+    "10": {
+      "executed": 48,
+      "answerable_executed": 39,
+      "negative_executed": 9,
+      "answer_accuracy": 1.0,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 1.0,
+      "citation_precision": 0.8504,
+      "citation_recall": 0.906,
+      "strict_citation_accuracy": 0.9231,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9351,
+      "avg_input_tokens": 184.625,
+      "avg_prompt_tokens": 2048.5,
+      "avg_output_tokens": 143.0625,
+      "avg_cache_read_tokens": 1863.875,
+      "total_input_tokens": 8862,
+      "total_prompt_tokens": 98328,
+      "total_cache_read_tokens": 89466,
+      "avg_delivered_chunks": 10.0,
+      "avg_context_chars": 3046.125,
+      "answer_p50_ms": 2065.25,
+      "answer_p95_ms": 3829.5649999999987,
+      "errors": 0,
+      "degraded": 0
+    }
+  },
+  "by_type": {
+    "3": {
+      "cross_document": {
+        "executed": 9,
+        "answer_accuracy": 0.5556,
+        "end_to_end": 0.5556
+      },
+      "long_distractor": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 0.8333,
+        "end_to_end": 0.8333
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 0.5,
+        "end_to_end": 0.5
+      },
+      "negative": {
+        "executed": 9,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    },
+    "5": {
+      "cross_document": {
+        "executed": 9,
+        "answer_accuracy": 0.5556,
+        "end_to_end": 0.5556
+      },
+      "long_distractor": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 0.5,
+        "end_to_end": 0.5
+      },
+      "negative": {
+        "executed": 9,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    },
+    "10": {
+      "cross_document": {
+        "executed": 9,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "long_distractor": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "negative": {
+        "executed": 9,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 3,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    }
+  },
+  "stability": {
+    "3": {
+      "rounds": 3,
+      "per_round": [
+        {
+          "round": 1,
+          "answer_accuracy": 0.8462,
+          "end_to_end": 0.875,
+          "citation_precision": 0.8077
+        },
+        {
+          "round": 2,
+          "answer_accuracy": 0.7692,
+          "end_to_end": 0.8125,
+          "citation_precision": 0.7692
+        },
+        {
+          "round": 3,
+          "answer_accuracy": 0.7692,
+          "end_to_end": 0.8125,
+          "citation_precision": 0.8462
+        }
+      ],
+      "answer_accuracy_range": 0.077,
+      "answer_accuracy_mean": 0.7949
+    },
+    "5": {
+      "rounds": 3,
+      "per_round": [
+        {
+          "round": 1,
+          "answer_accuracy": 0.8462,
+          "end_to_end": 0.875,
+          "citation_precision": 0.7949
+        },
+        {
+          "round": 2,
+          "answer_accuracy": 0.8462,
+          "end_to_end": 0.875,
+          "citation_precision": 0.7564
+        },
+        {
+          "round": 3,
+          "answer_accuracy": 0.7692,
+          "end_to_end": 0.8125,
+          "citation_precision": 0.7949
+        }
+      ],
+      "answer_accuracy_range": 0.077,
+      "answer_accuracy_mean": 0.8205
+    },
+    "10": {
+      "rounds": 3,
+      "per_round": [
+        {
+          "round": 1,
+          "answer_accuracy": 1.0,
+          "end_to_end": 1.0,
+          "citation_precision": 0.8846
+        },
+        {
+          "round": 2,
+          "answer_accuracy": 1.0,
+          "end_to_end": 1.0,
+          "citation_precision": 0.8333
+        },
+        {
+          "round": 3,
+          "answer_accuracy": 1.0,
+          "end_to_end": 1.0,
+          "citation_precision": 0.8333
+        }
+      ],
+      "answer_accuracy_range": 0.0,
+      "answer_accuracy_mean": 1.0
+    }
+  }
+}

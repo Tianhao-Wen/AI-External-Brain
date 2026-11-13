@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "run_id": "topk_full_main",
+    "suite": "topk-full",
+    "mode": "live",
+    "created_at": "2026-11-10T11:36:28",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "2f1e30ce3ed721715ac3074cc9c846a2ec7916b9",
+      "commit_short": "2f1e30c",
+      "branch": "experiment/rag-topk-ablation",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 200,
+      "used": 200,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-A -> doc_08130160ed48 (6页)",
+      "DOC-B -> doc_2030cbde4350 (5页)",
+      "DOC-C -> doc_d538ea9668da (5页)",
+      "DOC-D -> doc_28ff22416ce2 (4页)"
+    ]
+  },
+  "dataset": "full",
+  "split": "all",
+  "ks": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "repeat": 1,
+  "question_count": 50,
+  "question_ids": [
+    "RAG-001",
+    "RAG-002",
+    "RAG-003",
+    "RAG-004",
+    "RAG-005",
+    "RAG-006",
+    "RAG-007",
+    "RAG-008",
+    "RAG-009",
+    "RAG-010",
+    "RAG-011",
+    "RAG-012",
+    "RAG-013",
+    "RAG-014",
+    "RAG-015",
+    "RAG-016",
+    "RAG-017",
+    "RAG-018",
+    "RAG-019",
+    "RAG-020",
+    "RAG-021",
+    "RAG-022",
+    "RAG-023",
+    "RAG-024",
+    "RAG-025",
+    "RAG-026",
+    "RAG-027",
+    "RAG-028",
+    "RAG-029",
+    "RAG-030",
+    "RAG-031",
+    "RAG-032",
+    "RAG-033",
+    "RAG-034",
+    "RAG-035",
+    "RAG-036",
+    "RAG-037",
+    "RAG-038",
+    "RAG-039",
+    "RAG-040",
+    "RAG-041",
+    "RAG-042",
+    "RAG-043",
+    "RAG-044",
+    "RAG-045",
+    "RAG-046",
+    "RAG-047",
+    "RAG-048",
+    "RAG-049",
+    "RAG-050"
+  ],
+  "index_audit": {
+    "total_chunks": 20,
+    "total_pages_with_text": 20,
+    "chunks_per_page_max": 1,
+    "chunks_per_page_histogram": {
+      "1": 20
+    },
+    "avg_chunk_chars": 265.6,
+    "documents": {
+      "doc_08130160ed48": {
+        "doc_name": "DOC-A-内部管理手册.pdf",
+        "chunks": 6,
+        "pages": 6,
+        "chars": 1965
+      },
+      "doc_2030cbde4350": {
+        "doc_name": "DOC-B-供应商质量管理规范.pdf",
+        "chunks": 5,
+        "pages": 5,
+        "chars": 1235
+      },
+      "doc_28ff22416ce2": {
+        "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+        "chunks": 4,
+        "pages": 4,
+        "chars": 936
+      },
+      "doc_d538ea9668da": {
+        "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+        "chunks": 5,
+        "pages": 5,
+        "chars": 1176
+      }
+    }
+  },
+  "aggregates": {
+    "1": {
+      "executed": 50,
+      "answerable_executed": 44,
+      "negative_executed": 6,
+      "answer_accuracy": 0.5455,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 0.6,
+      "citation_precision": 0.7955,
+      "citation_recall": 0.6288,
+      "strict_citation_accuracy": 0.9773,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9335,
+      "avg_input_tokens": 223.88,
+      "avg_prompt_tokens": 280.2,
+      "avg_output_tokens": 66.6,
+      "avg_cache_read_tokens": 56.32,
+      "total_input_tokens": 11194,
+      "total_prompt_tokens": 14010,
+      "total_cache_read_tokens": 2816,
+      "avg_delivered_chunks": 1.0,
+      "avg_context_chars": 304.38,
+      "answer_p50_ms": 1991.05,
+      "answer_p95_ms": 2779.4049999999997,
+      "errors": 0,
+      "degraded": 0
+    },
+    "3": {
+      "executed": 50,
+      "answerable_executed": 44,
+      "negative_executed": 6,
+      "answer_accuracy": 0.9318,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 0.94,
+      "citation_precision": 0.8864,
+      "citation_recall": 0.9242,
+      "strict_citation_accuracy": 0.9773,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9468,
+      "avg_input_tokens": 221.98,
+      "avg_prompt_tokens": 664.86,
+      "avg_output_tokens": 108.56,
+      "avg_cache_read_tokens": 442.88,
+      "total_input_tokens": 11099,
+      "total_prompt_tokens": 33243,
+      "total_cache_read_tokens": 22144,
+      "avg_delivered_chunks": 3.0,
+      "avg_context_chars": 903.22,
+      "answer_p50_ms": 2112.85,
+      "answer_p95_ms": 3247.384999999999,
+      "errors": 0,
+      "degraded": 0
+    },
+    "5": {
+      "executed": 50,
+      "answerable_executed": 44,
+      "negative_executed": 6,
+      "answer_accuracy": 0.9318,
+      "abstention_accuracy": 1.0,
+      "end_to_end": 0.94,
+      "citation_precision": 0.8674,
+      "citation_recall": 0.928,
+      "strict_citation_accuracy": 0.9773,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9514,
+      "avg_input_tokens": 190.78,
+      "avg_prompt_tokens": 1066.18,
+      "avg_output_tokens": 111.24,
+      "avg_cache_read_tokens": 875.4,
+      "total_input_tokens": 9539,
+      "total_prompt_tokens": 53309,
+      "total_cache_read_tokens": 43770,
+      "avg_delivered_chunks": 5.0,
+      "avg_context_chars": 1523.82,
+      "answer_p50_ms": 2093.2,
+      "answer_p95_ms": 3352.8349999999996,
+      "errors": 0,
+      "degraded": 0
+    },
+    "10": {
+      "executed": 50,
+      "answerable_executed": 44,
+      "negative_executed": 6,
+      "answer_accuracy": 1.0,
+      "abstention_accuracy": 0.8333,
+      "end_to_end": 0.98,
+      "citation_precision": 0.9015,
+      "citation_recall": 0.9735,
+      "strict_citation_accuracy": 0.9773,
+      "citation_missing_rate": 0.0,
+      "groundedness": 0.9481,
+      "avg_input_tokens": 1019.96,
+      "avg_prompt_tokens": 2059.32,
+      "avg_output_tokens": 115.28,
+      "avg_cache_read_tokens": 1039.36,
+      "total_input_tokens": 50998,
+      "total_prompt_tokens": 102966,
+      "total_cache_read_tokens": 51968,
+      "avg_delivered_chunks": 10.0,
+      "avg_context_chars": 3060.6,
+      "answer_p50_ms": 2078.6499999999996,
+      "answer_p95_ms": 3515.089999999999,
+      "errors": 0,
+      "degraded": 0
+    }
+  },
+  "by_type": {
+    "1": {
+      "cross_document": {
+        "executed": 5,
+        "answer_accuracy": 0.0,
+        "end_to_end": 0.0
+      },
+      "long_distractor": {
+        "executed": 4,
+        "answer_accuracy": 0.75,
+        "end_to_end": 0.75
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 0.5,
+        "end_to_end": 0.5
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 0.1667,
+        "end_to_end": 0.1667
+      },
+      "negative": {
+        "executed": 6,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 4,
+        "answer_accuracy": 0.75,
+        "end_to_end": 0.75
+      },
+      "paraphrase": {
+        "executed": 5,
+        "answer_accuracy": 0.2,
+        "end_to_end": 0.2
+      },
+      "single_page": {
+        "executed": 8,
+        "answer_accuracy": 0.875,
+        "end_to_end": 0.875
+      }
+    },
+    "3": {
+      "cross_document": {
+        "executed": 5,
+        "answer_accuracy": 0.6,
+        "end_to_end": 0.6
+      },
+      "long_distractor": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 0.8333,
+        "end_to_end": 0.8333
+      },
+      "negative": {
+        "executed": 6,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 5,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 8,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    },
+    "5": {
+      "cross_document": {
+        "executed": 5,
+        "answer_accuracy": 0.6,
+        "end_to_end": 0.6
+      },
+      "long_distractor": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 0.8333,
+        "end_to_end": 0.8333
+      },
+      "negative": {
+        "executed": 6,
+        "answer_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 5,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 8,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    },
+    "10": {
+      "cross_document": {
+        "executed": 5,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "long_distractor": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "negative": {
+        "executed": 6,
+        "answer_accuracy": null,
+        "end_to_end": 0.8333
+      },
+      "numeric": {
+        "executed": 6,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "executed": 4,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "executed": 5,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "executed": 8,
+        "answer_accuracy": 1.0,
+        "end_to_end": 1.0
+      }
+    }
+  },
+  "stability": {}
+}

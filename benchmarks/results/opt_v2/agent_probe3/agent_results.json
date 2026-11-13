@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "run_id": "20261109_163024_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T16:30:24",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 8,
+      "used": 3,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 1.0,
+    "task_total": 1,
+    "task_passed": 1,
+    "tool_call_success_rate": 1.0,
+    "tool_call_total": 1,
+    "tool_success_total": 1,
+    "avg_tool_calls": 1.0,
+    "avg_llm_calls": 3.0,
+    "latency_p50_ms": 8959.5,
+    "latency_p95_ms": 8959.5,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "by_type": {
+      "pdf_qa_negative": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 8959.5
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 0
+    }
+  },
+  "cases": [
+    {
+      "task_id": "A4",
+      "round": 1,
+      "label": "A4",
+      "type": "pdf_qa_negative",
+      "title": "知识库里没有的信息",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有']（要求命中任意一个）"
+        },
+        {
+          "kind": "answer_not_contains",
+          "ok": true,
+          "detail": "出现了不该有的内容：[]"
+        }
+      ],
+      "answer": "我在知识库里检索了“公司股票代码”，没有找到相关内容。现有文档是《内部管理手册》《供应商质量管理规范》《星海项目预算与交付计划》《信息安全与数据分级规定》《设备维保管理制度》，这些文档都没有提到股票代码或上市信息。\n\n如果您能提供上市公司名称或证券简称，我可以再按名称检索一次；或者您也可以把包含该信息的文档上传到知识库。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 8959.5,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

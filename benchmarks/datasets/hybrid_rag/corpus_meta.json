@@ -1,0 +1,2405 @@
+{
+  "documents": [
+    {
+      "doc_id": "HDOC-001",
+      "filename": "HDOC-001_启明_采购部制度_V1.pdf",
+      "title": "启明科技采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 643,
+      "facts": {
+        "approval": "120万元",
+        "payment": "质保金20%",
+        "late": "20%",
+        "supplier": "500万元",
+        "code": "CG-2024-001"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-002",
+      "filename": "HDOC-002_启明_采购部制度_V2.pdf",
+      "title": "启明科技采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 696,
+      "facts": {
+        "approval": "120万元",
+        "payment": "质保金20%",
+        "late": "25%",
+        "supplier": "500万元",
+        "code": "CG-2024-002"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-003",
+      "filename": "HDOC-003_恒远_采购部制度_V1.pdf",
+      "title": "恒远制造采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 642,
+      "facts": {
+        "approval": "80万元",
+        "payment": "质保金10%",
+        "late": "15%",
+        "supplier": "800万元",
+        "code": "CG-2024-003"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-004",
+      "filename": "HDOC-004_恒远_采购部制度_V2.pdf",
+      "title": "恒远制造采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 695,
+      "facts": {
+        "approval": "80万元",
+        "payment": "质保金10%",
+        "late": "20%",
+        "supplier": "800万元",
+        "code": "CG-2024-004"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-005",
+      "filename": "HDOC-005_海川_采购部制度_V1.pdf",
+      "title": "海川物流采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 643,
+      "facts": {
+        "approval": "200万元",
+        "payment": "质保金20%",
+        "late": "25%",
+        "supplier": "300万元",
+        "code": "CG-2024-005"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-006",
+      "filename": "HDOC-006_海川_采购部制度_V2.pdf",
+      "title": "海川物流采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 696,
+      "facts": {
+        "approval": "200万元",
+        "payment": "质保金20%",
+        "late": "30%",
+        "supplier": "300万元",
+        "code": "CG-2024-006"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-007",
+      "filename": "HDOC-007_瑞和_采购部制度_V1.pdf",
+      "title": "瑞和医药采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 644,
+      "facts": {
+        "approval": "150万元",
+        "payment": "质保金30%",
+        "late": "18%",
+        "supplier": "1000万元",
+        "code": "CG-2024-007"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-008",
+      "filename": "HDOC-008_瑞和_采购部制度_V2.pdf",
+      "title": "瑞和医药采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 697,
+      "facts": {
+        "approval": "150万元",
+        "payment": "质保金30%",
+        "late": "23%",
+        "supplier": "1000万元",
+        "code": "CG-2024-008"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-009",
+      "filename": "HDOC-009_云图_采购部制度_V1.pdf",
+      "title": "云图数据采购部管理制度（V1）",
+      "dept_code": "CG",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 642,
+      "facts": {
+        "approval": "60万元",
+        "payment": "质保金10%",
+        "late": "12%",
+        "supplier": "200万元",
+        "code": "CG-2024-009"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-010",
+      "filename": "HDOC-010_云图_采购部制度_V2.pdf",
+      "title": "云图数据采购部管理制度（V2）",
+      "dept_code": "CG",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 695,
+      "facts": {
+        "approval": "60万元",
+        "payment": "质保金10%",
+        "late": "17%",
+        "supplier": "200万元",
+        "code": "CG-2024-010"
+      },
+      "fact_pages": {
+        "approval": 1,
+        "payment": 1,
+        "late": 2,
+        "supplier": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-011",
+      "filename": "HDOC-011_启明_质量部制度_V1.pdf",
+      "title": "启明科技质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 604,
+      "facts": {
+        "supplier": "500万元",
+        "sample": "5%",
+        "late": "20%",
+        "review": "10个工作日",
+        "code": "ZL-2024-011"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-012",
+      "filename": "HDOC-012_启明_质量部制度_V2.pdf",
+      "title": "启明科技质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 657,
+      "facts": {
+        "supplier": "500万元",
+        "sample": "6%",
+        "late": "25%",
+        "review": "12个工作日",
+        "code": "ZL-2024-012"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-013",
+      "filename": "HDOC-013_恒远_质量部制度_V1.pdf",
+      "title": "恒远制造质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 603,
+      "facts": {
+        "supplier": "800万元",
+        "sample": "8%",
+        "late": "15%",
+        "review": "7个工作日",
+        "code": "ZL-2024-013"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-014",
+      "filename": "HDOC-014_恒远_质量部制度_V2.pdf",
+      "title": "恒远制造质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 656,
+      "facts": {
+        "supplier": "800万元",
+        "sample": "9%",
+        "late": "20%",
+        "review": "9个工作日",
+        "code": "ZL-2024-014"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-015",
+      "filename": "HDOC-015_海川_质量部制度_V1.pdf",
+      "title": "海川物流质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 604,
+      "facts": {
+        "supplier": "300万元",
+        "sample": "3%",
+        "late": "25%",
+        "review": "15个工作日",
+        "code": "ZL-2024-015"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-016",
+      "filename": "HDOC-016_海川_质量部制度_V2.pdf",
+      "title": "海川物流质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 657,
+      "facts": {
+        "supplier": "300万元",
+        "sample": "4%",
+        "late": "30%",
+        "review": "17个工作日",
+        "code": "ZL-2024-016"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-017",
+      "filename": "HDOC-017_瑞和_质量部制度_V1.pdf",
+      "title": "瑞和医药质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 606,
+      "facts": {
+        "supplier": "1000万元",
+        "sample": "10%",
+        "late": "18%",
+        "review": "12个工作日",
+        "code": "ZL-2024-017"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-018",
+      "filename": "HDOC-018_瑞和_质量部制度_V2.pdf",
+      "title": "瑞和医药质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 659,
+      "facts": {
+        "supplier": "1000万元",
+        "sample": "11%",
+        "late": "23%",
+        "review": "14个工作日",
+        "code": "ZL-2024-018"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-019",
+      "filename": "HDOC-019_云图_质量部制度_V1.pdf",
+      "title": "云图数据质量部管理制度（V1）",
+      "dept_code": "ZL",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 603,
+      "facts": {
+        "supplier": "200万元",
+        "sample": "6%",
+        "late": "12%",
+        "review": "5个工作日",
+        "code": "ZL-2024-019"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-020",
+      "filename": "HDOC-020_云图_质量部制度_V2.pdf",
+      "title": "云图数据质量部管理制度（V2）",
+      "dept_code": "ZL",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 656,
+      "facts": {
+        "supplier": "200万元",
+        "sample": "7%",
+        "late": "17%",
+        "review": "7个工作日",
+        "code": "ZL-2024-020"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "late": 2,
+        "review": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-021",
+      "filename": "HDOC-021_启明_财务部制度_V1.pdf",
+      "title": "启明科技财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 572,
+      "facts": {
+        "budget": "3800万元",
+        "payment": "质保金20%",
+        "travel": "600元",
+        "confidential": "3年",
+        "code": "CW-2024-021"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-022",
+      "filename": "HDOC-022_启明_财务部制度_V2.pdf",
+      "title": "启明科技财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 625,
+      "facts": {
+        "budget": "3800万元",
+        "payment": "质保金20%",
+        "travel": "650元",
+        "confidential": "3年",
+        "code": "CW-2024-022"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-023",
+      "filename": "HDOC-023_恒远_财务部制度_V1.pdf",
+      "title": "恒远制造财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 572,
+      "facts": {
+        "budget": "5200万元",
+        "payment": "质保金10%",
+        "travel": "450元",
+        "confidential": "5年",
+        "code": "CW-2024-023"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-024",
+      "filename": "HDOC-024_恒远_财务部制度_V2.pdf",
+      "title": "恒远制造财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 625,
+      "facts": {
+        "budget": "5200万元",
+        "payment": "质保金10%",
+        "travel": "500元",
+        "confidential": "5年",
+        "code": "CW-2024-024"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-025",
+      "filename": "HDOC-025_海川_财务部制度_V1.pdf",
+      "title": "海川物流财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "2600万元",
+        "payment": "质保金20%",
+        "travel": "550元",
+        "confidential": "2年",
+        "code": "CW-2024-025"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-026",
+      "filename": "HDOC-026_海川_财务部制度_V2.pdf",
+      "title": "海川物流财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "2600万元",
+        "payment": "质保金20%",
+        "travel": "600元",
+        "confidential": "2年",
+        "code": "CW-2024-026"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-027",
+      "filename": "HDOC-027_瑞和_财务部制度_V1.pdf",
+      "title": "瑞和医药财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 572,
+      "facts": {
+        "budget": "6400万元",
+        "payment": "质保金30%",
+        "travel": "700元",
+        "confidential": "4年",
+        "code": "CW-2024-027"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-028",
+      "filename": "HDOC-028_瑞和_财务部制度_V2.pdf",
+      "title": "瑞和医药财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 625,
+      "facts": {
+        "budget": "6400万元",
+        "payment": "质保金30%",
+        "travel": "750元",
+        "confidential": "4年",
+        "code": "CW-2024-028"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-029",
+      "filename": "HDOC-029_云图_财务部制度_V1.pdf",
+      "title": "云图数据财务部管理制度（V1）",
+      "dept_code": "CW",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 573,
+      "facts": {
+        "budget": "1900万元",
+        "payment": "质保金10%",
+        "travel": "500元",
+        "confidential": "3年",
+        "code": "CW-2024-029"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-030",
+      "filename": "HDOC-030_云图_财务部制度_V2.pdf",
+      "title": "云图数据财务部管理制度（V2）",
+      "dept_code": "CW",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 626,
+      "facts": {
+        "budget": "1900万元",
+        "payment": "质保金10%",
+        "travel": "550元",
+        "confidential": "3年",
+        "code": "CW-2024-030"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "payment": 1,
+        "travel": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-031",
+      "filename": "HDOC-031_启明_项目管理部制度_V1.pdf",
+      "title": "启明科技项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "13个工作日",
+        "review": "10个工作日",
+        "late": "20%",
+        "code": "XM-2024-031"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-032",
+      "filename": "HDOC-032_启明_项目管理部制度_V2.pdf",
+      "title": "启明科技项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 669,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "15个工作日",
+        "review": "12个工作日",
+        "late": "25%",
+        "code": "XM-2024-032"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-033",
+      "filename": "HDOC-033_恒远_项目管理部制度_V1.pdf",
+      "title": "恒远制造项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 615,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "10个工作日",
+        "review": "7个工作日",
+        "late": "15%",
+        "code": "XM-2024-033"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-034",
+      "filename": "HDOC-034_恒远_项目管理部制度_V2.pdf",
+      "title": "恒远制造项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 668,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "12个工作日",
+        "review": "9个工作日",
+        "late": "20%",
+        "code": "XM-2024-034"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-035",
+      "filename": "HDOC-035_海川_项目管理部制度_V1.pdf",
+      "title": "海川物流项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "18个工作日",
+        "review": "15个工作日",
+        "late": "25%",
+        "code": "XM-2024-035"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-036",
+      "filename": "HDOC-036_海川_项目管理部制度_V2.pdf",
+      "title": "海川物流项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 669,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "20个工作日",
+        "review": "17个工作日",
+        "late": "30%",
+        "code": "XM-2024-036"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-037",
+      "filename": "HDOC-037_瑞和_项目管理部制度_V1.pdf",
+      "title": "瑞和医药项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "15个工作日",
+        "review": "12个工作日",
+        "late": "18%",
+        "code": "XM-2024-037"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-038",
+      "filename": "HDOC-038_瑞和_项目管理部制度_V2.pdf",
+      "title": "瑞和医药项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 669,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "17个工作日",
+        "review": "14个工作日",
+        "late": "23%",
+        "code": "XM-2024-038"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-039",
+      "filename": "HDOC-039_云图_项目管理部制度_V1.pdf",
+      "title": "云图数据项目管理部管理制度（V1）",
+      "dept_code": "XM",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 614,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "8个工作日",
+        "review": "5个工作日",
+        "late": "12%",
+        "code": "XM-2024-039"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-040",
+      "filename": "HDOC-040_云图_项目管理部制度_V2.pdf",
+      "title": "云图数据项目管理部管理制度（V2）",
+      "dept_code": "XM",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 668,
+      "facts": {
+        "milestone": "五个里程碑",
+        "delay": "10个工作日",
+        "review": "7个工作日",
+        "late": "17%",
+        "code": "XM-2024-040"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "delay": 1,
+        "review": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-041",
+      "filename": "HDOC-041_启明_人力资源部制度_V1.pdf",
+      "title": "启明科技人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 563,
+      "facts": {
+        "travel": "600元",
+        "review": "10个工作日",
+        "confidential": "3年",
+        "budget": "3800万元",
+        "code": "RL-2024-041"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-042",
+      "filename": "HDOC-042_启明_人力资源部制度_V2.pdf",
+      "title": "启明科技人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "travel": "650元",
+        "review": "12个工作日",
+        "confidential": "3年",
+        "budget": "3800万元",
+        "code": "RL-2024-042"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-043",
+      "filename": "HDOC-043_恒远_人力资源部制度_V1.pdf",
+      "title": "恒远制造人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 562,
+      "facts": {
+        "travel": "450元",
+        "review": "7个工作日",
+        "confidential": "5年",
+        "budget": "5200万元",
+        "code": "RL-2024-043"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-044",
+      "filename": "HDOC-044_恒远_人力资源部制度_V2.pdf",
+      "title": "恒远制造人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 615,
+      "facts": {
+        "travel": "500元",
+        "review": "9个工作日",
+        "confidential": "5年",
+        "budget": "5200万元",
+        "code": "RL-2024-044"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-045",
+      "filename": "HDOC-045_海川_人力资源部制度_V1.pdf",
+      "title": "海川物流人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "travel": "550元",
+        "review": "15个工作日",
+        "confidential": "2年",
+        "budget": "2600万元",
+        "code": "RL-2024-045"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-046",
+      "filename": "HDOC-046_海川_人力资源部制度_V2.pdf",
+      "title": "海川物流人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "travel": "600元",
+        "review": "17个工作日",
+        "confidential": "2年",
+        "budget": "2600万元",
+        "code": "RL-2024-046"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-047",
+      "filename": "HDOC-047_瑞和_人力资源部制度_V1.pdf",
+      "title": "瑞和医药人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 563,
+      "facts": {
+        "travel": "700元",
+        "review": "12个工作日",
+        "confidential": "4年",
+        "budget": "6400万元",
+        "code": "RL-2024-047"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-048",
+      "filename": "HDOC-048_瑞和_人力资源部制度_V2.pdf",
+      "title": "瑞和医药人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "travel": "750元",
+        "review": "14个工作日",
+        "confidential": "4年",
+        "budget": "6400万元",
+        "code": "RL-2024-048"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-049",
+      "filename": "HDOC-049_云图_人力资源部制度_V1.pdf",
+      "title": "云图数据人力资源部管理制度（V1）",
+      "dept_code": "RL",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 563,
+      "facts": {
+        "travel": "500元",
+        "review": "5个工作日",
+        "confidential": "3年",
+        "budget": "1900万元",
+        "code": "RL-2024-049"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-050",
+      "filename": "HDOC-050_云图_人力资源部制度_V2.pdf",
+      "title": "云图数据人力资源部管理制度（V2）",
+      "dept_code": "RL",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 616,
+      "facts": {
+        "travel": "550元",
+        "review": "7个工作日",
+        "confidential": "3年",
+        "budget": "1900万元",
+        "code": "RL-2024-050"
+      },
+      "fact_pages": {
+        "travel": 1,
+        "review": 1,
+        "confidential": 2,
+        "budget": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-051",
+      "filename": "HDOC-051_启明_信息安全部制度_V1.pdf",
+      "title": "启明科技信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 576,
+      "facts": {
+        "confidential": "3年",
+        "review": "10个工作日",
+        "supplier": "500万元",
+        "code": "AQ-2024-051",
+        "budget": "3800万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-052",
+      "filename": "HDOC-052_启明_信息安全部制度_V2.pdf",
+      "title": "启明科技信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 629,
+      "facts": {
+        "confidential": "3年",
+        "review": "12个工作日",
+        "supplier": "500万元",
+        "code": "AQ-2024-052",
+        "budget": "3800万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-053",
+      "filename": "HDOC-053_恒远_信息安全部制度_V1.pdf",
+      "title": "恒远制造信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 575,
+      "facts": {
+        "confidential": "5年",
+        "review": "7个工作日",
+        "supplier": "800万元",
+        "code": "AQ-2024-053",
+        "budget": "5200万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-054",
+      "filename": "HDOC-054_恒远_信息安全部制度_V2.pdf",
+      "title": "恒远制造信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 628,
+      "facts": {
+        "confidential": "5年",
+        "review": "9个工作日",
+        "supplier": "800万元",
+        "code": "AQ-2024-054",
+        "budget": "5200万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-055",
+      "filename": "HDOC-055_海川_信息安全部制度_V1.pdf",
+      "title": "海川物流信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 577,
+      "facts": {
+        "confidential": "2年",
+        "review": "15个工作日",
+        "supplier": "300万元",
+        "code": "AQ-2024-055",
+        "budget": "2600万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-056",
+      "filename": "HDOC-056_海川_信息安全部制度_V2.pdf",
+      "title": "海川物流信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "2年",
+        "review": "17个工作日",
+        "supplier": "300万元",
+        "code": "AQ-2024-056",
+        "budget": "2600万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-057",
+      "filename": "HDOC-057_瑞和_信息安全部制度_V1.pdf",
+      "title": "瑞和医药信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 577,
+      "facts": {
+        "confidential": "4年",
+        "review": "12个工作日",
+        "supplier": "1000万元",
+        "code": "AQ-2024-057",
+        "budget": "6400万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-058",
+      "filename": "HDOC-058_瑞和_信息安全部制度_V2.pdf",
+      "title": "瑞和医药信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 630,
+      "facts": {
+        "confidential": "4年",
+        "review": "14个工作日",
+        "supplier": "1000万元",
+        "code": "AQ-2024-058",
+        "budget": "6400万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-059",
+      "filename": "HDOC-059_云图_信息安全部制度_V1.pdf",
+      "title": "云图数据信息安全部管理制度（V1）",
+      "dept_code": "AQ",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 576,
+      "facts": {
+        "confidential": "3年",
+        "review": "5个工作日",
+        "supplier": "200万元",
+        "code": "AQ-2024-059",
+        "budget": "1900万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-060",
+      "filename": "HDOC-060_云图_信息安全部制度_V2.pdf",
+      "title": "云图数据信息安全部管理制度（V2）",
+      "dept_code": "AQ",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 629,
+      "facts": {
+        "confidential": "3年",
+        "review": "7个工作日",
+        "supplier": "200万元",
+        "code": "AQ-2024-060",
+        "budget": "1900万元"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "review": 1,
+        "supplier": 2,
+        "code": 2,
+        "budget": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-061",
+      "filename": "HDOC-061_启明_法务部制度_V1.pdf",
+      "title": "启明科技法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 614,
+      "facts": {
+        "confidential": "3年",
+        "approval": "120万元",
+        "late": "20%",
+        "code": "FW-2024-061",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-062",
+      "filename": "HDOC-062_启明_法务部制度_V2.pdf",
+      "title": "启明科技法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 667,
+      "facts": {
+        "confidential": "3年",
+        "approval": "120万元",
+        "late": "25%",
+        "code": "FW-2024-062",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-063",
+      "filename": "HDOC-063_恒远_法务部制度_V1.pdf",
+      "title": "恒远制造法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 613,
+      "facts": {
+        "confidential": "5年",
+        "approval": "80万元",
+        "late": "15%",
+        "code": "FW-2024-063",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-064",
+      "filename": "HDOC-064_恒远_法务部制度_V2.pdf",
+      "title": "恒远制造法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 666,
+      "facts": {
+        "confidential": "5年",
+        "approval": "80万元",
+        "late": "20%",
+        "code": "FW-2024-064",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-065",
+      "filename": "HDOC-065_海川_法务部制度_V1.pdf",
+      "title": "海川物流法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 614,
+      "facts": {
+        "confidential": "2年",
+        "approval": "200万元",
+        "late": "25%",
+        "code": "FW-2024-065",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-066",
+      "filename": "HDOC-066_海川_法务部制度_V2.pdf",
+      "title": "海川物流法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 667,
+      "facts": {
+        "confidential": "2年",
+        "approval": "200万元",
+        "late": "30%",
+        "code": "FW-2024-066",
+        "payment": "质保金20%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-067",
+      "filename": "HDOC-067_瑞和_法务部制度_V1.pdf",
+      "title": "瑞和医药法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 614,
+      "facts": {
+        "confidential": "4年",
+        "approval": "150万元",
+        "late": "18%",
+        "code": "FW-2024-067",
+        "payment": "质保金30%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-068",
+      "filename": "HDOC-068_瑞和_法务部制度_V2.pdf",
+      "title": "瑞和医药法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 667,
+      "facts": {
+        "confidential": "4年",
+        "approval": "150万元",
+        "late": "23%",
+        "code": "FW-2024-068",
+        "payment": "质保金30%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-069",
+      "filename": "HDOC-069_云图_法务部制度_V1.pdf",
+      "title": "云图数据法务部管理制度（V1）",
+      "dept_code": "FW",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 613,
+      "facts": {
+        "confidential": "3年",
+        "approval": "60万元",
+        "late": "12%",
+        "code": "FW-2024-069",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-070",
+      "filename": "HDOC-070_云图_法务部制度_V2.pdf",
+      "title": "云图数据法务部管理制度（V2）",
+      "dept_code": "FW",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 666,
+      "facts": {
+        "confidential": "3年",
+        "approval": "60万元",
+        "late": "17%",
+        "code": "FW-2024-070",
+        "payment": "质保金10%"
+      },
+      "fact_pages": {
+        "confidential": 1,
+        "approval": 1,
+        "late": 2,
+        "code": 2,
+        "payment": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-071",
+      "filename": "HDOC-071_启明_供应链管理部制度_V1.pdf",
+      "title": "启明科技供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 638,
+      "facts": {
+        "supplier": "500万元",
+        "sample": "5%",
+        "payment": "质保金20%",
+        "late": "20%",
+        "code": "GY-2024-071"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-072",
+      "filename": "HDOC-072_启明_供应链管理部制度_V2.pdf",
+      "title": "启明科技供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 691,
+      "facts": {
+        "supplier": "500万元",
+        "sample": "6%",
+        "payment": "质保金20%",
+        "late": "25%",
+        "code": "GY-2024-072"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-073",
+      "filename": "HDOC-073_恒远_供应链管理部制度_V1.pdf",
+      "title": "恒远制造供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 638,
+      "facts": {
+        "supplier": "800万元",
+        "sample": "8%",
+        "payment": "质保金10%",
+        "late": "15%",
+        "code": "GY-2024-073"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-074",
+      "filename": "HDOC-074_恒远_供应链管理部制度_V2.pdf",
+      "title": "恒远制造供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 691,
+      "facts": {
+        "supplier": "800万元",
+        "sample": "9%",
+        "payment": "质保金10%",
+        "late": "20%",
+        "code": "GY-2024-074"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-075",
+      "filename": "HDOC-075_海川_供应链管理部制度_V1.pdf",
+      "title": "海川物流供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 638,
+      "facts": {
+        "supplier": "300万元",
+        "sample": "3%",
+        "payment": "质保金20%",
+        "late": "25%",
+        "code": "GY-2024-075"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-076",
+      "filename": "HDOC-076_海川_供应链管理部制度_V2.pdf",
+      "title": "海川物流供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 691,
+      "facts": {
+        "supplier": "300万元",
+        "sample": "4%",
+        "payment": "质保金20%",
+        "late": "30%",
+        "code": "GY-2024-076"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-077",
+      "filename": "HDOC-077_瑞和_供应链管理部制度_V1.pdf",
+      "title": "瑞和医药供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 640,
+      "facts": {
+        "supplier": "1000万元",
+        "sample": "10%",
+        "payment": "质保金30%",
+        "late": "18%",
+        "code": "GY-2024-077"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-078",
+      "filename": "HDOC-078_瑞和_供应链管理部制度_V2.pdf",
+      "title": "瑞和医药供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 693,
+      "facts": {
+        "supplier": "1000万元",
+        "sample": "11%",
+        "payment": "质保金30%",
+        "late": "23%",
+        "code": "GY-2024-078"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-079",
+      "filename": "HDOC-079_云图_供应链管理部制度_V1.pdf",
+      "title": "云图数据供应链管理部管理制度（V1）",
+      "dept_code": "GY",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 638,
+      "facts": {
+        "supplier": "200万元",
+        "sample": "6%",
+        "payment": "质保金10%",
+        "late": "12%",
+        "code": "GY-2024-079"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-080",
+      "filename": "HDOC-080_云图_供应链管理部制度_V2.pdf",
+      "title": "云图数据供应链管理部管理制度（V2）",
+      "dept_code": "GY",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 691,
+      "facts": {
+        "supplier": "200万元",
+        "sample": "7%",
+        "payment": "质保金10%",
+        "late": "17%",
+        "code": "GY-2024-080"
+      },
+      "fact_pages": {
+        "supplier": 1,
+        "sample": 1,
+        "payment": 2,
+        "late": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-081",
+      "filename": "HDOC-081_启明_研发中心制度_V1.pdf",
+      "title": "启明科技研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "5%",
+        "confidential": "3年",
+        "code": "YF-2024-081",
+        "review": "10个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-082",
+      "filename": "HDOC-082_启明_研发中心制度_V2.pdf",
+      "title": "启明科技研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 618,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "6%",
+        "confidential": "3年",
+        "code": "YF-2024-082",
+        "review": "12个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-083",
+      "filename": "HDOC-083_恒远_研发中心制度_V1.pdf",
+      "title": "恒远制造研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "8%",
+        "confidential": "5年",
+        "code": "YF-2024-083",
+        "review": "7个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-084",
+      "filename": "HDOC-084_恒远_研发中心制度_V2.pdf",
+      "title": "恒远制造研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "9%",
+        "confidential": "5年",
+        "code": "YF-2024-084",
+        "review": "9个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-085",
+      "filename": "HDOC-085_海川_研发中心制度_V1.pdf",
+      "title": "海川物流研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 565,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "3%",
+        "confidential": "2年",
+        "code": "YF-2024-085",
+        "review": "15个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-086",
+      "filename": "HDOC-086_海川_研发中心制度_V2.pdf",
+      "title": "海川物流研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 618,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "4%",
+        "confidential": "2年",
+        "code": "YF-2024-086",
+        "review": "17个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-087",
+      "filename": "HDOC-087_瑞和_研发中心制度_V1.pdf",
+      "title": "瑞和医药研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 566,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "10%",
+        "confidential": "4年",
+        "code": "YF-2024-087",
+        "review": "12个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-088",
+      "filename": "HDOC-088_瑞和_研发中心制度_V2.pdf",
+      "title": "瑞和医药研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 619,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "11%",
+        "confidential": "4年",
+        "code": "YF-2024-088",
+        "review": "14个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-089",
+      "filename": "HDOC-089_云图_研发中心制度_V1.pdf",
+      "title": "云图数据研发中心管理制度（V1）",
+      "dept_code": "YF",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 564,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "6%",
+        "confidential": "3年",
+        "code": "YF-2024-089",
+        "review": "5个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-090",
+      "filename": "HDOC-090_云图_研发中心制度_V2.pdf",
+      "title": "云图数据研发中心管理制度（V2）",
+      "dept_code": "YF",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 617,
+      "facts": {
+        "milestone": "五个里程碑",
+        "sample": "7%",
+        "confidential": "3年",
+        "code": "YF-2024-090",
+        "review": "7个工作日"
+      },
+      "fact_pages": {
+        "milestone": 1,
+        "sample": 1,
+        "confidential": 2,
+        "code": 2,
+        "review": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-091",
+      "filename": "HDOC-091_启明_审计部制度_V1.pdf",
+      "title": "启明科技审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "启明科技",
+      "version": "v1",
+      "pages": 5,
+      "chars": 557,
+      "facts": {
+        "budget": "3800万元",
+        "approval": "120万元",
+        "review": "10个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-091"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-092",
+      "filename": "HDOC-092_启明_审计部制度_V2.pdf",
+      "title": "启明科技审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "启明科技",
+      "version": "v2",
+      "pages": 5,
+      "chars": 610,
+      "facts": {
+        "budget": "3800万元",
+        "approval": "120万元",
+        "review": "12个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-092"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-093",
+      "filename": "HDOC-093_恒远_审计部制度_V1.pdf",
+      "title": "恒远制造审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "恒远制造",
+      "version": "v1",
+      "pages": 5,
+      "chars": 555,
+      "facts": {
+        "budget": "5200万元",
+        "approval": "80万元",
+        "review": "7个工作日",
+        "confidential": "5年",
+        "code": "SJ-2024-093"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-094",
+      "filename": "HDOC-094_恒远_审计部制度_V2.pdf",
+      "title": "恒远制造审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "恒远制造",
+      "version": "v2",
+      "pages": 5,
+      "chars": 608,
+      "facts": {
+        "budget": "5200万元",
+        "approval": "80万元",
+        "review": "9个工作日",
+        "confidential": "5年",
+        "code": "SJ-2024-094"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-095",
+      "filename": "HDOC-095_海川_审计部制度_V1.pdf",
+      "title": "海川物流审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "海川物流",
+      "version": "v1",
+      "pages": 5,
+      "chars": 558,
+      "facts": {
+        "budget": "2600万元",
+        "approval": "200万元",
+        "review": "15个工作日",
+        "confidential": "2年",
+        "code": "SJ-2024-095"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-096",
+      "filename": "HDOC-096_海川_审计部制度_V2.pdf",
+      "title": "海川物流审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "海川物流",
+      "version": "v2",
+      "pages": 5,
+      "chars": 611,
+      "facts": {
+        "budget": "2600万元",
+        "approval": "200万元",
+        "review": "17个工作日",
+        "confidential": "2年",
+        "code": "SJ-2024-096"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-097",
+      "filename": "HDOC-097_瑞和_审计部制度_V1.pdf",
+      "title": "瑞和医药审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "瑞和医药",
+      "version": "v1",
+      "pages": 5,
+      "chars": 557,
+      "facts": {
+        "budget": "6400万元",
+        "approval": "150万元",
+        "review": "12个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-097"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-098",
+      "filename": "HDOC-098_瑞和_审计部制度_V2.pdf",
+      "title": "瑞和医药审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "瑞和医药",
+      "version": "v2",
+      "pages": 5,
+      "chars": 610,
+      "facts": {
+        "budget": "6400万元",
+        "approval": "150万元",
+        "review": "14个工作日",
+        "confidential": "4年",
+        "code": "SJ-2024-098"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-099",
+      "filename": "HDOC-099_云图_审计部制度_V1.pdf",
+      "title": "云图数据审计部管理制度（V1）",
+      "dept_code": "SJ",
+      "company": "云图数据",
+      "version": "v1",
+      "pages": 5,
+      "chars": 556,
+      "facts": {
+        "budget": "1900万元",
+        "approval": "60万元",
+        "review": "5个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-099"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    },
+    {
+      "doc_id": "HDOC-100",
+      "filename": "HDOC-100_云图_审计部制度_V2.pdf",
+      "title": "云图数据审计部管理制度（V2）",
+      "dept_code": "SJ",
+      "company": "云图数据",
+      "version": "v2",
+      "pages": 5,
+      "chars": 609,
+      "facts": {
+        "budget": "1900万元",
+        "approval": "60万元",
+        "review": "7个工作日",
+        "confidential": "3年",
+        "code": "SJ-2024-100"
+      },
+      "fact_pages": {
+        "budget": 1,
+        "approval": 1,
+        "review": 2,
+        "confidential": 2,
+        "code": 3
+      }
+    }
+  ],
+  "count": 100
+}

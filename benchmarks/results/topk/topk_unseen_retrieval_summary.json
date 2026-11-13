@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "run_id": "topk_unseen_live",
+    "suite": "topk-unseen",
+    "mode": "live",
+    "created_at": "2026-11-10T11:50:26",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "2f1e30ce3ed721715ac3074cc9c846a2ec7916b9",
+      "commit_short": "2f1e30c",
+      "branch": "experiment/rag-topk-ablation",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 92,
+      "used": 92,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-E -> doc_5b132eb07a12 (4页)",
+      "DOC-F -> doc_5b46c4bb2f5a (4页)"
+    ]
+  },
+  "dataset": "unseen",
+  "split": "test_unseen",
+  "ks": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "question_count": 23,
+  "question_ids": [
+    "RAGU-001",
+    "RAGU-002",
+    "RAGU-003",
+    "RAGU-004",
+    "RAGU-005",
+    "RAGU-006",
+    "RAGU-007",
+    "RAGU-008",
+    "RAGU-009",
+    "RAGU-010",
+    "RAGU-011",
+    "RAGU-012",
+    "RAGU-013",
+    "RAGU-014",
+    "RAGU-015",
+    "RAGU-016",
+    "RAGU-017",
+    "RAGU-018",
+    "RAGU-019",
+    "RAGU-020",
+    "RAGU-021",
+    "RAGU-022",
+    "RAGU-023"
+  ],
+  "index_audit": {
+    "total_chunks": 8,
+    "total_pages_with_text": 8,
+    "chunks_per_page_max": 1,
+    "chunks_per_page_histogram": {
+      "1": 8
+    },
+    "avg_chunk_chars": 266.1,
+    "documents": {
+      "doc_5b132eb07a12": {
+        "doc_name": "DOC-E-设备维保管理制度.pdf",
+        "chunks": 4,
+        "pages": 4,
+        "chars": 1158
+      },
+      "doc_5b46c4bb2f5a": {
+        "doc_name": "DOC-F-客户服务响应时限规定.pdf",
+        "chunks": 4,
+        "pages": 4,
+        "chars": 971
+      }
+    }
+  },
+  "aggregates": {
+    "1": {
+      "questions": 23,
+      "answerable_questions": 21,
+      "negative_questions": 2,
+      "recall": 0.7857,
+      "hit": 0.9048,
+      "full_evidence_rate": 0.6667,
+      "mrr@10": 0.9524,
+      "multi_evidence_questions": 6,
+      "avg_retrieved_chunks": 1.0,
+      "avg_delivered_chunks": 1.0,
+      "avg_context_chars": 322.2174,
+      "truncated_questions": 0,
+      "avg_search_ms": 0.1483,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "3": {
+      "questions": 23,
+      "answerable_questions": 21,
+      "negative_questions": 2,
+      "recall": 1.0,
+      "hit": 1.0,
+      "full_evidence_rate": 1.0,
+      "mrr@10": 0.9524,
+      "multi_evidence_questions": 6,
+      "avg_retrieved_chunks": 3.0,
+      "avg_delivered_chunks": 3.0,
+      "avg_context_chars": 910.4348,
+      "truncated_questions": 0,
+      "avg_search_ms": 0.1483,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "5": {
+      "questions": 23,
+      "answerable_questions": 21,
+      "negative_questions": 2,
+      "recall": 1.0,
+      "hit": 1.0,
+      "full_evidence_rate": 1.0,
+      "mrr@10": 0.9524,
+      "multi_evidence_questions": 6,
+      "avg_retrieved_chunks": 5.0,
+      "avg_delivered_chunks": 5.0,
+      "avg_context_chars": 1482.087,
+      "truncated_questions": 0,
+      "avg_search_ms": 0.1483,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "10": {
+      "questions": 23,
+      "answerable_questions": 21,
+      "negative_questions": 2,
+      "recall": 1.0,
+      "hit": 1.0,
+      "full_evidence_rate": 1.0,
+      "mrr@10": 0.9524,
+      "multi_evidence_questions": 6,
+      "avg_retrieved_chunks": 8.0,
+      "avg_delivered_chunks": 8.0,
+      "avg_context_chars": 2391.0,
+      "truncated_questions": 0,
+      "avg_search_ms": 0.1483,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "ranking_deterministic": true
+  }
+}

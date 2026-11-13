@@ -1,0 +1,125 @@
+{
+  "work_dir": "<repo>\\benchmarks\\.work\\e2e_workflow",
+  "steps": [
+    {
+      "step": "server_up",
+      "t": 4.1,
+      "url": "http://127.0.0.1:18997"
+    },
+    {
+      "step": "workflow_waiting_approval",
+      "t": 16.8,
+      "card": "会议→邮件工作流\nwf_530c8cd2dba0 · 会议 mtg_2e85e4373d53 · 下一步：等待人工审批\n等待人工审批\n需要你确认后才会发送邮件\n（草稿 v1，确认前不会发出）。\n收件人\n主题\n正文\n确认发送\n保存修改（需再次确认）\n取消发送\n查看执行 Trace\n审批绑定到具体草稿版本：修改后版本号会 +1，旧版本确认会被拒绝。"
+    },
+    {
+      "step": "after_reload",
+      "t": 17.1,
+      "card": "会议→邮件工作流\nwf_530c8cd2dba0 · 会议 mtg_2e85e4373d53 · 下一步：等待人工审批\n等待人工审批\n需要你确认后才会发送邮件\n（草稿 v1，确认前不会发出）。\n收件人\n主题\n正文\n确认发送\n保存修改（需再次确认）\n取消发送\n查看执行 Trace\n审批绑定到具体草稿版本：修改后版本号会 "
+    },
+    {
+      "step": "after_approve",
+      "t": 17.2,
+      "card": "会议→邮件工作流\nwf_530c8cd2dba0 · 会议 mtg_2e85e4373d53 · 当前步骤：record_audit\n已完成\n邮件已发送；会议、风险、待办已写入业务库。会议 ID：mtg_2e85e4373d53\n查看执行 Trace"
+    },
+    {
+      "step": "trace",
+      "t": 17.4,
+      "text": "节点级执行 Trace（Token 合计 995）\nload_meeting · 2ms\n2026-11-11T15:35:59+00:00\nanalyze_meeting · 4538ms\n2026-11-11T15:35:59+00:00 · in 176 / out 323\nextract_todos · 1ms"
+    },
+    {
+      "step": "after_restart",
+      "t": 91.1,
+      "card": "会议→邮件工作流\nwf_530c8cd2dba0 · 会议 mtg_2e85e4373d53 · 当前步骤：record_audit\n已完成\n邮件已发送；会议、风险、待办已写入业务库。会议 ID：mtg_2e85e4373d53\n查看执行 Trace",
+      "meetings": "项目周会\n今天 23:36 · 1 风险 · 2 待办"
+    },
+    {
+      "step": "after_cancel",
+      "t": 115.5,
+      "card": "会议→邮件工作流\nwf_0a098568b9fb · 会议 mtg_9699b5947912 · 当前步骤：record_audit\n已取消\n已取消…\n查看执行 Trace"
+    },
+    {
+      "step": "empty_recipient_blocked",
+      "t": 131.3,
+      "card": "会议→邮件工作流\nwf_14677b006021 · 会议 mtg_7bbc0f561c08 · 下一步：等待人工审批\n等待人工审批\n需要你确认后才会发送邮件\n（草稿 v1，确认前不会发出）。\n收件人\n主题\n正文\n确认发"
+    },
+    {
+      "step": "approve_after_edit_blocked",
+      "t": 132.1,
+      "card": "会议→邮件工作流\nwf_14677b006021 · 会议 mtg_7bbc0f561c08 · 下一步：等待人工审批\n等待人工审批\n需要你确认后才会发送邮件\n（草稿 v1，确认前不会发出）。\n收件人\n主题\n正文\n确认发"
+    },
+    {
+      "step": "after_edit_saved",
+      "t": 132.2,
+      "card": "会议→邮件工作流\nwf_14677b006021 · 会议 mtg_7bbc0f561c08 · 下一步：等待人工审批\n等待人工审批\n需要你确认后才会发送邮件\n（草稿 v2，确认前不会发出）。\n收件人\n主题\n正文\n确认发送\n保存修改（需再次确认）\n取消发送\n查看执行 Trace\n审批绑定到具体草稿版"
+    }
+  ],
+  "checks": {
+    "approval_card_shown": true,
+    "shows_real_status": true,
+    "draft_has_subject": true,
+    "survives_page_reload": true,
+    "completed_after_approve": true,
+    "trace_visible": true,
+    "restart_ok": true,
+    "meeting_single_after_restart": true,
+    "risks_and_todos_visible": true,
+    "cancel_shows_cancelled": true,
+    "no_duplicate_meetings": true,
+    "mail_count_matches_approvals": true,
+    "first_email_sent": true,
+    "second_email_cancelled": true,
+    "chat_page_ok": true,
+    "knowledge_page_ok": true,
+    "edit_requires_save": true,
+    "empty_recipient_blocked": true,
+    "edit_bumps_version": true,
+    "completed_after_reapprove": true,
+    "edited_email_version_two": true,
+    "all_passed": true
+  },
+  "fake_smtp_port": 50134,
+  "server_log_tail": "AI ���� Demo ����������http://127.0.0.1:18997\n",
+  "server_log_tail_2": "AI ���� Demo ����������http://127.0.0.1:18997\n",
+  "server_log_tail_3": "AI ���� Demo ����������http://127.0.0.1:18997\n",
+  "server_log_tail_4": "AI ���� Demo ����������http://127.0.0.1:18997\n",
+  "db": {
+    "meetings": 3,
+    "emails": [
+      [
+        "mail_e6b9f3a80da8",
+        "sent",
+        1
+      ],
+      [
+        "mail_426e04d1e617",
+        "cancelled",
+        1
+      ],
+      [
+        "mail_e4ed0d9a4fa7",
+        "sent",
+        2
+      ]
+    ],
+    "workflow_runs": 0
+  },
+  "smtp_captured": [
+    {
+      "from": "bot@example.com",
+      "to": [
+        "team@example.com"
+      ],
+      "subject": "【提醒】项目周会结论与待办事项",
+      "body": "各位好：\n\n现就项目周会结论及关键待办提醒如下，请相关同事按计划推进。\n\n一、关键风险\n- 接口联调不通过导致上线延期（等级：高）：接口联调一直未通过，已导致上线日期延期两周，该风险尚未解决。\n\n二、待办事项\n1. 补齐测试用例——负责人：李娜；截止时间：3月15日前；优先级：高。\n2. 完成联调——负责人：待确认；截止时间：本周五前；优先级：高。\n\n三、会议安排\n- 会议时间：待确认\n- 会议地点：待确认\n\n请各负责人及时跟进，如有疑问请提前沟通。\n\n谢谢。\n"
+    },
+    {
+      "from": "bot@example.com",
+      "to": [
+        "team@example.com"
+      ],
+      "subject": "【会议提醒】项目周会 风险与待办（审批人已修订）",
+      "body": "各位好：\n\n关于「项目周会」，请关注以下事项。\n\n一、风险提醒\n- [high] 接口联调不通过导致上线延期：接口联调一直不通过，上线日期已延期两周，该风险尚未解决。\n\n二、待办事项\n- 补齐测试用例（负责人：李娜，截止：3月15日）\n- 完成联调（负责人：待确认，截止：本周五）\n\n如有疑问请回复本邮件，谢谢。\n"
+    }
+  ],
+  "elapsed_seconds": 132.8
+}

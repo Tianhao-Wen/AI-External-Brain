@@ -1,0 +1,3515 @@
+{
+  "meta": {
+    "run_id": "20261109_162138_meeting_live",
+    "suite": "meeting",
+    "mode": "live",
+    "created_at": "2026-11-09T16:21:38",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 25,
+      "used": 13,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "overall": {
+      "meetings": 13,
+      "no_risk_meetings": 5,
+      "risky_meetings": 8,
+      "failed_meetings": 0,
+      "risk": {
+        "gold_total": 15,
+        "pred_total": 18,
+        "tp": 13,
+        "fp": 5,
+        "fn": 2,
+        "precision": 0.7222,
+        "recall": 0.8667,
+        "f1": 0.7879,
+        "high_risk_total": 8,
+        "high_risk_missed": 0,
+        "high_risk_miss_rate": 0.0,
+        "no_risk_false_positive_meetings": 0,
+        "no_risk_false_positive_rate": 0.0,
+        "severity_accuracy": 0.8542,
+        "severity_confusion": {
+          "high": {
+            "high": 6,
+            "medium": 2,
+            "low": 0
+          },
+          "medium": {
+            "high": 1,
+            "medium": 4,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 0.9583,
+        "type_accuracy": 0.8125,
+        "exact_meeting_rate": 0.6923076923076923
+      },
+      "risk_per_type": {
+        "进度": {
+          "gold": 3,
+          "pred": 5,
+          "tp": 3,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.75
+        },
+        "成本": {
+          "gold": 1,
+          "pred": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "质量": {
+          "gold": 2,
+          "pred": 1,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "技术": {
+          "gold": 2,
+          "pred": 3,
+          "tp": 1,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.3333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        "资源": {
+          "gold": 2,
+          "pred": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6667
+        },
+        "需求变更": {
+          "gold": 1,
+          "pred": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "合规": {
+          "gold": 2,
+          "pred": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "供应商": {
+          "gold": 2,
+          "pred": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "todos": {
+        "gold_total": 30,
+        "pred_total": 30,
+        "tp": 29,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.9667,
+        "recall": 0.9667,
+        "f1": 0.9667,
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated_total": 0,
+        "owner_false_fill_total": 0,
+        "deadline_fabricated_total": 0
+      },
+      "decisions": {
+        "gold_total": 27,
+        "pred_total": 27,
+        "tp": 27,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "meeting_all_found_rate": 1.0,
+        "retracted_conflicts": 0
+      },
+      "matched_risks": 13
+    },
+    "by_category": {
+      "multi_risk": {
+        "meetings": 3,
+        "gold_risks": 9,
+        "pred_risks": 8,
+        "tp": 7,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.875,
+        "recall": 0.7778,
+        "f1": 0.8235
+      },
+      "no_risk": {
+        "meetings": 5,
+        "gold_risks": 0,
+        "pred_risks": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "single_risk": {
+        "meetings": 5,
+        "gold_risks": 6,
+        "pred_risks": 10,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      }
+    },
+    "latency": {
+      "p50_ms": 4507.8,
+      "p95_ms": 6130.679999999999,
+      "total_s": 61.5
+    }
+  },
+  "cases": [
+    {
+      "meeting_id": "MEET-005",
+      "title": "磐石数据中台例行同步",
+      "category": "no_risk",
+      "text_chars": 361,
+      "gold": {
+        "risks": [],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "数据血缘可视化采用自研方案，不采购第三方工具",
+            "match": [
+              "自研",
+              "血缘"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "输出数据血缘自研方案概要设计",
+            "owner": "王强",
+            "deadline": "2026年3月20日",
+            "match": [
+              "概要设计",
+              "血缘"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "整理一致性校验用例为回归测试集",
+            "owner": "赵敏",
+            "deadline": "2026年3月18日",
+            "match": [
+              "回归测试集",
+              "校验用例"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "磐石数据中台例行同步",
+        "risks": [],
+        "todos": [
+          {
+            "id": "todo_4293e1718877",
+            "meeting_id": "mtg_bff4a9f0ecb1",
+            "risk_id": null,
+            "content": "输出数据血缘自研方案的概要设计",
+            "owner": "王强",
+            "due_date": "2026年3月20日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:44+00:00",
+            "updated_at": "2026-11-09T08:21:44+00:00"
+          },
+          {
+            "id": "todo_cae31bec24b2",
+            "meeting_id": "mtg_bff4a9f0ecb1",
+            "risk_id": null,
+            "content": "把一致性校验用例整理成回归测试集",
+            "owner": "赵敏",
+            "due_date": "2026年3月18日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:44+00:00",
+            "updated_at": "2026-11-09T08:21:44+00:00"
+          }
+        ],
+        "decisions": [
+          "数据血缘可视化采用自研方案，不采购第三方工具"
+        ],
+        "summary": "本次会议同步了数据中台的阶段性进展：调度改造使批处理耗时显著下降，一致性校验用例与监控告警规则梳理均已完成。会议讨论了下一阶段数据血缘可视化需求，确认现有元数据足以支撑，决定采用自研方案、不采购第三方工具。校验用例维护成本略高但仍在可接受范围内，暂不处理。后续由王强输出自研方案概要设计，赵敏整理回归测试集。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 0,
+        "pred_count": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matched": [],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": true,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 0.0,
+        "evidence_relevant_rate": 0.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {}
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 2,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月20日",
+            "pred_deadline": "2026年3月20日",
+            "deadline_ok": true,
+            "pred_content": "输出数据血缘自研方案的概要设计"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 2,
+            "gold_owner": "赵敏",
+            "pred_owner": "赵敏",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月18日",
+            "pred_deadline": "2026年3月18日",
+            "deadline_ok": true,
+            "pred_content": "把一致性校验用例整理成回归测试集"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 1,
+        "pred_count": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3975.3,
+      "index": 1
+    },
+    {
+      "meeting_id": "MEET-006",
+      "title": "天穹CRM 交付风险专项会",
+      "category": "multi_risk",
+      "text_chars": 506,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "供应商",
+            "severity": "high",
+            "evidence": "核心供应商华宸科技的系统对接人本月离职，新的对接人尚未到位",
+            "match": [
+              "华宸科技",
+              "对接人",
+              "供应商"
+            ]
+          },
+          {
+            "risk_id": "R2",
+            "risk_type": "进度",
+            "severity": "high",
+            "evidence": "累计耽误了 6 个工作日",
+            "match": [
+              "6 个工作日",
+              "耽误",
+              "延期"
+            ]
+          },
+          {
+            "risk_id": "R3",
+            "risk_type": "技术",
+            "severity": "medium",
+            "evidence": "字段定义存在分歧，客户主数据表的映射规则改了三版",
+            "match": [
+              "字段定义",
+              "映射规则"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "要求华宸科技 3月18日前指派固定对接人",
+            "match": [
+              "固定对接人",
+              "3月18日"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "以 2月26日版本接口文档为准冻结字段定义",
+            "match": [
+              "冻结",
+              "2月26日"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "向华宸科技发函要求指派固定对接人",
+            "owner": "周凯",
+            "deadline": "2026年3月16日",
+            "match": [
+              "发函"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "重做主数据映射规则",
+            "owner": "王强",
+            "deadline": "2026年3月20日",
+            "match": [
+              "映射规则"
+            ]
+          },
+          {
+            "todo_id": "T3",
+            "task": "整理接口文档版本差异清单",
+            "owner": "何斌",
+            "deadline": "2026年3月17日",
+            "match": [
+              "版本差异"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "天穹CRM 交付风险专项会",
+        "risks": [
+          {
+            "id": "risk_612679b1df8d",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "title": "核心供应商对接人空缺且接口文档版本不一致",
+            "level": "high",
+            "description": "华宸科技系统对接人本月离职、新对接人尚未到位，接口文档版本对不上，最后一次有效接口变更确认停留在2月26日，已造成双方对字段定义理解不一致。",
+            "evidence": "核心供应商华宸科技的系统对接人本月离职，新的对接人尚未到位，接口文档版本也对不上，最后一次有效的接口变更确认停留在 2月26日。这已经造成双方对字段定义的理解不一致。",
+            "suggestion": "尽快按决议向华宸科技发正式函件，要求3月18日前指派固定对接人；对接人到位前以2月26日版本接口文档冻结字段定义并推进后续工作。",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:50+00:00"
+          },
+          {
+            "id": "risk_99025d92a56d",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "title": "4月30日交付节点存在延期风险",
+            "level": "high",
+            "description": "若供应商继续无法确认接口，4月30日交付节点有较大概率延期。",
+            "evidence": "如果供应商继续无法确认接口，4月30日交付节点有较大概率延期。",
+            "suggestion": "推动供应商尽快确认接口并指派固定对接人；评估交付计划并准备应对预案。",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:50+00:00"
+          },
+          {
+            "id": "risk_0b7b7736cfa7",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "title": "字段定义分歧导致映射规则反复重做、进度延误",
+            "level": "medium",
+            "description": "由于字段定义存在分歧，客户主数据表映射规则改了三版，每次都要重跑历史数据回填，累计耽误6个工作日。",
+            "evidence": "由于字段定义存在分歧，客户主数据表的映射规则改了三版，每次都要重跑一次历史数据回填，累计耽误了 6 个工作日。",
+            "suggestion": "按冻结的字段定义重做主数据映射规则，减少反复；同步整理接口文档版本差异清单，明确口径。",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:50+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_a3ccefe5e885",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "risk_id": null,
+            "content": "向华宸科技发函要求指派固定对接人",
+            "owner": "周凯",
+            "due_date": "2026年3月16日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:50+00:00",
+            "updated_at": "2026-11-09T08:21:50+00:00"
+          },
+          {
+            "id": "todo_838fed1b1409",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "risk_id": null,
+            "content": "按冻结的字段定义重做主数据映射规则",
+            "owner": "王强",
+            "due_date": "2026年3月20日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:50+00:00",
+            "updated_at": "2026-11-09T08:21:50+00:00"
+          },
+          {
+            "id": "todo_99d43914970e",
+            "meeting_id": "mtg_0bb00b2efdd8",
+            "risk_id": null,
+            "content": "整理接口文档版本差异清单",
+            "owner": "何斌",
+            "due_date": "2026年3月17日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:50+00:00",
+            "updated_at": "2026-11-09T08:21:50+00:00"
+          }
+        ],
+        "decisions": [
+          "由周凯本周内向华宸科技发正式函件，要求3月18日前指派固定对接人",
+          "在对接人到位前，先以2月26日版本接口文档为准冻结字段定义"
+        ],
+        "summary": "会议围绕天穹CRM交付风险展开，整体进度62%，计划4月30日交付。核心供应商华宸科技对接人离职、新对接人未到位，接口文档版本对不上，字段定义理解不一致，导致主数据映射规则改了三版、累计耽误6个工作日。会议决定向华宸科技发函要求3月18日前指派固定对接人，并在对接人到位前以2月26日版本接口文档冻结字段定义。周凯、王强、何斌分别承担发函、重做映射规则和整理版本差异清单的待办。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.6667,
+        "recall": 0.6667,
+        "f1": 0.6667,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "供应商",
+            "pred_type": "供应商",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "核心供应商对接人空缺且接口文档版本不一致",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          },
+          {
+            "risk_id": "R2",
+            "gold_type": "进度",
+            "pred_type": "进度",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "medium",
+            "severity_ok": false,
+            "match_score": 2,
+            "pred_title": "字段定义分歧导致映射规则反复重做、进度延误",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [
+          "R3"
+        ],
+        "spurious": [
+          {
+            "index": 1,
+            "title": "4月30日交付节点存在延期风险",
+            "pred_type": "进度"
+          }
+        ],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.5,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 1,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 1.0,
+        "high_risk_total": 2,
+        "high_risk_missed": 0,
+        "per_type": {
+          "进度": {
+            "gold": 1,
+            "pred": 2,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6667
+          },
+          "技术": {
+            "gold": 1,
+            "pred": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "供应商": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "周凯",
+            "pred_owner": "周凯",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月16日",
+            "pred_deadline": "2026年3月16日",
+            "deadline_ok": true,
+            "pred_content": "向华宸科技发函要求指派固定对接人"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月20日",
+            "pred_deadline": "2026年3月20日",
+            "deadline_ok": true,
+            "pred_content": "按冻结的字段定义重做主数据映射规则"
+          },
+          {
+            "todo_id": "T3",
+            "match_score": 1,
+            "gold_owner": "何斌",
+            "pred_owner": "何斌",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月17日",
+            "pred_deadline": "2026年3月17日",
+            "deadline_ok": true,
+            "pred_content": "整理接口文档版本差异清单"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 5784.6,
+      "index": 2
+    },
+    {
+      "meeting_id": "MEET-013",
+      "title": "星海项目客户需求澄清会",
+      "category": "no_risk",
+      "text_chars": 364,
+      "gold": {
+        "risks": [],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "报表导出仅支持 Excel 格式",
+            "match": [
+              "Excel"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "不实现自动归档功能",
+            "match": [
+              "不实现",
+              "归档"
+            ]
+          },
+          {
+            "decision_id": "D3",
+            "text": "权限模型沿用三级角色",
+            "match": [
+              "三级角色"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "更新需求规格说明书",
+            "owner": "陈晨",
+            "deadline": "2026年3月26日",
+            "match": [
+              "需求规格"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "按澄清结论调整前端排期",
+            "owner": "李娜",
+            "deadline": "2026年3月25日",
+            "match": [
+              "前端排期"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "星海项目客户需求澄清会",
+        "risks": [],
+        "todos": [
+          {
+            "id": "todo_bbda25b9587f",
+            "meeting_id": "mtg_72dd209660df",
+            "risk_id": null,
+            "content": "更新需求规格说明书",
+            "owner": "陈晨",
+            "due_date": "2026年3月26日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:53+00:00",
+            "updated_at": "2026-11-09T08:21:53+00:00"
+          },
+          {
+            "id": "todo_893cbc3790f3",
+            "meeting_id": "mtg_72dd209660df",
+            "risk_id": null,
+            "content": "按澄清结论调整前端排期",
+            "owner": "李娜",
+            "due_date": "2026年3月25日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:53+00:00",
+            "updated_at": "2026-11-09T08:21:53+00:00"
+          }
+        ],
+        "decisions": [
+          "报表导出仅支持 Excel 格式",
+          "不实现自动归档功能",
+          "权限模型沿用三级角色"
+        ],
+        "summary": "本次会议与客户澄清了报表导出格式、数据保留期限和权限模型三项需求。客户确认导出仅支持 Excel、不要求自动归档、沿用现有三级角色，实现范围相应缩小，减少约 5 人日工作量。会议未发现新的风险，现有排期可以覆盖。后续由陈晨更新需求规格说明书，李娜按澄清结论调整前端排期。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 0,
+        "pred_count": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matched": [],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": true,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 0.0,
+        "evidence_relevant_rate": 0.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {}
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "陈晨",
+            "pred_owner": "陈晨",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月26日",
+            "pred_deadline": "2026年3月26日",
+            "deadline_ok": true,
+            "pred_content": "更新需求规格说明书"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "李娜",
+            "pred_owner": "李娜",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月25日",
+            "pred_deadline": "2026年3月25日",
+            "deadline_ok": true,
+            "pred_content": "按澄清结论调整前端排期"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3369.7,
+      "index": 3
+    },
+    {
+      "meeting_id": "MEET-014",
+      "title": "天穹CRM 数据迁移专题会",
+      "category": "multi_risk",
+      "text_chars": 539,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "质量",
+            "severity": "high",
+            "evidence": "失败 18 万条，失败率 4.19%",
+            "match": [
+              "失败率",
+              "4.19",
+              "18 万条"
+            ]
+          },
+          {
+            "risk_id": "R2",
+            "risk_type": "合规",
+            "severity": "high",
+            "evidence": "迁移后的客户手机号仍然是明文存储，不符合合同中关于客户数据加密存储的约定",
+            "match": [
+              "明文",
+              "加密",
+              "合规"
+            ]
+          },
+          {
+            "risk_id": "R3",
+            "risk_type": "进度",
+            "severity": "medium",
+            "evidence": "正式迁移窗口只有 8 小时，按试跑耗时 11 小时推算，窗口时间不够",
+            "match": [
+              "窗口",
+              "延期"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "正式迁移前再完成两次全量试跑，失败率低于 0.5%",
+            "match": [
+              "试跑",
+              "0.5%"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "手机号落库前加密",
+            "match": [
+              "加密"
+            ]
+          },
+          {
+            "decision_id": "D3",
+            "text": "迁移窗口从 8 小时延长到 12 小时",
+            "match": [
+              "12 小时",
+              "窗口"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "修正手机号格式校验规则",
+            "owner": "王强",
+            "deadline": "2026年3月27日",
+            "match": [
+              "校验规则"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "确认手机号加密方案",
+            "owner": "孙磊",
+            "deadline": "2026年3月26日",
+            "match": [
+              "加密方案"
+            ]
+          },
+          {
+            "todo_id": "T3",
+            "task": "向客户提出迁移窗口延长申请",
+            "owner": "何斌",
+            "deadline": "2026年3月25日",
+            "match": [
+              "窗口延长"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "天穹CRM 数据迁移专题会",
+        "risks": [
+          {
+            "id": "risk_2a853bd0cd1e",
+            "meeting_id": "mtg_c59c84b70eca",
+            "title": "手机号明文存储不符合合同加密约定",
+            "level": "high",
+            "description": "迁移后的客户手机号仍为明文存储，不符合合同中关于客户数据加密存储的约定，一旦客户方审计将被认定为违约。",
+            "evidence": "迁移后的客户手机号仍然是明文存储，不符合合同中关于客户数据加密存储的约定，存在合规风险，一旦客户方审计将被认定为违约。",
+            "suggestion": "按会议决议在手机号落库前完成加密，由孙磊确认加密方案并跟踪落实",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:59+00:00"
+          },
+          {
+            "id": "risk_ebcd5c3c6e83",
+            "meeting_id": "mtg_c59c84b70eca",
+            "title": "正式迁移窗口不足导致交付延期",
+            "level": "high",
+            "description": "目前只做过一次试跑，按试跑耗时11小时推算，8小时正式迁移窗口不够，交付节点存在延期风险。",
+            "evidence": "目前只做过一次试跑，正式迁移窗口只有 8 小时，按试跑耗时 11 小时推算，窗口时间不够，交付节点有延期风险。",
+            "suggestion": "按决议将迁移窗口延长至12小时并向客户提出变更，同时完成两次全量试跑验证时长",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:59+00:00"
+          },
+          {
+            "id": "risk_6070f248f311",
+            "meeting_id": "mtg_c59c84b70eca",
+            "title": "试跑数据完整性不达标",
+            "level": "medium",
+            "description": "第一次全量试跑失败18万条，失败率4.19%，其中约11万条为手机号字段格式不合法，7万条因客户主键重复被拒绝写入，数据完整性不达标。",
+            "evidence": "失败数据中约 11 万条为手机号字段格式不合法，另有 7 万条因客户主键重复被拒绝写入，数据完整性不达标。",
+            "suggestion": "修正手机号格式校验规则，处理客户主键重复问题，正式迁移前完成两次全量试跑并达到失败率低于0.5%的达标线",
+            "status": "open",
+            "created_at": "2026-11-09T08:21:59+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_428f60af60e6",
+            "meeting_id": "mtg_c59c84b70eca",
+            "risk_id": null,
+            "content": "修正手机号格式校验规则",
+            "owner": "王强",
+            "due_date": "2026年3月27日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:59+00:00",
+            "updated_at": "2026-11-09T08:21:59+00:00"
+          },
+          {
+            "id": "todo_1c47790cab59",
+            "meeting_id": "mtg_c59c84b70eca",
+            "risk_id": null,
+            "content": "确认手机号加密方案",
+            "owner": "孙磊",
+            "due_date": "2026年3月26日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:59+00:00",
+            "updated_at": "2026-11-09T08:21:59+00:00"
+          },
+          {
+            "id": "todo_51112469d6d9",
+            "meeting_id": "mtg_c59c84b70eca",
+            "risk_id": null,
+            "content": "向客户提出迁移窗口延长申请",
+            "owner": "何斌",
+            "due_date": "2026年3月25日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:21:59+00:00",
+            "updated_at": "2026-11-09T08:21:59+00:00"
+          }
+        ],
+        "decisions": [
+          "正式迁移前必须再完成两次全量试跑，达标线是失败率低于0.5%",
+          "手机号落库前加密，加密方案由孙磊确认",
+          "迁移窗口从8小时延长到12小时，向客户提出变更"
+        ],
+        "summary": "本次会议就天穹CRM数据迁移第一次全量试跑结果进行复盘，试跑失败率4.19%，未达到数据完整性要求。会议识别出手机号明文存储的合规风险与迁移窗口不足的延期风险。会议决定正式迁移前再完成两次全量试跑（失败率低于0.5%），手机号落库前加密，并将迁移窗口由8小时延长至12小时向客户提出变更。相关待办已分配到王强、孙磊、何斌并明确截止时间。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "质量",
+            "pred_type": "质量",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "medium",
+            "severity_ok": false,
+            "match_score": 3,
+            "pred_title": "试跑数据完整性不达标",
+            "evidence_grounded": true,
+            "evidence_relevant": false
+          },
+          {
+            "risk_id": "R2",
+            "gold_type": "合规",
+            "pred_type": "合规",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 2,
+            "pred_title": "手机号明文存储不符合合同加密约定",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          },
+          {
+            "risk_id": "R3",
+            "gold_type": "进度",
+            "pred_type": "进度",
+            "type_ok": true,
+            "gold_severity": "medium",
+            "pred_severity": "high",
+            "severity_ok": false,
+            "match_score": 2,
+            "pred_title": "正式迁移窗口不足导致交付延期",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.3333333333333333,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 1,
+            "low": 0
+          },
+          "medium": {
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 0.6666666666666666,
+        "type_accuracy": 1.0,
+        "high_risk_total": 2,
+        "high_risk_missed": 0,
+        "per_type": {
+          "进度": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "质量": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "合规": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月27日",
+            "pred_deadline": "2026年3月27日",
+            "deadline_ok": true,
+            "pred_content": "修正手机号格式校验规则"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "孙磊",
+            "pred_owner": "孙磊",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月26日",
+            "pred_deadline": "2026年3月26日",
+            "deadline_ok": true,
+            "pred_content": "确认手机号加密方案"
+          },
+          {
+            "todo_id": "T3",
+            "match_score": 1,
+            "gold_owner": "何斌",
+            "pred_owner": "何斌",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月25日",
+            "pred_deadline": "2026年3月25日",
+            "deadline_ok": true,
+            "pred_content": "向客户提出迁移窗口延长申请"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 6347.4,
+      "index": 4
+    },
+    {
+      "meeting_id": "MEET-015",
+      "title": "研发中心人力盘点会",
+      "category": "single_risk",
+      "text_chars": 448,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "资源",
+            "severity": "high",
+            "evidence": "按工时测算缺口 7 人……人员缺口已经成为交付的主要瓶颈",
+            "match": [
+              "缺口 7 人",
+              "人员缺口",
+              "缺口"
+            ]
+          },
+          {
+            "risk_id": "R2",
+            "risk_type": "成本",
+            "severity": "medium",
+            "evidence": "本年度人力预算已用掉 71%，新增 7 人需要追加预算约 210 万元",
+            "match": [
+              "210 万元",
+              "追加预算",
+              "71%"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "后端正式招聘、测试外包、运维内部转岗",
+            "match": [
+              "外包",
+              "转岗"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "提交追加人力预算申请",
+            "match": [
+              "追加人力预算",
+              "追加预算"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "发布后端岗位招聘需求",
+            "owner": "张伟",
+            "deadline": "2026年3月31日",
+            "match": [
+              "招聘需求"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "提交追加人力预算申请",
+            "owner": "吴静",
+            "deadline": "2026年3月30日",
+            "match": [
+              "预算申请"
+            ]
+          },
+          {
+            "todo_id": "T3",
+            "task": "梳理可内部转岗的运维候选人",
+            "owner": "刘洋",
+            "deadline": "2026年4月3日",
+            "match": [
+              "转岗"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "研发中心人力盘点会",
+        "risks": [
+          {
+            "id": "risk_28c153c1a8de",
+            "meeting_id": "mtg_6f1f8b2334dd",
+            "title": "二季度人力缺口难以补齐，影响项目交付",
+            "level": "high",
+            "description": "研发中心按工时测算缺口 7 人，当前招聘周期平均 62 天，二季度内补齐全部缺口的可能性较低，人员缺口已成为交付的主要瓶颈。",
+            "evidence": "当前招聘周期平均 62 天，二季度内补齐全部缺口的可能性较低，人员缺口已经成为交付的主要瓶颈。",
+            "suggestion": "按决议并行推进后端正式招聘、测试外包和运维内部转岗，并跟踪各渠道到岗进度",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:04+00:00"
+          },
+          {
+            "id": "risk_10c78c50e626",
+            "meeting_id": "mtg_6f1f8b2334dd",
+            "title": "人力预算已用 71%，新增人员需追加预算",
+            "level": "medium",
+            "description": "本年度人力预算已用掉 71%，新增 7 人需要追加预算约 210 万元，追加申请尚未提交。",
+            "evidence": "吴静说明本年度人力预算已用掉 71%，新增 7 人需要追加预算约 210 万元。",
+            "suggestion": "尽快提交追加人力预算 210 万元的申请并跟进审批",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:04+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_984cf6936101",
+            "meeting_id": "mtg_6f1f8b2334dd",
+            "risk_id": null,
+            "content": "发布后端岗位招聘需求",
+            "owner": "张伟",
+            "due_date": "2026年3月31日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:04+00:00",
+            "updated_at": "2026-11-09T08:22:04+00:00"
+          },
+          {
+            "id": "todo_1a22a57a96cc",
+            "meeting_id": "mtg_6f1f8b2334dd",
+            "risk_id": null,
+            "content": "提交追加人力预算 210 万元的申请",
+            "owner": "吴静",
+            "due_date": "2026年3月30日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:04+00:00",
+            "updated_at": "2026-11-09T08:22:04+00:00"
+          },
+          {
+            "id": "todo_a5e822dc009e",
+            "meeting_id": "mtg_6f1f8b2334dd",
+            "risk_id": null,
+            "content": "梳理可内部转岗的运维候选人",
+            "owner": "刘洋",
+            "due_date": "2026年4月3日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:04+00:00",
+            "updated_at": "2026-11-09T08:22:04+00:00"
+          }
+        ],
+        "decisions": [
+          "后端 4 人走正式招聘，测试 2 人采用外包，运维 1 人内部转岗解决",
+          "由吴静提交追加人力预算申请"
+        ],
+        "summary": "研发中心现有 26 人，二季度需支撑 4 个并行项目，按工时测算缺口 7 人，分别为后端 4 人、测试 2 人、运维 1 人。当前招聘周期平均 62 天，二季度内补齐全部缺口的可能性较低，人员缺口已成为交付的主要瓶颈。本年度人力预算已用掉 71%，新增 7 人需追加预算约 210 万元。会议决定后端走正式招聘、测试采用外包、运维通过内部转岗解决，并由吴静提交追加人力预算申请。相关招聘、预算申请和转岗候选人梳理已明确责任人与截止时间。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "资源",
+            "pred_type": "资源",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "二季度人力缺口难以补齐，影响项目交付",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          },
+          {
+            "risk_id": "R2",
+            "gold_type": "成本",
+            "pred_type": "成本",
+            "type_ok": true,
+            "gold_severity": "medium",
+            "pred_severity": "medium",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "人力预算已用 71%，新增人员需追加预算",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 1,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 1.0,
+        "high_risk_total": 1,
+        "high_risk_missed": 0,
+        "per_type": {
+          "成本": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "资源": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.6667,
+        "recall": 0.6667,
+        "f1": 0.6667,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "张伟",
+            "pred_owner": "张伟",
+            "owner_ok": true,
+            "gold_deadline": "2026年3月31日",
+            "pred_deadline": "2026年3月31日",
+            "deadline_ok": true,
+            "pred_content": "发布后端岗位招聘需求"
+          },
+          {
+            "todo_id": "T3",
+            "match_score": 1,
+            "gold_owner": "刘洋",
+            "pred_owner": "刘洋",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月3日",
+            "pred_deadline": "2026年4月3日",
+            "deadline_ok": true,
+            "pred_content": "梳理可内部转岗的运维候选人"
+          }
+        ],
+        "missed": [
+          "T2"
+        ],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 1
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 5091.6,
+      "index": 5
+    },
+    {
+      "meeting_id": "MEET-019",
+      "title": "物流服务商切换评估会",
+      "category": "single_risk",
+      "text_chars": 368,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "供应商",
+            "severity": "medium",
+            "evidence": "华南区域只有 1 个分拨中心，旺季爆仓风险较高",
+            "match": [
+              "分拨中心",
+              "爆仓",
+              "延误"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "华东切换新服务商，华南暂不切换",
+            "match": [
+              "华东",
+              "华南"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "系统对接费用 8 万元列入二季度预算",
+            "match": [
+              "8 万元",
+              "对接费用"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "完成新服务商华东区域试运行",
+            "owner": "何斌",
+            "deadline": "2026年4月15日",
+            "match": [
+              "试运行"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "把对接费用列入二季度预算",
+            "owner": "吴静",
+            "deadline": "2026年4月10日",
+            "match": [
+              "对接费用"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "物流服务商切换评估会",
+        "risks": [
+          {
+            "id": "risk_98ceaa68478f",
+            "meeting_id": "mtg_a525826e1341",
+            "title": "华南区域旺季爆仓与延误风险",
+            "level": "medium",
+            "description": "新服务商华南区域只有1个分拨中心，旺季爆仓风险较高，去年双十一期间平均延误天数为2.7天。",
+            "evidence": "华南区域只有 1 个分拨中心，旺季爆仓风险较高，去年双十一期间该服务商的平均延误天数为 2.7 天。",
+            "suggestion": "华南区域暂不切换，持续观察新服务商华南区域旺季保障能力。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:08+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_3c0dd51cdcc3",
+            "meeting_id": "mtg_a525826e1341",
+            "risk_id": null,
+            "content": "完成新服务商华东区域的试运行",
+            "owner": "何斌",
+            "due_date": "2026年4月15日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:08+00:00",
+            "updated_at": "2026-11-09T08:22:08+00:00"
+          },
+          {
+            "id": "todo_85ef3f86828c",
+            "meeting_id": "mtg_a525826e1341",
+            "risk_id": null,
+            "content": "把8万元对接费用列入二季度预算",
+            "owner": "吴静",
+            "due_date": "2026年4月10日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:08+00:00",
+            "updated_at": "2026-11-09T08:22:08+00:00"
+          }
+        ],
+        "decisions": [
+          "华东区域切换到新服务商，华南区域暂不切换",
+          "系统对接费用8万元列入二季度预算"
+        ],
+        "summary": "会议评估了物流服务商切换方案。现有服务商合同5月31日到期，新服务商报价低12%。新服务商华东区域时效与现服务商持平，华南区域因只有1个分拨中心存在旺季爆仓风险。会议决定华东区域切换到新服务商，华南区域暂不切换，并将8万元系统对接费用列入二季度预算。待办包括华东区域试运行和预算列入工作。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 1,
+        "pred_count": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "供应商",
+            "pred_type": "供应商",
+            "type_ok": true,
+            "gold_severity": "medium",
+            "pred_severity": "medium",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "华南区域旺季爆仓与延误风险",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 1,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 1.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {
+          "供应商": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "何斌",
+            "pred_owner": "何斌",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月15日",
+            "pred_deadline": "2026年4月15日",
+            "deadline_ok": true,
+            "pred_content": "完成新服务商华东区域的试运行"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "吴静",
+            "pred_owner": "吴静",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月10日",
+            "pred_deadline": "2026年4月10日",
+            "deadline_ok": true,
+            "pred_content": "把8万元对接费用列入二季度预算"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3944.0,
+      "index": 6
+    },
+    {
+      "meeting_id": "MEET-021",
+      "title": "星海项目变更控制会",
+      "category": "single_risk",
+      "text_chars": 430,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "需求变更",
+            "severity": "high",
+            "evidence": "本次变更将导致交付时间推迟 3 周，已超出合同约定的变更容差",
+            "match": [
+              "变更",
+              "推迟 3 周",
+              "26 人日",
+              "范围过大"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "变更暂不进入本版本，走合同变更流程",
+            "match": [
+              "暂不进入",
+              "合同变更"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "本版本审批流仍按固定两级实现",
+            "match": [
+              "固定两级"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "向客户发出变更影响说明",
+            "owner": "陈晨",
+            "deadline": "2026年4月8日",
+            "match": [
+              "变更影响"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "输出审批流引擎重写技术预研结论",
+            "owner": "王强",
+            "deadline": "2026年4月15日",
+            "match": [
+              "预研"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "星海项目变更控制会",
+        "risks": [
+          {
+            "id": "risk_2af56e5ab74d",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "title": "变更导致交付延期并超出合同变更容差",
+            "level": "high",
+            "description": "客户提出的审批流可配置化变更将导致交付时间推迟3周，已超出合同约定的变更容差，需求变更影响范围过大，该问题尚未解决。",
+            "evidence": "本次变更将导致交付时间推迟 3 周，已超出合同约定的变更容差，需求变更影响范围过大",
+            "suggestion": "走合同变更流程与客户重新约定范围与工期，并发出变更影响说明约谈范围",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:14+00:00"
+          },
+          {
+            "id": "risk_f765c7fbdefb",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "title": "审批流引擎需重写，工作量与时序投入大",
+            "level": "medium",
+            "description": "审批流引擎需要重写，工作量约26人日（后端18人日、前端8人日），并需输出技术预研结论。",
+            "evidence": "审批流引擎需要重写，工作量约 26 人日，其中后端 18 人日、前端 8 人日",
+            "suggestion": "由王强按期输出审批流引擎重写的技术预研结论，评估可行性与工作量",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:14+00:00"
+          },
+          {
+            "id": "risk_82f748edbe3c",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "title": "测试用例需大幅扩展",
+            "level": "medium",
+            "description": "变更后测试用例要从40条扩展到150条以上，测试工作量显著增加。",
+            "evidence": "测试用例要从 40 条扩展到 150 条以上",
+            "suggestion": "随变更范围重新评估测试资源与排期",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:14+00:00"
+          },
+          {
+            "id": "risk_230fd8901003",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "title": "前端流程设计器交互需重新设计",
+            "level": "medium",
+            "description": "前端流程设计器需要重新设计交互，至少需要6轮评审，评审周期较长。",
+            "evidence": "前端流程设计器需要重新设计交互，至少需要 6 轮评审",
+            "suggestion": "在变更范围确定后同步评估前端设计器的工作量与评审排期",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:14+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_be6072a251f0",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "risk_id": null,
+            "content": "向客户发出变更影响说明并约谈范围",
+            "owner": "陈晨",
+            "due_date": "2026年4月8日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:14+00:00",
+            "updated_at": "2026-11-09T08:22:14+00:00"
+          },
+          {
+            "id": "todo_2903f2c511a3",
+            "meeting_id": "mtg_65fb0f2d4adf",
+            "risk_id": null,
+            "content": "输出审批流引擎重写的技术预研结论",
+            "owner": "王强",
+            "due_date": "2026年4月15日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:14+00:00",
+            "updated_at": "2026-11-09T08:22:14+00:00"
+          }
+        ],
+        "decisions": [
+          "变更暂不进入本版本，走合同变更流程与客户重新约定范围与工期",
+          "本版本审批流仍按固定两级实现"
+        ],
+        "summary": "客户提出将审批流从固定两级改为可配置任意级数的变更申请。影响评估显示审批流引擎需重写、前端设计器需重新设计、测试用例需大幅扩展，并会导致交付推迟3周且超出合同变更容差。会议决定本次变更暂不进入本版本，改走合同变更流程与客户重新约定范围与工期，本版本仍按固定两级实现。后续由陈晨向客户发出变更影响说明并约谈范围，王强输出技术预研结论。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 1,
+        "pred_count": 4,
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "需求变更",
+            "pred_type": "进度",
+            "type_ok": false,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "变更导致交付延期并超出合同变更容差",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [
+          {
+            "index": 1,
+            "title": "审批流引擎需重写，工作量与时序投入大",
+            "pred_type": ""
+          },
+          {
+            "index": 2,
+            "title": "测试用例需大幅扩展",
+            "pred_type": "需求变更"
+          },
+          {
+            "index": 3,
+            "title": "前端流程设计器交互需重新设计",
+            "pred_type": ""
+          }
+        ],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 1,
+        "high_risk_missed": 0,
+        "per_type": {
+          "进度": {
+            "gold": 0,
+            "pred": 1,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "需求变更": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "陈晨",
+            "pred_owner": "陈晨",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月8日",
+            "pred_deadline": "2026年4月8日",
+            "deadline_ok": true,
+            "pred_content": "向客户发出变更影响说明并约谈范围"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月15日",
+            "pred_deadline": "2026年4月15日",
+            "deadline_ok": true,
+            "pred_content": "输出审批流引擎重写的技术预研结论"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 5986.2,
+      "index": 7
+    },
+    {
+      "meeting_id": "MEET-022",
+      "title": "研发效能工具分享会",
+      "category": "no_risk",
+      "text_chars": 357,
+      "gold": {
+        "risks": [],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "流水线缓存优化方案推广到全部项目",
+            "match": [
+              "缓存",
+              "推广"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "代码评审清单纳入研发规范",
+            "match": [
+              "评审清单",
+              "研发规范"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "整理缓存优化方案为操作手册",
+            "owner": "刘洋",
+            "deadline": "2026年4月10日",
+            "match": [
+              "操作手册"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "把评审清单纳入研发规范文档",
+            "owner": "王强",
+            "deadline": "2026年4月14日",
+            "match": [
+              "研发规范"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "研发效能工具分享会",
+        "risks": [],
+        "todos": [
+          {
+            "id": "todo_ceaf080d4148",
+            "meeting_id": "mtg_be116a78b5e5",
+            "risk_id": null,
+            "content": "把缓存优化方案整理成操作手册",
+            "owner": "刘洋",
+            "due_date": "2026年4月10日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:18+00:00",
+            "updated_at": "2026-11-09T08:22:18+00:00"
+          },
+          {
+            "id": "todo_a4151876099c",
+            "meeting_id": "mtg_be116a78b5e5",
+            "risk_id": null,
+            "content": "把评审清单纳入研发规范文档",
+            "owner": "王强",
+            "due_date": "2026年4月14日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:18+00:00",
+            "updated_at": "2026-11-09T08:22:18+00:00"
+          }
+        ],
+        "decisions": [
+          "流水线缓存优化方案推广到全部 5 个项目",
+          "代码评审清单纳入研发规范"
+        ],
+        "summary": "会议分享了流水线缓存优化和代码评审清单两项研发效能实践，均取得明显改善效果。参会人一致认为两项实践可直接复用到其他项目，且不需要额外投入。会议未讨论任何阻塞问题。会议决定将缓存优化方案推广到全部 5 个项目，并将代码评审清单纳入研发规范。相关操作手册和规范文档由刘洋、王强分别整理。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 0,
+        "pred_count": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matched": [],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": true,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 0.0,
+        "evidence_relevant_rate": 0.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {}
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "刘洋",
+            "pred_owner": "刘洋",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月10日",
+            "pred_deadline": "2026年4月10日",
+            "deadline_ok": true,
+            "pred_content": "把缓存优化方案整理成操作手册"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月14日",
+            "pred_deadline": "2026年4月14日",
+            "deadline_ok": true,
+            "pred_content": "把评审清单纳入研发规范文档"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3293.1,
+      "index": 8
+    },
+    {
+      "meeting_id": "MEET-025",
+      "title": "星海项目二期启动会",
+      "category": "multi_risk",
+      "text_chars": 484,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "进度",
+            "severity": "high",
+            "evidence": "一期的支付模块还有 2 个遗留缺陷没有关闭，如果不解决会带到二期，交付存在风险",
+            "match": [
+              "遗留缺陷",
+              "多预留 5 个工作日",
+              "交付存在风险"
+            ]
+          },
+          {
+            "risk_id": "R2",
+            "risk_type": "资源",
+            "severity": "medium",
+            "evidence": "翻译资源也没有落实，人力上还要再加 1 名前端",
+            "match": [
+              "翻译资源",
+              "再加 1 名前端",
+              "国际化"
+            ]
+          },
+          {
+            "risk_id": "R3",
+            "risk_type": "质量",
+            "severity": "medium",
+            "evidence": "一期上线后积累的技术债较多，测试环境的数据准备脚本已经失效",
+            "match": [
+              "技术债",
+              "数据准备脚本",
+              "测试"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "一期遗留缺陷在二期内前两周关闭",
+            "match": [
+              "遗留缺陷",
+              "前置任务"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "国际化先做技术选型，翻译资源由陈晨对接客户",
+            "match": [
+              "国际化",
+              "技术选型"
+            ]
+          },
+          {
+            "decision_id": "D3",
+            "text": "增加 1 名前端支援国际化改造",
+            "match": [
+              "增加 1 名前端",
+              "前端"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "关闭一期遗留支付缺陷",
+            "owner": "王强",
+            "deadline": "2026年4月17日",
+            "match": [
+              "遗留",
+              "支付缺陷"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "确认国际化翻译资源来源",
+            "owner": "陈晨",
+            "deadline": "2026年4月15日",
+            "match": [
+              "翻译资源"
+            ]
+          },
+          {
+            "todo_id": "T3",
+            "task": "修复测试环境数据准备脚本",
+            "owner": "赵敏",
+            "deadline": "2026年4月14日",
+            "match": [
+              "数据准备脚本"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "星海项目二期启动会",
+        "risks": [
+          {
+            "id": "risk_6ae3138945a5",
+            "meeting_id": "mtg_d6593a38a17c",
+            "title": "一期支付模块遗留缺陷未关闭",
+            "level": "high",
+            "description": "一期支付模块还有 2 个遗留缺陷没有关闭，如果不解决会带到二期，交付存在风险，进度上至少要多预留 5 个工作日。",
+            "evidence": "一期的支付模块还有 2 个遗留缺陷没有关闭，如果不解决会带到二期，交付存在风险，进度上至少要多预留 5 个工作日",
+            "suggestion": "按决议在二期前两周内关闭遗留缺陷，并在二期计划中预留 5 个工作日缓冲。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:23+00:00"
+          },
+          {
+            "id": "risk_1c25acd956b9",
+            "meeting_id": "mtg_d6593a38a17c",
+            "title": "测试环境数据准备脚本失效",
+            "level": "medium",
+            "description": "一期上线后积累的技术债较多，测试环境的数据准备脚本已经失效，测试效率会受到明显影响。",
+            "evidence": "测试环境的数据准备脚本已经失效，测试效率会受到明显影响",
+            "suggestion": "由赵敏在 2026年4月14日前修复数据准备脚本，恢复测试环境数据准备能力。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:23+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_b97b4a1c0744",
+            "meeting_id": "mtg_d6593a38a17c",
+            "risk_id": null,
+            "content": "关闭一期遗留支付缺陷",
+            "owner": "王强",
+            "due_date": "2026年4月17日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:23+00:00",
+            "updated_at": "2026-11-09T08:22:23+00:00"
+          },
+          {
+            "id": "todo_8ca40cd1cc5c",
+            "meeting_id": "mtg_d6593a38a17c",
+            "risk_id": null,
+            "content": "确认国际化翻译资源来源",
+            "owner": "陈晨",
+            "due_date": "2026年4月15日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:23+00:00",
+            "updated_at": "2026-11-09T08:22:23+00:00"
+          },
+          {
+            "id": "todo_adb78dcefca6",
+            "meeting_id": "mtg_d6593a38a17c",
+            "risk_id": null,
+            "content": "修复测试环境数据准备脚本",
+            "owner": "赵敏",
+            "due_date": "2026年4月14日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:23+00:00",
+            "updated_at": "2026-11-09T08:22:23+00:00"
+          }
+        ],
+        "decisions": [
+          "一期遗留缺陷必须在二期前两周关闭，作为二期的前置任务",
+          "国际化方案先做技术选型，翻译资源由陈晨对接客户提供",
+          "增加 1 名前端支援国际化改造"
+        ],
+        "summary": "星海项目二期共 14 个需求，计划 6月30日交付，团队 9 人。会议识别出三项主要问题：一期支付模块有 2 个遗留缺陷未关闭、二期双语要求缺少国际化基础设施与翻译资源、测试环境数据准备脚本失效。会议决定将一期遗留缺陷关闭作为二期前置任务，国际化先做技术选型并由陈晨对接客户获取翻译资源，同时增加 1 名前端。相关待办已明确负责人与截止时间。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 3,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "进度",
+            "pred_type": "进度",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "一期支付模块遗留缺陷未关闭",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          },
+          {
+            "risk_id": "R3",
+            "gold_type": "质量",
+            "pred_type": "技术",
+            "type_ok": false,
+            "gold_severity": "medium",
+            "pred_severity": "medium",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "测试环境数据准备脚本失效",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [
+          "R2"
+        ],
+        "spurious": [],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 1,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 0.5,
+        "high_risk_total": 1,
+        "high_risk_missed": 0,
+        "per_type": {
+          "进度": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "质量": {
+            "gold": 1,
+            "pred": 0,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "技术": {
+            "gold": 0,
+            "pred": 1,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "资源": {
+            "gold": 1,
+            "pred": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 2,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月17日",
+            "pred_deadline": "2026年4月17日",
+            "deadline_ok": true,
+            "pred_content": "关闭一期遗留支付缺陷"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "陈晨",
+            "pred_owner": "陈晨",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月15日",
+            "pred_deadline": "2026年4月15日",
+            "deadline_ok": true,
+            "pred_content": "确认国际化翻译资源来源"
+          },
+          {
+            "todo_id": "T3",
+            "match_score": 1,
+            "gold_owner": "赵敏",
+            "pred_owner": "赵敏",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月14日",
+            "pred_deadline": "2026年4月14日",
+            "deadline_ok": true,
+            "pred_content": "修复测试环境数据准备脚本"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 3,
+        "pred_count": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 5838.5,
+      "index": 9
+    },
+    {
+      "meeting_id": "MEET-026",
+      "title": "海外业务数据合规评审会",
+      "category": "single_risk",
+      "text_chars": 358,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "合规",
+            "severity": "high",
+            "evidence": "这构成了数据出境，未完成安全评估即传输属于违规",
+            "match": [
+              "数据出境",
+              "安全评估",
+              "违规"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "完成安全评估前暂停数据同步",
+            "match": [
+              "暂停",
+              "安全评估"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "推进专线建设的供应商询价",
+            "match": [
+              "专线",
+              "询价"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "启动数据出境安全评估申报",
+            "owner": "孙磊",
+            "deadline": "2026年4月30日",
+            "match": [
+              "安全评估"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "完成专线供应商询价",
+            "owner": "刘洋",
+            "deadline": "",
+            "match": [
+              "专线",
+              "询价"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "海外业务数据合规评审会",
+        "risks": [
+          {
+            "id": "risk_99cc5cf0b28f",
+            "meeting_id": "mtg_6542e36ed5ab",
+            "title": "数据出境未完成安全评估即传输的合规风险",
+            "level": "high",
+            "description": "当前实现将用户行为数据先落到国内机房再做分发，构成数据出境，未完成安全评估即传输属于违规，存在明确的合规风险，尚未解决，会议已决定暂停数据同步。",
+            "evidence": "当前实现是把数据先落到国内机房再做分发，这构成了数据出境，未完成安全评估即传输属于违规，存在明确的合规风险。",
+            "suggestion": "严格落实暂停数据同步的决议，尽快启动并完成数据出境安全评估申报，评估通过前不得恢复传输。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:28+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_c61e4569b948",
+            "meeting_id": "mtg_6542e36ed5ab",
+            "risk_id": null,
+            "content": "启动数据出境安全评估申报",
+            "owner": "孙磊",
+            "due_date": "2026年4月30日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:28+00:00",
+            "updated_at": "2026-11-09T08:22:28+00:00"
+          },
+          {
+            "id": "todo_af8c6b0bd3a7",
+            "meeting_id": "mtg_6542e36ed5ab",
+            "risk_id": null,
+            "content": "完成专线供应商询价",
+            "owner": "刘洋",
+            "due_date": "",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:28+00:00",
+            "updated_at": "2026-11-09T08:22:28+00:00"
+          }
+        ],
+        "decisions": [
+          "在完成数据出境安全评估前，暂停任何数据同步",
+          "由刘洋推进专线建设的供应商询价"
+        ],
+        "summary": "会议评审了欧洲客户要求将用户行为数据同步至法兰克福服务器的合规问题。当前先落国内机房再分发的实现方式构成数据出境，未完成安全评估即传输属于违规。会议决定在完成数据出境安全评估前暂停任何数据同步，并由刘洋推进专线供应商询价。孙磊负责启动数据出境安全评估申报，截止2026年4月30日；刘洋需在下一次评审前提供专线询价结果。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 1,
+        "pred_count": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "合规",
+            "pred_type": "合规",
+            "type_ok": true,
+            "gold_severity": "high",
+            "pred_severity": "high",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "数据出境未完成安全评估即传输的合规风险",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 1.0,
+        "high_risk_total": 1,
+        "high_risk_missed": 0,
+        "per_type": {
+          "合规": {
+            "gold": 1,
+            "pred": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T2",
+            "match_score": 2,
+            "gold_owner": "刘洋",
+            "pred_owner": "刘洋",
+            "owner_ok": true,
+            "gold_deadline": "",
+            "pred_deadline": "",
+            "deadline_ok": true,
+            "pred_content": "完成专线供应商询价"
+          },
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "孙磊",
+            "pred_owner": "孙磊",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月30日",
+            "pred_deadline": "2026年4月30日",
+            "deadline_ok": true,
+            "pred_content": "启动数据出境安全评估申报"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 4507.8,
+      "index": 10
+    },
+    {
+      "meeting_id": "MEET-028",
+      "title": "极光App 用户反馈周会",
+      "category": "no_risk",
+      "text_chars": 336,
+      "gold": {
+        "risks": [],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "下个版本增加字号调节功能",
+            "match": [
+              "字号调节"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "输出字号调节功能实现方案",
+            "owner": "李娜",
+            "deadline": "2026年4月16日",
+            "match": [
+              "字号调节"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "整理本周反馈的分类统计",
+            "owner": "陈晨",
+            "deadline": "2026年4月14日",
+            "match": [
+              "分类统计"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "极光App 用户反馈周会",
+        "risks": [],
+        "todos": [
+          {
+            "id": "todo_74dabae3a6e4",
+            "meeting_id": "mtg_3e399ed62996",
+            "risk_id": null,
+            "content": "输出字号调节功能的实现方案",
+            "owner": "李娜",
+            "due_date": "2026年4月16日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:32+00:00",
+            "updated_at": "2026-11-09T08:22:32+00:00"
+          },
+          {
+            "id": "todo_5abfcf97d1ae",
+            "meeting_id": "mtg_3e399ed62996",
+            "risk_id": null,
+            "content": "整理本周反馈的分类统计",
+            "owner": "陈晨",
+            "due_date": "2026年4月14日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:32+00:00",
+            "updated_at": "2026-11-09T08:22:32+00:00"
+          }
+        ],
+        "decisions": [
+          "下个版本增加字号调节功能"
+        ],
+        "summary": "本次周会汇总了本周用户反馈情况：共143条，包含功能建议88条、缺陷反馈39条和咨询16条。深色模式文字对比度问题已在3.2.1版本修复。会议决定下个版本增加字号调节功能，该功能工作量约3人日，排期允许。三人一致确认当前没有需要升级为风险的反馈项。后续由李娜输出字号调节功能实现方案，陈晨整理本周反馈分类统计。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 0,
+        "pred_count": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matched": [],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": true,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 0.0,
+        "evidence_relevant_rate": 0.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {}
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "李娜",
+            "pred_owner": "李娜",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月16日",
+            "pred_deadline": "2026年4月16日",
+            "deadline_ok": true,
+            "pred_content": "输出字号调节功能的实现方案"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "陈晨",
+            "pred_owner": "陈晨",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月14日",
+            "pred_deadline": "2026年4月14日",
+            "deadline_ok": true,
+            "pred_content": "整理本周反馈的分类统计"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 1,
+        "pred_count": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3717.1,
+      "index": 11
+    },
+    {
+      "meeting_id": "MEET-030",
+      "title": "天穹CRM 接口性能优化会",
+      "category": "single_risk",
+      "text_chars": 390,
+      "gold": {
+        "risks": [
+          {
+            "risk_id": "R1",
+            "risk_type": "技术",
+            "severity": "medium",
+            "evidence": "单次请求执行了 34 条 SQL，存在典型的 N+1 查询问题",
+            "match": [
+              "N+1",
+              "慢查询",
+              "34 条 SQL"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "先加缓存把响应时间压到 1 秒以内",
+            "match": [
+              "缓存"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "数据访问层重构排入下个迭代",
+            "match": [
+              "重构",
+              "下个迭代"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "实现客户列表接口缓存",
+            "owner": "王强",
+            "deadline": "2026年4月22日",
+            "match": [
+              "缓存"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "评估受影响的回归用例范围",
+            "owner": "赵敏",
+            "deadline": "2026年4月18日",
+            "match": [
+              "回归用例"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "天穹CRM 接口性能优化会",
+        "risks": [
+          {
+            "id": "risk_c046767b0a2e",
+            "meeting_id": "mtg_4840e5b9105f",
+            "title": "数据访问层存在N+1查询问题",
+            "level": "medium",
+            "description": "慢查询日志显示单次请求执行34条SQL，存在典型N+1查询问题，需要重构数据访问层。",
+            "evidence": "慢查询日志显示单次请求执行了 34 条 SQL，存在典型的 N+1 查询问题，需要重构数据访问层。",
+            "suggestion": "将数据访问层重构排入下个迭代并按计划实施。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:38+00:00"
+          },
+          {
+            "id": "risk_d07ead610bb5",
+            "meeting_id": "mtg_4840e5b9105f",
+            "title": "缓存方案无法解决数据量增长后的性能退化",
+            "level": "low",
+            "description": "缓存只能缓解问题，数据量继续增长时接口性能仍会退化，短期方案存在长期隐患。",
+            "evidence": "王强认为缓存只能缓解，数据量继续增长仍会退化。",
+            "suggestion": "在缓存方案上线后持续监控性能，并确保数据访问层重构按期推进。",
+            "status": "open",
+            "created_at": "2026-11-09T08:22:38+00:00"
+          }
+        ],
+        "todos": [
+          {
+            "id": "todo_4fe3da067581",
+            "meeting_id": "mtg_4840e5b9105f",
+            "risk_id": null,
+            "content": "实现客户列表接口缓存",
+            "owner": "王强",
+            "due_date": "2026年4月22日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:38+00:00",
+            "updated_at": "2026-11-09T08:22:38+00:00"
+          },
+          {
+            "id": "todo_15953c50d76c",
+            "meeting_id": "mtg_4840e5b9105f",
+            "risk_id": null,
+            "content": "评估受影响的回归用例范围",
+            "owner": "赵敏",
+            "due_date": "2026年4月18日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:38+00:00",
+            "updated_at": "2026-11-09T08:22:38+00:00"
+          }
+        ],
+        "decisions": [
+          "先加缓存把响应时间压到1秒以内，作为短期方案",
+          "数据访问层重构排入下个迭代"
+        ],
+        "summary": "会议围绕天穹CRM客户列表接口的性能问题展开。当前接口在2000条数据量下响应3.4秒，客户方要求低于1秒，根因是34条SQL的N+1查询。会议决定短期通过加缓存把响应压到1秒以内，数据访问层重构排入下个迭代。王强负责实现缓存，赵敏负责评估受影响的回归用例范围。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 1,
+        "pred_count": 2,
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "matched": [
+          {
+            "risk_id": "R1",
+            "gold_type": "技术",
+            "pred_type": "技术",
+            "type_ok": true,
+            "gold_severity": "medium",
+            "pred_severity": "medium",
+            "severity_ok": true,
+            "match_score": 3,
+            "pred_title": "数据访问层存在N+1查询问题",
+            "evidence_grounded": true,
+            "evidence_relevant": true
+          }
+        ],
+        "missed": [],
+        "spurious": [
+          {
+            "index": 1,
+            "title": "缓存方案无法解决数据量增长后的性能退化",
+            "pred_type": "技术"
+          }
+        ],
+        "truly_no_risk": false,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 1.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 1,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 1.0,
+        "evidence_relevant_rate": 1.0,
+        "type_accuracy": 1.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {
+          "技术": {
+            "gold": 1,
+            "pred": 2,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6667
+          }
+        }
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "王强",
+            "pred_owner": "王强",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月22日",
+            "pred_deadline": "2026年4月22日",
+            "deadline_ok": true,
+            "pred_content": "实现客户列表接口缓存"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "赵敏",
+            "pred_owner": "赵敏",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月18日",
+            "pred_deadline": "2026年4月18日",
+            "deadline_ok": true,
+            "pred_content": "评估受影响的回归用例范围"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 5944.5,
+      "index": 12
+    },
+    {
+      "meeting_id": "MEET-033",
+      "title": "云图平台需求优先级排序会",
+      "category": "no_risk",
+      "text_chars": 357,
+      "gold": {
+        "risks": [],
+        "decisions": [
+          {
+            "decision_id": "D1",
+            "text": "品牌视觉规范相关需求提升为中优先级",
+            "match": [
+              "品牌视觉",
+              "中优先级"
+            ]
+          },
+          {
+            "decision_id": "D2",
+            "text": "本季度交付高优先级 5 条与中优先级 8 条",
+            "match": [
+              "高优先级",
+              "8 条"
+            ]
+          }
+        ],
+        "todos": [
+          {
+            "todo_id": "T1",
+            "task": "更新需求池状态与优先级",
+            "owner": "陈晨",
+            "deadline": "2026年4月21日",
+            "match": [
+              "需求池"
+            ]
+          },
+          {
+            "todo_id": "T2",
+            "task": "输出品牌视觉规范需求设计稿",
+            "owner": "郑爽",
+            "deadline": "2026年4月28日",
+            "match": [
+              "设计稿"
+            ]
+          }
+        ]
+      },
+      "prediction": {
+        "title": "云图平台需求优先级排序会",
+        "risks": [],
+        "todos": [
+          {
+            "id": "todo_28aec7cc4940",
+            "meeting_id": "mtg_5f6bd5c98021",
+            "risk_id": null,
+            "content": "更新需求池的状态与优先级",
+            "owner": "陈晨",
+            "due_date": "2026年4月21日",
+            "priority": "high",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:41+00:00",
+            "updated_at": "2026-11-09T08:22:41+00:00"
+          },
+          {
+            "id": "todo_b9f6af84f275",
+            "meeting_id": "mtg_5f6bd5c98021",
+            "risk_id": null,
+            "content": "输出品牌视觉规范需求的设计稿",
+            "owner": "郑爽",
+            "due_date": "2026年4月28日",
+            "priority": "medium",
+            "status": "pending",
+            "created_at": "2026-11-09T08:22:41+00:00",
+            "updated_at": "2026-11-09T08:22:41+00:00"
+          }
+        ],
+        "decisions": [
+          "品牌视觉规范相关需求提升为中优先级",
+          "本季度只交付高优先级5条与中优先级8条"
+        ],
+        "summary": "会议对本季度17条待排需求进行了优先级排序，陈晨按客户影响面给出排序建议，李娜按实现成本校正，郑爽提出品牌视觉规范相关需求应提升优先级。会议确认将品牌视觉规范相关需求提升为中优先级，本季度只交付高优先级5条与中优先级8条。讨论过程顺利，未出现需要升级的风险，也未超出当前排期容量。后续由陈晨更新需求池状态与优先级，郑爽输出品牌视觉规范需求设计稿。",
+        "error": ""
+      },
+      "reused": false,
+      "risks": {
+        "gold_count": 0,
+        "pred_count": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matched": [],
+        "missed": [],
+        "spurious": [],
+        "truly_no_risk": true,
+        "no_risk_false_positive": false,
+        "severity_accuracy": 0.0,
+        "severity_confusion": {
+          "high": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "medium": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "low": {
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          }
+        },
+        "evidence_grounded_rate": 0.0,
+        "evidence_relevant_rate": 0.0,
+        "type_accuracy": 0.0,
+        "high_risk_total": 0,
+        "high_risk_missed": 0,
+        "per_type": {}
+      },
+      "todos": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "matched": [
+          {
+            "todo_id": "T1",
+            "match_score": 1,
+            "gold_owner": "陈晨",
+            "pred_owner": "陈晨",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月21日",
+            "pred_deadline": "2026年4月21日",
+            "deadline_ok": true,
+            "pred_content": "更新需求池的状态与优先级"
+          },
+          {
+            "todo_id": "T2",
+            "match_score": 1,
+            "gold_owner": "郑爽",
+            "pred_owner": "郑爽",
+            "owner_ok": true,
+            "gold_deadline": "2026年4月28日",
+            "pred_deadline": "2026年4月28日",
+            "deadline_ok": true,
+            "pred_content": "输出品牌视觉规范需求的设计稿"
+          }
+        ],
+        "missed": [],
+        "owner_accuracy": 1.0,
+        "deadline_accuracy": 1.0,
+        "owner_fabricated": 0,
+        "owner_false_fill": 0,
+        "deadline_fabricated": 0,
+        "unmatched_pred": 0
+      },
+      "decisions": {
+        "gold_count": 2,
+        "pred_count": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "found": [
+          "D1",
+          "D2"
+        ],
+        "missed": [],
+        "spurious_count": 0,
+        "retracted_conflicts": [],
+        "all_found": true
+      },
+      "latency_ms": 3663.1,
+      "index": 13
+    }
+  ]
+}

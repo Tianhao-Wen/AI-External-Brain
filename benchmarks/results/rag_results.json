@@ -1,0 +1,6647 @@
+{
+  "meta": {
+    "run_id": "20261109_122826_rag_live",
+    "suite": "rag",
+    "mode": "live",
+    "created_at": "2026-11-09T12:28:27",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "d237a63e41850a9212ad54003572ebada222f8eb",
+      "commit_short": "d237a63",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 90,
+      "used": 50,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-A -> doc_5dd5997598b4 (6页)",
+      "DOC-B -> doc_338c3e4b734d (5页)",
+      "DOC-C -> doc_df742a7cdae9 (5页)",
+      "DOC-D -> doc_15cac2970e87 (4页)"
+    ]
+  },
+  "aggregates": {
+    "retrieval": {
+      "answerable_questions": 44,
+      "negative_questions": 6,
+      "recall@1": 0.6288,
+      "hit@1": 0.7955,
+      "recall@3": 0.9242,
+      "hit@3": 1.0,
+      "recall@5": 0.9583,
+      "hit@5": 1.0,
+      "mrr@5": 0.8902,
+      "full_evidence_rate@5": 0.9091,
+      "multi_evidence_questions": 15,
+      "negative_retrieved_any_rate": 1.0
+    },
+    "answer": {
+      "executed": 50,
+      "answerable_executed": 44,
+      "negative_executed": 6,
+      "answer_accuracy": 0.9545,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.8902,
+      "citation_recall": 0.9015,
+      "strict_citation_accuracy": 0.9773,
+      "groundedness": 0.9455,
+      "no_citation_responses": 0,
+      "degraded_responses": 0,
+      "end_to_end_success": 0.96
+    },
+    "by_type": {
+      "cross_document": {
+        "count": 5,
+        "answerable_count": 5,
+        "recall@5": 0.7333,
+        "mrr@5": 0.9,
+        "answer_accuracy": 0.8,
+        "abstention_accuracy": null,
+        "end_to_end": 0.8
+      },
+      "long_distractor": {
+        "count": 4,
+        "answerable_count": 4,
+        "recall@5": 1.0,
+        "mrr@5": 0.875,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_condition": {
+        "count": 6,
+        "answerable_count": 6,
+        "recall@5": 1.0,
+        "mrr@5": 0.8333,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "multi_page": {
+        "count": 6,
+        "answerable_count": 6,
+        "recall@5": 0.9167,
+        "mrr@5": 1.0,
+        "answer_accuracy": 0.8333,
+        "abstention_accuracy": null,
+        "end_to_end": 0.8333
+      },
+      "negative": {
+        "count": 6,
+        "answerable_count": 0,
+        "recall@5": null,
+        "mrr@5": null,
+        "answer_accuracy": null,
+        "abstention_accuracy": 1.0,
+        "end_to_end": 1.0
+      },
+      "numeric": {
+        "count": 6,
+        "answerable_count": 6,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "page_citation_trap": {
+        "count": 4,
+        "answerable_count": 4,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "paraphrase": {
+        "count": 5,
+        "answerable_count": 5,
+        "recall@5": 1.0,
+        "mrr@5": 0.5667,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      },
+      "single_page": {
+        "count": 8,
+        "answerable_count": 8,
+        "recall@5": 1.0,
+        "mrr@5": 0.9167,
+        "answer_accuracy": 1.0,
+        "abstention_accuracy": null,
+        "end_to_end": 1.0
+      }
+    },
+    "latency": {
+      "retrieval_p50_ms": 1.1,
+      "retrieval_p95_ms": 1.8549999999999998,
+      "answer_p50_ms": 1648.1,
+      "answer_p95_ms": 3543.9049999999997
+    }
+  },
+  "cases": [
+    {
+      "question_id": "RAG-001",
+      "question": "去上海出差，住宿费每晚最多能报多少？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "一线城市（含上海）住宿每晚上限 600 元。",
+      "gold_pages": [
+        "DOC-A:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 34.0
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 5.17
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 4.986
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 4.888
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 4.615
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 4.53
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 4.294
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 4.248
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p3"
+        ],
+        "top_pages": [
+          "DOC-A:p3",
+          "DOC-C:p5",
+          "DOC-C:p1",
+          "DOC-A:p1",
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-A:p5",
+          "DOC-D:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "去上海出差，住宿费每晚最多能报 600 元。依据住宿标准：北京、上海、广州、深圳四个一线城市每晚上限 600 元 [来源：DOC-A-内部管理手册.pdf · 第3页]。",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1555
+      },
+      "latency": {
+        "retrieval_ms": 0.7,
+        "answer_ms": 3603.8
+      },
+      "index": 1
+    },
+    {
+      "question_id": "RAG-002",
+      "question": "出差补贴一天多少钱？包含餐费吗？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "120 元/天，已包含餐费，不得另行报销餐费。",
+      "gold_pages": [
+        "DOC-A:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 38.1
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 5.116
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 5.001
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 4.53
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 3.912
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 3.759
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 3.693
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 3.547
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p3"
+        ],
+        "top_pages": [
+          "DOC-A:p3",
+          "DOC-C:p2",
+          "DOC-A:p1",
+          "DOC-C:p4",
+          "DOC-A:p4",
+          "DOC-B:p4",
+          "DOC-D:p3",
+          "DOC-A:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "出差补贴按 120 元/天计发，且已包含餐费，不得另行报销餐费。[来源：DOC-A-内部管理手册.pdf · 第3页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1568
+      },
+      "latency": {
+        "retrieval_ms": 1.6,
+        "answer_ms": 2061.0
+      },
+      "index": 2
+    },
+    {
+      "question_id": "RAG-003",
+      "question": "供应商季度绩效评分中，质量这一项占多少分？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "质量占 40 分（交期 30、成本 20、服务 10）。",
+      "gold_pages": [
+        "DOC-B:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 35.772
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 31.161
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 26.242
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 18.064
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 17.87
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 17.821
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 11.813
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 10.894
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p3"
+        ],
+        "top_pages": [
+          "DOC-B:p3",
+          "DOC-B:p1",
+          "DOC-B:p5",
+          "DOC-A:p4",
+          "DOC-B:p2",
+          "DOC-B:p4",
+          "DOC-D:p4",
+          "DOC-C:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "供应商季度绩效评分中，质量占40分。[来源：DOC-B-供应商质量管理规范.pdf · 第3页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1499
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 1575.7
+      },
+      "index": 3
+    },
+    {
+      "question_id": "RAG-004",
+      "question": "供应商提交 8D 报告时，临时措施要在多久内给出？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "收到不合格通知后 24 小时内提交临时措施（D3）。",
+      "gold_pages": [
+        "DOC-B:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 36.372
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 15.432
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 13.947
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 13.836
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 13.53
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 12.656
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 12.656
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 10.2
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p4"
+        ],
+        "top_pages": [
+          "DOC-B:p4",
+          "DOC-B:p1",
+          "DOC-C:p5",
+          "DOC-A:p4",
+          "DOC-B:p2",
+          "DOC-B:p5",
+          "DOC-B:p3",
+          "DOC-A:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "供应商在收到不合格通知后 24 小时内提交临时措施（D3），确保不再流出。[来源：DOC-B-供应商质量管理规范.pdf · 第4页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1480
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 1911.5
+      },
+      "index": 4
+    },
+    {
+      "question_id": "RAG-005",
+      "question": "星海项目的总预算是多少？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "总预算 2,480 万元人民币（含税）。",
+      "gold_pages": [
+        "DOC-C:p1"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 23.322
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 19.171
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 15.937
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 13.735
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 12.323
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 6.972
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 4.994
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 3.634
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p1"
+        ],
+        "top_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-C:p5",
+          "DOC-C:p3",
+          "DOC-D:p1",
+          "DOC-A:p2",
+          "DOC-A:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p1"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目的总预算为2,480万元人民币（含税）。[来源：DOC-C-星海项目预算与交付计划.pdf · 第1页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 1931.0
+      },
+      "index": 5
+    },
+    {
+      "question_id": "RAG-006",
+      "question": "绝密级数据都有谁能看？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "仅董事会与总经理可见。",
+      "gold_pages": [
+        "DOC-D:p1"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 19.918
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 18.158
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 17.545
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 7.229
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 3.59
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 2.921
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 2.153
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 2.082
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p1"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-A:p6",
+          "DOC-C:p1",
+          "DOC-A:p3",
+          "DOC-A:p1"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.3333,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p1"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，绝密级数据仅董事会与总经理可见 [来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]；其访问权限须由总经理批准，并报董事会备案 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 1.6,
+        "answer_ms": 1954.5
+      },
+      "index": 6
+    },
+    {
+      "question_id": "RAG-007",
+      "question": "申请用印要提前几个工作日提交？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "至少提前 2 个工作日提交，紧急用印须总经理特批。",
+      "gold_pages": [
+        "DOC-A:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 30.525
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 19.319
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 13.64
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 13.496
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 8.755
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 8.608
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.108
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 7.096
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p5"
+        ],
+        "top_pages": [
+          "DOC-A:p5",
+          "DOC-A:p3",
+          "DOC-D:p2",
+          "DOC-B:p3",
+          "DOC-A:p4",
+          "DOC-C:p3",
+          "DOC-A:p2",
+          "DOC-D:p4"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "申请用印须至少提前 2 个工作日提交；紧急用印须由总经理特批。[来源：DOC-A-内部管理手册.pdf · 第5页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1524
+      },
+      "latency": {
+        "retrieval_ms": 1.6,
+        "answer_ms": 2438.3
+      },
+      "index": 7
+    },
+    {
+      "question_id": "RAG-008",
+      "question": "机密级数据对外发送时用什么加密算法？",
+      "question_type": "single_page",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "须使用 AES-256 加密，并由两名授权人员复核。",
+      "gold_pages": [
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 35.199
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 24.016
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 18.246
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 12.936
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 11.21
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 8.107
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 7.102
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 5.754
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p1",
+          "DOC-D:p2",
+          "DOC-A:p6",
+          "DOC-D:p4",
+          "DOC-A:p5",
+          "DOC-B:p1",
+          "DOC-C:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "机密级数据外发须使用 AES-256 加密，并由两名授权人员复核后方可发出。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 0.4,
+        "answer_ms": 1836.9
+      },
+      "index": 8
+    },
+    {
+      "question_id": "RAG-009",
+      "question": "一笔 60 万元的设备采购，按现行规定需要谁审批？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "由采购总监与财务经理会签即可，不需要 CFO 审批（2025-07-01 起 CFO 门槛为 80 万元）。",
+      "gold_pages": [
+        "DOC-A:p2",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 28.601
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 23.532
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 19.284
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 11.486
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 11.172
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 10.603
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 9.782
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 9.542
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-B:p2",
+          "DOC-A:p3",
+          "DOC-A:p1",
+          "DOC-A:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "一笔 60 万元的设备采购，按现行规定需要由采购总监与财务经理会签审批。\n\n依据：原第 2.3 条规定单笔采购金额 5 万元（含）以上、50 万元以下由采购总监与财务经理会签；但 2025-07-01 V3.1 修订将 CFO 审批门槛由 50 万元调整为 80 万元，即自 2025 年 7 月 1 日起，5 万元（含）以上、80 万元以下仍由采购总监与财务经理会签，超过 80 万元才须 CFO 审批。60 万元落在该区间内。[来源：DOC-A-内部管理手册.pdf · 第6页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.8182,
+          "total": 11,
+          "unsupported": [
+            "60万元"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 0.5,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1663
+      },
+      "latency": {
+        "retrieval_ms": 1.5,
+        "answer_ms": 2217.2
+      },
+      "index": 9
+    },
+    {
+      "question_id": "RAG-010",
+      "question": "一笔 350 万元的采购，审批流程要走哪些环节？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "超过 80 万元须 CFO 审批；超过 300 万元还须提交总经理办公会形成书面决议。",
+      "gold_pages": [
+        "DOC-A:p2",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 22.66
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 18.417
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 13.627
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 10.394
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 9.523
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 8.846
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 8.66
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 6.706
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-A:p3",
+          "DOC-C:p2",
+          "DOC-B:p4",
+          "DOC-A:p4",
+          "DOC-B:p2",
+          "DOC-A:p1"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "一笔 350 万元的采购，审批流程需走以下环节：\n\n1. **立项**：所有采购须先立项，立项单须写明用途、数量、预估单价与供应商初选意见。[来源：DOC-A-内部管理手册.pdf · 第2页]\n2. **CFO 审批**：根据 2025 年 7 月 1 日起施行的修订，单笔采购金额超过 80 万元的，须由 CFO 审批；350 万元已超过 80 万元，故须经 CFO 审批。[来源：DOC-A-内部管理手册.pdf · 第6页]\n3. **总经理办公会书面决议**：单笔采购金额超过 300 万元的，除按上述规定执行外，还须提交总经理办公会形成书面决议；该规定在修订后保持不变，350 万元超过 300 万元，故须提交总经理办公会形成书面决议。[来源：DOC-A-内部管理手册.pdf · 第6页]\n4. **供应商比价记录**：采购合同签订前，采购部须在系统中完成供应商比价记录，比价供应商不少于三家。[来源：DOC-A-内部管理手册.pdf · 第2页]\n\n关于付款账期：资料中默认账期为 60 天（自验收合格之日起算）；如供应商申请缩短至 45 天，须经财务总监书面批准并在合同中单独约定。[来源：DOC-A-内部管理手册.pdf · 第2页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.8,
+          "total": 15,
+          "unsupported": [
+            "350万元"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1683
+      },
+      "latency": {
+        "retrieval_ms": 1.9,
+        "answer_ms": 3470.7
+      },
+      "index": 10
+    },
+    {
+      "question_id": "RAG-011",
+      "question": "供应商从被列为观察级到最终被淘汰，中间要经过哪些节点？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "季度评分低于 70 分列为观察级；连续两个季度低于 70 分降为限制级、新订单份额不得超过 30%；限制级再连续一个季度低于 70 分则淘汰，12 个月内不得重新准入。",
+      "gold_pages": [
+        "DOC-B:p3",
+        "DOC-B:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 31.617
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 28.313
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 20.19
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 15.945
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 11.406
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 11.159
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 10.228
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 8.431
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p3",
+          "DOC-B:p5"
+        ],
+        "top_pages": [
+          "DOC-B:p5",
+          "DOC-B:p3",
+          "DOC-A:p4",
+          "DOC-B:p1",
+          "DOC-B:p2",
+          "DOC-C:p5",
+          "DOC-A:p2",
+          "DOC-B:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p3",
+          "DOC-B:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "供应商从被列为观察级到最终被淘汰，需经过以下节点：\n\n1. **列为观察级**：季度评分低于70分的供应商列为观察级，采购部须在10个工作日内约谈。[来源：DOC-B-供应商质量管理规范.pdf · 第3页]\n\n2. **降为限制级**：连续两个季度评分低于70分的，降为限制级，新订单份额不得超过30%。[来源：DOC-B-供应商质量管理规范.pdf · 第3页]\n\n3. **提交改善计划并跟踪**：限制级供应商须提交为期一个季度的改善计划，质量部按月跟踪。[来源：DOC-B-供应商质量管理规范.pdf · 第3页]\n\n4. **予以淘汰**：限制级供应商连续一个季度评分仍低于70分的，予以淘汰。[来源：DOC-B-供应商质量管理规范.pdf · 第5页]\n\n此外，资料还规定：被淘汰的供应商12个月内不得重新申请准入；供应商年度复审安排在每年3月，复审不通过的按7.1（即淘汰）处理。[来源：DOC-B-供应商质量管理规范.pdf · 第5页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 11,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1499
+      },
+      "latency": {
+        "retrieval_ms": 1.4,
+        "answer_ms": 2584.9
+      },
+      "index": 11
+    },
+    {
+      "question_id": "RAG-012",
+      "question": "如果样机验证因为实验室档期推后 25 天，项目上要补哪些手续？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "需提交书面偏差说明与追赶计划（延期超 15 天），且里程碑日期变更须同步更新合同附件并抄送客户项目经理。",
+      "gold_pages": [
+        "DOC-C:p4",
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 37.852
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 22.75
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 17.734
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 12.451
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 11.464
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.042
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 9.385
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 8.382
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4",
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-C:p3",
+          "DOC-D:p3",
+          "DOC-B:p4",
+          "DOC-A:p3",
+          "DOC-B:p2",
+          "DOC-B:p3",
+          "DOC-C:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 0.5,
+        "hit@3": 1.0,
+        "recall@5": 0.5,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p5"
+        ],
+        "missing_pages": [
+          "DOC-C:p4"
+        ]
+      },
+      "answer": {
+        "answer": "资料中没有直接规定“样机验证因实验室档期推后25天”需要补办哪些手续，因此无法据此列出具体手续。可依据资料确认的相关信息是：样机验证依赖第三方实验室档期，最早可预约时间为2025年8月15日 [来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]；M2样机验证里程碑为2025年9月30日 [来源：DOC-C-星海项目预算与交付计划.pdf · 第3页]；每个里程碑结束后5个工作日内需完成里程碑评审并归档结论 [来源：DOC-C-星海项目预算与交付计划.pdf · 第3页]。关于延期25天对应的变更申请、审批流程或责任人手续，资料中未提及。",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.75,
+          "total": 8,
+          "unsupported": [
+            "25天"
+          ]
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 0.5,
+        "citation_count": 2,
+        "answer_correct": false,
+        "missing_keys": [
+          "书面偏差说明",
+          "合同附件"
+        ],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": false,
+        "executed": true,
+        "context_chars": 1450
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 2696.6
+      },
+      "index": 12
+    },
+    {
+      "question_id": "RAG-013",
+      "question": "把机密级数据发给外部合作方，从申请到发出要经过哪些控制点？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "访问权限须部门负责人与信息安全负责人双签、有效期最长 12 个月；外发须 AES-256 加密并由两名授权人员复核。",
+      "gold_pages": [
+        "DOC-D:p2",
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 32.533
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 27.754
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 21.018
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 17.126
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 15.667
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 14.598
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 11.445
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 10.865
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p2",
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-A:p1",
+          "DOC-D:p4",
+          "DOC-A:p3",
+          "DOC-A:p5",
+          "DOC-A:p6"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p2",
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "机密级数据外发从申请到发出，依据资料涉及以下控制点：\n\n1. **权限申请与审批**：机密级数据的访问权限须由部门负责人与信息安全负责人双签；权限有效期最长12个月，到期由系统自动回收，续期须重新申请。[来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]\n\n2. **外发加密与复核**：机密级数据外发须使用 AES-256 加密，并由两名授权人员复核后方可发出。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n\n3. **禁止个人渠道**：禁止使用个人邮箱或个人网盘传输内部级及以上数据（机密级属于该范围）。[来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]\n\n4. **留痕与审计**：信息安全审计每季度开展一次，覆盖权限、外发记录与终端安全；审计发现的问题须在15个工作日内整改闭环。[来源：DOC-D-信息安全与数据分级规定.pdf · 第4页]\n\n资料中未提及针对“发给外部合作方”这一场景的额外专门审批环节。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 6,
+          "unsupported": []
+        },
+        "citation_precision": 0.6667,
+        "citation_recall": 1.0,
+        "citation_count": 3,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1435
+      },
+      "latency": {
+        "retrieval_ms": 2.0,
+        "answer_ms": 2764.6
+      },
+      "index": 13
+    },
+    {
+      "question_id": "RAG-014",
+      "question": "星海项目预留的预备费，大约占总预算的多少？",
+      "question_type": "multi_page",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "预备费 200 万元，约占总预算 2,480 万元的 8.06%。",
+      "gold_pages": [
+        "DOC-C:p1",
+        "DOC-C:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 40.789
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 28.794
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 20.821
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 19.782
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 16.364
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 11.917
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.207
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 6.451
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-C:p5",
+          "DOC-C:p4",
+          "DOC-C:p3",
+          "DOC-D:p1",
+          "DOC-A:p2",
+          "DOC-D:p3"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p1",
+          "DOC-C:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目的预备费为 200 万元，项目总预算为 2,480 万元，据此计算约占总预算的 8.1%（200 ÷ 2,480 ≈ 8.06%）。[来源：DOC-C-星海项目预算与交付计划.pdf · 第2页][来源：DOC-C-星海项目预算与交付计划.pdf · 第1页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.6667,
+          "total": 6,
+          "unsupported": [
+            "8.06%",
+            "8.1%"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 1.5,
+        "answer_ms": 2041.0
+      },
+      "index": 14
+    },
+    {
+      "question_id": "RAG-015",
+      "question": "采购一台 12 万元的设备，同时希望把账期从 60 天缩短到 45 天，这两件事分别要谁批？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "12 万元采购由采购总监与财务经理会签；账期缩短至 45 天须财务总监书面批准。",
+      "gold_pages": [
+        "DOC-A:p2",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 36.796
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 20.631
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 16.329
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 16.017
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 15.235
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 12.482
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 12.409
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 11.904
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p4",
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-A:p6",
+          "DOC-B:p4",
+          "DOC-A:p5",
+          "DOC-C:p3"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 0.5,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "**采购审批**：单笔12万元的设备采购，按2025年7月1日起施行的修订后门槛，属于“5万元（含）以上、80万元以下”，由采购总监与财务经理会签审批。[来源：DOC-A-内部管理手册.pdf · 第6页]\n\n**账期缩短审批**：账期由默认60天缩短至45天，须经财务总监书面批准，并在合同中单独约定。[来源：DOC-A-内部管理手册.pdf · 第2页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.875,
+          "total": 8,
+          "unsupported": [
+            "12万元"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1714
+      },
+      "latency": {
+        "retrieval_ms": 1.8,
+        "answer_ms": 2529.6
+      },
+      "index": 15
+    },
+    {
+      "question_id": "RAG-016",
+      "question": "某供应商的 ISO9001 证书只剩 3 个月有效期，能不能通过新供应商准入？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "不能，准入要求 ISO9001 证书剩余有效期不少于 6 个月。",
+      "gold_pages": [
+        "DOC-A:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 57.097
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 38.281
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 21.314
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 19.219
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 17.71
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 17.68
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 17.465
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 13.098
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p4"
+        ],
+        "top_pages": [
+          "DOC-A:p4",
+          "DOC-B:p5",
+          "DOC-B:p3",
+          "DOC-B:p2",
+          "DOC-B:p4",
+          "DOC-B:p1",
+          "DOC-A:p2",
+          "DOC-A:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "不能通过新供应商准入。资料规定，新供应商准入须提交 ISO9001 质量管理体系证书，且剩余有效期不少于 6 个月，三项材料缺一不可；该供应商证书只剩 3 个月有效期，不满足这一条件 [来源：DOC-A-内部管理手册.pdf · 第4页]。",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.6667,
+          "total": 3,
+          "unsupported": [
+            "3个月"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1436
+      },
+      "latency": {
+        "retrieval_ms": 1.5,
+        "answer_ms": 1934.4
+      },
+      "index": 16
+    },
+    {
+      "question_id": "RAG-017",
+      "question": "某供应商上季度 72 分、本季度 68 分，会被怎么处理？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "本季度低于 70 分，列为观察级并被约谈；因尚未连续两个季度低于 70 分，暂不降为限制级。",
+      "gold_pages": [
+        "DOC-B:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 26.296
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 25.601
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 19.098
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 17.794
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 13.529
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 12.718
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.425
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 8.401
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p3"
+        ],
+        "top_pages": [
+          "DOC-B:p5",
+          "DOC-B:p3",
+          "DOC-B:p1",
+          "DOC-D:p4",
+          "DOC-C:p5",
+          "DOC-B:p4",
+          "DOC-A:p2",
+          "DOC-A:p4"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "该供应商本季度 68 分，低于 70 分，应列为观察级，采购部须在 10 个工作日内约谈 [来源：DOC-B-供应商质量管理规范.pdf · 第3页]。上季度 72 分、本季度 68 分，属于仅本季度低于 70 分，尚未达到“连续两个季度评分低于 70 分”的降级条件，因此资料中未提及需要降为限制级 [来源：DOC-B-供应商质量管理规范.pdf · 第3页]。资料中也未提及该情形还需要其他处理 [来源：DOC-B-供应商质量管理规范.pdf · 第3页]。",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.7,
+          "total": 10,
+          "unsupported": [
+            "68分",
+            "72分"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1383
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 2341.0
+      },
+      "index": 17
+    },
+    {
+      "question_id": "RAG-018",
+      "question": "某供应商连续两个季度 65 分，之后一个季度 68 分，最终结果是什么？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "连续两个季度低于 70 分先降为限制级；限制级再连续一个季度仍低于 70 分则淘汰，12 个月内不得重新准入。",
+      "gold_pages": [
+        "DOC-B:p3",
+        "DOC-B:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 54.391
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 37.76
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 17.815
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 16.193
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 15.521
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 14.437
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 14.351
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.838
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p3",
+          "DOC-B:p5"
+        ],
+        "top_pages": [
+          "DOC-B:p3",
+          "DOC-B:p5",
+          "DOC-A:p4",
+          "DOC-B:p1",
+          "DOC-C:p5",
+          "DOC-D:p4",
+          "DOC-B:p4",
+          "DOC-B:p2"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p3",
+          "DOC-B:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，该供应商的最终结果是被淘汰。\n\n具体依据：连续两个季度评分低于70分的，降为限制级，新订单份额不得超过30% [来源：DOC-B-供应商质量管理规范.pdf · 第3页]；限制级供应商连续一个季度评分仍低于70分的，予以淘汰 [来源：DOC-B-供应商质量管理规范.pdf · 第5页]。该供应商连续两个季度65分（低于70分）降为限制级，之后一个季度68分仍低于70分，因此予以淘汰。\n\n补充：被淘汰的供应商12个月内不得重新申请准入 [来源：DOC-B-供应商质量管理规范.pdf · 第5页]。",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.8182,
+          "total": 11,
+          "unsupported": [
+            "65分",
+            "68分"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1472
+      },
+      "latency": {
+        "retrieval_ms": 1.7,
+        "answer_ms": 2427.4
+      },
+      "index": 18
+    },
+    {
+      "question_id": "RAG-019",
+      "question": "一份 150 万元的合同要走完签批并盖章，涉及哪些人和等待时间？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "100 万元以上须法务审核并由总经理签批；用印申请至少提前 2 个工作日提交。",
+      "gold_pages": [
+        "DOC-A:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 19.579
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 19.574
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 13.443
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 13.192
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 12.908
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 11.573
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 10.693
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 10.347
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p5"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p5",
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-C:p2",
+          "DOC-A:p1",
+          "DOC-C:p5",
+          "DOC-A:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "一份150万元的合同要走完签批并盖章，涉及的人员和等待时间如下：\n\n**一、采购审批环节**\n\n按手册第2章，单笔采购金额150万元。根据2025年7月1日V3.1修订后的2.3/2.4条，CFO审批门槛已由50万元调整为80万元：5万元（含）以上、80万元以下由采购总监与财务经理会签；超过80万元的须由CFO审批。150万元超过80万元，因此须由CFO审批；同时150万元未超过300万元，不需提交总经理办公会形成书面决议。[来源：DOC-A-内部管理手册.pdf · 第6页][来源：DOC-A-内部管理手册.pdf · 第2页]\n\n此外，采购合同签订前，采购部须在系统中完成供应商比价记录，比价供应商不少于三家。[来源：DOC-A-内部管理手册.pdf · 第2页]\n\n**二、合同签署与用印环节**\n\n合同金额150万元属于100万元以上，须经法务审核并由总经理签批后方可用印。[来源：DOC-A-内部管理手册.pdf · 第5页]\n\n用印申请须至少提前2个工作日提交；如属紧急用印，须由总经理特批。[来源：DOC-A-内部管理手册.pdf · 第5页]\n\n**三、涉及人员汇总**\n\n采购总监与财务经理（会签，适用于80万元以下情形，150万元不适用此档）、CFO（审批）、法务（审核）、总经理（签批）、采购部（比价记录）以及用印申请相关人员。\n\n**四、等待时间**\n\n资料中明确规定的等待时间仅为：用印申请须至少提前2个工作日提交；紧急用印须由总经理特批。[来源：DOC-A-内部管理手册.pdf · 第5页]\n\n至于CFO审批、法务审核、总经理签批各自的具体办理时限，资料中未提及。",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.75,
+          "total": 24,
+          "unsupported": [
+            "150万元"
+          ]
+        },
+        "citation_precision": 0.3333,
+        "citation_recall": 1.0,
+        "citation_count": 3,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1663
+      },
+      "latency": {
+        "retrieval_ms": 2.0,
+        "answer_ms": 3756.2
+      },
+      "index": 19
+    },
+    {
+      "question_id": "RAG-020",
+      "question": "预算变更幅度 4.9%，由谁签批就可以了？",
+      "question_type": "multi_condition",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "不超过 5% 的变更由项目经理与财务经理会签即可，无须上指导委员会。",
+      "gold_pages": [
+        "DOC-C:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 39.211
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 17.302
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 8.144
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 7.424
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 6.668
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 6.344
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 6.058
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 5.612
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4"
+        ],
+        "top_pages": [
+          "DOC-C:p4",
+          "DOC-C:p2",
+          "DOC-A:p5",
+          "DOC-C:p3",
+          "DOC-A:p6",
+          "DOC-C:p5",
+          "DOC-A:p2",
+          "DOC-C:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "预算变更幅度 4.9% 未超过 5%，由项目经理与财务经理会签即可。[来源：DOC-C-星海项目预算与交付计划.pdf · 第4页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.6667,
+          "total": 3,
+          "unsupported": [
+            "4.9%"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1445
+      },
+      "latency": {
+        "retrieval_ms": 0.3,
+        "answer_ms": 1232.6
+      },
+      "index": 20
+    },
+    {
+      "question_id": "RAG-021",
+      "question": "来料批次不合格率的目标值是多少？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "不高于 0.8%。",
+      "gold_pages": [
+        "DOC-B:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 55.104
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 10.472
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 10.118
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 7.372
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 7.261
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 4.795
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 4.508
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 3.993
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p2"
+        ],
+        "top_pages": [
+          "DOC-B:p2",
+          "DOC-B:p1",
+          "DOC-B:p4",
+          "DOC-A:p2",
+          "DOC-A:p5",
+          "DOC-A:p3",
+          "DOC-C:p4",
+          "DOC-A:p4"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "来料批次不合格率的目标值为不高于 0.8%，按月统计并纳入供应商绩效。[来源：DOC-B-供应商质量管理规范.pdf · 第2页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1502
+      },
+      "latency": {
+        "retrieval_ms": 0.6,
+        "answer_ms": 1131.6
+      },
+      "index": 21
+    },
+    {
+      "question_id": "RAG-022",
+      "question": "单批不合格率超过多少就必须停线评审？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "超过 2% 须立即停线评审，并在 2 小时内通知供应商。",
+      "gold_pages": [
+        "DOC-B:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 54.146
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 14.609
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 9.576
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 9.555
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 9.172
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 9.126
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 7.365
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 7.356
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p2"
+        ],
+        "top_pages": [
+          "DOC-B:p2",
+          "DOC-A:p2",
+          "DOC-A:p4",
+          "DOC-C:p4",
+          "DOC-A:p3",
+          "DOC-B:p4",
+          "DOC-A:p5",
+          "DOC-A:p6"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "单批不合格率超过 2% 的，须立即停线评审，并在 2 小时内通知供应商。[来源：DOC-B-供应商质量管理规范.pdf · 第2页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1648
+      },
+      "latency": {
+        "retrieval_ms": 1.0,
+        "answer_ms": 861.2
+      },
+      "index": 22
+    },
+    {
+      "question_id": "RAG-023",
+      "question": "抽样检验中主要缺陷的 AQL 取值是多少？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "主要缺陷 AQL 0.65（次要缺陷 1.5）。",
+      "gold_pages": [
+        "DOC-B:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 48.487
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 17.524
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 6.256
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 3.862
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 3.844
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 3.474
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 3.007
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 2.468
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p2"
+        ],
+        "top_pages": [
+          "DOC-B:p2",
+          "DOC-B:p1",
+          "DOC-A:p4",
+          "DOC-A:p2",
+          "DOC-D:p3",
+          "DOC-C:p3",
+          "DOC-C:p5",
+          "DOC-A:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "抽样检验中主要缺陷的 AQL 取值为 0.65。[来源：DOC-B-供应商质量管理规范.pdf · 第2页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1623
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1010.8
+      },
+      "index": 23
+    },
+    {
+      "question_id": "RAG-024",
+      "question": "星海项目里工业相机的采购交期是多少周？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "16 周，且为单一供应商，存在断供风险。",
+      "gold_pages": [
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 35.472
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 26.91
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 18.116
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 16.261
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 15.454
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 9.106
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.41
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 7.903
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-C:p2",
+          "DOC-C:p1",
+          "DOC-C:p4",
+          "DOC-C:p3",
+          "DOC-A:p4",
+          "DOC-A:p2",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目中工业相机的采购交期为16周。[来源：DOC-C-星海项目预算与交付计划.pdf · 第5页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 927.5
+      },
+      "index": 24
+    },
+    {
+      "question_id": "RAG-025",
+      "question": "实施服务这一项预算科目是多少钱？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "实施服务 380 万元。",
+      "gold_pages": [
+        "DOC-C:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 29.626
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 19.539
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 13.636
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 9.178
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 5.552
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 5.456
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 5.339
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 4.885
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p2"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p5",
+          "DOC-C:p4",
+          "DOC-C:p1",
+          "DOC-D:p1",
+          "DOC-B:p1",
+          "DOC-C:p3",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "实施服务预算科目为 380 万元，含现场部署、联调与培训。[来源：DOC-C-星海项目预算与交付计划.pdf · 第2页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1355
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1148.7
+      },
+      "index": 25
+    },
+    {
+      "question_id": "RAG-026",
+      "question": "被淘汰的供应商要等多久才能再次申请准入？",
+      "question_type": "numeric",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "12 个月内不得重新申请准入。",
+      "gold_pages": [
+        "DOC-B:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 43.283
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 17.816
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 14.748
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 12.502
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 10.499
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 10.013
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 9.959
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 9.223
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p5"
+        ],
+        "top_pages": [
+          "DOC-B:p5",
+          "DOC-A:p4",
+          "DOC-B:p4",
+          "DOC-B:p2",
+          "DOC-A:p2",
+          "DOC-B:p1",
+          "DOC-A:p3",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "被淘汰的供应商 12 个月内不得重新申请准入。[来源：DOC-B-供应商质量管理规范.pdf · 第5页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1524
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 913.0
+      },
+      "index": 26
+    },
+    {
+      "question_id": "RAG-027",
+      "question": "向一家新供应商首次下单 90 万元，审批上有什么要求？如果这批货批次不合格率达到 2.3% 又会触发什么？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A",
+        "DOC-B"
+      ],
+      "gold_answer": "90 万元超过 80 万元，须 CFO 审批；批次不合格率 2.3% 超过 2%，须立即停线评审并在 2 小时内通知供应商。",
+      "gold_pages": [
+        "DOC-B:p2",
+        "DOC-A:p2",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 44.8
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 33.642
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 30.414
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 22.556
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 20.258
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 19.264
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 17.306
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 14.758
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p2",
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-B:p2",
+          "DOC-A:p2",
+          "DOC-A:p4",
+          "DOC-B:p4",
+          "DOC-A:p1",
+          "DOC-A:p6",
+          "DOC-B:p3",
+          "DOC-A:p5"
+        ],
+        "recall@1": 0.3333,
+        "hit@1": 1.0,
+        "recall@3": 0.6667,
+        "hit@3": 1.0,
+        "recall@5": 0.6667,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p2",
+          "DOC-A:p2"
+        ],
+        "missing_pages": [
+          "DOC-A:p6"
+        ]
+      },
+      "answer": {
+        "answer": "**一、90 万元首次下单的审批要求**\n\n根据内部管理手册的采购审批规定：单笔采购金额 5 万元（含）以上、50 万元以下的，由采购总监与财务经理会签 [来源：DOC-A-内部管理手册.pdf · 第2页]；单笔采购金额超过 50 万元的，须由 CFO 审批 [来源：DOC-A-内部管理手册.pdf · 第2页]。90 万元属于“超过 50 万元”且未超过 300 万元的情形，因此须由 CFO 审批，不涉及总经理办公会书面决议（该要求适用于超过 300 万元）[来源：DOC-A-内部管理手册.pdf · 第2页]。\n\n此外，采购合同签订前，采购部须在系统中完成供应商比价记录，比价供应商不少于三家 [来源：DOC-A-内部管理手册.pdf · 第2页]。作为新供应商，还须先完成准入：由采购部发起、质量部会签、采购总监批准，并提交营业执照复印件（加盖公章）、剩余有效期不少于 6 个月的 ISO9001 证书、近两年无重大质量事故声明（供应商盖章）三项材料，缺一不可 [来源：DOC-A-内部管理手册.pdf · 第4页]。付款账期默认 60 天，自验收合格之日起算 [来源：DOC-A-内部管理手册.pdf · 第2页]。\n\n**二、批次不合格率 2.3% 的触发后果**\n\n来料批次不合格率的目标值为不高于 0.8%，按月统计并纳入供应商绩效 [来源：DOC-B-供应商质量管理规范.pdf · 第2页]。单批不合格率超过 2% 的，须立即停线评审，并在 2 小时内通知供应商 [来源：DOC-B-供应商质量管理规范.pdf · 第2页]。2.3% 已超过 2%，因此触发立即停线评审和 2 小时内通知供应商。停线评审由质量部牵头，采购部与生产部参加，评审结论 24 小时内下发 [来源：DOC-B-供应商质量管理规范.pdf · 第2页]。\n\n若该批被判定为不合格并发出不合格通知，供应商还须在收到通知后 24 小时内提交临时措施（D3），7 天内提交根本原因分析（D4）与永久措施计划（D5/D6），30 天内完成措施验证并关闭（D8）；逾期未关闭的，每次扣减当季绩效 5 分 [来源：DOC-B-供应商质量管理规范.pdf · 第4页]。同一问题重复发生两次以上的，直接进入限制级评估流程 [来源：DOC-B-供应商质量管理规范.pdf · 第4页]。\n\n**资料中未提及**：针对新供应商首次下单是否有额外的加严检验或首批全检要求，以及 2.3% 不合格率是否直接导致订单转移等具体后果。",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 0.8529,
+          "total": 34,
+          "unsupported": [
+            "2.3%",
+            "90万元"
+          ]
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 0.6667,
+        "citation_count": 4,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1651
+      },
+      "latency": {
+        "retrieval_ms": 1.4,
+        "answer_ms": 3945.6
+      },
+      "index": 27
+    },
+    {
+      "question_id": "RAG-028",
+      "question": "要把星海项目的样机验证数据发给第三方实验室，按信息安全规定要注意什么？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-C",
+        "DOC-D"
+      ],
+      "gold_answer": "对外提供的样机验证数据须经项目负责人确认密级；属机密级时须 AES-256 加密并由两名授权人员复核，绝密级不得离开内网。",
+      "gold_pages": [
+        "DOC-D:p3",
+        "DOC-C:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 43.86
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 41.465
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 30.942
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 29.24
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 23.928
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 23.689
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 15.628
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.034
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3",
+          "DOC-C:p5"
+        ],
+        "top_pages": [
+          "DOC-C:p5",
+          "DOC-D:p3",
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-D:p2",
+          "DOC-C:p3",
+          "DOC-B:p2",
+          "DOC-C:p2"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3",
+          "DOC-C:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "要把星海项目的样机验证数据发给第三方实验室，按信息安全规定需注意以下几点：\n\n1. **先确认密级**：对外提供的样机验证数据，须经项目负责人确认其密级后方可外发 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n2. **按确认后的密级走相应外发要求**：\n   - 若属**绝密级**，不得以任何形式离开公司内网，包括邮件、即时通讯与移动存储 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]；\n   - 若属**机密级**，外发须使用 AES-256 加密，并由两名授权人员复核后方可发出 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]；\n   - 若属**内部级**，外发须在系统中留痕，留痕记录保存 90 天 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n3. **禁止使用个人渠道**：禁止使用个人邮箱或个人网盘传输内部级及以上数据 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。\n\n另外供参考：项目预算文件属于机密级数据 [来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]，但样机验证数据本身的具体密级，资料中未提及，需由项目负责人确认。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 7,
+          "unsupported": []
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 0.5,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1346
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 2311.3
+      },
+      "index": 28
+    },
+    {
+      "question_id": "RAG-029",
+      "question": "内部管理手册和信息安全规定分别从什么时候开始生效？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A",
+        "DOC-D"
+      ],
+      "gold_answer": "内部管理手册自 2024 年 3 月 1 日起施行（2025-07-01 修订 V3.1）；信息安全与数据分级规定自 2025 年 1 月 1 日起施行。",
+      "gold_pages": [
+        "DOC-D:p1",
+        "DOC-D:p4",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 28.635
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 26.341
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 20.157
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 19.127
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 17.326
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 16.042
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 12.829
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 11.419
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-D:p1",
+          "DOC-D:p4",
+          "DOC-A:p1",
+          "DOC-D:p2",
+          "DOC-D:p3",
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-B:p1"
+        ],
+        "recall@1": 0.3333,
+        "hit@1": 1.0,
+        "recall@3": 0.6667,
+        "hit@3": 1.0,
+        "recall@5": 0.6667,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p1",
+          "DOC-D:p4"
+        ],
+        "missing_pages": [
+          "DOC-A:p6"
+        ]
+      },
+      "answer": {
+        "answer": "根据资料，两份文件的生效时间如下：\n\n1. **《信息安全与数据分级规定》（HX-ISO-2025）**：生效日期为 2025-01-01，并规定自 2025 年 1 月 1 日起施行。[来源：DOC-D-信息安全与数据分级规定.pdf · 第1页][来源：DOC-D-信息安全与数据分级规定.pdf · 第4页]\n\n2. **《内部管理手册》（HX-ADM-2024，版本 V3.1）**：资料中只记载了修订记录，其中 2024-03-01 V3.0 首次发布、2025-07-01 V3.1 调整第二章 CFO 审批金额门槛，**资料中未提及**该手册的生效日期。[来源：DOC-A-内部管理手册.pdf · 第1页]",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 4,
+          "unsupported": []
+        },
+        "citation_precision": 0.6667,
+        "citation_recall": 0.6667,
+        "citation_count": 3,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1435
+      },
+      "latency": {
+        "retrieval_ms": 1.2,
+        "answer_ms": 1942.6
+      },
+      "index": 29
+    },
+    {
+      "question_id": "RAG-030",
+      "question": "给新供应商开通机密数据的访问权限，要同时满足哪些条件？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A",
+        "DOC-D"
+      ],
+      "gold_answer": "先通过供应商准入（营业执照、ISO9001 剩余有效期不少于 6 个月、无重大质量事故声明）；机密数据权限还须部门负责人与信息安全负责人双签。",
+      "gold_pages": [
+        "DOC-D:p2",
+        "DOC-A:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 40.316
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 22.624
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 18.787
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 18.081
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 13.659
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 13.2
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 12.247
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 11.14
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p2",
+          "DOC-A:p4"
+        ],
+        "top_pages": [
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-D:p3",
+          "DOC-A:p4",
+          "DOC-D:p4",
+          "DOC-B:p2",
+          "DOC-B:p4",
+          "DOC-B:p3"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 0.5,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p2",
+          "DOC-A:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "资料中没有直接规定“给新供应商开通机密数据访问权限”的专门条件，只能分别依据两类规定说明：\n\n**一、机密数据访问权限方面**（按公司内部权限申请规定）：\n1. 须由部门负责人与信息安全负责人双签 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]；\n2. 权限有效期最长 12 个月，到期由系统自动回收，续期须重新申请 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]；\n3. 权限申请与审批记录保存不少于 3 年 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]。\n\n**二、供应商准入方面**（须先完成准入）：\n1. 由采购部发起，质量部会签，最终由采购总监批准 [来源：DOC-A-内部管理手册.pdf · 第4页]；\n2. 须提交三项材料，缺一不可：营业执照复印件（加盖公章）、ISO9001 质量管理体系证书（剩余有效期不少于 6 个月）、近两年无重大质量事故声明（供应商盖章）[来源：DOC-A-内部管理手册.pdf · 第4页]；\n3. 新供应商首批准入有效期为 12 个月，到期前 30 天由采购部发起复审 [来源：DOC-A-内部管理手册.pdf · 第4页]。\n\n需要说明的是：资料中未提及“新供应商”能否访问机密级数据，也未规定供应商访问机密数据与员工权限审批之间如何衔接，这部分内容资料中未提及，需另行确认。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 11,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1424
+      },
+      "latency": {
+        "retrieval_ms": 0.7,
+        "answer_ms": 2348.6
+      },
+      "index": 30
+    },
+    {
+      "question_id": "RAG-031",
+      "question": "能不能把星海项目的预算文件直接发给外部供应商？依据哪份规定？",
+      "question_type": "cross_document",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A",
+        "DOC-D"
+      ],
+      "gold_answer": "不能随意对外提供。项目预算文件属机密级，须按机密级外发要求（AES-256 加密 + 两名授权人员复核）；内部管理手册也规定机密级资料不得以任何形式对外提供。",
+      "gold_pages": [
+        "DOC-D:p1",
+        "DOC-D:p3",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 28.064
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 23.084
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 21.477
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 21.148
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 18.961
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 17.469
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 15.59
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 14.605
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p1",
+          "DOC-D:p3",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-C:p1",
+          "DOC-D:p1",
+          "DOC-C:p5",
+          "DOC-B:p1",
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-D:p3",
+          "DOC-B:p4"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 0.3333,
+        "hit@3": 1.0,
+        "recall@5": 0.3333,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p1"
+        ],
+        "missing_pages": [
+          "DOC-D:p3",
+          "DOC-A:p6"
+        ]
+      },
+      "answer": {
+        "answer": "不可以直接发给外部供应商。\n\n依据《信息安全与数据分级规定》（HX-ISO-2025），项目预算文件属于机密级数据 [来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]；机密级数据仅限公司员工访问的是内部级，而机密级的可见范围资料中未具体说明 [来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]。资料中未提及机密级数据对外提供的审批流程或例外情形，因此不能据此认定可以直接发给外部供应商。\n\n判断所依据的规定是《信息安全与数据分级规定》（文件编号 HX-ISO-2025）[来源：DOC-D-信息安全与数据分级规定.pdf · 第1页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 0.3333,
+        "citation_count": 1,
+        "answer_correct": false,
+        "missing_keys": [
+          "AES-256"
+        ],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": false,
+        "executed": true,
+        "context_chars": 1431
+      },
+      "latency": {
+        "retrieval_ms": 0.5,
+        "answer_ms": 1681.8
+      },
+      "index": 31
+    },
+    {
+      "question_id": "RAG-032",
+      "question": "公司规定的年假天数是多少天？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "文档中未提及年假天数（手册只覆盖采购审批、差旅报销、供应商准入、合同用印与信息保密）。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 8.545
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 8.057
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 7.92
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 7.907
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 7.706
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 6.685
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 5.254
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 4.747
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-D:p3",
+          "DOC-D:p4",
+          "DOC-D:p2",
+          "DOC-A:p6",
+          "DOC-D:p1",
+          "DOC-A:p2",
+          "DOC-B:p4",
+          "DOC-A:p4"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 8.545,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及公司规定的年假天数。给定资料仅涉及信息安全与数据分级、权限审批、审计与违规处理及内部管理手册中的信息保密条款等内容，未包含年假相关规定。[来源：DOC-D-信息安全与数据分级规定.pdf · 第1页][来源：DOC-A-内部管理手册.pdf · 第6页]",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 2,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 1.2,
+        "answer_ms": 1316.9
+      },
+      "index": 32
+    },
+    {
+      "question_id": "RAG-033",
+      "question": "华瑞精密今年的员工培训预算是多少？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "文档中未提及员工培训预算。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.648
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 10.126
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 7.676
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 7.051
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 6.878
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 6.816
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 6.67
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 6.173
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-D:p1",
+          "DOC-C:p1",
+          "DOC-A:p6",
+          "DOC-A:p1",
+          "DOC-C:p5",
+          "DOC-C:p4",
+          "DOC-A:p5"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 15.648,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及华瑞精密今年的员工培训预算。所提供的资料涉及星海项目预算、数据分级规定及采购审批门槛等内容，均未包含公司员工培训预算信息。[来源：DOC-C-星海项目预算与交付计划.pdf · 第1页][来源：DOC-D-信息安全与数据分级规定.pdf · 第1页][来源：DOC-A-内部管理手册.pdf · 第6页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 3,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1627
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 1364.5
+      },
+      "index": 33
+    },
+    {
+      "question_id": "RAG-034",
+      "question": "星海项目经理陈立的手机号是多少？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "文档中只写了项目经理是陈立，未提及任何联系方式。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 29.491
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 16.245
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.694
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 11.485
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 9.992
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 7.932
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 7.666
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 6.298
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-C:p1",
+          "DOC-C:p4",
+          "DOC-C:p2",
+          "DOC-C:p5",
+          "DOC-C:p3",
+          "DOC-A:p2",
+          "DOC-D:p1",
+          "DOC-A:p5"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 29.491,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及星海项目经理陈立的手机号。现有资料仅记载项目经理为陈立 [来源：DOC-C-星海项目预算与交付计划.pdf · 第1页]，未包含其联系方式。",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 1,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1349
+      },
+      "latency": {
+        "retrieval_ms": 1.0,
+        "answer_ms": 1439.3
+      },
+      "index": 34
+    },
+    {
+      "question_id": "RAG-035",
+      "question": "供应商准入是否必须提供 ISO14001 环境管理体系认证？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "文档未要求 ISO14001，准入只要求营业执照、ISO9001 证书（剩余有效期不少于 6 个月）与近两年无重大质量事故声明。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 34.307
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 17.257
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 15.331
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 14.408
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 13.28
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 12.366
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 11.737
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.478
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-A:p4",
+          "DOC-B:p5",
+          "DOC-B:p1",
+          "DOC-A:p2",
+          "DOC-B:p3",
+          "DOC-A:p1",
+          "DOC-B:p4",
+          "DOC-B:p2"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 34.307,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "根据资料，供应商准入必须提交的材料为三项：营业执照复印件（加盖公章）、ISO9001 质量管理体系证书（剩余有效期不少于6个月）、近两年无重大质量事故声明（供应商盖章），其中并未要求提供 ISO14001 环境管理体系认证。[来源：DOC-A-内部管理手册.pdf · 第4页]\n\n关于 ISO14001 环境管理体系认证，资料中未提及。",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第3页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 1,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1594
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 1826.1
+      },
+      "index": 35
+    },
+    {
+      "question_id": "RAG-036",
+      "question": "会议纪要形成后由谁签字确认？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "文档中未提及会议纪要的签字确认流程。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 10.294
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 9.174
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 8.44
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 6.595
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 5.289
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 4.115
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 4.099
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 3.575
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-D:p3",
+          "DOC-C:p4",
+          "DOC-A:p6",
+          "DOC-A:p5",
+          "DOC-A:p4",
+          "DOC-B:p4",
+          "DOC-B:p2"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 10.294,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及会议纪要形成后由谁签字确认。",
+        "citations": [],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第5页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 0,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 0,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1567
+      },
+      "latency": {
+        "retrieval_ms": 0.5,
+        "answer_ms": 919.6
+      },
+      "index": 36
+    },
+    {
+      "question_id": "RAG-037",
+      "question": "去香港、澳门出差的住宿标准是多少？",
+      "question_type": "negative",
+      "answerable": false,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "文档只规定了一线城市（北京、上海、广州、深圳）与其他城市的标准，未提及港澳台地区。",
+      "gold_pages": [],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 26.597
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 4.863
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 4.693
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 3.99
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 3.667
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 3.169
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 2.969
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 2.933
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [],
+        "top_pages": [
+          "DOC-A:p3",
+          "DOC-B:p1",
+          "DOC-C:p4",
+          "DOC-A:p1",
+          "DOC-D:p2",
+          "DOC-B:p2",
+          "DOC-A:p2",
+          "DOC-D:p1"
+        ],
+        "answerable": false,
+        "retrieved_any": true,
+        "top1_score": 26.597,
+        "recall@1": null,
+        "recall@3": null,
+        "recall@5": null,
+        "hit@1": null,
+        "hit@3": null,
+        "hit@5": null,
+        "mrr@5": null
+      },
+      "answer": {
+        "answer": "资料中未提及香港、澳门的住宿标准。住宿标准仅列出：北京、上海、广州、深圳四个一线城市每晚上限600元，其他城市每晚上限450元。[来源：DOC-A-内部管理手册.pdf · 第3页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": true,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": null,
+        "citation_count": 1,
+        "forbidden_hits": [],
+        "abstained": true,
+        "answer_correct": true,
+        "correct": true,
+        "missing_keys": [],
+        "strict_citation_ok": true,
+        "citation_exact": null,
+        "executed": true,
+        "context_chars": 1527
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1080.0
+      },
+      "index": 37
+    },
+    {
+      "question_id": "RAG-038",
+      "question": "去北京出差，晚上住酒店最高能报多少？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "北京属一线城市，住宿每晚上限 600 元。",
+      "gold_pages": [
+        "DOC-A:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 30.955
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 4.248
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 3.592
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 3.353
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 3.3
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 3.246
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 2.921
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 2.92
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p3"
+        ],
+        "top_pages": [
+          "DOC-A:p3",
+          "DOC-D:p2",
+          "DOC-B:p2",
+          "DOC-A:p5",
+          "DOC-A:p1",
+          "DOC-C:p4",
+          "DOC-C:p1",
+          "DOC-C:p5"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "去北京出差，住宿费每晚上限为 600 元。[来源：DOC-A-内部管理手册.pdf · 第3页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1528
+      },
+      "latency": {
+        "retrieval_ms": 1.0,
+        "answer_ms": 1186.2
+      },
+      "index": 38
+    },
+    {
+      "question_id": "RAG-039",
+      "question": "供应商交的那份整改报告，最晚多久要把问题彻底关掉？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "8D 中的 D8 要在 30 天内完成措施验证并关闭，逾期每次扣当季绩效 5 分。",
+      "gold_pages": [
+        "DOC-B:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 18.623
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 16.753
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 13.121
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 12.233
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 11.53
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 11.518
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 10.06
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 9.718
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p4"
+        ],
+        "top_pages": [
+          "DOC-D:p4",
+          "DOC-B:p4",
+          "DOC-B:p3",
+          "DOC-C:p3",
+          "DOC-A:p4",
+          "DOC-B:p1",
+          "DOC-C:p5",
+          "DOC-B:p2"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，供应商在收到不合格通知后，30 天内完成措施验证并关闭（D8），即最晚 30 天内把问题彻底关闭。[来源：DOC-B-供应商质量管理规范.pdf · 第4页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1454
+      },
+      "latency": {
+        "retrieval_ms": 0.4,
+        "answer_ms": 1139.8
+      },
+      "index": 39
+    },
+    {
+      "question_id": "RAG-040",
+      "question": "项目花钱超出计划一定比例时，需要哪个层级的机构点头？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "预算变更超过 5% 须提交项目指导委员会批准。",
+      "gold_pages": [
+        "DOC-C:p4"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.259
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 12.341
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 11.52
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 11.116
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 11.096
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 10.818
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 9.754
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 9.331
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p4"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p4",
+          "DOC-C:p5",
+          "DOC-A:p3",
+          "DOC-C:p1",
+          "DOC-B:p2",
+          "DOC-C:p3",
+          "DOC-D:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p4"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "当预算变更幅度超过 5% 时，须提交项目指导委员会批准；不超过 5% 的，由项目经理与财务经理会签即可。 [来源：DOC-C-星海项目预算与交付计划.pdf · 第4页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第4页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第4页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1430
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 1337.8
+      },
+      "index": 40
+    },
+    {
+      "question_id": "RAG-041",
+      "question": "盖公章之前要提前几天跟行政打招呼？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "用印申请至少提前 2 个工作日提交，紧急用印须总经理特批。",
+      "gold_pages": [
+        "DOC-A:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 16.218
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 13.647
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 8.441
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 8.173
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 6.891
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 4.407
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 4.189
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 3.743
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p5"
+        ],
+        "top_pages": [
+          "DOC-A:p4",
+          "DOC-A:p5",
+          "DOC-A:p3",
+          "DOC-A:p2",
+          "DOC-A:p1",
+          "DOC-C:p2",
+          "DOC-B:p2",
+          "DOC-D:p4"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "资料中没有直接规定“盖公章之前要提前几天跟行政打招呼”。可参考的相关规定是：用印申请须至少提前 2 个工作日提交，紧急用印须由总经理特批。[来源：DOC-A-内部管理手册.pdf · 第5页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第5页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1724
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1060.4
+      },
+      "index": 41
+    },
+    {
+      "question_id": "RAG-042",
+      "question": "公司里最敏感的那类资料，能拷到 U 盘带出去吗？",
+      "question_type": "paraphrase",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "绝密级数据不得以任何形式离开公司内网，包括移动存储。",
+      "gold_pages": [
+        "DOC-D:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 8.975
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 5.981
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 4.982
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 4.721
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 4.27
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 3.862
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 3.854
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 3.776
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p3"
+        ],
+        "top_pages": [
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-D:p3",
+          "DOC-D:p2",
+          "DOC-B:p4",
+          "DOC-C:p1",
+          "DOC-C:p4",
+          "DOC-C:p3"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.3333,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "不能。根据资料，公司中最敏感的一类数据是“绝密级数据”，该类数据不得以任何形式离开公司内网，包括邮件、即时通讯与移动存储 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。U盘属于移动存储，因此绝密级数据不能拷贝到U盘带出。\n\n另外，客户清单、报价单、成本核算表属于机密级资料 [来源：DOC-A-内部管理手册.pdf · 第6页]；机密级数据外发须使用 AES-256 加密，并由两名授权人员复核后方可发出 [来源：DOC-D-信息安全与数据分级规定.pdf · 第3页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 0.5,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1535
+      },
+      "latency": {
+        "retrieval_ms": 0.6,
+        "answer_ms": 1614.4
+      },
+      "index": 42
+    },
+    {
+      "question_id": "RAG-043",
+      "question": "我们最近在梳理差旅报销和供应商管理两套流程：差旅这块一线城市住宿上限、出差补贴、报销时限都重新确认过；供应商这块准入材料、绩效评分、8D 时限也在复核。另外来料检验的抽样方案依据 GB/T 2828.1、主要缺陷 AQL 0.65，那么次要缺陷的 AQL 取多少？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "次要缺陷 AQL 取 1.5。",
+      "gold_pages": [
+        "DOC-B:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 134.975
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 95.794
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 71.057
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 57.79
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 48.801
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 45.826
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 39.738
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 38.56
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p2"
+        ],
+        "top_pages": [
+          "DOC-B:p2",
+          "DOC-A:p3",
+          "DOC-B:p1",
+          "DOC-A:p4",
+          "DOC-B:p4",
+          "DOC-A:p1",
+          "DOC-B:p5",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "次要缺陷的 AQL 取 1.5。[来源：DOC-B-供应商质量管理规范.pdf · 第2页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-A-内部管理手册.pdf 第4页",
+          "DOC-B-供应商质量管理规范.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 1,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1579
+      },
+      "latency": {
+        "retrieval_ms": 1.6,
+        "answer_ms": 811.2
+      },
+      "index": 43
+    },
+    {
+      "question_id": "RAG-044",
+      "question": "星海项目 2025 年 1 月启动，总预算 2,480 万元，研发人力 1,120 万元、硬件采购 780 万元、实施服务 380 万元、预备费 200 万元；M1 设计冻结、M2 样机验证都排在 2025 年。请问小批量交付（M3）的死线是哪一天？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-C"
+      ],
+      "gold_answer": "M3 小批量交付为 2026 年 2 月 28 日。",
+      "gold_pages": [
+        "DOC-C:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 126.205
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 3,
+          "score": 81.672
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 72.892
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 57.815
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 52.92
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 50.681
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 31.576
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 30.631
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-C:p3"
+        ],
+        "top_pages": [
+          "DOC-C:p2",
+          "DOC-C:p3",
+          "DOC-C:p1",
+          "DOC-C:p5",
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-C:p4",
+          "DOC-A:p5"
+        ],
+        "recall@1": 0.0,
+        "hit@1": 0.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.5,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-C:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "星海项目的小批量交付（M3）死线是 2026 年 2 月 28 日，需交付 3 台设备并完成客户验收。[来源：DOC-C-星海项目预算与交付计划.pdf · 第3页]",
+        "citations": [
+          "DOC-C-星海项目预算与交付计划.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第1页",
+          "DOC-C-星海项目预算与交付计划.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第2页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1507
+      },
+      "latency": {
+        "retrieval_ms": 1.1,
+        "answer_ms": 904.9
+      },
+      "index": 44
+    },
+    {
+      "question_id": "RAG-045",
+      "question": "按信息安全规定，数据分四级、机密级要双签、绝密级要总经理批准并报董事会备案，外部传输还有加密与留痕要求。那么员工拿到的数据访问权限到期后会自动回收吗？有效期最长多久？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-D"
+      ],
+      "gold_answer": "会自动回收，权限有效期最长 12 个月，续期须重新申请。",
+      "gold_pages": [
+        "DOC-D:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 152.379
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 1,
+          "score": 93.043
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 3,
+          "score": 88.367
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 4,
+          "score": 52.913
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 39.576
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 38.824
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 26.691
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 25.725
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-D:p2"
+        ],
+        "top_pages": [
+          "DOC-D:p2",
+          "DOC-D:p1",
+          "DOC-D:p3",
+          "DOC-D:p4",
+          "DOC-A:p6",
+          "DOC-A:p4",
+          "DOC-A:p1",
+          "DOC-A:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-D:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "会自动回收，有效期最长 12 个月。依据规定：权限有效期最长 12 个月，到期由系统自动回收，续期须重新申请 [来源：DOC-D-信息安全与数据分级规定.pdf · 第2页]。",
+        "citations": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-D-信息安全与数据分级规定.pdf 第2页",
+          "DOC-D-信息安全与数据分级规定.pdf 第1页",
+          "DOC-D-信息安全与数据分级规定.pdf 第3页",
+          "DOC-D-信息安全与数据分级规定.pdf 第4页",
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 3,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1493
+      },
+      "latency": {
+        "retrieval_ms": 0.6,
+        "answer_ms": 1398.7
+      },
+      "index": 45
+    },
+    {
+      "question_id": "RAG-046",
+      "question": "采购流程要先立项、比价不少于三家，5 万元以下部门经理批、80 万元以下采购总监与财务经理会签、超过 80 万元 CFO 批、超过 300 万元还要上总经理办公会。在这些规定之外，付款账期的默认天数是多少？",
+      "question_type": "long_distractor",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "付款账期默认 60 天，自验收合格之日起算。",
+      "gold_pages": [
+        "DOC-A:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 170.622
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 116.371
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 59.293
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 52.726
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 45.032
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 44.986
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 37.372
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 1,
+          "score": 37.249
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-C:p2",
+          "DOC-A:p5",
+          "DOC-A:p4",
+          "DOC-C:p4",
+          "DOC-A:p3",
+          "DOC-C:p1"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "付款账期默认 60 天，自验收合格之日起算。[来源：DOC-A-内部管理手册.pdf · 第2页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第2页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1663
+      },
+      "latency": {
+        "retrieval_ms": 1.4,
+        "answer_ms": 1256.5
+      },
+      "index": 46
+    },
+    {
+      "question_id": "RAG-047",
+      "question": "2025 年 9 月发生的一笔 70 万元采购，是否需要 CFO 审批？请说明依据出自哪一页。",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "hard",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "不需要。2025-07-01 修订后 CFO 门槛为 80 万元，70 万元由采购总监与财务经理会签，依据在修订记录页（第 6 页）。",
+      "gold_pages": [
+        "DOC-A:p2",
+        "DOC-A:p6"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 26.514
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 25.102
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 20.657
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 15.657
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 14.39
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 13.422
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 13.123
+        },
+        {
+          "doc_id": "DOC-D",
+          "doc_name": "DOC-D-信息安全与数据分级规定.pdf",
+          "page": 2,
+          "score": 12.217
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-A:p3",
+          "DOC-C:p2",
+          "DOC-A:p1",
+          "DOC-B:p2",
+          "DOC-A:p4",
+          "DOC-D:p2"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "不需要 CFO 审批。根据 2025-07-01 V3.1 修订记录，第 2.3 条与第 2.4 条的 CFO 审批门槛已由 50 万元调整为 80 万元：自 2025 年 7 月 1 日起，单笔采购金额 5 万元（含）以上、80 万元以下的，仍由采购总监与财务经理会签；超过 80 万元的，方须由 CFO 审批。2025 年 9 月发生的 70 万元采购适用修订后的规则，属于 5 万元（含）以上、80 万元以下区间，应由采购总监与财务经理会签，无需 CFO 审批。[来源：DOC-A-内部管理手册.pdf · 第6页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-A-内部管理手册.pdf 第3页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 0.9091,
+          "total": 11,
+          "unsupported": [
+            "70万元"
+          ]
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 0.5,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": false,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1795
+      },
+      "latency": {
+        "retrieval_ms": 0.6,
+        "answer_ms": 1828.5
+      },
+      "index": 47
+    },
+    {
+      "question_id": "RAG-048",
+      "question": "合同金额正好 100 万元，是不是必须走法务审核？",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "是。合同金额 100 万元以上（含本数）须经法务审核并由总经理签批后方可用印。",
+      "gold_pages": [
+        "DOC-A:p1",
+        "DOC-A:p5"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 5,
+          "score": 35.376
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 22.131
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 16.621
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 9.539
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 1,
+          "score": 8.987
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 8.566
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 6.941
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 5.091
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p1",
+          "DOC-A:p5"
+        ],
+        "top_pages": [
+          "DOC-A:p5",
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-C:p2",
+          "DOC-A:p1",
+          "DOC-A:p3",
+          "DOC-C:p4",
+          "DOC-B:p4"
+        ],
+        "recall@1": 0.5,
+        "hit@1": 1.0,
+        "recall@3": 0.5,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p1",
+          "DOC-A:p5"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "是，必须走法务审核。因为手册规定合同金额100万元以上的须经法务审核并由总经理签批后方可用印，而“以上”除另有说明外均含本数，所以正好100万元属于该范围。[来源：DOC-A-内部管理手册.pdf · 第5页][来源：DOC-A-内部管理手册.pdf · 第1页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第5页",
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第1页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 4,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 2,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1674
+      },
+      "latency": {
+        "retrieval_ms": 0.9,
+        "answer_ms": 1197.9
+      },
+      "index": 48
+    },
+    {
+      "question_id": "RAG-049",
+      "question": "供应商评分里“服务”这一项值多少分？",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "easy",
+      "document_ids": [
+        "DOC-B"
+      ],
+      "gold_answer": "服务占 10 分。",
+      "gold_pages": [
+        "DOC-B:p3"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 20.605
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 1,
+          "score": 15.628
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 5,
+          "score": 12.982
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 12.696
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 10.957
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 5,
+          "score": 10.892
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 4,
+          "score": 9.576
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 9.005
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-B:p3"
+        ],
+        "top_pages": [
+          "DOC-B:p3",
+          "DOC-B:p1",
+          "DOC-B:p5",
+          "DOC-B:p2",
+          "DOC-A:p4",
+          "DOC-C:p5",
+          "DOC-B:p4",
+          "DOC-A:p2"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-B:p3"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "根据资料，供应商季度百分制评分中“服务”这一项占 10 分。[来源：DOC-B-供应商质量管理规范.pdf · 第3页]",
+        "citations": [
+          "DOC-B-供应商质量管理规范.pdf 第3页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-B-供应商质量管理规范.pdf 第3页",
+          "DOC-B-供应商质量管理规范.pdf 第1页",
+          "DOC-B-供应商质量管理规范.pdf 第5页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 2,
+          "unsupported": []
+        },
+        "citation_precision": 1.0,
+        "citation_recall": 1.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": true,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1499
+      },
+      "latency": {
+        "retrieval_ms": 0.8,
+        "answer_ms": 1220.0
+      },
+      "index": 49
+    },
+    {
+      "question_id": "RAG-050",
+      "question": "单笔采购超过 300 万元时，除了 CFO 还要走什么程序？",
+      "question_type": "page_citation_trap",
+      "answerable": true,
+      "difficulty": "medium",
+      "document_ids": [
+        "DOC-A"
+      ],
+      "gold_answer": "还须提交总经理办公会形成书面决议。",
+      "gold_pages": [
+        "DOC-A:p2"
+      ],
+      "top_hits": [
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 2,
+          "score": 35.603
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 6,
+          "score": 24.766
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 2,
+          "score": 11.508
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 2,
+          "score": 10.253
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 4,
+          "score": 9.049
+        },
+        {
+          "doc_id": "DOC-A",
+          "doc_name": "DOC-A-内部管理手册.pdf",
+          "page": 3,
+          "score": 8.474
+        },
+        {
+          "doc_id": "DOC-C",
+          "doc_name": "DOC-C-星海项目预算与交付计划.pdf",
+          "page": 4,
+          "score": 7.377
+        },
+        {
+          "doc_id": "DOC-B",
+          "doc_name": "DOC-B-供应商质量管理规范.pdf",
+          "page": 3,
+          "score": 6.908
+        }
+      ],
+      "retrieval": {
+        "gold_pages": [
+          "DOC-A:p2"
+        ],
+        "top_pages": [
+          "DOC-A:p2",
+          "DOC-A:p6",
+          "DOC-B:p2",
+          "DOC-C:p2",
+          "DOC-A:p4",
+          "DOC-A:p3",
+          "DOC-C:p4",
+          "DOC-B:p3"
+        ],
+        "recall@1": 1.0,
+        "hit@1": 1.0,
+        "recall@3": 1.0,
+        "hit@3": 1.0,
+        "recall@5": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 1.0,
+        "answerable": true,
+        "covered_pages": [
+          "DOC-A:p2"
+        ],
+        "missing_pages": []
+      },
+      "answer": {
+        "answer": "单笔采购金额超过 300 万元时，除按 2.4 执行（即由 CFO 审批）外，还须提交总经理办公会形成书面决议。另据修订记录，2025 年 7 月 1 日起 CFO 审批门槛调整为超过 80 万元，但第 2.5 条关于 300 万元以上须总经理办公会决议的规定不变。[来源：DOC-A-内部管理手册.pdf · 第6页]",
+        "citations": [
+          "DOC-A-内部管理手册.pdf 第6页"
+        ],
+        "unresolved_citations": [],
+        "context_pages": [
+          "DOC-A-内部管理手册.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第6页",
+          "DOC-B-供应商质量管理规范.pdf 第2页",
+          "DOC-C-星海项目预算与交付计划.pdf 第2页",
+          "DOC-A-内部管理手册.pdf 第4页"
+        ],
+        "degraded": false,
+        "refusal": false,
+        "groundedness": {
+          "rate": 1.0,
+          "total": 5,
+          "unsupported": []
+        },
+        "citation_precision": 0.0,
+        "citation_recall": 0.0,
+        "citation_count": 1,
+        "answer_correct": true,
+        "missing_keys": [],
+        "forbidden_hits": [],
+        "strict_citation_ok": true,
+        "citation_exact": false,
+        "correct": true,
+        "executed": true,
+        "context_chars": 1712
+      },
+      "latency": {
+        "retrieval_ms": 0.4,
+        "answer_ms": 1423.1
+      },
+      "index": 50
+    }
+  ]
+}

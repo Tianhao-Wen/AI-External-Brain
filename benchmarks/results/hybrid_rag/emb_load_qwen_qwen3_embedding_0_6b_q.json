@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen3-Embedding-0.6B-Q",
+  "split": "dev",
+  "top_k": 10,
+  "collection": "emb_qwen_qwen3_embedding_0_6b_q",
+  "rss_start_mb": 94.1,
+  "cache_dir": "benchmarks\\.work\\emb_cache_cold",
+  "fresh_cache": false,
+  "model_load_seconds": 2.28,
+  "dim": 1024,
+  "model_version": "Qwen/Qwen3-Embedding-0.6B-Q@1024",
+  "rss_after_load_mb": 1279.5,
+  "hf_hub_offline": "1"
+}

@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "run_id": "topk_stability",
+    "suite": "topk-full",
+    "mode": "live",
+    "created_at": "2026-11-10T11:44:31",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "2f1e30ce3ed721715ac3074cc9c846a2ec7916b9",
+      "commit_short": "2f1e30c",
+      "branch": "experiment/rag-topk-ablation",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 144,
+      "used": 144,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": [
+      "DOC-A -> doc_f89a73de8f9e (6页)",
+      "DOC-B -> doc_0d968f09e251 (5页)",
+      "DOC-C -> doc_429cc182a8c3 (5页)",
+      "DOC-D -> doc_45d4d63bfd9f (4页)"
+    ]
+  },
+  "dataset": "full",
+  "ks": [
+    3,
+    5,
+    10
+  ],
+  "repeat": 3,
+  "mode": "live",
+  "budget": {
+    "max_calls": 144,
+    "used": 144,
+    "failures": 0
+  },
+  "usage": {
+    "llm_calls": 1,
+    "input_tokens": 136,
+    "output_tokens": 133,
+    "cache_read_tokens": 2048,
+    "usage_reported": true
+  },
+  "demo_env_unchanged": true,
+  "status": "ok"
+}

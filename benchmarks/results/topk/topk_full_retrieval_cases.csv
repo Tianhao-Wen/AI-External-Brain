@@ -1,0 +1,201 @@
+﻿question_id,question_type,difficulty,answerable,k,gold_pages,recall,hit,full_evidence,mrr@10,retrieved_chunks,retrieved_distinct_pages,ctx_delivered_chunks,ctx_dropped_chunks,ctx_context_chars,covered_pages,missing_pages,search_ms
+RAG-001,single_page,easy,true,1,DOC-A:p3,1.0,1.0,1.0,1.0,1,1,1,0,369,DOC-A:p3,,0.83
+RAG-001,single_page,easy,true,3,DOC-A:p3,1.0,1.0,1.0,1.0,3,3,3,0,942,DOC-A:p3,,0.83
+RAG-001,single_page,easy,true,5,DOC-A:p3,1.0,1.0,1.0,1.0,5,5,5,0,1555,DOC-A:p3,,0.83
+RAG-001,single_page,easy,true,10,DOC-A:p3,1.0,1.0,1.0,1.0,10,10,10,0,2829,DOC-A:p3,,0.83
+RAG-002,single_page,easy,true,1,DOC-A:p3,1.0,1.0,1.0,1.0,1,1,1,0,369,DOC-A:p3,,0.62
+RAG-002,single_page,easy,true,3,DOC-A:p3,1.0,1.0,1.0,1.0,3,3,3,0,982,DOC-A:p3,,0.62
+RAG-002,single_page,easy,true,5,DOC-A:p3,1.0,1.0,1.0,1.0,5,5,5,0,1568,DOC-A:p3,,0.62
+RAG-002,single_page,easy,true,10,DOC-A:p3,1.0,1.0,1.0,1.0,10,10,10,0,2965,DOC-A:p3,,0.62
+RAG-003,single_page,easy,true,1,DOC-B:p3,1.0,1.0,1.0,1.0,1,1,1,0,304,DOC-B:p3,,0.63
+RAG-003,single_page,easy,true,3,DOC-B:p3,1.0,1.0,1.0,1.0,3,3,3,0,850,DOC-B:p3,,0.63
+RAG-003,single_page,easy,true,5,DOC-B:p3,1.0,1.0,1.0,1.0,5,5,5,0,1499,DOC-B:p3,,0.63
+RAG-003,single_page,easy,true,10,DOC-B:p3,1.0,1.0,1.0,1.0,10,10,10,0,3036,DOC-B:p3,,0.63
+RAG-004,single_page,easy,true,1,DOC-B:p4,1.0,1.0,1.0,1.0,1,1,1,0,247,DOC-B:p4,,0.56
+RAG-004,single_page,easy,true,3,DOC-B:p4,1.0,1.0,1.0,1.0,3,3,3,0,831,DOC-B:p4,,0.56
+RAG-004,single_page,easy,true,5,DOC-B:p4,1.0,1.0,1.0,1.0,5,5,5,0,1480,DOC-B:p4,,0.56
+RAG-004,single_page,easy,true,10,DOC-B:p4,1.0,1.0,1.0,1.0,10,10,10,0,3046,DOC-B:p4,,0.56
+RAG-005,single_page,easy,true,1,DOC-C:p1,1.0,1.0,1.0,1.0,1,1,1,0,299,DOC-C:p1,,0.55
+RAG-005,single_page,easy,true,3,DOC-C:p1,1.0,1.0,1.0,1.0,3,3,3,0,787,DOC-C:p1,,0.55
+RAG-005,single_page,easy,true,5,DOC-C:p1,1.0,1.0,1.0,1.0,5,5,5,0,1349,DOC-C:p1,,0.55
+RAG-005,single_page,easy,true,10,DOC-C:p1,1.0,1.0,1.0,1.0,10,10,10,0,2972,DOC-C:p1,,0.55
+RAG-006,single_page,easy,true,1,DOC-D:p1,0.0,0.0,0.0,0.3333,1,1,1,0,268,,DOC-D:p1,0.44
+RAG-006,single_page,easy,true,3,DOC-D:p1,1.0,1.0,1.0,0.3333,3,3,3,0,813,DOC-D:p1,,0.44
+RAG-006,single_page,easy,true,5,DOC-D:p1,1.0,1.0,1.0,0.3333,5,5,5,0,1493,DOC-D:p1,,0.44
+RAG-006,single_page,easy,true,10,DOC-D:p1,1.0,1.0,1.0,0.3333,10,10,10,0,3226,DOC-D:p1,,0.44
+RAG-007,single_page,easy,true,1,DOC-A:p5,1.0,1.0,1.0,1.0,1,1,1,0,248,DOC-A:p5,,0.44
+RAG-007,single_page,easy,true,3,DOC-A:p5,1.0,1.0,1.0,1.0,3,3,3,0,868,DOC-A:p5,,0.44
+RAG-007,single_page,easy,true,5,DOC-A:p5,1.0,1.0,1.0,1.0,5,5,5,0,1524,DOC-A:p5,,0.44
+RAG-007,single_page,easy,true,10,DOC-A:p5,1.0,1.0,1.0,1.0,10,10,10,0,3064,DOC-A:p5,,0.44
+RAG-008,single_page,easy,true,1,DOC-D:p3,1.0,1.0,1.0,1.0,1,1,1,0,268,DOC-D:p3,,0.43
+RAG-008,single_page,easy,true,3,DOC-D:p3,1.0,1.0,1.0,1.0,3,3,3,0,813,DOC-D:p3,,0.43
+RAG-008,single_page,easy,true,5,DOC-D:p3,1.0,1.0,1.0,1.0,5,5,5,0,1493,DOC-D:p3,,0.43
+RAG-008,single_page,easy,true,10,DOC-D:p3,1.0,1.0,1.0,1.0,10,10,10,0,2940,DOC-D:p3,,0.43
+RAG-009,multi_page,hard,true,1,DOC-A:p2 | DOC-A:p6,0.5,1.0,0.0,1.0,1,1,1,0,392,DOC-A:p2,DOC-A:p6,0.4
+RAG-009,multi_page,hard,true,3,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,3,3,3,0,1063,DOC-A:p2 | DOC-A:p6,,0.4
+RAG-009,multi_page,hard,true,5,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,5,5,5,0,1663,DOC-A:p2 | DOC-A:p6,,0.4
+RAG-009,multi_page,hard,true,10,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,10,10,10,0,3296,DOC-A:p2 | DOC-A:p6,,0.4
+RAG-010,multi_page,hard,true,1,DOC-A:p2 | DOC-A:p6,0.5,1.0,0.0,1.0,1,1,1,0,392,DOC-A:p2,DOC-A:p6,0.35
+RAG-010,multi_page,hard,true,3,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,3,3,3,0,1182,DOC-A:p2 | DOC-A:p6,,0.35
+RAG-010,multi_page,hard,true,5,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,5,5,5,0,1683,DOC-A:p2 | DOC-A:p6,,0.35
+RAG-010,multi_page,hard,true,10,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,10,10,10,0,3244,DOC-A:p2 | DOC-A:p6,,0.35
+RAG-011,multi_page,hard,true,1,DOC-B:p3 | DOC-B:p5,0.5,1.0,0.0,1.0,1,1,1,0,232,DOC-B:p5,DOC-B:p3,0.35
+RAG-011,multi_page,hard,true,3,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,3,3,3,0,888,DOC-B:p3 | DOC-B:p5,,0.35
+RAG-011,multi_page,hard,true,5,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,5,5,5,0,1499,DOC-B:p3 | DOC-B:p5,,0.35
+RAG-011,multi_page,hard,true,10,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,10,10,10,0,2924,DOC-B:p3 | DOC-B:p5,,0.35
+RAG-012,multi_page,hard,true,1,DOC-C:p4 | DOC-C:p5,0.5,1.0,0.0,1.0,1,1,1,0,270,DOC-C:p5,DOC-C:p4,0.38
+RAG-012,multi_page,hard,true,3,DOC-C:p4 | DOC-C:p5,0.5,1.0,0.0,1.0,3,3,3,0,830,DOC-C:p5,DOC-C:p4,0.38
+RAG-012,multi_page,hard,true,5,DOC-C:p4 | DOC-C:p5,0.5,1.0,0.0,1.0,5,5,5,0,1450,DOC-C:p5,DOC-C:p4,0.38
+RAG-012,multi_page,hard,true,10,DOC-C:p4 | DOC-C:p5,1.0,1.0,1.0,1.0,10,10,10,0,2893,DOC-C:p4 | DOC-C:p5,,0.38
+RAG-013,multi_page,medium,true,1,DOC-D:p2 | DOC-D:p3,0.5,1.0,0.0,1.0,1,1,1,0,268,DOC-D:p3,DOC-D:p2,0.34
+RAG-013,multi_page,medium,true,3,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,3,3,3,0,813,DOC-D:p2 | DOC-D:p3,,0.34
+RAG-013,multi_page,medium,true,5,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,5,5,5,0,1435,DOC-D:p2 | DOC-D:p3,,0.34
+RAG-013,multi_page,medium,true,10,DOC-D:p2 | DOC-D:p3,1.0,1.0,1.0,1.0,10,10,10,0,2963,DOC-D:p2 | DOC-D:p3,,0.34
+RAG-014,multi_page,medium,true,1,DOC-C:p1 | DOC-C:p2,0.5,1.0,0.0,1.0,1,1,1,0,250,DOC-C:p2,DOC-C:p1,0.28
+RAG-014,multi_page,medium,true,3,DOC-C:p1 | DOC-C:p2,1.0,1.0,1.0,1.0,3,3,3,0,823,DOC-C:p1 | DOC-C:p2,,0.28
+RAG-014,multi_page,medium,true,5,DOC-C:p1 | DOC-C:p2,1.0,1.0,1.0,1.0,5,5,5,0,1349,DOC-C:p1 | DOC-C:p2,,0.28
+RAG-014,multi_page,medium,true,10,DOC-C:p1 | DOC-C:p2,1.0,1.0,1.0,1.0,10,10,10,0,3030,DOC-C:p1 | DOC-C:p2,,0.28
+RAG-015,multi_condition,hard,true,1,DOC-A:p2 | DOC-A:p6,0.5,1.0,0.0,1.0,1,1,1,0,392,DOC-A:p2,DOC-A:p6,0.32
+RAG-015,multi_condition,hard,true,3,DOC-A:p2 | DOC-A:p6,0.5,1.0,0.0,1.0,3,3,3,0,994,DOC-A:p2,DOC-A:p6,0.32
+RAG-015,multi_condition,hard,true,5,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,5,5,5,0,1714,DOC-A:p2 | DOC-A:p6,,0.32
+RAG-015,multi_condition,hard,true,10,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,10,10,10,0,3180,DOC-A:p2 | DOC-A:p6,,0.32
+RAG-016,multi_condition,medium,true,1,DOC-A:p4,1.0,1.0,1.0,1.0,1,1,1,0,348,DOC-A:p4,,0.32
+RAG-016,multi_condition,medium,true,3,DOC-A:p4,1.0,1.0,1.0,1.0,3,3,3,0,888,DOC-A:p4,,0.32
+RAG-016,multi_condition,medium,true,5,DOC-A:p4,1.0,1.0,1.0,1.0,5,5,5,0,1436,DOC-A:p4,,0.32
+RAG-016,multi_condition,medium,true,10,DOC-A:p4,1.0,1.0,1.0,1.0,10,10,10,0,3024,DOC-A:p4,,0.32
+RAG-017,multi_condition,hard,true,1,DOC-B:p3,0.0,0.0,0.0,0.5,1,1,1,0,232,,DOC-B:p3,0.28
+RAG-017,multi_condition,hard,true,3,DOC-B:p3,1.0,1.0,1.0,0.5,3,3,3,0,850,DOC-B:p3,,0.28
+RAG-017,multi_condition,hard,true,5,DOC-B:p3,1.0,1.0,1.0,0.5,5,5,5,0,1383,DOC-B:p3,,0.28
+RAG-017,multi_condition,hard,true,10,DOC-B:p3,1.0,1.0,1.0,0.5,10,10,10,0,3094,DOC-B:p3,,0.28
+RAG-018,multi_condition,hard,true,1,DOC-B:p3 | DOC-B:p5,0.5,1.0,0.0,1.0,1,1,1,0,304,DOC-B:p3,DOC-B:p5,0.3
+RAG-018,multi_condition,hard,true,3,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,3,3,3,0,888,DOC-B:p3 | DOC-B:p5,,0.3
+RAG-018,multi_condition,hard,true,5,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,5,5,5,0,1472,DOC-B:p3 | DOC-B:p5,,0.3
+RAG-018,multi_condition,hard,true,10,DOC-B:p3 | DOC-B:p5,1.0,1.0,1.0,1.0,10,10,10,0,3046,DOC-B:p3 | DOC-B:p5,,0.3
+RAG-019,multi_condition,medium,true,1,DOC-A:p5,0.0,0.0,0.0,0.5,1,1,1,0,392,,DOC-A:p5,0.28
+RAG-019,multi_condition,medium,true,3,DOC-A:p5,1.0,1.0,1.0,0.5,3,3,3,0,1061,DOC-A:p5,,0.28
+RAG-019,multi_condition,medium,true,5,DOC-A:p5,1.0,1.0,1.0,0.5,5,5,5,0,1663,DOC-A:p5,,0.28
+RAG-019,multi_condition,medium,true,10,DOC-A:p5,1.0,1.0,1.0,0.5,10,10,10,0,3202,DOC-A:p5,,0.28
+RAG-020,multi_condition,medium,true,1,DOC-C:p4,1.0,1.0,1.0,1.0,1,1,1,0,234,DOC-C:p4,,0.26
+RAG-020,multi_condition,medium,true,3,DOC-C:p4,1.0,1.0,1.0,1.0,3,3,3,0,736,DOC-C:p4,,0.26
+RAG-020,multi_condition,medium,true,5,DOC-C:p4,1.0,1.0,1.0,1.0,5,5,5,0,1445,DOC-C:p4,,0.26
+RAG-020,multi_condition,medium,true,10,DOC-C:p4,1.0,1.0,1.0,1.0,10,10,10,0,3058,DOC-C:p4,,0.26
+RAG-021,numeric,easy,true,1,DOC-B:p2,1.0,1.0,1.0,1.0,1,1,1,0,297,DOC-B:p2,,0.27
+RAG-021,numeric,easy,true,3,DOC-B:p2,1.0,1.0,1.0,1.0,3,3,3,0,858,DOC-B:p2,,0.27
+RAG-021,numeric,easy,true,5,DOC-B:p2,1.0,1.0,1.0,1.0,5,5,5,0,1502,DOC-B:p2,,0.27
+RAG-021,numeric,easy,true,10,DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3174,DOC-B:p2,,0.27
+RAG-022,numeric,easy,true,1,DOC-B:p2,1.0,1.0,1.0,1.0,1,1,1,0,297,DOC-B:p2,,0.26
+RAG-022,numeric,easy,true,3,DOC-B:p2,1.0,1.0,1.0,1.0,3,3,3,0,1041,DOC-B:p2,,0.26
+RAG-022,numeric,easy,true,5,DOC-B:p2,1.0,1.0,1.0,1.0,5,5,5,0,1648,DOC-B:p2,,0.26
+RAG-022,numeric,easy,true,10,DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3162,DOC-B:p2,,0.26
+RAG-023,numeric,easy,true,1,DOC-B:p2,1.0,1.0,1.0,1.0,1,1,1,0,297,DOC-B:p2,,0.25
+RAG-023,numeric,easy,true,3,DOC-B:p2,1.0,1.0,1.0,1.0,3,3,3,0,959,DOC-B:p2,,0.25
+RAG-023,numeric,easy,true,5,DOC-B:p2,1.0,1.0,1.0,1.0,5,5,5,0,1623,DOC-B:p2,,0.25
+RAG-023,numeric,easy,true,10,DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,2997,DOC-B:p2,,0.25
+RAG-024,numeric,easy,true,1,DOC-C:p5,1.0,1.0,1.0,1.0,1,1,1,0,270,DOC-C:p5,,0.28
+RAG-024,numeric,easy,true,3,DOC-C:p5,1.0,1.0,1.0,1.0,3,3,3,0,823,DOC-C:p5,,0.28
+RAG-024,numeric,easy,true,5,DOC-C:p5,1.0,1.0,1.0,1.0,5,5,5,0,1349,DOC-C:p5,,0.28
+RAG-024,numeric,easy,true,10,DOC-C:p5,1.0,1.0,1.0,1.0,10,10,10,0,3114,DOC-C:p5,,0.28
+RAG-025,numeric,easy,true,1,DOC-C:p2,1.0,1.0,1.0,1.0,1,1,1,0,250,DOC-C:p2,,0.26
+RAG-025,numeric,easy,true,3,DOC-C:p2,1.0,1.0,1.0,1.0,3,3,3,0,758,DOC-C:p2,,0.26
+RAG-025,numeric,easy,true,5,DOC-C:p2,1.0,1.0,1.0,1.0,5,5,5,0,1355,DOC-C:p2,,0.26
+RAG-025,numeric,easy,true,10,DOC-C:p2,1.0,1.0,1.0,1.0,10,10,10,0,2907,DOC-C:p2,,0.26
+RAG-026,numeric,easy,true,1,DOC-B:p5,1.0,1.0,1.0,1.0,1,1,1,0,232,DOC-B:p5,,0.27
+RAG-026,numeric,easy,true,3,DOC-B:p5,1.0,1.0,1.0,1.0,3,3,3,0,831,DOC-B:p5,,0.27
+RAG-026,numeric,easy,true,5,DOC-B:p5,1.0,1.0,1.0,1.0,5,5,5,0,1524,DOC-B:p5,,0.27
+RAG-026,numeric,easy,true,10,DOC-B:p5,1.0,1.0,1.0,1.0,10,10,10,0,3034,DOC-B:p5,,0.27
+RAG-027,cross_document,hard,true,1,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,0.3333,1.0,0.0,1.0,1,1,1,0,297,DOC-B:p2,DOC-A:p2 | DOC-A:p6,0.35
+RAG-027,cross_document,hard,true,3,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,0.6667,1.0,0.0,1.0,3,3,3,0,1041,DOC-A:p2 | DOC-B:p2,DOC-A:p6,0.35
+RAG-027,cross_document,hard,true,5,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,0.6667,1.0,0.0,1.0,5,5,5,0,1651,DOC-A:p2 | DOC-B:p2,DOC-A:p6,0.35
+RAG-027,cross_document,hard,true,10,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3231,DOC-A:p2 | DOC-A:p6 | DOC-B:p2,,0.35
+RAG-028,cross_document,hard,true,1,DOC-C:p5 | DOC-D:p3,0.5,1.0,0.0,1.0,1,1,1,0,270,DOC-C:p5,DOC-D:p3,0.33
+RAG-028,cross_document,hard,true,3,DOC-C:p5 | DOC-D:p3,1.0,1.0,1.0,1.0,3,3,3,0,836,DOC-C:p5 | DOC-D:p3,,0.33
+RAG-028,cross_document,hard,true,5,DOC-C:p5 | DOC-D:p3,1.0,1.0,1.0,1.0,5,5,5,0,1346,DOC-C:p5 | DOC-D:p3,,0.33
+RAG-028,cross_document,hard,true,10,DOC-C:p5 | DOC-D:p3,1.0,1.0,1.0,1.0,10,10,10,0,2859,DOC-C:p5 | DOC-D:p3,,0.33
+RAG-029,cross_document,medium,true,1,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,0.3333,1.0,0.0,1.0,1,1,1,0,294,DOC-D:p1,DOC-A:p6 | DOC-D:p4,0.31
+RAG-029,cross_document,medium,true,3,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,0.6667,1.0,0.0,1.0,3,3,3,0,916,DOC-D:p1 | DOC-D:p4,DOC-A:p6,0.31
+RAG-029,cross_document,medium,true,5,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,0.6667,1.0,0.0,1.0,5,5,5,0,1435,DOC-D:p1 | DOC-D:p4,DOC-A:p6,0.31
+RAG-029,cross_document,medium,true,10,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,1.0,1.0,1.0,1.0,10,10,10,0,3137,DOC-A:p6 | DOC-D:p1 | DOC-D:p4,,0.31
+RAG-030,cross_document,hard,true,1,DOC-A:p4 | DOC-D:p2,0.5,1.0,0.0,1.0,1,1,1,0,247,DOC-D:p2,DOC-A:p4,0.31
+RAG-030,cross_document,hard,true,3,DOC-A:p4 | DOC-D:p2,0.5,1.0,0.0,1.0,3,3,3,0,813,DOC-D:p2,DOC-A:p4,0.31
+RAG-030,cross_document,hard,true,5,DOC-A:p4 | DOC-D:p2,1.0,1.0,1.0,1.0,5,5,5,0,1424,DOC-A:p4 | DOC-D:p2,,0.31
+RAG-030,cross_document,hard,true,10,DOC-A:p4 | DOC-D:p2,1.0,1.0,1.0,1.0,10,10,10,0,2824,DOC-A:p4 | DOC-D:p2,,0.31
+RAG-031,cross_document,hard,true,1,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.0,0.0,0.0,0.5,1,1,1,0,299,,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.33
+RAG-031,cross_document,hard,true,3,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.3333,1.0,0.0,0.5,3,3,3,0,867,DOC-D:p1,DOC-A:p6 | DOC-D:p3,0.33
+RAG-031,cross_document,hard,true,5,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.3333,1.0,0.0,0.5,5,5,5,0,1431,DOC-D:p1,DOC-A:p6 | DOC-D:p3,0.33
+RAG-031,cross_document,hard,true,10,DOC-A:p6 | DOC-D:p1 | DOC-D:p3,0.6667,1.0,0.0,0.5,10,10,10,0,2853,DOC-D:p1 | DOC-D:p3,DOC-A:p6,0.33
+RAG-032,negative,medium,false,1,,,,,,1,1,1,0,268,,,0.27
+RAG-032,negative,medium,false,3,,,,,,3,3,3,0,778,,,0.27
+RAG-032,negative,medium,false,5,,,,,,5,5,5,0,1493,,,0.27
+RAG-032,negative,medium,false,10,,,,,,10,10,10,0,3097,,,0.27
+RAG-033,negative,medium,false,1,,,,,,1,1,1,0,250,,,0.29
+RAG-033,negative,medium,false,3,,,,,,3,3,3,0,847,,,0.29
+RAG-033,negative,medium,false,5,,,,,,5,5,5,0,1627,,,0.29
+RAG-033,negative,medium,false,10,,,,,,10,10,10,0,2924,,,0.29
+RAG-034,negative,easy,false,1,,,,,,1,1,1,0,299,,,0.28
+RAG-034,negative,easy,false,3,,,,,,3,3,3,0,787,,,0.28
+RAG-034,negative,easy,false,5,,,,,,5,5,5,0,1349,,,0.28
+RAG-034,negative,easy,false,10,,,,,,10,10,10,0,2978,,,0.28
+RAG-035,negative,hard,false,1,,,,,,1,1,1,0,348,,,0.29
+RAG-035,negative,hard,false,3,,,,,,3,3,3,0,894,,,0.29
+RAG-035,negative,hard,false,5,,,,,,5,5,5,0,1594,,,0.29
+RAG-035,negative,hard,false,10,,,,,,10,10,10,0,3009,,,0.29
+RAG-036,negative,medium,false,1,,,,,,1,1,1,0,392,,,0.25
+RAG-036,negative,medium,false,3,,,,,,3,3,3,0,898,,,0.25
+RAG-036,negative,medium,false,5,,,,,,5,5,5,0,1567,,,0.25
+RAG-036,negative,medium,false,10,,,,,,10,10,10,0,3126,,,0.25
+RAG-037,negative,hard,false,1,,,,,,1,1,1,0,369,,,0.26
+RAG-037,negative,hard,false,3,,,,,,3,3,3,0,917,,,0.26
+RAG-037,negative,hard,false,5,,,,,,5,5,5,0,1527,,,0.26
+RAG-037,negative,hard,false,10,,,,,,10,10,10,0,3285,,,0.26
+RAG-038,paraphrase,easy,true,1,DOC-A:p3,1.0,1.0,1.0,1.0,1,1,1,0,369,DOC-A:p3,,0.26
+RAG-038,paraphrase,easy,true,3,DOC-A:p3,1.0,1.0,1.0,1.0,3,3,3,0,917,DOC-A:p3,,0.26
+RAG-038,paraphrase,easy,true,5,DOC-A:p3,1.0,1.0,1.0,1.0,5,5,5,0,1528,DOC-A:p3,,0.26
+RAG-038,paraphrase,easy,true,10,DOC-A:p3,1.0,1.0,1.0,1.0,10,10,10,0,2936,DOC-A:p3,,0.26
+RAG-039,paraphrase,medium,true,1,DOC-B:p4,0.0,0.0,0.0,0.5,1,1,1,0,259,,DOC-B:p4,0.29
+RAG-039,paraphrase,medium,true,3,DOC-B:p4,1.0,1.0,1.0,0.5,3,3,3,0,814,DOC-B:p4,,0.29
+RAG-039,paraphrase,medium,true,5,DOC-B:p4,1.0,1.0,1.0,0.5,5,5,5,0,1454,DOC-B:p4,,0.29
+RAG-039,paraphrase,medium,true,10,DOC-B:p4,1.0,1.0,1.0,0.5,10,10,10,0,2965,DOC-B:p4,,0.29
+RAG-040,paraphrase,medium,true,1,DOC-C:p4,0.0,0.0,0.0,0.5,1,1,1,0,250,,DOC-C:p4,0.3
+RAG-040,paraphrase,medium,true,3,DOC-C:p4,1.0,1.0,1.0,0.5,3,3,3,0,758,DOC-C:p4,,0.3
+RAG-040,paraphrase,medium,true,5,DOC-C:p4,1.0,1.0,1.0,0.5,5,5,5,0,1430,DOC-C:p4,,0.3
+RAG-040,paraphrase,medium,true,10,DOC-C:p4,1.0,1.0,1.0,0.5,10,10,10,0,2989,DOC-C:p4,,0.3
+RAG-041,paraphrase,easy,true,1,DOC-A:p5,0.0,0.0,0.0,0.5,1,1,1,0,348,,DOC-A:p5,0.26
+RAG-041,paraphrase,easy,true,3,DOC-A:p5,1.0,1.0,1.0,0.5,3,3,3,0,969,DOC-A:p5,,0.26
+RAG-041,paraphrase,easy,true,5,DOC-A:p5,1.0,1.0,1.0,0.5,5,5,5,0,1724,DOC-A:p5,,0.26
+RAG-041,paraphrase,easy,true,10,DOC-A:p5,1.0,1.0,1.0,0.5,10,10,10,0,3138,DOC-A:p5,,0.26
+RAG-042,paraphrase,medium,true,1,DOC-D:p3,0.0,0.0,0.0,0.3333,1,1,1,0,417,,DOC-D:p3,0.27
+RAG-042,paraphrase,medium,true,3,DOC-D:p3,1.0,1.0,1.0,0.3333,3,3,3,0,1037,DOC-D:p3,,0.27
+RAG-042,paraphrase,medium,true,5,DOC-D:p3,1.0,1.0,1.0,0.3333,5,5,5,0,1535,DOC-D:p3,,0.27
+RAG-042,paraphrase,medium,true,10,DOC-D:p3,1.0,1.0,1.0,0.3333,10,10,10,0,3035,DOC-D:p3,,0.27
+RAG-043,long_distractor,hard,true,1,DOC-B:p2,1.0,1.0,1.0,1.0,1,1,1,0,297,DOC-B:p2,,0.54
+RAG-043,long_distractor,hard,true,3,DOC-B:p2,1.0,1.0,1.0,1.0,3,3,3,0,980,DOC-B:p2,,0.54
+RAG-043,long_distractor,hard,true,5,DOC-B:p2,1.0,1.0,1.0,1.0,5,5,5,0,1579,DOC-B:p2,,0.54
+RAG-043,long_distractor,hard,true,10,DOC-B:p2,1.0,1.0,1.0,1.0,10,10,10,0,3022,DOC-B:p2,,0.54
+RAG-044,long_distractor,medium,true,1,DOC-C:p3,0.0,0.0,0.0,0.5,1,1,1,0,250,,DOC-C:p3,0.47
+RAG-044,long_distractor,medium,true,3,DOC-C:p3,1.0,1.0,1.0,0.5,3,3,3,0,841,DOC-C:p3,,0.47
+RAG-044,long_distractor,medium,true,5,DOC-C:p3,1.0,1.0,1.0,0.5,5,5,5,0,1507,DOC-C:p3,,0.47
+RAG-044,long_distractor,medium,true,10,DOC-C:p3,1.0,1.0,1.0,0.5,10,10,10,0,3082,DOC-C:p3,,0.47
+RAG-045,long_distractor,medium,true,1,DOC-D:p2,1.0,1.0,1.0,1.0,1,1,1,0,247,DOC-D:p2,,0.5
+RAG-045,long_distractor,medium,true,3,DOC-D:p2,1.0,1.0,1.0,1.0,3,3,3,0,813,DOC-D:p2,,0.5
+RAG-045,long_distractor,medium,true,5,DOC-D:p2,1.0,1.0,1.0,1.0,5,5,5,0,1493,DOC-D:p2,,0.5
+RAG-045,long_distractor,medium,true,10,DOC-D:p2,1.0,1.0,1.0,1.0,10,10,10,0,3268,DOC-D:p2,,0.5
+RAG-046,long_distractor,easy,true,1,DOC-A:p2,1.0,1.0,1.0,1.0,1,1,1,0,392,DOC-A:p2,,0.52
+RAG-046,long_distractor,easy,true,3,DOC-A:p2,1.0,1.0,1.0,1.0,3,3,3,0,1063,DOC-A:p2,,0.52
+RAG-046,long_distractor,easy,true,5,DOC-A:p2,1.0,1.0,1.0,1.0,5,5,5,0,1663,DOC-A:p2,,0.52
+RAG-046,long_distractor,easy,true,10,DOC-A:p2,1.0,1.0,1.0,1.0,10,10,10,0,3231,DOC-A:p2,,0.52
+RAG-047,page_citation_trap,hard,true,1,DOC-A:p2 | DOC-A:p6,0.5,1.0,0.0,1.0,1,1,1,0,392,DOC-A:p2,DOC-A:p6,0.33
+RAG-047,page_citation_trap,hard,true,3,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,3,3,3,0,1182,DOC-A:p2 | DOC-A:p6,,0.33
+RAG-047,page_citation_trap,hard,true,5,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,5,5,5,0,1795,DOC-A:p2 | DOC-A:p6,,0.33
+RAG-047,page_citation_trap,hard,true,10,DOC-A:p2 | DOC-A:p6,1.0,1.0,1.0,1.0,10,10,10,0,3215,DOC-A:p2 | DOC-A:p6,,0.33
+RAG-048,page_citation_trap,medium,true,1,DOC-A:p1 | DOC-A:p5,0.5,1.0,0.0,1.0,1,1,1,0,248,DOC-A:p5,DOC-A:p1,0.28
+RAG-048,page_citation_trap,medium,true,3,DOC-A:p1 | DOC-A:p5,0.5,1.0,0.0,1.0,3,3,3,0,1061,DOC-A:p5,DOC-A:p1,0.28
+RAG-048,page_citation_trap,medium,true,5,DOC-A:p1 | DOC-A:p5,1.0,1.0,1.0,1.0,5,5,5,0,1674,DOC-A:p1 | DOC-A:p5,,0.28
+RAG-048,page_citation_trap,medium,true,10,DOC-A:p1 | DOC-A:p5,1.0,1.0,1.0,1.0,10,10,10,0,3192,DOC-A:p1 | DOC-A:p5,,0.28
+RAG-049,page_citation_trap,easy,true,1,DOC-B:p3,1.0,1.0,1.0,1.0,1,1,1,0,304,DOC-B:p3,,0.28
+RAG-049,page_citation_trap,easy,true,3,DOC-B:p3,1.0,1.0,1.0,1.0,3,3,3,0,850,DOC-B:p3,,0.28
+RAG-049,page_citation_trap,easy,true,5,DOC-B:p3,1.0,1.0,1.0,1.0,5,5,5,0,1499,DOC-B:p3,,0.28
+RAG-049,page_citation_trap,easy,true,10,DOC-B:p3,1.0,1.0,1.0,1.0,10,10,10,0,2956,DOC-B:p3,,0.28
+RAG-050,page_citation_trap,medium,true,1,DOC-A:p2,1.0,1.0,1.0,1.0,1,1,1,0,392,DOC-A:p2,,0.45
+RAG-050,page_citation_trap,medium,true,3,DOC-A:p2,1.0,1.0,1.0,1.0,3,3,3,0,1110,DOC-A:p2,,0.45
+RAG-050,page_citation_trap,medium,true,5,DOC-A:p2,1.0,1.0,1.0,1.0,5,5,5,0,1712,DOC-A:p2,,0.45
+RAG-050,page_citation_trap,medium,true,10,DOC-A:p2,1.0,1.0,1.0,1.0,10,10,10,0,3258,DOC-A:p2,,0.45

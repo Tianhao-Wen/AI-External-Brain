@@ -1,0 +1,333 @@
+{
+  "mode": "live:deepseek-chat",
+  "workflow_id": "wf_fb676a7b28b6",
+  "thread_id": "wf_fb676a7b28b6",
+  "status": "completed",
+  "token_totals": {
+    "input_tokens": 581,
+    "output_tokens": 697
+  },
+  "effects": [
+    {
+      "action": "draft_email",
+      "status": "succeeded",
+      "object_id": "mtg_c956b12a2fe6",
+      "version": 1,
+      "attempts": 1
+    },
+    {
+      "action": "persist_meeting",
+      "status": "succeeded",
+      "object_id": "5e1a5b7a55e993f2",
+      "version": 0,
+      "attempts": 1
+    },
+    {
+      "action": "send_email",
+      "status": "succeeded",
+      "object_id": "mail_998334ca8ca5",
+      "version": 1,
+      "attempts": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_a9ae956be250",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 1,
+      "node": "load_meeting",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:22+00:00",
+      "ended_at": "2026-11-11T15:12:22+00:00",
+      "duration_ms": 1.16,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {}
+    },
+    {
+      "id": "evt_2ab4f890fc5a",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 2,
+      "node": "analyze_meeting",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:22+00:00",
+      "ended_at": "2026-11-11T15:12:25+00:00",
+      "duration_ms": 3004.81,
+      "model": "deepseek-chat",
+      "tool": "",
+      "input_tokens": 227,
+      "output_tokens": 462,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "risk_candidates": 1,
+        "todo_candidates": 2,
+        "retry": 0
+      }
+    },
+    {
+      "id": "evt_6c230cac55eb",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 3,
+      "node": "extract_todos",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:25+00:00",
+      "ended_at": "2026-11-11T15:12:25+00:00",
+      "duration_ms": 0.54,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "todos": 2
+      }
+    },
+    {
+      "id": "evt_bac4ad833fb6",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 4,
+      "node": "validate_risks",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:25+00:00",
+      "ended_at": "2026-11-11T15:12:25+00:00",
+      "duration_ms": 1.34,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "kept": 1,
+        "dropped": 0
+      }
+    },
+    {
+      "id": "evt_897967c962b1",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 5,
+      "node": "merge_results",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:25+00:00",
+      "ended_at": "2026-11-11T15:12:25+00:00",
+      "duration_ms": 0.0,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "risks": 1,
+        "todos": 2,
+        "dropped": 0
+      }
+    },
+    {
+      "id": "evt_4d79137ca1e5",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 6,
+      "node": "persist_business_state",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:25+00:00",
+      "ended_at": "2026-11-11T15:12:25+00:00",
+      "duration_ms": 12.78,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "meeting_id": "mtg_c956b12a2fe6"
+      }
+    },
+    {
+      "id": "evt_1c264742f360",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 7,
+      "node": "generate_email_draft",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:25+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 2053.51,
+      "model": "deepseek-chat",
+      "tool": "",
+      "input_tokens": 354,
+      "output_tokens": 235,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "email_id": "mail_998334ca8ca5",
+        "fallback": false
+      }
+    },
+    {
+      "id": "evt_b84707292d65",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 8,
+      "node": "human_approval",
+      "event": "interrupt",
+      "status": "interrupted",
+      "started_at": "2026-11-11T15:12:27+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 0.29,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "signal": "GraphInterrupt",
+        "reason": "等待人工审批"
+      }
+    },
+    {
+      "id": "evt_7baf49dfda0f",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 9,
+      "node": "graph",
+      "event": "start",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:22+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 0.0,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "1f1dde24-eab2-6ea3-8006-3bd204eba18a",
+      "detail": {
+        "decision": "",
+        "status": "waiting_approval",
+        "next": [
+          "human_approval"
+        ]
+      }
+    },
+    {
+      "id": "evt_181945afea41",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 10,
+      "node": "human_approval",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:27+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 0.23,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "decision": "approve",
+        "approved_version": 1,
+        "current_version": 1
+      }
+    },
+    {
+      "id": "evt_a38600c721d5",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 11,
+      "node": "send_email",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:27+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 32.21,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "message": "SMTP 已接受：***@example.com（不代表已送达对方邮箱）"
+      }
+    },
+    {
+      "id": "evt_5513edc43384",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 12,
+      "node": "record_audit",
+      "event": "node",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:27+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 4.1,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "",
+      "detail": {
+        "meeting_id": "mtg_c956b12a2fe6"
+      }
+    },
+    {
+      "id": "evt_98214917b015",
+      "workflow_id": "wf_fb676a7b28b6",
+      "seq": 13,
+      "node": "graph",
+      "event": "resume",
+      "status": "ok",
+      "started_at": "2026-11-11T15:12:27+00:00",
+      "ended_at": "2026-11-11T15:12:27+00:00",
+      "duration_ms": 0.0,
+      "model": "",
+      "tool": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retry": 0,
+      "error_type": "",
+      "checkpoint_id": "1f1dde24-eb85-6a5a-8009-04bcc1fe7c8f",
+      "detail": {
+        "decision": "approve",
+        "status": "completed",
+        "next": []
+      }
+    }
+  ],
+  "slowest_node": "analyze_meeting",
+  "failed_nodes": [],
+  "checkpoints": [
+    "1f1dde24-eab2-6ea3-8006-3bd204eba18a",
+    "1f1dde24-eb85-6a5a-8009-04bcc1fe7c8f"
+  ],
+  "redaction": {
+    "emails": "替换为 ***@example.com",
+    "api_keys": "形如 sk-... 的字符串全量替换为 ***REDACTED***",
+    "meeting_text": "Trace 里不含会议原文（原文只在上传请求与业务库 raw_text 中）",
+    "external_upload": "全部写本地 SQLite，未接入 LangSmith 或任何外部观测平台"
+  }
+}

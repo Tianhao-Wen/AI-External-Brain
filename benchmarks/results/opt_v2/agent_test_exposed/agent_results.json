@@ -1,0 +1,540 @@
+{
+  "meta": {
+    "run_id": "20261109_164809_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T16:48:10",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "67bac69908f64e4dc0a78b5e9af9de799907290e",
+      "commit_short": "67bac69",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 60,
+      "used": 32,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 0.875,
+    "task_total": 8,
+    "task_passed": 7,
+    "tool_call_success_rate": 0.9,
+    "tool_call_total": 20,
+    "tool_success_total": 18,
+    "avg_tool_calls": 2.5,
+    "avg_llm_calls": 4.0,
+    "latency_p50_ms": 10554.95,
+    "latency_p95_ms": 17408.39,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "duplicate_tool_calls": {
+      "duplicate": 0,
+      "total": 20,
+      "rate": 0.0
+    },
+    "pptx_artifact_duplicates": {
+      "pptx_runs": 1,
+      "runs_with_multiple_artifacts": 0
+    },
+    "by_type": {
+      "email_draft": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 15715.4
+      },
+      "error_handling": {
+        "tasks": 1,
+        "passed": 0,
+        "success_rate": 0.0,
+        "avg_llm_calls": 8.0,
+        "avg_latency_ms": 14160.7
+      },
+      "meeting_analysis": {
+        "tasks": 2,
+        "passed": 2,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.5,
+        "avg_latency_ms": 10228.0
+      },
+      "memory_recall": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.0,
+        "avg_latency_ms": 5469.3
+      },
+      "pdf_qa": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 8719.6
+      },
+      "pptx": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 18320.0
+      },
+      "web_search_fixture": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.0,
+        "avg_latency_ms": 4782.8
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 0
+    }
+  },
+  "cases": [
+    {
+      "task_id": "A2",
+      "round": 1,
+      "label": "A2",
+      "type": "pdf_qa",
+      "title": "供应商评分权重",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "质量这一项占 **40 分，占比 40%**，来源：《供应商质量管理规范》第3页。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "args": {
+            "query": "供应商综合评分 质量 分值 占比",
+            "top_k": 5
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 8719.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B2",
+      "round": 1,
+      "label": "B2",
+      "type": "meeting_analysis",
+      "title": "无风险会议（不虚报）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 0 条"
+        }
+      ],
+      "answer": "已存入会议中心（编号 mtg_d82cc997d954）。\n\n**「星海项目客户需求澄清会」** — 2026年3月23日 10:00-11:10，客户现场，参与人：陈晨、张伟、李娜。\n\n**风险情况：0 条，本次会议未发现新风险。** 三项需求澄清（报表导出仅支持 Excel、数据保留 3 年且不要求自动归档、权限沿用三级角色）全部是缩小实现范围，比原方案少约 5 人日工作量，现有排期可以覆盖。\n\n后续待办两条：\n- 更新需求规格说明书 — 陈晨，3月26日\n- 按澄清结论调整前端排期 — 李娜，3月25日\n\n需要我生成提醒邮件草稿给两位负责人吗？",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-013.txt",
+            "meeting_text": "",
+            "title": ""
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 8065.7,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B4",
+      "round": 1,
+      "label": "B4",
+      "type": "meeting_analysis",
+      "title": "会议决策提取",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ReadFile']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 1 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "已分析并存入会议中心（编号 mtg_08dcb19c20f6）。\n\n**结论：不发布全量。** 原定 3月15日的全量发布被取消，改为同日灰度 5% 用户、观察 48 小时，再决定是否扩大灰度。\n\n**依据（三条，均来自会议记录）：**\n1. **质量数据不达标**：全量回归 486 条用例，失败 6 条。\n2. **存在高危隐患**：支付回调超时在压测中复现，3000 并发下 1.7% 请求超时超过 15 秒，可能导致用户重复支付。这是会议认定「本次最大的质量隐患」。\n3. **根因明确但尚未修复**：王强说明回调处理缺少幂等保护，需要补去重表。\n\n也就是说，依据是压测数据一出来，会议当场改变了原定决议（记录中明确写了「在看到压测数据后」）。关键前置条件是：王强须在 3月13日前补齐幂等去重逻辑，刘洋须在 3月14日前准备灰度开关与回滚预案，否则 3月15日的灰度也不具备条件。灰度后由赵敏 3月18日出具观察报告，才是扩大发布的依据。\n\n需要我基于这次会议生成一份汇报 PPT 或一封待办提醒邮件草稿吗？",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-004.txt",
+            "offset": 0,
+            "limit": 2000
+          },
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-004.txt",
+            "meeting_text": "",
+            "title": "极光App 3.2 版本发布评审"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 12390.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C2",
+      "round": 1,
+      "label": "C2",
+      "type": "memory_recall",
+      "title": "回忆责任人",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings']（实际：['ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "负责跟进的人是 **陈晨**。\n\n- **待办**：与支付网关方确认沙箱环境，负责人陈晨，截止 2026年3月7日\n- **相关决策**：由陈晨出面与支付网关方对接争取沙箱环境\n\n以上信息来自会议「星海项目周例会」的记录；搜索会议中心时没有找到同名的记录文件，因此来源以长期记忆中的会议笔记为准。需要我把这场会议的原文调出来，确认当前进度吗？",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "args": {
+            "query": "支付网关沙箱环境",
+            "limit": 8
+          },
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "args": {
+            "query": "支付网关",
+            "limit": 10
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 2,
+      "latency_ms": 5469.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "D2",
+      "round": 1,
+      "label": "D2",
+      "type": "web_search_fixture",
+      "title": "指数行情",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['WebSearch']（实际：['WebSearch']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "搜索结果给出的数据如下（需提醒：这条来自公开网页摘要，未与交易所官方数据核对）：\n\n- **上证指数收盘：3286.45 点**，涨 0.62%，成交额约 4120 亿元\n- 日期标注为 **2026-10-20**\n\n我没法确认这条摘要对应的具体交易日是否就是“今天”，也没法验证数值准确性。要拿到确切收盘点位，建议直接看[上海证券交易所官网](https://www.sse.com.cn)或行情软件的实时数据。",
+      "tool_calls": [
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "args": {
+            "query": "上证指数 今日收盘点位"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 4782.8,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E2",
+      "round": 1,
+      "label": "E2",
+      "type": "email_draft",
+      "title": "明确要求不发时不得发送",
+      "success": true,
+      "checks": [
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "已生成草稿，**没有发送**，正在等你确认。\n\n- 收件人：[REDACTED]\n- 主题：云图平台双周例会纪要（2026年3月6日）\n- 内容：会议基本信息、6 条结论、2 项待办（郑爽 3 月 13 日、刘洋 3 月 11 日）\n\n有几点你可能想调整：\n\n1. 会议参与人只有张伟、郑爽、刘洋三位，李娜不在其中；如果她需要的是“知会”性质的内容，这没问题，否则请确认收件人是否正确。\n2. 落款写的是“行政助理”，可以替换为你的名字或部门。\n3. 要不要加点称谓，比如“李娜你好”放在开头？\n\n确认无误后，你在草稿卡片上点确认即可发送；修改意见告诉我，我来改。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/MEET-002.txt",
+            "meeting_text": "",
+            "title": ""
+          },
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "args": {
+            "meeting_id": "mtg_d7b3a9a63ab3",
+            "to": "lina@example.com",
+            "extra": "这是一封例会纪要邮件，不是催促提醒。请按会议纪要口吻整理：会议时间地点、参与人、主要结论（数据看板视觉改版通过设计评审、灰度环境扩容完成、客户侧满意度4.6分无新增投诉、可视化交互方案暂不排期、下阶段重心为性能优化）、两项待办及截止时间。不要包含收件人之外的额外猜测。"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 15715.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F2",
+      "round": 1,
+      "label": "F2",
+      "type": "pptx",
+      "title": "5 页项目复盘",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['CreatePresentation', 'ListMeetings', 'SearchKnowledge']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "5 页，全部可读"
+        }
+      ],
+      "answer": "已生成《云图平台季度复盘》，共 5 页，重点放在性能优化上。\n\n结构大致为：季度概览与性能目标 → 瓶颈与根因 → 优化措施与落地 → 效果对比 → 下季度计划与风险。\n\n两点说明：\n- 会议中心和知识库里都没有「云图平台」的任何记录，因此 PPT 内容基于通用复盘框架，**具体指标数字（时延、吞吐、资源成本）都是占位，需要你填入真实数据**。\n- 如果你有本季度的性能监控数据或复盘会议记录，发给我，我可以据此替换成真实数字；有了评审反馈后，也可以再补做一版加长版。",
+      "tool_calls": [
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "args": {
+            "query": "云图平台",
+            "limit": 10
+          },
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "args": {
+            "query": "云图平台 季度复盘 性能优化",
+            "top_k": 5
+          },
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "args": {
+            "topic": "云图平台季度复盘",
+            "slides": 5,
+            "focus": "重点讲性能优化：季度目标与关键指标、性能瓶颈与根因分析、优化措施与落地情况、效果对比（时延/吞吐/资源成本）、下季度性能优化计划与风险。具体数字留空标注待填，不要虚构业务数据。",
+            "audience": "内部技术与管理评审"
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 5,
+      "latency_ms": 18320.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G2",
+      "round": 1,
+      "label": "G2",
+      "type": "error_handling",
+      "title": "不支持的文件格式",
+      "success": false,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": false,
+          "detail": "命中：无（要求命中任意一个）"
+        }
+      ],
+      "answer": "这个文件只有 46 字节，内容还没有会议记录正文那么多。我先读取它的内容。",
+      "tool_calls": [
+        {
+          "tool": "ToolSearch",
+          "ok": true,
+          "args": {
+            "query": "select:Bash,Glob",
+            "max_results": 5
+          },
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": false,
+          "args": {
+            "command": "ls -la 会议记录/ 2>/dev/null && wc -c 会议记录/数据导出.csv",
+            "timeout": 120
+          },
+          "error": "系统找不到指定的路径。\n\nExit code 1"
+        },
+        {
+          "tool": "Bash",
+          "ok": false,
+          "args": {
+            "command": "cd . && ls -la",
+            "timeout": 120
+          },
+          "error": "'ls' 不是内部或外部命令，也不是可运行的程序\r\n或批处理文件。\n\nExit code 1"
+        },
+        {
+          "tool": "Glob",
+          "ok": true,
+          "args": {
+            "pattern": "**/*.csv",
+            "path": "."
+          },
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "args": {
+            "command": "python -c \"import os;print(os.path.getsize('会议记录/数据导出.csv'))\"",
+            "timeout": 120
+          },
+          "error": ""
+        },
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "args": {
+            "file_path": "会议记录/数据导出.csv",
+            "offset": 0,
+            "limit": 2000
+          },
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "args": {
+            "command": "python -c \"\nimport os\nfor r,d,f in os.walk('.'):\n    if '.git' in r: continue\n    for n in f:\n        p=os.path.join(r,n)\n        print(os.path.getsize(p), p)\n\"",
+            "timeout": 120
+          },
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "args": {
+            "command": "python -c \"\nimport os\nprint(os.getcwd())\nprint(os.listdir('.'))\nprint(os.listdir('会议记录'))\n\"",
+            "timeout": 120
+          },
+          "error": ""
+        }
+      ],
+      "tool_call_count": 8,
+      "tool_calls_ok": 6,
+      "llm_calls": 8,
+      "latency_ms": 14160.7,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

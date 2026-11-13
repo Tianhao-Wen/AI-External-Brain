@@ -1,0 +1,1859 @@
+{
+  "meta": {
+    "run_id": "20261109_124601_agent_live",
+    "suite": "agent",
+    "mode": "live",
+    "created_at": "2026-11-09T12:46:01",
+    "dataset_version": "rag-v1 / meeting-v1 / agent-v1",
+    "git": {
+      "commit": "d237a63e41850a9212ad54003572ebada222f8eb",
+      "commit_short": "d237a63",
+      "branch": "master",
+      "dirty": true
+    },
+    "model": {
+      "provider": "deepseek-flash",
+      "protocol": "openai-compat",
+      "model": "deepseek-chat",
+      "endpoint_host": "api.deepseek.com",
+      "context_window": 128000
+    },
+    "budget": {
+      "max_calls": 220,
+      "used": 151,
+      "failures": 0
+    },
+    "demo_env": {
+      "files": 23,
+      "digest": "f572baf7c98c8020"
+    },
+    "python": "3.14.2",
+    "platform": "nt",
+    "notes": []
+  },
+  "aggregates": {
+    "task_success_rate": 0.8974,
+    "task_total": 39,
+    "task_passed": 35,
+    "tool_call_success_rate": 0.9659090909090909,
+    "tool_call_total": 88,
+    "tool_success_total": 85,
+    "avg_tool_calls": 2.2564,
+    "avg_llm_calls": 3.8718,
+    "latency_p50_ms": 5638.3,
+    "latency_p95_ms": 18665.86000000001,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "by_type": {
+      "email_draft": {
+        "tasks": 4,
+        "passed": 4,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 11433.2
+      },
+      "email_send": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 12363.8
+      },
+      "error_handling": {
+        "tasks": 3,
+        "passed": 3,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 7505.4333
+      },
+      "meeting_analysis": {
+        "tasks": 8,
+        "passed": 8,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.5,
+        "avg_latency_ms": 8273.675
+      },
+      "memory_recall": {
+        "tasks": 5,
+        "passed": 5,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.4,
+        "avg_latency_ms": 3239.4
+      },
+      "memory_recall_negative": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 3.0,
+        "avg_latency_ms": 5219.9
+      },
+      "multi_turn": {
+        "tasks": 1,
+        "passed": 1,
+        "success_rate": 1.0,
+        "avg_llm_calls": 5.0,
+        "avg_latency_ms": 10775.4
+      },
+      "pdf_qa": {
+        "tasks": 7,
+        "passed": 6,
+        "success_rate": 0.8571,
+        "avg_llm_calls": 2.7143,
+        "avg_latency_ms": 3849.7857
+      },
+      "pdf_qa_negative": {
+        "tasks": 1,
+        "passed": 0,
+        "success_rate": 0.0,
+        "avg_llm_calls": 1.0,
+        "avg_latency_ms": 1619.9
+      },
+      "pptx": {
+        "tasks": 5,
+        "passed": 3,
+        "success_rate": 0.6,
+        "avg_llm_calls": 7.0,
+        "avg_latency_ms": 19634.08
+      },
+      "web_search_fixture": {
+        "tasks": 3,
+        "passed": 3,
+        "success_rate": 1.0,
+        "avg_llm_calls": 2.6667,
+        "avg_latency_ms": 4460.3667
+      }
+    },
+    "repeat_consistency": {
+      "repeated_tasks": 7,
+      "runs": 21,
+      "all_pass_rate": 0.8571,
+      "flaky_tasks": [
+        "F1"
+      ],
+      "per_task": {
+        "A1": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 4590.9333,
+          "avg_llm_calls": 3.0
+        },
+        "A3": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 3729.5,
+          "avg_llm_calls": 3.0
+        },
+        "B1": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 9041.8667,
+          "avg_llm_calls": 3.3333
+        },
+        "B2": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 6410.0333,
+          "avg_llm_calls": 3.3333
+        },
+        "C1": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 3058.7667,
+          "avg_llm_calls": 2.3333
+        },
+        "E1": {
+          "runs": 3,
+          "pass": 3,
+          "avg_latency_ms": 12101.3667,
+          "avg_llm_calls": 5.0
+        },
+        "F1": {
+          "runs": 3,
+          "pass": 2,
+          "avg_latency_ms": 16404.5667,
+          "avg_llm_calls": 5.6667
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "task_id": "A1",
+      "round": 1,
+      "label": "A1#1",
+      "type": "pdf_qa",
+      "title": "差旅住宿标准",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "**结论：去上海出差的住宿费每晚上限为 600 元。**\n\n出处：`DOC-A-内部管理手册.pdf` 第 3 页（差旅费用标准部分）。\n\n补充说明：检索结果还列出了同一手册第 1 页和其他文档，但那些页面没有直接给出上海的住宿费标准。如果你要报销的是特殊情形（比如会议统一安排住宿、超标需特批，或是总监级以上人员），建议再核对一下手册第 3 页的例外条款，或者告诉我具体情形，我帮你查。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 5554.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A1",
+      "round": 2,
+      "label": "A1#2",
+      "type": "pdf_qa",
+      "title": "差旅住宿标准",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "结论：上海出差住宿费每晚最多报销 **600 元**。\n\n出处：《内部管理手册》第 3 页，其中规定北京、上海、广州、深圳四个一线城市的住宿标准为每晚上限 600 元。\n\n补充说明：这里只查到住宿上限这一条。加班或超标的审批流程、发票要求等细节，以及如果实际住宿超过 600 元是否还要另行审批，知识库里这次检索没有返回对应内容。如果你需要，我可以再针对“超标审批”或“报销凭证要求”单独检索一次。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 4272.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A1",
+      "round": 3,
+      "label": "A1#3",
+      "type": "pdf_qa",
+      "title": "差旅住宿标准",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "**结论：去上海出差，住宿费每晚最多报销 600 元。**\n\n出处：公司《内部管理手册》（DOC-A）第 3 页。\n\n另外，差旅规定里可能还涉及报销时需要酒店发票、是否需要事前审批等内容。需要的话，我可以把这些一并查出来。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 3945.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A2",
+      "round": 1,
+      "label": "A2",
+      "type": "pdf_qa",
+      "title": "供应商评分权重",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": false,
+          "detail": "已调用：无（实际：无）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": false,
+          "detail": "缺少关键词：['40']"
+        }
+      ],
+      "answer": "这取决于你们评分体系的具体设定，我无法凭空给出一个数字。\n\n如果你想让我查，请告诉我以下任一项：\n\n- 评分表文件的位置（Excel、Word 或 PDF 均可，我来读取里面的分值和权重）\n- 或者直接把供应商评分表的内容贴给我\n\n如果评分标准还没有定，我可以基于常见的供应商评估框架（质量、成本、交付、服务、技术等维度）帮你设计一版权重分配，你再按业务重点调整。",
+      "tool_calls": [],
+      "tool_call_count": 0,
+      "tool_calls_ok": 0,
+      "llm_calls": 1,
+      "latency_ms": 1987.2,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A3",
+      "round": 1,
+      "label": "A3#1",
+      "type": "pdf_qa",
+      "title": "项目总预算",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "星海项目（XH-2025）的总预算为 **2,480 万元人民币（含税）**。\n\n参考来源：`DOC-C-星海项目预算与交付计划.pdf` 第 1 页。\n\n如果需要，我可以再帮你查一下这笔预算的分项构成、各阶段付款节点或交付计划。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 3821.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A3",
+      "round": 2,
+      "label": "A3#2",
+      "type": "pdf_qa",
+      "title": "项目总预算",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "星海项目（XH-2025）的总预算为 **2,480 万元人民币（含税）**。\n\n引用来源：《DOC-C-星海项目预算与交付计划.pdf》第 1 页。\n\n需要我进一步查看预算构成（分项明细、年度分摊或交付节点）吗？",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 3722.5,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A3",
+      "round": 3,
+      "label": "A3#3",
+      "type": "pdf_qa",
+      "title": "项目总预算",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['SearchKnowledge']（实际：['SearchKnowledge']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        },
+        {
+          "kind": "no_tool_error",
+          "ok": true,
+          "detail": "报错工具：[]"
+        }
+      ],
+      "answer": "星海项目的总预算为 **2,480 万元人民币（含税）**。\n\n来源：`DOC-C-星海项目预算与交付计划.pdf` 第 1 页。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 3645.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "A4",
+      "round": 1,
+      "label": "A4",
+      "type": "pdf_qa_negative",
+      "title": "知识库里没有的信息",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": false,
+          "detail": "已调用：无（实际：无）"
+        },
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有', '无法']（要求命中任意一个）"
+        },
+        {
+          "kind": "answer_not_contains",
+          "ok": true,
+          "detail": "出现了不该有的内容：[]"
+        }
+      ],
+      "answer": "你还没有告诉我是哪家公司，因此我目前无法给出股票代码。\n\n请补充以下任一信息，我就能帮你查：\n- 公司全称（例如“宁德时代”“贵州茅台”）\n- 或者公司在哪家交易所上市（A股、港股、美股等）\n\n另外提一下：如果公司还没有上市，就自然没有股票代码。",
+      "tool_calls": [],
+      "tool_call_count": 0,
+      "tool_calls_ok": 0,
+      "llm_calls": 1,
+      "latency_ms": 1619.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B1",
+      "round": 1,
+      "label": "B1#1",
+      "type": "meeting_analysis",
+      "title": "分析会议文件中的风险",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 3 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "已保存到会议中心（编号 mtg_7dba016b4f6a）。\n\n**星海项目周例会** · 2026年3月5日 14:00-15:30 · 3号会议室 · 张伟、李娜、王强、赵敏、陈晨\n\n**三条风险：**\n\n1. **[高] 接口联调落后影响上线节点**：订单服务与支付网关的联调进度落后约两周，但会议仍决定维持 4 月 10 日上线节点不变。这可以说是整场会议最关键的问题：时间表没有改变，实际进度却已经延后，缺口只能靠压缩联调和测试时间来弥补，因此上线质量很难有保障。\n2. **[中] 订单服务人力单点**：后端订单服务的关键工作只依靠一个人承担，一旦该负责人请假或离职，联调和缺陷修复就会直接停摆。\n3. **[中] 阻塞级缺陷**：回归测试发现 12 个缺陷，其中 3 个为阻塞级；这些缺陷不解决，就无法进入完整的验收和上线。\n\n**对应的三条待办：**\n- 与支付网关方确认沙箱环境：陈晨，3月7日前（联调依赖它才能启动，属于处在关键路径上的事项）\n- 提交后端补员申请：张伟，3月9日前（缓解上述人力单点风险）\n- 整理订单服务交接文档：王强，3月12日前（同样是为了缓解人力单点风险）\n\n需要我基于这些风险起草一封提醒邮件给参会人吗？或者为管理层做一份风险复盘 PPT，可以直接出文件。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 9413.5,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B1",
+      "round": 2,
+      "label": "B1#2",
+      "type": "meeting_analysis",
+      "title": "分析会议文件中的风险",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "已分析并存入会议中心（编号 mtg_5f5b6b5866d6）。\n\n**这场会议的风险有 2 条：**\n\n1. **【高】接口联调滞后影响上线节点** — 订单服务与支付网关的接口联调因沙箱环境未提供，已落后两周，可能影响 4 月 10 日上线节点。会议决定上线节点不变，本周内启动联调。\n2. **【中】后端订单服务人力单点风险** — 后端订单服务的人力集中在少数人身上，若关键人员不可用，会影响交付。\n\n另有 3 项待办：陈晨对接支付网关方争取沙箱环境（3月7日）、王强整理订单服务交接文档（3月12日）、张伟提交后端补员申请（3月9日）。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 7639.7,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B1",
+      "round": 3,
+      "label": "B1#3",
+      "type": "meeting_analysis",
+      "title": "分析会议文件中的风险",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ReadFile']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 3 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "已分析完成，会议已存入会议中心（编号 mtg_c300509f8128）。这场会议识别出 3 条风险：\n\n**高风险**\n- **接口联调落后导致上线节点风险**：订单服务与支付网关的联调比计划落后两周，原因是支付网关方尚未提供沙箱环境。原文明确：若本周内仍无法联调，4月10日的上线节点将无法保证。而会议同时决定“上线节点维持 4月10日不变”，即把风险转移到了执行端。\n\n**中风险**\n- **后端订单服务人力单点风险**：目前只有王强一人熟悉订单服务，一旦他休假将无人接手。缓解措施已定：张伟在 3月9日前提交补员申请，王强在 3月12日前整理交接文档。\n- **回归测试阻塞级缺陷**：第一轮回归测试共发现 12 个缺陷，其中 3 个为阻塞级，是会议纪要里记录的事实，且与上面两条风险叠加影响上线判断。\n\n会议还记录了 3 条待办（陈晨 3月7日前确认沙箱、王强 3月12日前交接文档、张伟 3月9日前提补员申请）。需要我针对高风险项起草一封提醒邮件草稿吗？",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 10072.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B2",
+      "round": 1,
+      "label": "B2#1",
+      "type": "meeting_analysis",
+      "title": "无风险会议（不虚报）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ReadFile']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 0 条"
+        }
+      ],
+      "answer": "已把 MEET-013 分析完成并存入会议中心（编号 mtg_6082840d9907）。\n\n**风险情况：0 条。**\n\n会议原文第 13 行明确记录「未发现新的风险，现有排期可以覆盖」，三项澄清都是**收窄实现范围**（Excel 导出、不做自动归档、沿用三级角色），相比原方案减少约 5 人日工作量，所以本次确实没有可提取的风险项。\n\n**待办 2 条**\n- 陈晨：更新需求规格说明书，截止 2026-03-26\n- 李娜：按澄清结论调整前端排期，截止 2026-03-25\n\n一点提醒：这次澄清虽无风险，但有两点在原文里没有写、值得你留意——减少的 5 人日是否要回填到整体排期（谁确认、什么时候确认），以及「客户自行导出、系统不归档」这一条是否需要写进合同/SOW 以防后期扯皮。需要我把这两点补成跟踪事项，或者直接生成一封给客户的确认邮件草稿吗？",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 8002.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B2",
+      "round": 2,
+      "label": "B2#2",
+      "type": "meeting_analysis",
+      "title": "无风险会议（不虚报）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 0 条"
+        }
+      ],
+      "answer": "已分析并存入会议中心，编号 mtg_ebf00c060dd5。\n\n**风险情况：0 条。** 本次会议没有识别出任何风险，结论也明确写了「未发现新的风险，现有排期可以覆盖」。\n\n**会议要点**\n- 星海项目客户需求澄清会，2026年3月23日 10:00–11:10，客户现场\n- 参与人：陈晨、张伟、李娜\n- 三项澄清：报表导出仅支持 Excel；数据保留 3 年且不做系统自动归档；权限模型沿用现有三级角色\n- 影响：实现范围缩小，较原方案减少约 5 人日工作量\n\n**待办 2 条**\n- 更新需求规格说明书 — 陈晨，截止 3月26日\n- 按澄清结论调整前端排期 — 李娜，截止 3月25日\n\n需要我把这两条待办生成提醒邮件草稿，或者基于结论出一份汇报 PPT 吗？",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 5940.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B2",
+      "round": 3,
+      "label": "B2#3",
+      "type": "meeting_analysis",
+      "title": "无风险会议（不虚报）",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 0 条"
+        }
+      ],
+      "answer": "会议「星海项目客户需求澄清会」已分析并存入会议中心（编号 mtg_f0a5a8ce1afe）。\n\n**风险情况：0 条。** 这次会议没有识别出任何风险——它在缩小实现范围，而不是引入问题。\n\n具体来说：\n- **会议结论**：明确三项客户需求——报表导出仅支持 Excel、不实现自动归档、权限沿用三级角色\n- **工作量**：相比原方案减少约 5 人日的开发量\n- **排期影响**：现有排期足以覆盖，无需额外应对\n\n**后续待办 2 条**（非风险，属正常跟进项）：\n| 待办 | 负责人 | 截止时间 |\n|---|---|---|\n| 更新需求规格说明书 | 陈晨 | 2026年3月26日 |\n| 按澄清结论调整前端排期 | 李娜 | 2026年3月25日 |\n\n需要我为这场会生成一封进展同步邮件草稿吗？",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 5287.2,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B3",
+      "round": 1,
+      "label": "B3",
+      "type": "meeting_analysis",
+      "title": "会议待办清单",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ListOpenTodos']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 4 条"
+        },
+        {
+          "kind": "todos_at_least",
+          "ok": true,
+          "detail": "待办 4 条（要求 ≥3）"
+        }
+      ],
+      "answer": "会议记录已存入会议中心（编号 mtg_73950c26c267），会议名称「磐石数据中台交付风险review」，时间 2026年4月14日 14:00-16:10，地点 6号会议室。\n\n**待办事项（4 条，全部未完成）**\n\n| # | 待办 | 负责人 | 截止时间 | 优先级 |\n|---|------|--------|----------|--------|\n| 1 | 重写迁移脚本并加入幂等重试 | 王强 | 2026年4月21日 | 高 |\n| 2 | 启动第二家硬件供应商资质审核 | 周凯 | 2026年4月18日 | 高 |\n| 3 | 提交外包费用专项审批 | 吴静 | 2026年4月17日 | 中 |\n| 4 | 搭建迁移回滚演练环境 | 赵敏 | 待确认 | 中 |\n\n第 4 项原文没有写截止时间，已按「待确认」处理。会议另外识别出 4 条风险（迁移脚本无法自动恢复、硬件供应商周期延长且无违约金约束、按期交付可能性明显降低、外包费用超支至 26 万元）。需要的话我可以基于这场会议生成提醒邮件草稿或风险复盘 PPT。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListOpenTodos",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 9586.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "B4",
+      "round": 1,
+      "label": "B4",
+      "type": "meeting_analysis",
+      "title": "会议决策提取",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['AnalyzeMeeting']（实际：['AnalyzeMeeting', 'ReadFile']）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "**结论：不发布。这次不进行全量发布，改为 3月15日只灰度 5% 用户。**\n\n依据（原文）：\n\n1. **质量数据不达标** — 3.2 版本的全量回归执行了 486 条用例，其中 6 条失败；在 3000 并发压测下，支付回调超时问题复现，有 1.7% 的请求超时超过 15 秒，原文称这是“本次最大的质量隐患，用户可能重复支付”。支付属于资金链路，不能带着这个隐患进行全面发布。\n2. **根因未修复** — 王强说明支付回调超时的根因是回调处理没有幂等保护，需要补一张去重表；截至本次会议，该问题尚未修复。\n3. **决议本身已明确取消** — 决议第 1 条写明：“取消 3月15日全量发布，改为 3月15日灰度 5% 用户”，灰度观察 48 小时后，再由赵敏在 3月18日出具报告，决定是否扩大灰度。\n\n配套的三项待办：\n- 王强：补齐支付回调幂等去重逻辑（3月13日），必须在灰度前完成\n- 刘洋：准备灰度开关与回滚预案（3月14日）\n- 赵敏：灰度 48 小时观察报告（3月18日）\n\n会议记录已存入会议中心，编号 mtg_1b0eb01ca7ca；共识别出风险 2 条、待办 3 条。需要我据此生成一份发布决策汇报 PPT，或给参会人起草一封提醒邮件吗？",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 4,
+      "latency_ms": 10247.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C1",
+      "round": 1,
+      "label": "C1#1",
+      "type": "memory_recall",
+      "title": "回忆历史会议结论",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings']（实际：['ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "上线时间是 **2026年4月10日**，会上决定维持该节点不变（来源：2026年3月5日的星海项目周例会）。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 2,
+      "latency_ms": 2783.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C1",
+      "round": 2,
+      "label": "C1#2",
+      "type": "memory_recall",
+      "title": "回忆历史会议结论",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory']（实际：['RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "星海项目周例会（2026年3月5日）上定的上线时间是 **4月10日**，并明确维持这个节点不变。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 2604.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C1",
+      "round": 3,
+      "label": "C1#3",
+      "type": "memory_recall",
+      "title": "回忆历史会议结论",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings', 'GetMeeting']（实际：['GetMeeting', 'ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "上线时间是 **4月10日**。\n\n在 2026年3月5日的星海项目周例会上，大家确认了支付网关接口联调滞后和人力缺口这两项风险，但仍决定“上线节点维持 4月10日不变”。另外，会议还定下由陈晨负责与支付网关方对接，争取沙箱环境，截止 3月7日。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "GetMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 3,
+      "latency_ms": 3788.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C2",
+      "round": 1,
+      "label": "C2",
+      "type": "memory_recall",
+      "title": "回忆责任人",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'ListMeetings']（实际：['ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "是**陈晨**负责跟进。\n\n- 决策：由陈晨出面与支付网关方对接，争取沙箱环境（来源：会议「星海项目周例会」）\n- 待办：与支付网关方确认沙箱环境，负责人陈晨，截止 2026 年 3 月 7 日\n\n需要看这场周例会的完整记录，或者确认这条待办现在是否已完成吗？",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 2,
+      "latency_ms": 2622.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C3",
+      "round": 1,
+      "label": "C3",
+      "type": "memory_recall",
+      "title": "回忆供应商议题",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['RecallMemory', 'GetMeeting', 'ListMeetings']（实际：['GetMeeting', 'ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "是的，有记录。来自 **2026年3月19日 10:00-11:00 的「供应商年度评估沟通会」**（采购部会议室，参与人：周凯、何斌、赵敏）。\n\n**结论**\n- 恒安电子因来料合格率不达标，本年度评级降为 **C 级**，列入重点观察名单。\n\n**原因**\n- 来料合格率 96.2%，低于合同约定的 98% 门槛。\n- 建议措施：加严抽检。\n\n**遗留待办**\n- 更新抽检作业指导书，负责人赵敏，截止 2026年3月26日，目前仍未完成。\n\n需要的话我可以帮你查这条待办的最新状态，或者起草一封给恒安电子的提醒邮件。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "GetMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 3,
+      "latency_ms": 4398.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "C4",
+      "round": 1,
+      "label": "C4",
+      "type": "memory_recall_negative",
+      "title": "没有记录时如实说没有",
+      "success": true,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有']（要求命中任意一个）"
+        },
+        {
+          "kind": "answer_not_contains",
+          "ok": true,
+          "detail": "出现了不该有的内容：[]"
+        }
+      ],
+      "answer": "我在长期记忆和会议中心里都没有找到南京地铁项目的会议记录。\n\n目前会议中心只有两场会议：\n\n- **星海项目周例会**（2026年3月5日 14:00-15:30）\n- **供应商年度评估沟通会**（2026年3月19日 10:00-11:00）\n\n没有以「南京地铁」为名的会议，也没有在记忆中检索到相关结论。可能是当时会议记录没上传，或用了别的名称（比如子项目名、线路名如“宁芜线”“S8”之类）。\n\n如果你手上有那场会议的记录文件，可以发给我，我来解析并保存；或者告诉我文件大概的名称/时间，我再找一次。",
+      "tool_calls": [
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 3,
+      "latency_ms": 5219.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "D1",
+      "round": 1,
+      "label": "D1",
+      "type": "web_search_fixture",
+      "title": "LPR 报价",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['WebSearch']（实际：['WebSearch']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "根据公开信息，最新一期（2026年10月20日发布）的贷款市场报价利率为：\n\n- **1年期 LPR：3.00%**\n- **5年期以上 LPR：3.50%**\n\nLPR 由全国银行间同业拆借中心在每月20日（遇节假日顺延）公布，报价行根据对最优质客户的贷款利率加点形成。房贷利率通常参考5年期以上 LPR，企业经营贷、短期贷款多参考1年期。\n\n建议以[全国银行间同业拆借中心官网](https://www.chinamoney.com.cn/)当期公布为准，如需确认是否与上月持平或调整，我可以再帮你查一下上期数据做对比。",
+      "tool_calls": [
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 3829.8,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "D2",
+      "round": 1,
+      "label": "D2",
+      "type": "web_search_fixture",
+      "title": "指数行情",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['WebSearch']（实际：['WebSearch']）"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "根据公开网页的搜索结果：上证指数今日（2026-10-20）收于 **3286.45 点**，上涨 0.62%，成交额约 4120 亿元。\n\n需要说明的是，这条数据来自公开搜索摘要，并非交易所实时行情接口；具体数值请以上交所或行情软件为准。需要我再查深证成指、创业板指或某个板块的表现吗？",
+      "tool_calls": [
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 2,
+      "latency_ms": 2676.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "D3",
+      "round": 1,
+      "label": "D3",
+      "type": "web_search_fixture",
+      "title": "搜不到时不要编",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['WebSearch']（实际：['WebSearch']）"
+        },
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有']（要求命中任意一个）"
+        }
+      ],
+      "answer": "这次没查到。「天罡九号卫星发射时间」我一共搜了三组关键词（含\"天罡\"卫星、天罡卫星星座最新发射），返回结果都是 0 条，也就是说这次检索没有拿到任何公开网页信息。\n\n我不能凭记忆给你一个日期——卫星发射时间这种精确事实，猜错代价很高，所以我如实说：**当前无法确认天罡九号的发射时间**。\n\n几点说明和建议：\n- 「天罡」这个名称我无法确认对应哪个星座项目，也不排除是名称记法有出入（同音、简称、批产编号等），如果是这样，检索方向就要调整。\n- 想拿到准确时间，最可靠的是官方口径：国内发射以国家航天局、中国航天科技集团（及所属火箭院）发布为准；商业星座看运营方官网与官方公众号；国际发射可查发射服务商的 mission 页面。\n- 如果你能补充一点线索（运营单位、搭载火箭型号、大概年份、或者你在哪里看到这个名称），我可以再针对性地搜一次。\n\n另外，如果要的是可以直接引用的准确发射日期，建议以官方通报页面上的时间为准；搜索结果里的二手报道常有日期偏差。",
+      "tool_calls": [
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "WebSearch",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 4,
+      "latency_ms": 6875.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E1",
+      "round": 1,
+      "label": "E1#1",
+      "type": "email_draft",
+      "title": "生成会议提醒邮件草稿",
+      "success": true,
+      "checks": [
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "会议分析与邮件草稿都已生成，**邮件尚未发送**，需要你在草稿卡片上确认。\n\n**会议要点：星海项目周例会**（编号 mtg_18dfa5bc9a60）\n- 时间地点：2026年3月5日 14:00-15:30，3号会议室；参与人：张伟、李娜、王强、赵敏、陈晨\n- 进展：前端页面完成 80%，订单服务接口开发完成，第一轮回归测试发现 12 个缺陷，其中 3 个是阻塞级缺陷\n- 决策：维持 4月10日上线节点不变，本周内启动联调\n\n**风险（共 2 条）**\n- 高：订单服务与支付网关接口联调落后计划两周，直接威胁上线节点\n- 中：后端订单服务人力单点问题\n\n**待办（共 3 条）**\n- 陈晨：与支付网关方确认沙箱环境，截止 3月7日\n- 张伟：提交后端补员申请，截止 3月9日\n- 王强：整理订单服务交接文档，截止 3月12日\n\n**邮件草稿**：收件人 [REDACTED]，主题「提醒：星海项目周例会（3月5日 14:00）及关键风险待办」，正文以两条风险为重点，并突出张伟本人在 3月9日前的补员申请待办。\n\n另外，草稿开头把会议写成“将于3月5日召开”，而会议记录是该次例会本身的纪要，所以措辞上这更像会后提醒。如果你希望改成“纪要回顾与待办跟进”的口吻，我可以调整后再生成一版。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 12405.9,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E1",
+      "round": 2,
+      "label": "E1#2",
+      "type": "email_draft",
+      "title": "生成会议提醒邮件草稿",
+      "success": true,
+      "checks": [
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "会议记录已分析完成，邮件草稿也已生成，**未发送**，需要你在草稿卡片上确认后才会发出。\n\n**会议要点（星海项目周例会，2026年3月5日 14:00–15:30，3号会议室）**\n- 进展：前端完成 80%，订单服务接口开发完成，回归测试发现 12 个缺陷（其中 3 个阻塞级）。\n- 风险1（高）：订单服务与支付网关的接口联调落后两周，支付网关方未提供沙箱环境；本周内不能启动联调，4月10日上线就无法保证。\n- 风险2（中）：后端仅王强一人熟悉订单服务，人力单点依赖。\n- 待办：陈晨对接沙箱环境（3/7）、王强整理交接文档（3/12）、张伟提交后端补员申请（3/9）。\n\n**邮件草稿**：收件人 [REDACTED]，主题已包含会议时间地点，正文把两条风险放在最前面单独成节，并标明张伟自己的补员申请 3/9 截止为高优先级。\n\n有一点需要提醒：邮件正文写的是\"会议将于…召开\"，而这场会议是**已召开的**，用作\"提醒\"会显得像会前通知。如果你想要的是会前提醒，需要先调整时间表述；要改成\"会议纪要/行动项提醒\"版本，我可以重出一稿。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 12777.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E1",
+      "round": 3,
+      "label": "E1#3",
+      "type": "email_draft",
+      "title": "生成会议提醒邮件草稿",
+      "success": true,
+      "checks": [
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 2 条"
+        },
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "分析完成，邮件草稿已生成（**尚未发送**）。\n\n**会议要点**（星海项目周例会，2026年3月5日 14:00-15:30，3号会议室）\n- 进展：前端页面完成 80%，订单服务接口开发完成；第一轮回归测试发现 12 个缺陷，其中 3 个阻塞级\n- 结论：维持 4 月 10 日上线节点不变，本周内必须启动联调\n\n**两条风险**\n1. [高] 接口联调落后：支付网关方未提供沙箱环境，联调较计划落后两周，直接威胁上线节点\n2. [中] 人力单点：订单服务仅王强一人熟悉，无人可接手\n\n**三项待办**：陈晨 3月7日前拿到沙箱环境；张伟 3月9日前提交后端补员申请；王强 3月12日前整理交接文档。\n\n**邮件草稿**收件人为 [REDACTED]，正文已按你的要求将两条风险置顶强调，并单独点名张伟本人的补员申请待办。请在下方草稿卡片上核对，确认无误后点击「确认发送」；我这边不会自动发出。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 11120.6,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E2",
+      "round": 1,
+      "label": "E2",
+      "type": "email_draft",
+      "title": "明确要求不发时不得发送",
+      "success": true,
+      "checks": [
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['draft']）"
+        },
+        {
+          "kind": "email_not_sent",
+          "ok": true,
+          "detail": "Fake SMTP 收到 0 封（期望 0）"
+        }
+      ],
+      "answer": "草稿已生成，**绝对没有发送**，只保存在「草稿」状态，等你确认。\n\n- **收件人**：[REDACTED]\n- **主题**：云图平台双周例会纪要（2026年3月6日）\n- **内容要点**：会议时间地点与参与人、三条主要结论（客户满意度 4.6 分无新增投诉、工作重心放在性能优化、可视化交互方案暂不排期）、两项待办（郑爽 3/13 前输出交互降级方案，刘洋 3/11 前整理扩容配置清单）\n\n有一点提醒：会议记录里的参与人是张伟、郑爽、刘洋，李娜不在其中。如果她是代收或需要转达，没问题；如果是发错人，告诉我换收件人即可。\n\n你可以在上面回复里的邮件草稿卡片上核对内容，满意后再点「确认发送」；要改措辞或收件人，也直接说。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 9428.7,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "E3",
+      "round": 1,
+      "label": "E3",
+      "type": "email_send",
+      "title": "草稿经人工确认后投递",
+      "success": true,
+      "checks": [
+        {
+          "kind": "email_draft_exists",
+          "ok": true,
+          "detail": "会议提醒邮件 1 封（状态 ['sent']）"
+        },
+        {
+          "kind": "email_sent_count",
+          "ok": true,
+          "detail": "Fake SMTP 收到 1 封（期望 1）"
+        }
+      ],
+      "answer": "分析已经完成，邮件草稿也已生成；这封草稿目前还没有发送，需要你在邮件草稿卡片上确认。\n\n**会议要点（天穹CRM 交付风险专项会，3月12日 14:00–15:40，1号会议室）**\n- 项目计划于 4月30日交付，当前整体进度为 62%\n- 核心供应商华宸科技的原对接人离职，新对接人尚未到位；双方使用的接口文档版本不一致，导致字段定义出现分歧，映射规则返工累计耽误 6 个工作日\n- 会议决定：以 2月26日版本的接口文档冻结字段定义，并对主数据映射规则重做\n\n**三项风险**：供应商对接人缺失【高】、4月30日交付节点延期【高】、字段定义分歧导致反复返工【中】\n\n**三项待办**\n| 待办 | 负责人 | 截止时间 |\n|---|---|---|\n| 向华宸科技发函要求指派固定对接人 | 周凯 | 3月16日 |\n| 整理接口文档版本差异清单 | 何斌 | 3月17日 |\n| 按冻结定义重做主数据映射规则 | 王强 | 3月20日 |\n\n邮件主题是「【会议提醒】天穹CRM交付风险专项会」，收件人是 [REDACTED]，正文包含上述风险与待办。请核对后决定是否发送。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "DraftReminderEmail",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 12363.8,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 1
+    },
+    {
+      "task_id": "F1",
+      "round": 1,
+      "label": "F1#1",
+      "type": "pptx",
+      "title": "8 页风险汇报",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['CreatePresentation', 'ListMeetings', 'SearchKnowledge']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "9 页，全部可读"
+        }
+      ],
+      "answer": "PPT 已生成，请查收上方下载卡片《星海项目交付风险汇报》，文件名 `星海项目交付风险汇报_20261109_124928.pptx`。\n\n我需要说明两点：\n\n1. **页数偏了**：您要求 8 页，实际生成了 9 页。需要的话我可以按 8 页重新生成。\n2. **内容来源**：内容取自知识库《星海项目预算与交付计划》中的三大风险，即 R1 工业相机单一供应商、交期 16 周，R2 实验室档期最早 8/15，R3 与华南项目在 10 至 12 月人力重叠；也取自里程碑 M2、M3、M4 和变更控制规则。会议中心没有星海项目的会议记录，因此汇报中不含会议结论和责任人。\n\n资料里没有给出风险发生概率、影响等级量化和具体应对措施，这些内容已在页面上标为“待确认”，没有代为编造。如果您能提供项目周报，我可以补上责任人和量化评估。\n\n需要我重做成 8 页，或者等您提供周报后再补充完善吗？",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 4,
+      "tool_calls_ok": 4,
+      "llm_calls": 6,
+      "latency_ms": 17885.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F1",
+      "round": 2,
+      "label": "F1#2",
+      "type": "pptx",
+      "title": "8 页风险汇报",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['CreatePresentation', 'ListMeetings', 'SearchKnowledge']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "9 页，全部可读"
+        }
+      ],
+      "answer": "PPT 已生成：**星海项目交付风险汇报_20261109_124954.pptx**（汇报材料/ 目录，共 9 页，含封面）。\n\n内容结构大致如下：\n\n1. 封面\n2. 项目概况 — 总预算 2,480 万元（含税），周期 2025-01-06 至 2026-06-30，交付 12 台软硬件一体化设备及 MES 接口与运维手册\n3. 里程碑计划 — M1 设计冻结（2025-04-30）、M2 样机验证（2025-09-30）、M3 小批量交付（2026-02-28，3 台+客户验收）、M4 结项验收（2026-06-30，12 台+运维移交）\n4. R1 关键器件断供 — 工业相机单一供应商，采购交期 16 周\n5. R2 样机验证档期 — 依赖第三方实验室，最早可约 2025-08-15，挤压 M2 缓冲\n6. R3 人力冲突 — 实施服务人力与华南项目重叠，冲突期 2025 年 10 月—12 月\n7. 治理与管控现状 — 指导委员会（主任为总经理）专项跟进，风险等级季度复核，预算变更分级审批\n8. 需管理层决策事项 + 结论\n\n两点需要你在汇报前补齐：资料中**没有记载 R1–R3 的发生概率、影响评级和责任人**（原文指向\"项目周报\"，但周报未在资料中），PPT 里已按\"需确认\"标注，建议会前向陈立索取；另外客户名称在资料中也未出现，我未做任何填充。",
+      "tool_calls": [
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 5,
+      "tool_calls_ok": 5,
+      "llm_calls": 8,
+      "latency_ms": 25690.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F1",
+      "round": 3,
+      "label": "F1#3",
+      "type": "pptx",
+      "title": "8 页风险汇报",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": false,
+          "detail": "已调用：无（实际：['ListMeetings', 'RecallMemory']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": false,
+          "detail": "没有生成 .pptx"
+        }
+      ],
+      "answer": "会议中心是空的，也没有关于「星海项目」的历史记忆，所以我手上没有任何关于该项目的真实材料，包括进度、风险项、交付节点等。\n\n在没有任何素材的情况下直接生成 8 页 PPT，内容只能靠编造，比如虚构的风险清单和延期天数；这样的汇报如果拿到管理层面前使用，风险很大。\n\n请选择一种方式继续：\n\n1. **上传材料**：把星海项目的会议记录、周报或风险登记表放到工作目录；.txt、.md、.docx、.pdf 都可以。我会先从中提炼结论、风险和待办，再生成 PPT 并标注来源。\n2. **直接给我要点**：例如当前进度、2–3 个主要风险、关键里程碑日期、需要的决策。你提供多少我就写多少，缺少部分我会标为「待补充」，不会编造。\n3. **只要框架版**：我先输出一份通用的交付风险汇报结构，包含项目概况、里程碑状态、Top 风险与应对、资源与依赖、需管理层决策事项和下一步计划；内容位置留空，供你后续填写。\n\n请回复要采用哪种方式，或直接把材料发给我。",
+      "tool_calls": [
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 3,
+      "tool_calls_ok": 3,
+      "llm_calls": 3,
+      "latency_ms": 5638.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F2",
+      "round": 1,
+      "label": "F2",
+      "type": "pptx",
+      "title": "5 页项目复盘",
+      "success": true,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['CreatePresentation', 'ListMeetings', 'RecallMemory', 'SearchKnowledge']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "5 页，全部可读"
+        }
+      ],
+      "answer": "PPT 已生成：**云图平台季度复盘_20261109_125015.pptx**，共 5 页，位于 `汇报材料/` 目录，下载卡片已附上。\n\n结构（围绕性能优化展开）：\n1. 封面\n2. 季度性能目标与达成情况\n3. 瓶颈定位与优化举措（链路、缓存、数据库、前端）\n4. 优化收益对比（优化前后关键指标）\n5. 遗留问题与下季度优化计划\n\n需要说明一点：知识库和会议中心里都没有「云图平台」的任何材料（现有文档只涉及星海项目、供应商质量、信息安全分级），所以这份 PPT 里没有具体数字，关键指标需要用你们实测数据替换。如果你把季度性能数据或复盘会议记录给我，我可以直接补进去重新生成；也可以告诉我平台的技术栈，我把优化举措那页写得更具体。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "RecallMemory",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 4,
+      "tool_calls_ok": 4,
+      "llm_calls": 6,
+      "latency_ms": 14209.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "F3",
+      "round": 1,
+      "label": "F3",
+      "type": "pptx",
+      "title": "10 页安全合规汇报",
+      "success": false,
+      "checks": [
+        {
+          "kind": "tool_called_any",
+          "ok": true,
+          "detail": "已调用：['CreatePresentation']（实际：['Bash', 'CreatePresentation', 'ListMeetings', 'SearchKnowledge', 'ToolSearch']）"
+        },
+        {
+          "kind": "pptx_valid",
+          "ok": true,
+          "detail": "11 页，全部可读"
+        },
+        {
+          "kind": "max_llm_calls",
+          "ok": false,
+          "detail": "LLM 调用 12 次（上限 6）"
+        }
+      ],
+      "answer": "知识库里只有《信息安全与数据分级规定》这一份制度依据，没有整改记录或会议结论。我将按制度要求梳理整改框架来生成 PPT。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "CreatePresentation",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ToolSearch",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": false,
+          "error": "'ls' 不是内部或外部命令，也不是可运行的程序\r\n或批处理文件。\n\nExit code 1"
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 10,
+      "tool_calls_ok": 9,
+      "llm_calls": 12,
+      "latency_ms": 34747.7,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G1",
+      "round": 1,
+      "label": "G1",
+      "type": "error_handling",
+      "title": "文件不存在时不编造",
+      "success": true,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['不存在']（要求命中任意一个）"
+        },
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 0 场（期望 0）"
+        }
+      ],
+      "answer": "这个文件确实不存在，会议中心里也没有对应的记录。可能的原因：\n\n- 文件路径或文件名不对：检查文件名是否有笔误，或者它是否放在别的目录下。\n- 文件还没有上传：可以直接把会议记录正文粘贴给我，或者告诉我实际路径。\n\n请提供正确的路径或正文，我会立刻分析其中的风险、决策和待办。",
+      "tool_calls": [
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": false,
+          "error": "找不到会议文件：会议记录/不存在的会议.txt"
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 4016.3,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G2",
+      "round": 1,
+      "label": "G2",
+      "type": "error_handling",
+      "title": "不支持的文件格式",
+      "success": true,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['格式']（要求命中任意一个）"
+        }
+      ],
+      "answer": "格式已经清楚了：每份文件都包含会议主题、会议时间、会议地点、参会人、风险与待办几个部分。接下来我会逐份解析，并保存进会议中心，从 MEET-001 开始。",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ToolSearch",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Glob",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ListMeetings",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": false,
+          "error": "Exit code 255"
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "Bash",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 10,
+      "tool_calls_ok": 9,
+      "llm_calls": 9,
+      "latency_ms": 13677.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G3",
+      "round": 1,
+      "label": "G3",
+      "type": "error_handling",
+      "title": "无文档时的知识库提问",
+      "success": true,
+      "checks": [
+        {
+          "kind": "answer_contains_any",
+          "ok": true,
+          "detail": "命中：['没有']（要求命中任意一个）"
+        }
+      ],
+      "answer": "知识库里没有任何关于「火星基地建设预算」的规定。检索到的内容完全是另一个项目：现有文档只涉及**星海项目（XH-2025）**的预算与交付计划，项目总预算为 2,480 万元人民币（含税）。\n\n如果你要找的是这个项目的预算规定，我可以进一步把其中的科目划分、付款节点和交付安排整理出来。",
+      "tool_calls": [
+        {
+          "tool": "SearchKnowledge",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_ok": 1,
+      "llm_calls": 3,
+      "latency_ms": 4823.0,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    },
+    {
+      "task_id": "G4",
+      "round": 1,
+      "label": "G4",
+      "type": "multi_turn",
+      "title": "同一会话内两轮追问",
+      "success": true,
+      "checks": [
+        {
+          "kind": "meeting_created",
+          "ok": true,
+          "detail": "新增会议 1 场，最新会议风险 3 条"
+        },
+        {
+          "kind": "answer_contains",
+          "ok": true,
+          "detail": "缺少关键词：[]"
+        }
+      ],
+      "answer": "会议已存入会议中心（编号 mtg_cd33b392c40f，风险 3 条、待办 3 条）。这场会有三项风险：\n\n**1. 报表查询性能不达标（高）**\n在单表数据量超过 8000 万行时，查询平均耗时 12 秒，超过 5 秒的验收标准。这项已被定为上线阻塞项：优化不达标就不许上线，因此它直接决定 4 月 8 日能否按期上线。王强负责优化，截止 3 月 27 日，距上线仅剩 12 天。\n\n**2. 服务器成本超预算（中）**\n两台临时采购的高配服务器月费 3.6 万元，已超出本季度预算。缓解办法是改为按需开机、在非压测时段关机，但实际能省多少，要等吴静 3 月 24 日的核算结果。\n\n**3. 运维人力不足（中）**\n现有运维只有 2 人，要同时支撑中台上线和另一项目日常运维，明显不足。已经决定从外部借调 1 人，需要张伟在 3 月 25 日前协调到位；借调不成功的话，上线窗口期的保障会没有余量。\n\n另外有一个隐含风险值得注意：完成度现在是 78%，三项风险全压在上线前的最后三周，而且性能优化和借调人员这两条关键路径都安排在 3 月底截止，没有任何缓冲时间。\n报表查询性能不达标",
+      "tool_calls": [
+        {
+          "tool": "ReadFile",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "tool": "AnalyzeMeeting",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_ok": 2,
+      "llm_calls": 5,
+      "latency_ms": 10775.4,
+      "error": "",
+      "timed_out": false,
+      "emails_captured": 0
+    }
+  ]
+}

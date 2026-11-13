@@ -1,0 +1,40 @@
+{
+  "document": {
+    "pages": 6,
+    "chars": 8196,
+    "chunks": 12,
+    "chunks_per_page": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 2
+    },
+    "avg_chunk_chars": 683.0
+  },
+  "retrieval": {
+    "query": "供应商逾期交付的违约金怎么算，上限是多少",
+    "returned_chunks": 10,
+    "distinct_pages": 6,
+    "duplicate_chunk_texts": 0,
+    "hits_per_page": {
+      "p6": 2,
+      "p5": 2,
+      "p4": 2,
+      "p3": 2,
+      "p2": 1,
+      "p1": 1
+    },
+    "max_chunks_same_page": 2
+  },
+  "context_budget": {
+    "max_chars": 6000,
+    "retrieved_chunks": 10,
+    "blocks_in_prompt": 8,
+    "dropped_chunks": 2,
+    "context_chars": 5682,
+    "truncated": true,
+    "replica_matches": true
+  }
+}

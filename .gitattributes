@@ -1,0 +1,11 @@
+# 容器相关文件必须保持 LF：CRLF 的 shell 脚本在 Linux 容器里会报
+# `/bin/bash^M: bad interpreter: No such file or directory`。
+*.sh text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+*.dockerignore text eol=lf
+docker-compose.yml text eol=lf
+requirements-docker.txt text eol=lf
+
+# 其余文本按各平台默认处理
+* text=auto

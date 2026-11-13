@@ -1,0 +1,35 @@
+{
+  "mode": "hybrid",
+  "dead_qdrant_url": "http://127.0.0.1:6399",
+  "work_dir": "<repo>\\benchmarks\\.work\\e2e_degraded",
+  "checks": {
+    "upload_not_blocked": true,
+    "controlled_degradation": true,
+    "degradation_visible": true,
+    "reason_readable": true,
+    "all_passed": true
+  },
+  "steps": [
+    {
+      "step": "upload_with_dead_qdrant",
+      "t": 46.6,
+      "documents": 1,
+      "detail": "采购管理制度.pdf\n5.5 KB · 3 页 · 489 字符 · 今天 20:21\n删除\n基于本文档提问\n提问\n回答会附带页码引用"
+    },
+    {
+      "step": "ask_with_dead_qdrant",
+      "t": 51.6,
+      "warn": "检索已降级\n：VectorStoreError: 连接 Qdrant 失败（http://127.0.0.1:6399）：ResponseHandlingException: [WinError 10061] 由于目标计算机积极拒绝，无法连",
+      "err": "",
+      "answered": true
+    }
+  ],
+  "upload_detail": "采购管理制度.pdf\n5.5 KB · 3 页 · 489 字符 · 今天 20:21\n删除\n基于本文档提问\n提问\n回答会附带页码引用",
+  "answer_view": {
+    "text": "检索已降级\n：VectorStoreError: 连接 Qdrant 失败（http://127.0.0.1:6399）：ResponseHandlingException: [WinError 10061] 由于目标计算机积极拒绝，无法连接。。请确认服务已启动：docker compose up -d qdrant，或在 Windows 上运行 tools/qdrant/qdrant.exe；也可用 AIEB_RETRIEVAL_MODE=bm25 回到纯关键词检索。\n\n本次结果仅来自 bm25，可能不如完整混合检索全面，请核对引用原文。\n\n根据资料，单一份合同的采购金额超过 95 万元时，须由部门负责人与财务负责人共同签批。[来源：采购管理制度.pdf · 第1页]\n\n引用来源\n采购管理制度.pdf · 第1 页\n华东智造集团 采购管理制度(V1) 第一条 单一合同审批权限 单一份合同的采购金额超过 95 万元时,须由部门负责人与财务负责人共同签批; 不超过 95 万元的,由部门负责人单独签批即可。 第二条 质保金 质保金比例为合同金额的 5%,验收合格后 30 日内退还。 第三条 项目编号规则 项目编号格式为 PRJ-年份-三位序号,例如 PRJ-2024-123。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 第 1…\n采购管理制度.pdf · 第3 页\n附件二 交付与违约 第一阶段验收应在合同签订后第 30 日完成。 若交付逾期,违约金按合同金额的 0.5%/日计算,累计封顶比例为 10%。 违约金的计算基数为合同金额,与第二条的质保金条款互不抵扣。 第 3 页 / 共 3 页…\n采购管理制度.pdf · 第2 页\n附件一 项目台账(节选) 项目 PRJ-2024-1230 的负责人为张明,预算为 340 万元。 项目 PRJ-2024-123 的负责人为李强,预算为 120 万元。 注意:PRJ-2024-123 与 PRJ-2024-1230 是两个不同项目,请勿混淆。 第 2 页 / 共 3 页…",
+    "warn": "检索已降级\n：VectorStoreError: 连接 Qdrant 失败（http://127.0.0.1:6399）：ResponseHandlingException: [WinError 10061] 由于目标计算机积极拒绝，无法连接。。请确认服务已启动：docker compose up -d qdrant，或在 Windows 上运行 tools/qdrant/qdrant.exe；也可用 AIEB_RETRIEVAL_MODE=bm25 回到纯关键词检索。\n\n本次结果仅来自 bm25，可能不如完整混合检索全面，请核对引用原文。",
+    "err": ""
+  },
+  "server_log_tail": "s and faster downloads.\n<user-home>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\huggingface_hub\\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in <repo>\\benchmarks\\.work\\e2e_degraded\\.aieb\\cache\\embeddings\\models. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.\nTo support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development\n  warnings.warn(message)\n<user-home>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\huggingface_hub\\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in <repo>\\benchmarks\\.work\\e2e_degraded\\.aieb\\cache\\embeddings\\models\\models--Qdrant--bge-small-zh-v1.5. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.\nTo support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development\n  warnings.warn(message)\n\nFetching 5 files:  20%|����        | 1/5 [00:01<00:04,  1.23s/it]\nFetching 5 files:  80%|����������������  | 4/5 [00:01<00:00,  3.07it/s]\nFetching 5 files: 100%|��������������������| 5/5 [00:33<00:00,  9.07s/it]\nFetching 5 files: 100%|��������������������| 5/5 [00:33<00:00,  6.66s/it]\n<user-home>\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\qdrant_client\\qdrant_remote.py:295: UserWarning: Failed to obtain server version. Unable to check client-server compatibility. Set check_compatibility=False to skip version check.\n  show_warning(\n",
+  "elapsed_seconds": 51.8
+}
